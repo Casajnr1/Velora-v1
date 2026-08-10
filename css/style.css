@@ -4093,3 +4093,659 @@ font-size:15px;
     }
 
 }
+
+/*=========================================
+          VELORA PRICING
+=========================================*/
+
+.velora-pricing {
+
+    padding: 150px 0;
+
+    background: #fafafa;
+
+    overflow: hidden;
+
+}
+
+
+/*=========================================
+              HEADER
+=========================================*/
+
+.pricing-header {
+
+    max-width: 700px;
+
+    margin: 0 auto 75px;
+
+    padding: 0 20px;
+
+    text-align: center;
+
+}
+
+
+.pricing-eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--velora-green);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+}
+
+
+.pricing-header h2 {
+
+    margin: 0 0 22px;
+
+    color: var(--velora-ink);
+
+    font-size: clamp(42px, 5vw, 60px);
+
+    font-weight: 500;
+
+    line-height: 1.08;
+
+    letter-spacing: -.05em;
+
+}
+
+
+.pricing-header h2 span {
+
+    color: var(--velora-green);
+
+}
+
+
+.pricing-header p {
+
+    max-width: 560px;
+
+    margin: 0 auto;
+
+    color: var(--velora-muted);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+/*=========================================
+              PRICING GRID
+=========================================*/
+
+.pricing-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    align-items: stretch;
+
+}
+
+
+/*=========================================
+              PRICING CARD
+=========================================*/
+
+.pricing-card {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 34px;
+
+    background: var(--velora-paper);
+
+    border: 1px solid var(--velora-line);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 45px rgba(23,24,26,.04);
+
+}
+
+
+.pricing-card-featured {
+
+    border: 1px solid var(--velora-green);
+
+    box-shadow:
+        0 25px 65px rgba(27,67,50,.12);
+
+}
+
+
+/*=========================================
+              MOST POPULAR
+=========================================*/
+
+.pricing-popular {
+
+    position: absolute;
+
+    top: -13px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 6px 13px;
+
+    border-radius: 999px;
+
+    background: var(--velora-green);
+
+    color: white;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+    white-space: nowrap;
+
+}
+
+
+/*=========================================
+              CARD TOP
+=========================================*/
+
+.pricing-card-top {
+
+    min-height: 160px;
+
+}
+
+
+.pricing-plan {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--velora-ink);
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+}
+
+
+.pricing-description {
+
+    min-height: 45px;
+
+    margin: 0 0 20px;
+
+    color: var(--velora-muted);
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+}
+
+
+.pricing-price {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 5px;
+
+}
+
+
+.pricing-price strong {
+
+    color: var(--velora-ink);
+
+    font-size: 48px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: -.05em;
+
+}
+
+
+.pricing-price span {
+
+    color: var(--velora-muted);
+
+    font-size: 13px;
+
+}
+
+
+/*=========================================
+              BUTTONS
+=========================================*/
+
+.pricing-btn {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 50px;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background-color .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+
+}
+
+
+.pricing-btn:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+.pricing-btn-outline {
+
+    border: 1px solid #dcdedc;
+
+    background: white;
+
+    color: var(--velora-ink);
+
+}
+
+
+.pricing-btn-outline:hover {
+
+    border-color: var(--velora-green);
+
+    background: var(--velora-green-tint);
+
+    color: var(--velora-green);
+
+}
+
+
+.pricing-btn-primary {
+
+    border: 1px solid var(--velora-green);
+
+    background: var(--velora-green);
+
+    color: white;
+
+}
+
+
+.pricing-btn-primary:hover {
+
+    border-color: var(--velora-green-dark);
+
+    background: var(--velora-green-dark);
+
+    color: white;
+
+}
+
+
+/*=========================================
+              DIVIDER
+=========================================*/
+
+.pricing-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin: 28px 0 20px;
+
+    background: var(--velora-line);
+
+}
+
+
+/*=========================================
+              STORAGE
+=========================================*/
+
+.pricing-storage {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+
+    color: var(--velora-green);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.pricing-storage i {
+
+    font-size: 15px;
+
+}
+
+
+/*=========================================
+              FEATURES
+=========================================*/
+
+.pricing-features {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+.pricing-features li {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    color: var(--velora-ink);
+
+    font-size: 13px;
+
+    line-height: 1.45;
+
+}
+
+
+.pricing-features li i {
+
+    flex-shrink: 0;
+
+    margin-top: 1px;
+
+    color: var(--velora-green);
+
+    font-size: 14px;
+
+}
+
+
+.pricing-features
+.pricing-feature-disabled {
+
+    color: #a5a7a5;
+
+}
+
+
+.pricing-features
+.pricing-feature-disabled i {
+
+    color: #b7bab7;
+
+}
+
+
+/*=========================================
+          REASSURANCE
+=========================================*/
+
+.pricing-reassurance {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 30px;
+
+    margin-top: 45px;
+
+}
+
+
+.pricing-reassurance span {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--velora-muted);
+
+    font-size: 12px;
+
+}
+
+
+.pricing-reassurance i {
+
+    color: var(--velora-green);
+
+    font-size: 14px;
+
+}
+
+
+/*=========================================
+        COMPARE FEATURES
+=========================================*/
+
+.pricing-comparison-link {
+
+    margin-top: 25px;
+
+    text-align: center;
+
+}
+
+
+.pricing-comparison-link a {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--velora-ink);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+}
+
+
+.pricing-comparison-link a:hover {
+
+    color: var(--velora-green);
+
+}
+
+
+.pricing-comparison-link i {
+
+    transition:
+        transform .2s ease;
+
+}
+
+
+.pricing-comparison-link a:hover i {
+
+    transform:
+        translateX(4px);
+
+}
+
+
+/*=========================================
+              TABLET
+=========================================*/
+
+@media (max-width: 991px) {
+
+    .velora-pricing {
+
+        padding: 110px 0;
+
+    }
+
+
+    .pricing-grid {
+
+        grid-template-columns:
+            1fr;
+
+        max-width: 600px;
+
+        gap: 25px;
+
+    }
+
+
+    .pricing-card {
+
+        padding: 32px;
+
+    }
+
+
+    .pricing-card-featured {
+
+        order: -1;
+
+    }
+
+}
+
+
+/*=========================================
+              MOBILE
+=========================================*/
+
+@media (max-width: 767px) {
+
+    .velora-pricing {
+
+        padding: 85px 0;
+
+    }
+
+
+    .pricing-header {
+
+        margin-bottom: 55px;
+
+    }
+
+
+    .pricing-header h2 {
+
+        font-size: 40px;
+
+    }
+
+
+    .pricing-header p {
+
+        font-size: 16px;
+
+    }
+
+
+    .pricing-card {
+
+        padding: 28px 24px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .pricing-price strong {
+
+        font-size: 44px;
+
+    }
+
+
+    .pricing-reassurance {
+
+        flex-direction: column;
+
+        gap: 14px;
+
+        margin-top: 35px;
+
+    }
+
+}
