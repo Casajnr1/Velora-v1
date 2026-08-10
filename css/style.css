@@ -28,7 +28,8 @@ body {
 
   margin: 0;
 
-  font-family: proxima-nova, Lato, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+   font-family: "Lato", sans-serif;
+
 
   background: var(--velora-paper);
 
@@ -47,13 +48,15 @@ body {
 
 
 .velora-nav {
-
+ font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: normal;
   background: var(--velora-paper);
 
   border-bottom: 1px solid var(--velora-line);
 
   padding:0;
-
+ box-shadow: 0 1px 25px rgba(49, 103, 69, 0.548);
 }
 
 
@@ -367,12 +370,28 @@ body {
 
   max-width:760px;
 
-font-family: proxima-nova, Lato, Lucida Sans Unicode, Lucida Grande, sans-serif;
-font-size: 2.5rem;
-font-weight: 600;
-line-height: 1.2;
-color: rgb(25 25 24 / var(--tw-text-opacity, 1));
+
+
+  font-size:clamp(42px,5vw,64px);
+
+
+
+  font-weight:500;
+
+ font-family: "Lato", sans-serif;
+  
+
+  line-height:1.08;
+
+
+
   letter-spacing:-0.045em;
+
+
+
+  color:var(--velora-ink);
+
+
 }
 
 
@@ -615,5 +634,3462 @@ color: rgb(25 25 24 / var(--tw-text-opacity, 1));
 
   }
 
+
+}
+/*==========================
+      TEMPLATE SECTION
+===========================*/
+
+.velora-templates{
+
+    padding:120px 0;
+
+    background:#fafafa;
+
+    overflow:hidden;
+
+}
+
+
+.templates-header{
+
+    max-width:720px;
+
+    margin:0 auto;
+
+    text-align:center;
+
+    padding:0 20px;
+
+}
+
+
+.templates-header h2{
+
+    font-size:clamp(38px,5vw,58px);
+
+    font-weight:500;
+
+    line-height:1.1;
+
+    letter-spacing:-.05em;
+
+    margin-bottom:24px;
+
+}
+
+
+.templates-header p{
+
+    max-width:620px;
+
+    margin:auto;
+
+    font-size:19px;
+
+    line-height:1.75;
+
+    color:#63676c;
+
+}
+
+
+.templates-header .btn{
+
+    margin-top:38px;
+
+}
+
+
+/*==========================
+        CAROUSEL
+===========================*/
+
+.template-slider{
+
+    position:relative;
+    margin-top:90px;
+
+}
+
+.swiper{
+
+    width:100%;
+    padding:20px 70px 90px;
+    overflow:visible;
+
+}
+
+.swiper-wrapper{
+
+    align-items:center;
+
+}
+
+.swiper-slide{
+
+    transition:.45s ease;
+
+}
+
+.swiper-slide img{
+
+    width:100%;
+    height:540px;
+    object-fit:cover;
+
+    border-radius:28px;
+
+    box-shadow:
+        0 22px 70px rgba(0,0,0,.12);
+
+    transition:.45s;
+
+}
+
+/* Center Card */
+
+.swiper-slide-active{
+
+    transform:scale(1.04);
+
+}
+
+.swiper-slide-active img{
+
+    box-shadow:
+        0 35px 90px rgba(0,0,0,.18);
+
+}
+
+/* Side Cards */
+
+.swiper-slide-prev{
+
+    transform:rotate(-2deg);
+
+    opacity:.9;
+
+}
+
+.swiper-slide-next{
+
+    transform:rotate(2deg);
+
+    opacity:.9;
+
+}
+
+/* Hover */
+
+.swiper-slide img:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/*==========================
+      ARROWS
+===========================*/
+
+.swiper-button-next,
+.swiper-button-prev{
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.12);
+
+    transition:.25s;
+
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after{
+
+    font-size:20px;
+    font-weight:bold;
+    color:#17181a;
+
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover{
+
+    background:var(--velora-green);
+
+}
+
+.swiper-button-next:hover::after,
+.swiper-button-prev:hover::after{
+
+    color:#fff;
+
+}
+
+/*==========================
+      PAGINATION
+===========================*/
+
+.swiper-pagination{
+
+    bottom:0 !important;
+
+}
+
+.swiper-pagination-bullet{
+
+    width:10px;
+    height:10px;
+
+    background:#cfcfcf;
+    opacity:1;
+
+}
+
+.swiper-pagination-bullet-active{
+
+    background:var(--velora-green);
+
+}
+
+/*==========================
+      RESPONSIVE
+===========================*/
+
+@media(max-width:992px){
+
+.swiper{
+
+padding:20px 45px 80px;
+
+}
+
+.swiper-slide img{
+
+height:430px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.velora-templates{
+
+padding:80px 0;
+
+}
+
+.swiper{
+
+padding:20px 18px 70px;
+
+}
+
+.swiper-slide img{
+
+height:320px;
+
+border-radius:18px;
+
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+
+width:42px;
+height:42px;
+
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after{
+
+font-size:15px;
+
+}
+
+}
+
+/*=========================================
+    EVERYTHING YOUR PHOTOGRAPHY BUSINESS NEEDS
+=========================================*/
+
+.velora-business {
+
+    padding: 140px 0 150px;
+
+    background: var(--velora-paper);
+
+    overflow: hidden;
+
+}
+
+
+/*=========================================
+            SECTION HEADER
+=========================================*/
+
+.business-header {
+
+    max-width: 760px;
+
+    margin: 0 auto 80px;
+
+    padding: 0 20px;
+
+    text-align: center;
+
+}
+
+
+.business-eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--velora-green);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+}
+
+
+.business-header h2 {
+
+    max-width: 720px;
+
+    margin: 0 auto 24px;
+
+    color: var(--velora-ink);
+
+    font-family: "Lato", sans-serif;
+
+    font-size: clamp(40px, 5vw, 62px);
+
+    font-weight: 500;
+
+    line-height: 1.08;
+
+    letter-spacing: -.05em;
+
+}
+
+
+.business-header h2 span {
+
+    color: var(--velora-green);
+
+}
+
+
+.business-header p {
+
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    color: var(--velora-muted);
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    line-height: 1.7;
+
+}
+
+
+/*=========================================
+          DASHBOARD SHOWCASE
+=========================================*/
+
+.business-showcase {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.7fr)
+        minmax(320px, .8fr);
+
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+
+/*=========================================
+          DASHBOARD PREVIEW
+=========================================*/
+
+.business-preview {
+
+    width: 100%;
+
+    min-width: 0;
+
+}
+
+
+.preview-window {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background: #f7f7f7;
+
+    border: 1px solid var(--velora-line);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 35px 100px rgba(0, 0, 0, .10);
+
+}
+
+
+/*=========================================
+            BROWSER TOP BAR
+=========================================*/
+
+.preview-topbar {
+
+    position: relative;
+
+    z-index: 5;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 18px;
+
+    background: #f8f8f8;
+
+    border-bottom: 1px solid #e8e8e8;
+
+}
+
+
+.preview-dots {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+}
+
+
+.preview-dots span {
+
+    display: block;
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #d4d4d4;
+
+}
+
+
+.preview-address {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 6px 18px;
+
+    background: #eeeeee;
+
+    border-radius: 8px;
+
+    color: #888;
+
+    font-size: 11px;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+}
+
+
+/*=========================================
+          DASHBOARD SCREEN AREA
+=========================================*/
+
+.preview-screen {
+
+    position: relative;
+
+    width: 100%;
+
+    /*
+       Every dashboard screenshot uses
+       exactly the same viewport ratio.
+    */
+
+    aspect-ratio: 16 / 10;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+}
+
+
+/*=========================================
+          DASHBOARD PANELS
+=========================================*/
+
+.dashboard-panel {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(.985);
+
+    transition:
+        opacity .35s ease,
+        transform .45s ease,
+        visibility .35s ease;
+
+}
+
+
+/* Active dashboard */
+
+.dashboard-panel.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+
+}
+
+
+/*=========================================
+          DASHBOARD SCREENSHOTS
+=========================================*/
+
+.dashboard-panel img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    /*
+       Keeps every screenshot inside
+       the exact same frame.
+    */
+
+    object-fit: cover;
+
+    object-position: top left;
+
+}
+
+
+/*=========================================
+            FEATURE TABS
+=========================================*/
+
+.business-features {
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+}
+
+
+.business-feature {
+
+    position: relative;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        36px
+        minmax(0, 1fr)
+        20px;
+
+    gap: 18px;
+
+    align-items: start;
+
+    padding: 28px 0;
+
+    background: transparent;
+
+    border: 0;
+
+    border-bottom: 1px solid var(--velora-line);
+
+    color: var(--velora-ink);
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-family: "Lato", sans-serif;
+
+    transition:
+        color .25s ease,
+        padding-left .25s ease;
+
+}
+
+
+.business-feature:first-child {
+
+    border-top: 1px solid var(--velora-line);
+
+}
+
+
+/*=========================================
+          FEATURE NUMBER
+=========================================*/
+
+.feature-number {
+
+    padding-top: 3px;
+
+    color: #a0a0a0;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing: .04em;
+
+    transition: color .25s ease;
+
+}
+
+
+/*=========================================
+          FEATURE CONTENT
+=========================================*/
+
+.feature-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.feature-content strong {
+
+    display: block;
+
+    color: var(--velora-ink);
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    line-height: 1.25;
+
+    transition: color .25s ease;
+
+}
+
+
+.feature-content span {
+
+    display: block;
+
+    max-width: 330px;
+
+    color: var(--velora-muted);
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    line-height: 1.6;
+
+}
+
+
+/*=========================================
+          FEATURE ARROW
+=========================================*/
+
+.business-feature > i {
+
+    padding-top: 2px;
+
+    color: #a0a0a0;
+
+    font-size: 15px;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
+
+}
+
+
+/*=========================================
+          FEATURE HOVER
+=========================================*/
+
+.business-feature:hover {
+
+    padding-left: 6px;
+
+}
+
+
+.business-feature:hover > i {
+
+    color: var(--velora-green);
+
+    transform:
+        translate(3px, -3px);
+
+}
+
+
+/*=========================================
+          ACTIVE FEATURE
+=========================================*/
+
+.business-feature.active {
+
+    color: var(--velora-green);
+
+}
+
+
+.business-feature.active .feature-number {
+
+    color: var(--velora-green);
+
+}
+
+
+.business-feature.active .feature-content strong {
+
+    color: var(--velora-green);
+
+}
+
+
+.business-feature.active > i {
+
+    color: var(--velora-green);
+
+    transform:
+        translate(3px, -3px);
+
+}
+
+
+/*=========================================
+        RESPONSIVE — TABLET
+=========================================*/
+
+@media (max-width: 1100px) {
+
+    .business-showcase {
+
+        grid-template-columns:
+            minmax(0, 1.5fr)
+            minmax(290px, .8fr);
+
+        gap: 45px;
+
+    }
+
+}
+
+
+/*=========================================
+        RESPONSIVE — SMALL DESKTOP
+=========================================*/
+
+@media (max-width: 991px) {
+
+    .velora-business {
+
+        padding: 110px 0 120px;
+
+    }
+
+
+    .business-header {
+
+        margin-bottom: 60px;
+
+    }
+
+
+    .business-showcase {
+
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+
+    }
+
+
+    .business-features {
+
+        max-width: 700px;
+
+        margin: 0 auto;
+
+    }
+
+}
+
+
+/*=========================================
+        RESPONSIVE — MOBILE
+=========================================*/
+
+@media (max-width: 767px) {
+
+    .velora-business {
+
+        padding: 80px 0 90px;
+
+    }
+
+
+    .business-header {
+
+        margin-bottom: 45px;
+
+        padding: 0 18px;
+
+    }
+
+
+    .business-header h2 {
+
+        font-size: 39px;
+
+        line-height: 1.08;
+
+    }
+
+
+    .business-header p {
+
+        font-size: 16px;
+
+        line-height: 1.7;
+
+    }
+
+
+    /* Browser frame */
+
+    .preview-window {
+
+        border-radius: 18px;
+
+    }
+
+
+    /* Browser bar */
+
+    .preview-topbar {
+
+        height: 38px;
+
+        padding: 0 13px;
+
+    }
+
+
+    .preview-dots {
+
+        gap: 5px;
+
+    }
+
+
+    .preview-dots span {
+
+        width: 7px;
+
+        height: 7px;
+
+    }
+
+
+    .preview-address {
+
+        display: none;
+
+    }
+
+
+    /* Dashboard */
+
+    .preview-screen {
+
+        aspect-ratio: 16 / 10;
+
+    }
+
+
+    /* Feature list */
+
+    .business-showcase {
+
+        gap: 40px;
+
+    }
+
+
+    .business-feature {
+
+        grid-template-columns:
+            30px
+            minmax(0, 1fr)
+            18px;
+
+        gap: 12px;
+
+        padding: 23px 0;
+
+    }
+
+
+    .feature-content strong {
+
+        font-size: 17px;
+
+    }
+
+
+    .feature-content span {
+
+        font-size: 13px;
+
+        line-height: 1.55;
+
+    }
+
+
+    .feature-number {
+
+        font-size: 11px;
+
+    }
+
+
+    .business-feature > i {
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+```css
+/*=========================================
+        VELORA WORKFLOW SECTION
+=========================================*/
+
+.velora-workflow {
+
+    padding: 150px 0;
+
+    background: var(--velora-paper);
+
+    overflow: hidden;
+
+}
+
+
+/*=========================================
+              HEADER
+=========================================*/
+
+.workflow-header {
+
+    max-width: 760px;
+
+    margin: 0 auto 90px;
+
+    text-align: center;
+
+}
+
+
+.workflow-eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 22px;
+
+    padding: 8px 15px;
+
+    border-radius: 999px;
+
+    background: #f3f5f3;
+
+    color: var(--velora-ink);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+
+}
+
+
+.workflow-eyebrow::before {
+
+    content: "";
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--velora-green);
+
+}
+
+
+.workflow-header h2 {
+
+    margin: 0 auto 25px;
+
+    color: var(--velora-ink);
+
+    font-family: "Lato", sans-serif;
+
+    font-size: clamp(42px, 5vw, 64px);
+
+    font-weight: 500;
+
+    line-height: 1.08;
+
+    letter-spacing: -.05em;
+
+}
+
+
+.workflow-header h2 span {
+
+    color: var(--velora-green);
+
+}
+
+
+.workflow-header p {
+
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    color: var(--velora-muted);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+/*=========================================
+              WORKFLOW GRID
+=========================================*/
+
+.workflow-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+
+}
+
+
+/*=========================================
+              WORKFLOW STEP
+=========================================*/
+
+.workflow-step {
+
+    position: relative;
+
+    min-width: 0;
+
+}
+
+
+.workflow-step-content {
+
+    min-height: 145px;
+
+    padding: 0 5px;
+
+}
+
+
+.workflow-number {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 50%;
+
+    background: var(--velora-green);
+
+    color: #fff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+.workflow-step h3 {
+
+    margin: 0 0 12px;
+
+    color: var(--velora-ink);
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    line-height: 1.25;
+
+}
+
+
+.workflow-step-content p {
+
+    max-width: 260px;
+
+    margin: 0;
+
+    color: var(--velora-muted);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+/*=========================================
+            CONNECTOR LINE
+=========================================*/
+
+.workflow-connector {
+
+    position: absolute;
+
+    top: 130px;
+
+    right: -22px;
+
+    width: 45px;
+
+    height: 70px;
+
+    z-index: 3;
+
+}
+
+
+.workflow-connector::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 45px;
+
+    height: 35px;
+
+    border-top: 2px solid var(--velora-green);
+
+    border-right: 2px solid var(--velora-green);
+
+    border-radius: 0 25px 0 0;
+
+}
+
+
+.workflow-connector::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -3px;
+
+    top: -4px;
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--velora-green);
+
+}
+
+
+.workflow-connector-right span {
+
+    position: absolute;
+
+    left: -4px;
+
+    top: -4px;
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--velora-green);
+
+}
+
+
+/*=========================================
+            MOCKUP
+=========================================*/
+
+.workflow-mockup {
+
+    position: relative;
+
+    margin-top: 15px;
+
+}
+
+
+.workflow-browser {
+
+    overflow: hidden;
+
+    background: #fff;
+
+    border: 1px solid #e7e9e7;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 55px rgba(23, 24, 26, .10);
+
+}
+
+
+.workflow-browser-bar {
+
+    position: relative;
+
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 12px;
+
+    background: #f8f9f8;
+
+    border-bottom: 1px solid #eceeec;
+
+}
+
+
+.workflow-dots {
+
+    display: flex;
+
+    gap: 4px;
+
+}
+
+
+.workflow-dots span {
+
+    width: 6px;
+
+    height: 6px;
+
+    display: block;
+
+    border-radius: 50%;
+
+    background: #cfd2cf;
+
+}
+
+
+.workflow-url {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #a0a4a0;
+
+    font-size: 7px;
+
+}
+
+
+/*=========================================
+              MOCKUP UI
+=========================================*/
+
+.workflow-ui {
+
+    display: grid;
+
+    grid-template-columns: 72px minmax(0, 1fr);
+
+    min-height: 260px;
+
+    background: #fff;
+
+}
+
+
+/* Sidebar */
+
+.workflow-sidebar {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 15px 9px;
+
+    background: #fafbfa;
+
+    border-right: 1px solid #eeeeee;
+
+}
+
+
+.workflow-logo {
+
+    margin-bottom: 14px;
+
+    color: var(--velora-green);
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: .12em;
+
+}
+
+
+.workflow-sidebar > span {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 6px 5px;
+
+    border-radius: 5px;
+
+    color: #7a7e7a;
+
+    font-size: 7px;
+
+    white-space: nowrap;
+
+}
+
+
+.workflow-sidebar > span i {
+
+    font-size: 8px;
+
+}
+
+
+.workflow-sidebar > span.workflow-active {
+
+    background: var(--velora-green-tint);
+
+    color: var(--velora-green);
+
+    font-weight: 600;
+
+}
+
+
+/* Main */
+
+.workflow-main {
+
+    min-width: 0;
+
+    padding: 18px;
+
+}
+
+
+.workflow-ui-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 8px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.workflow-ui-heading strong {
+
+    color: var(--velora-ink);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.workflow-ui-heading button {
+
+    padding: 5px 8px;
+
+    border: 0;
+
+    border-radius: 5px;
+
+    background: var(--velora-green);
+
+    color: #fff;
+
+    font-size: 7px;
+
+}
+
+
+/* Tabs */
+
+.workflow-tabs,
+.workflow-project-tabs {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 13px;
+
+    border-bottom: 1px solid #eeeeee;
+
+}
+
+
+.workflow-tabs span,
+.workflow-project-tabs span {
+
+    padding-bottom: 7px;
+
+    color: #999;
+
+    font-size: 7px;
+
+}
+
+
+.workflow-tabs span.active,
+.workflow-project-tabs span.active {
+
+    color: var(--velora-green);
+
+    border-bottom: 1px solid var(--velora-green);
+
+}
+
+
+/*=========================================
+              INQUIRY UI
+=========================================*/
+
+.workflow-inquiry {
+
+    display: grid;
+
+    grid-template-columns: 25px minmax(0, 1fr) auto;
+
+    gap: 8px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #f0f0f0;
+
+}
+
+
+.workflow-avatar {
+
+    width: 25px;
+
+    height: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--velora-green-tint);
+
+    color: var(--velora-green);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+}
+
+
+.workflow-avatar.large {
+
+    width: 32px;
+
+    height: 32px;
+
+}
+
+
+.workflow-inquiry strong {
+
+    display: block;
+
+    color: var(--velora-ink);
+
+    font-size: 8px;
+
+}
+
+
+.workflow-inquiry span {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: #707570;
+
+    font-size: 7px;
+
+}
+
+
+.workflow-inquiry small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #a0a4a0;
+
+    font-size: 6px;
+
+}
+
+
+.workflow-inquiry time {
+
+    color: #999;
+
+    font-size: 6px;
+
+}
+
+
+/*=========================================
+              BOOKING UI
+=========================================*/
+
+.workflow-client-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px;
+
+    margin-bottom: 12px;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 7px;
+
+}
+
+
+.workflow-client-card strong {
+
+    display: block;
+
+    color: var(--velora-ink);
+
+    font-size: 8px;
+
+}
+
+
+.workflow-client-card span {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: #999;
+
+    font-size: 6px;
+
+}
+
+
+.workflow-info-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 7px;
+
+}
+
+
+.workflow-info-grid > div {
+
+    padding: 9px;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 6px;
+
+}
+
+
+.workflow-info-grid small {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #aaa;
+
+    font-size: 6px;
+
+    letter-spacing: .05em;
+
+}
+
+
+.workflow-info-grid strong {
+
+    color: var(--velora-ink);
+
+    font-size: 7px;
+
+}
+
+
+.workflow-status {
+
+    padding: 4px 7px;
+
+    border-radius: 999px;
+
+    background: var(--velora-green-tint);
+
+    color: var(--velora-green);
+
+    font-size: 6px;
+
+}
+
+
+.workflow-progress {
+
+    margin-top: 12px;
+
+}
+
+
+.workflow-progress > div:first-child {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 5px;
+
+}
+
+
+.workflow-progress span,
+.workflow-progress strong {
+
+    color: #777;
+
+    font-size: 6px;
+
+}
+
+
+.workflow-progress-bar {
+
+    width: 100%;
+
+    height: 4px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: #e9ece9;
+
+}
+
+
+.workflow-progress-bar span {
+
+    display: block;
+
+    width: 75%;
+
+    height: 100%;
+
+    background: var(--velora-green);
+
+}
+
+
+/*=========================================
+              PROJECT UI
+=========================================*/
+
+.workflow-project-tabs {
+
+    margin-bottom: 15px;
+
+}
+
+
+.workflow-photo-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 5px;
+
+}
+
+
+.photo-placeholder {
+
+    width: 100%;
+
+    aspect-ratio: 1;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d9ded9,
+            #89988b
+        );
+
+}
+
+
+.photo-two {
+
+    background:
+        linear-gradient(
+            135deg,
+            #aeb9ad,
+            #526456
+        );
+
+}
+
+
+.photo-three {
+
+    background:
+        linear-gradient(
+            135deg,
+            #d8d0c7,
+            #857a70
+        );
+
+}
+
+
+.photo-four {
+
+    background:
+        linear-gradient(
+            135deg,
+            #c6cec6,
+            #667568
+        );
+
+}
+
+
+.workflow-project-progress {
+
+    margin-top: 14px;
+
+}
+
+
+.workflow-project-progress > div:first-child {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 5px;
+
+}
+
+
+.workflow-project-progress span,
+.workflow-project-progress strong {
+
+    color: #777;
+
+    font-size: 7px;
+
+}
+
+
+/*=========================================
+              GALLERY UI
+=========================================*/
+
+.workflow-gallery-card {
+
+    display: grid;
+
+    grid-template-columns: 85px 1fr;
+
+    gap: 10px;
+
+    padding: 8px;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 7px;
+
+}
+
+
+.gallery-cover {
+
+    position: relative;
+
+}
+
+
+.gallery-cover-image {
+
+    width: 100%;
+
+    height: 105px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c6c8c4,
+            #505951
+        );
+
+}
+
+
+.gallery-delivered {
+
+    position: absolute;
+
+    top: 5px;
+
+    left: 5px;
+
+    padding: 3px 5px;
+
+    border-radius: 999px;
+
+    background: var(--velora-green);
+
+    color: #fff;
+
+    font-size: 5px;
+
+}
+
+
+.gallery-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.gallery-details strong {
+
+    color: var(--velora-ink);
+
+    font-size: 10px;
+
+}
+
+
+.gallery-details span {
+
+    margin-top: 3px;
+
+    color: #777;
+
+    font-size: 7px;
+
+}
+
+
+.gallery-details small {
+
+    margin-top: 6px;
+
+    color: #999;
+
+    font-size: 6px;
+
+}
+
+
+.gallery-actions {
+
+    display: flex;
+
+    gap: 5px;
+
+    margin-top: 10px;
+
+}
+
+
+.gallery-actions button {
+
+    padding: 5px 7px;
+
+    border: 1px solid #e4e6e4;
+
+    border-radius: 4px;
+
+    background: #fff;
+
+    color: #555;
+
+    font-size: 6px;
+
+}
+
+
+.gallery-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 5px;
+
+    margin-top: 8px;
+
+}
+
+
+.gallery-stats > div {
+
+    padding: 7px 4px;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 5px;
+
+    text-align: center;
+
+}
+
+
+.gallery-stats strong {
+
+    display: block;
+
+    color: var(--velora-ink);
+
+    font-size: 10px;
+
+}
+
+
+.gallery-stats span {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: #999;
+
+    font-size: 5px;
+
+}
+
+
+/*=========================================
+              BOTTOM CTA
+=========================================*/
+
+.workflow-bottom {
+
+    display: grid;
+
+    grid-template-columns:
+        55px
+        1fr
+        1px
+        1.5fr
+        auto;
+
+    gap: 25px;
+
+    align-items: center;
+
+    max-width: 1150px;
+
+    margin: 90px auto 0;
+
+    padding: 28px 30px;
+
+    border: 1px solid var(--velora-line);
+
+    border-radius: 16px;
+
+    background: #fbfcfb;
+
+}
+
+
+.workflow-bottom-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--velora-green);
+
+    color: #fff;
+
+    font-size: 19px;
+
+}
+
+
+.workflow-bottom-copy strong {
+
+    color: var(--velora-ink);
+
+    font-size: 16px;
+
+    line-height: 1.35;
+
+}
+
+
+.workflow-bottom-divider {
+
+    width: 1px;
+
+    height: 45px;
+
+    background: var(--velora-line);
+
+}
+
+
+.workflow-bottom p {
+
+    margin: 0;
+
+    color: var(--velora-muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+.workflow-bottom-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 13px 19px;
+
+    border-radius: 8px;
+
+    background: var(--velora-green);
+
+    color: #fff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition: .2s ease;
+
+}
+
+
+.workflow-bottom-btn:hover {
+
+    background: var(--velora-green-dark);
+
+    color: #fff;
+
+    transform: translateY(-1px);
+
+}
+
+
+/*=========================================
+              RESPONSIVE
+=========================================*/
+
+@media (max-width: 1100px) {
+
+    .workflow-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 65px 25px;
+
+    }
+
+
+    .workflow-connector {
+
+        display: none;
+
+    }
+
+}
+
+
+@media (max-width: 991px) {
+
+    .velora-workflow {
+
+        padding: 110px 0;
+
+    }
+
+
+    .workflow-header {
+
+        margin-bottom: 65px;
+
+    }
+
+
+    .workflow-bottom {
+
+        grid-template-columns:
+            50px 1fr;
+
+        gap: 18px;
+
+    }
+
+
+    .workflow-bottom-divider {
+
+        display: none;
+
+    }
+
+
+    .workflow-bottom p {
+
+        grid-column: 2;
+
+    }
+
+
+    .workflow-bottom-btn {
+
+        grid-column: 2;
+
+        justify-self: start;
+
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .velora-workflow {
+
+        padding: 85px 0;
+
+    }
+
+
+    .workflow-header {
+
+        padding: 0 18px;
+
+        margin-bottom: 55px;
+
+    }
+
+
+    .workflow-header h2 {
+
+        font-size: 39px;
+
+    }
+
+
+    .workflow-header p {
+
+        font-size: 16px;
+
+    }
+
+
+    .workflow-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+
+    }
+
+
+    .workflow-step-content {
+
+        min-height: auto;
+
+        margin-bottom: 20px;
+
+        padding: 0;
+
+    }
+
+
+    .workflow-number {
+
+        width: 36px;
+
+        height: 36px;
+
+        margin-bottom: 18px;
+
+        font-size: 12px;
+
+    }
+
+
+    .workflow-step h3 {
+
+        font-size: 19px;
+
+    }
+
+
+    .workflow-step-content p {
+
+        max-width: 100%;
+
+        font-size: 14px;
+
+    }
+
+
+    .workflow-ui {
+
+        grid-template-columns:
+            65px minmax(0, 1fr);
+
+    }
+
+
+    .workflow-sidebar {
+
+        padding: 12px 7px;
+
+    }
+
+
+    .workflow-main {
+
+        padding: 14px;
+
+    }
+
+
+    .workflow-bottom {
+
+        grid-template-columns: 45px 1fr;
+
+        margin: 60px 18px 0;
+
+        padding: 22px;
+
+    }
+
+
+    .workflow-bottom-icon {
+
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 16px;
+
+    }
+
+
+    .workflow-bottom-copy strong {
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .workflow-ui {
+
+        grid-template-columns:
+            55px minmax(0, 1fr);
+
+    }
+
+
+    .workflow-sidebar > span {
+
+        font-size: 6px;
+
+    }
+
+
+    .workflow-sidebar > span i {
+
+        font-size: 7px;
+
+    }
+
+
+    .workflow-logo {
+
+        font-size: 7px;
+
+    }
+
+
+    .workflow-main {
+
+        padding: 11px;
+
+    }
+
+
+    .workflow-gallery-card {
+
+        grid-template-columns: 70px 1fr;
+
+    }
+
+
+    .gallery-cover-image {
+
+        height: 90px;
+
+    }
+
+
+    .workflow-bottom {
+
+        margin-left: 10px;
+
+        margin-right: 10px;
+
+    }
+
+}
+
+/*=========================================
+      MADE FOR PHOTOGRAPHERS
+=========================================*/
+
+.velora-photographers {
+
+    padding: 150px 0;
+
+    background: #fafafa;
+
+    overflow: hidden;
+
+}
+
+
+/*=========================================
+            MAIN SHOWCASE
+=========================================*/
+
+.photographers-showcase {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, .9fr)
+        minmax(0, 1.1fr);
+
+    gap: 90px;
+
+    align-items: center;
+
+}
+
+
+/*=========================================
+              CONTENT
+=========================================*/
+
+.photographers-content {
+
+    max-width: 520px;
+
+}
+
+
+.photographers-eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 22px;
+
+    color: var(--velora-green);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+}
+
+
+.photographers-content h2 {
+
+    margin: 0 0 25px;
+
+    color: var(--velora-ink);
+
+    font-family: "Lato", sans-serif;
+
+    font-size: clamp(42px, 5vw, 64px);
+
+    font-weight: 500;
+
+    line-height: 1.07;
+
+    letter-spacing: -.05em;
+
+}
+
+
+.photographers-content h2 span {
+
+    color: var(--velora-green);
+
+}
+
+
+.photographers-content p {
+
+    max-width: 480px;
+
+    margin: 0 0 35px;
+
+    color: var(--velora-muted);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+/*=========================================
+              VISUAL
+=========================================*/
+
+.photographers-visual {
+
+    position: relative;
+
+}
+
+
+.photographers-image {
+
+    position: relative;
+
+    min-height: 620px;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 35px 90px rgba(23, 24, 26, .15);
+
+}
+
+
+.photographers-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 55%,
+            rgba(0,0,0,.28)
+        );
+
+    pointer-events: none;
+
+}
+
+
+.photographers-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 620px;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+/*=========================================
+          FLOATING CLIENT CARD
+=========================================*/
+
+.photographers-floating-card {
+
+    position: absolute;
+
+    z-index: 2;
+
+    left: 30px;
+
+    bottom: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 220px;
+
+    padding: 18px 20px;
+
+    border: 1px solid rgba(255,255,255,.35);
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,.92);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.15);
+
+}
+
+
+.photographers-floating-card span {
+
+    margin-bottom: 6px;
+
+    color: var(--velora-green);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .1em;
+
+}
+
+
+.photographers-floating-card strong {
+
+    color: var(--velora-ink);
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+}
+
+
+.photographers-floating-card small {
+
+    margin-top: 3px;
+
+    color: var(--velora-muted);
+
+    font-size: 11px;
+
+}
+
+
+/*=========================================
+              IMAGE INDEX
+=========================================*/
+
+.photographers-index {
+
+    position: absolute;
+
+    z-index: 3;
+
+    top: 25px;
+
+    right: 25px;
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.5);
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.15);
+
+    backdrop-filter: blur(10px);
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+/*=========================================
+              PROOF ROW
+=========================================*/
+
+.photographers-proof {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 0;
+
+    margin-top: 100px;
+
+    border-top: 1px solid var(--velora-line);
+
+    border-bottom: 1px solid var(--velora-line);
+
+}
+
+
+.proof-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 30px 35px;
+
+}
+
+
+.proof-item + .proof-item {
+
+    border-left: 1px solid var(--velora-line);
+
+}
+
+
+.proof-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--velora-green-tint);
+
+    color: var(--velora-green);
+
+}
+
+
+.proof-item strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--velora-ink);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+.proof-item div span {
+
+    display: block;
+
+    color: var(--velora-muted);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+/*=========================================
+              TABLET
+=========================================*/
+
+@media (max-width: 991px) {
+
+    .velora-photographers {
+
+        padding: 110px 0;
+
+    }
+
+
+    .photographers-showcase {
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+
+    }
+
+
+    .photographers-content {
+
+        max-width: 700px;
+
+        text-align: center;
+
+        margin: 0 auto;
+
+    }
+
+
+    .photographers-content p {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .photographers-image {
+
+        min-height: 550px;
+
+    }
+
+
+    .photographers-image img {
+
+        min-height: 550px;
+
+    }
+
+}
+
+
+/*=========================================
+              MOBILE
+=========================================*/
+
+@media (max-width: 767px) {
+
+    .velora-photographers {
+
+        padding: 85px 0;
+
+    }
+
+
+    .photographers-content {
+
+        padding: 0 18px;
+
+    }
+
+
+    .photographers-content h2 {
+
+        font-size: 40px;
+
+    }
+
+
+    .photographers-content p {
+
+        font-size: 16px;
+
+    }
+
+
+    .photographers-image {
+
+        min-height: 460px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .photographers-image img {
+
+        min-height: 460px;
+
+    }
+
+
+    .photographers-floating-card {
+
+        left: 18px;
+
+        bottom: 18px;
+
+        min-width: 190px;
+
+        padding: 14px 16px;
+
+    }
+
+
+    .photographers-proof {
+
+        grid-template-columns: 1fr;
+
+        margin-top: 65px;
+
+    }
+
+
+    .proof-item {
+
+        padding: 22px 10px;
+
+    }
+
+
+    .proof-item + .proof-item {
+
+        border-left: 0;
+
+        border-top: 1px solid var(--velora-line);
+
+    }
+
+}
+
+/*=========================================
+       TESTIMONIAL MARQUEE
+=========================================*/
+
+.velora-testimonials {
+
+    padding: 150px 0;
+
+    background: var(--velora-paper);
+
+    overflow: hidden;
+
+}
+
+
+/*=========================================
+              HEADER
+=========================================*/
+
+.testimonial-header {
+
+    max-width: 700px;
+
+    margin: 0 auto 75px;
+
+    padding: 0 20px;
+
+    text-align: center;
+
+}
+
+
+.testimonial-eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--velora-green);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+}
+
+
+.testimonial-header h2 {
+
+    margin: 0 0 22px;
+
+    color: var(--velora-ink);
+
+    font-size: clamp(42px, 5vw, 60px);
+
+    font-weight: 500;
+
+    line-height: 1.08;
+
+    letter-spacing: -.05em;
+
+}
+
+
+.testimonial-header h2 span {
+
+    color: var(--velora-green);
+
+}
+
+
+.testimonial-header p {
+
+    margin: 0;
+
+    color: var(--velora-muted);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+/*=========================================
+              MARQUEE
+=========================================*/
+
+.testimonial-marquee {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+}
+
+
+.testimonial-track {
+
+    display: flex;
+
+    width: max-content;
+
+    gap: 22px;
+
+    will-change: transform;
+
+}
+
+
+.testimonial-track-left {
+
+    animation:
+        testimonialLeft 45s linear infinite;
+
+}
+
+
+.testimonial-track-right {
+
+    animation:
+        testimonialRight 50s linear infinite;
+
+}
+
+
+.testimonial-marquee-second {
+
+    margin-top: 22px;
+
+}
+
+
+/*=========================================
+              CARDS
+=========================================*/
+
+.testimonial-card {
+
+    position: relative;
+
+    width: 390px;
+
+    min-height: 245px;
+
+    flex-shrink: 0;
+
+    padding: 28px;
+
+    background: #fbfcfb;
+
+    border: 1px solid var(--velora-line);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 45px rgba(23, 24, 26, .05);
+
+}
+
+
+.testimonial-quote {
+
+    margin-bottom: 10px;
+
+    color: var(--velora-green);
+
+    font-family: Georgia, serif;
+
+    font-size: 38px;
+
+    line-height: .8;
+
+}
+
+
+.testimonial-card p {
+
+    max-width: 320px;
+
+    margin: 0 0 25px;
+
+    color: var(--velora-ink);
+
+    font-size: 15px;
+
+    line-height: 1.65;
+
+}
+
+
+/*=========================================
+              AUTHOR
+=========================================*/
+
+.testimonial-author {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+}
+
+
+.testimonial-avatar {
+
+    width: 34px;
+
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--velora-green-tint);
+
+    color: var(--velora-green);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+}
+
+
+.testimonial-author strong {
+
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: var(--velora-ink);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.testimonial-author span {
+
+    display: block;
+
+    color: var(--velora-muted);
+
+    font-size: 10px;
+
+}
+
+
+/*=========================================
+              ANIMATION
+=========================================*/
+
+@keyframes testimonialLeft {
+
+    from {
+
+        transform: translateX(0);
+
+    }
+
+    to {
+
+        transform:
+            translateX(calc(-50% - 11px));
+
+    }
+
+}
+
+
+@keyframes testimonialRight {
+
+    from {
+
+        transform:
+            translateX(calc(-50% - 11px));
+
+    }
+
+    to {
+
+        transform: translateX(0);
+
+    }
+
+}
+
+
+/*=========================================
+          PAUSE ON HOVER
+=========================================*/
+
+.testimonial-marquee:hover
+.testimonial-track {
+
+    animation-play-state: paused;
+
+}
+
+
+/*=========================================
+              MOBILE
+=========================================*/
+
+@media (max-width: 767px) {
+
+    .velora-testimonials {
+
+        padding: 90px 0;
+
+    }
+
+
+    .testimonial-header {
+
+        margin-bottom: 50px;
+
+    }
+
+
+    .testimonial-header h2 {
+
+        font-size: 40px;
+
+    }
+
+
+    .testimonial-header p {
+
+        font-size: 16px;
+
+    }
+
+
+    .testimonial-track {
+
+        gap: 14px;
+
+    }
+
+
+    .testimonial-card {
+
+        width: 300px;
+
+        min-height: 225px;
+
+        padding: 22px;
+
+        border-radius: 16px;
+
+    }
+
+
+    .testimonial-card p {
+
+        font-size: 14px;
+
+    }
+
+
+    .testimonial-track-left {
+
+        animation-duration: 38s;
+
+    }
+
+
+    .testimonial-track-right {
+
+        animation-duration: 42s;
+
+    }
+
+}
+
+
+/*=========================================
+       REDUCED MOTION ACCESSIBILITY
+=========================================*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .testimonial-track {
+
+        animation: none;
+
+    }
 
 }

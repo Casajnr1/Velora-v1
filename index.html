@@ -1,91 +1,2429 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Velora | Home</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="shortcut icon" href="media/favicon/favicon.png" type="image/x-icon">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Velora | Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon"
+        href="media/favicon/favicon.png"
+        type="image/x-icon">
+
 </head>
+
 <body>
 
+
+
+<!-- ==========================
+            NAVBAR
+=========================== -->
+
 <nav class="navbar navbar-expand-lg velora-nav">
-  <div class="container velora-nav-inner">
 
-    <!-- Logo Left -->
-    <a class="navbar-brand velora-brand" href="#">
-      <img src="media/logo/logo-1-main.png" alt="Velora" class="velora-logo">
-    </a>
+    <div class="container velora-nav-inner">
 
+        <!-- Logo -->
 
-    <!-- Mobile Toggle -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#veloraNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <a class="navbar-brand velora-brand" href="#">
 
+            <img
+                src="media/logo/logo-1-main.png"
+                alt="Velora"
+                class="velora-logo">
 
-    <!-- Center Navigation -->
-    <div class="collapse navbar-collapse" id="veloraNav">
-
-      <ul class="navbar-nav velora-links mx-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="#home">Home</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#features">Features</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#pricing">Pricing</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#acceptance-criteria">
-            Acceptance Criteria
-          </a>
-        </li>
-      </ul>
+        </a>
 
 
-      <!-- Dashboard Right -->
-      <a href="register.html" class="btn velora-btn-dashboard">
-        Dashboard
-      </a>
+        <!-- Mobile Toggle -->
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#veloraNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+
+        <div
+            class="collapse navbar-collapse"
+            id="veloraNav">
+
+            <!-- Navigation -->
+
+            <ul class="navbar-nav velora-links mx-auto">
+
+                <li class="nav-item">
+
+                    <a class="nav-link active" href="#">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#features">
+
+                        Features
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#templates">
+
+                        Templates
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#pricing">
+
+                        Pricing
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#contact">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+
+
+            <!-- CTA -->
+
+            <a
+                href="register.html"
+                class="btn velora-btn-dashboard">
+
+                Dashboard
+
+            </a>
+
+        </div>
 
     </div>
 
-  </div>
 </nav>
 
-<!-- ===== Hero ===== -->
+
+
+<!-- ==========================
+            HERO
+=========================== -->
+
 <header class="velora-hero">
-  <div class="velora-hero-inner">
-    <h1 class="velora-hero-title">Run your photography business<br class="d-none d-md-block"> from one calm place.</h1>
-    <p class="velora-hero-sub">
-      Galleries, bookings and client messages — organized, on brand,
-      and ready the moment a client says yes.
-    </p>
-    <div class="velora-hero-actions">
-      <a href="register.html" class="btn velora-btn-primary">Get Started</a>
-      <a href="#features" class="btn velora-btn-secondary">See features</a>
+
+    <div class="velora-hero-inner">
+
+        <h1 class="velora-hero-title">
+
+            Run your
+
+            <span style="color: #123325;" class="fw-bold">
+
+                PHOTOGRAPHY
+
+            </span>
+
+            business
+
+            <br class="d-none d-md-block">
+
+            from one calm
+
+            <span  style="color: #123325;" class="fw-bold">
+
+                PLACE
+
+            </span>
+
+        </h1>
+
+
+
+        <p class="velora-hero-sub">
+
+            Galleries, bookings and client messages
+            organized, on brand, and ready the moment
+            a client says yes.
+
+        </p>
+
+
+
+        <div class="velora-hero-actions">
+
+            <a
+                href="register.html"
+                class="btn velora-btn-primary">
+
+                Get Started
+
+            </a>
+
+            <a
+                href="#templates"
+                class="btn velora-btn-secondary">
+
+                See Features
+
+            </a>
+
+        </div>
+
     </div>
-  </div>
 
-  <div class="velora-hero-media">
-    <img src="https://ss-assets.pixieset.com/43gaRjvVJOlImHyVuTwR4Q/PW-hero-090425.webp" alt="Velora gallery preview" class="velora-hero-img">
-  </div>
+
+
+    <div class="velora-hero-media">
+
+        <img
+            src="https://ss-assets.pixieset.com/43gaRjvVJOlImHyVuTwR4Q/PW-hero-090425.webp"
+            class="velora-hero-img"
+            alt="Velora Dashboard">
+
+    </div>
+
 </header>
+<!-- ==========================
+        TEMPLATES SECTION
+========================== -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<section class="velora-templates" id="templates">
 
+    <div class="container">
+
+        <div class="templates-header">
+
+            <h2>
+                Templates as stunning as your photos
+            </h2>
+
+            <p>
+                Our beautiful, easy-to-customize templates are crafted by
+                world-class designers to put your photos in full focus at
+                every moment.
+            </p>
+
+            <a href="#" class="btn velora-btn-primary">
+                See website templates
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+   <div class="template-slider">
+
+<div class="swiper veloraSwiper">
+
+<div class="swiper-wrapper">
+
+<div class="swiper-slide">
+<img src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.15.jpeg" alt="">
+</div>
+
+<div class="swiper-slide">
+<img src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.17.jpeg" alt="">
+</div>
+
+<div class="swiper-slide">
+<img src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.22.jpeg" alt="">
+</div>
+
+<div class="swiper-slide">
+<img src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.11.jpeg" alt="">
+</div>
+
+<div class="swiper-slide">
+<img src="media/L.P img/WhatsApp Image 2026-08-09 at 11.53.11.jpeg" alt="">
+</div>
+
+<div class="swiper-slide">
+<img src="media/L.P img/WhatsApp Image 2026-08-09 at 11.52.53.jpeg" alt="">
+</div>
+
+<div class="swiper-slide">
+<img src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.13.jpeg" alt="">
+</div>
+
+</div>
+
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+
+<div class="swiper-pagination"></div>
+
+</div>
+
+</div>
+        <!-- Navigation -->
+
+        
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     EVERYTHING YOUR PHOTOGRAPHY BUSINESS NEEDS
+========================================= -->
+
+<section class="velora-business" id="features">
+
+    <div class="container">
+
+        <!-- =================================
+             SECTION HEADER
+        ================================== -->
+
+        <div class="business-header">
+
+            <span class="business-eyebrow">
+                EVERYTHING IN ONE PLACE
+            </span>
+
+            <h2>
+                Everything your photography
+                <span>business needs.</span>
+            </h2>
+
+            <p>
+                From your first inquiry to the final delivery,
+                Velora brings your entire photography business
+                together in one calm, organized workspace.
+            </p>
+
+        </div>
+
+
+        <!-- =================================
+             DASHBOARD SHOWCASE
+        ================================== -->
+
+        <div class="business-showcase">
+
+
+            <!-- =================================
+                 DASHBOARD SCREENSHOTS
+            ================================== -->
+
+            <div class="business-preview">
+
+                <div class="preview-window">
+
+
+                    <!-- Browser Top Bar -->
+
+                    <div class="preview-topbar">
+
+                        <div class="preview-dots">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <div class="preview-address">
+                            app.velora.com
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================
+                         DASHBOARD SCREEN AREA
+                    ================================== -->
+
+                    <div class="preview-screen">
+
+
+                        <!-- =============================
+                             01 — OVERVIEW
+                        ============================== -->
+
+                        <div
+                            class="dashboard-panel active"
+                            data-panel="overview"
+                        >
+
+                            <img
+                                src="media/L.P img/overview.png"
+                                alt="Velora dashboard overview"
+                            >
+
+                        </div>
+
+
+
+                        <!-- =============================
+                             02 — GALLERIES
+                        ============================== -->
+
+                        <div
+                            class="dashboard-panel"
+                            data-panel="galleries"
+                        >
+
+                            <img
+                                src="media/L.P img/gallery.png"
+                                alt="Velora galleries dashboard"
+                            >
+
+                        </div>
+
+
+
+                        <!-- =============================
+                             03 — BOOKINGS
+                        ============================== -->
+
+                        <div
+                            class="dashboard-panel"
+                            data-panel="bookings"
+                        >
+
+                            <img
+                                src="media/L.P img/booking.png"
+                                alt="Velora bookings dashboard"
+                            >
+
+                        </div>
+
+
+
+                        <!-- =============================
+                             04 — ANALYTICS
+                        ============================== -->
+
+                        <div
+                            class="dashboard-panel"
+                            data-panel="analytics"
+                        >
+
+                            <img
+                                src="media/L.P img/faq.png"
+                                alt="Velora analytics dashboard"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 FEATURE TABS
+            ================================== -->
+
+            <div class="business-features">
+
+
+                <!-- =============================
+                     01 — OVERVIEW
+                ============================== -->
+
+                <button
+                    class="business-feature active"
+                    type="button"
+                    data-target="overview"
+                >
+
+                    <span class="feature-number">
+                        01
+                    </span>
+
+                    <span class="feature-content">
+
+                        <strong>
+                            Your business at a glance
+                        </strong>
+
+                        <span>
+                            See bookings, projects, revenue and
+                            upcoming work the moment you open Velora.
+                        </span>
+
+                    </span>
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </button>
+
+
+
+                <!-- =============================
+                     02 — GALLERIES
+                ============================== -->
+
+                <button
+                    class="business-feature"
+                    type="button"
+                    data-target="galleries"
+                >
+
+                    <span class="feature-number">
+                        02
+                    </span>
+
+                    <span class="feature-content">
+
+                        <strong>
+                            Beautiful galleries
+                        </strong>
+
+                        <span>
+                            Organize, deliver and share your work
+                            through galleries designed around your photography.
+                        </span>
+
+                    </span>
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </button>
+
+
+
+                <!-- =============================
+                     03 — BOOKINGS
+                ============================== -->
+
+                <button
+                    class="business-feature"
+                    type="button"
+                    data-target="bookings"
+                >
+
+                    <span class="feature-number">
+                        03
+                    </span>
+
+                    <span class="feature-content">
+
+                        <strong>
+                            Effortless bookings
+                        </strong>
+
+                        <span>
+                            Keep inquiries, sessions, appointments
+                            and client schedules organized in one place.
+                        </span>
+
+                    </span>
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </button>
+
+
+
+                <!-- =============================
+                     04 — ANALYTICS
+                ============================== -->
+
+                <button
+                    class="business-feature"
+                    type="button"
+                    data-target="analytics"
+                >
+
+                    <span class="feature-number">
+                        04
+                    </span>
+
+                    <span class="feature-content">
+
+                        <strong>
+                            Understand your business
+                        </strong>
+
+                        <span>
+                            Track revenue, bookings, gallery views
+                            and growth without complicated spreadsheets.
+                        </span>
+
+                    </span>
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+        DASHBOARD TAB JAVASCRIPT
+========================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const featureButtons =
+        document.querySelectorAll(".business-feature");
+
+    const dashboardPanels =
+        document.querySelectorAll(".dashboard-panel");
+
+
+    featureButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const target =
+                this.dataset.target;
+
+
+            /* Remove active state
+               from all buttons */
+
+            featureButtons.forEach(function (item) {
+
+                item.classList.remove("active");
+
+            });
+
+
+            /* Hide all dashboard screens */
+
+            dashboardPanels.forEach(function (panel) {
+
+                panel.classList.remove("active");
+
+            });
+
+
+            /* Activate selected button */
+
+            this.classList.add("active");
+
+
+            /* Show matching dashboard */
+
+            const targetPanel =
+                document.querySelector(
+                    '.dashboard-panel[data-panel="' +
+                    target +
+                    '"]'
+                );
+
+
+            if (targetPanel) {
+
+                targetPanel.classList.add("active");
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+
+
+<!-- =========================================
+     FROM INQUIRY TO DELIVERY
+========================================= -->
+
+<section class="velora-workflow" id="workflow">
+
+    <div class="container">
+
+        <!-- SECTION HEADER -->
+
+        <div class="workflow-header">
+
+            <!-- <span class="workflow-eyebrow">
+                YOUR WORKFLOW, SIMPLIFIED
+            </span> -->
+
+            <h2>
+                From inquiry to delivery,
+                <br>
+                all in <span>one flow.</span>
+            </h2>
+
+            <p>
+                Velora keeps every part of your process connected
+                so you can focus on what you do best — creating.
+            </p>
+
+        </div>
+
+
+        <!-- =================================
+             WORKFLOW
+        ================================== -->
+
+        <div class="workflow-grid">
+
+
+            <!-- =================================
+                 STEP 01
+            ================================== -->
+
+            <article class="workflow-step">
+
+                <div class="workflow-step-content">
+
+                    <div class="workflow-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Get the inquiry
+                    </h3>
+
+                    <p>
+                        Clients reach out through your portfolio
+                        or contact form. Every inquiry lands in
+                        one organized place.
+                    </p>
+
+                </div>
+
+
+                <!-- Connector -->
+
+                <div class="workflow-connector workflow-connector-right">
+
+                    <span></span>
+
+                </div>
+
+
+                <!-- UI MOCKUP -->
+
+                <div class="workflow-mockup">
+
+                    <div class="workflow-browser">
+
+                        <div class="workflow-browser-bar">
+
+                            <div class="workflow-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <span class="workflow-url">
+                                app.velora.com
+                            </span>
+
+                        </div>
+
+
+                        <div class="workflow-ui">
+
+                            <aside class="workflow-sidebar">
+
+                                <div class="workflow-logo">
+                                    VELORA
+                                </div>
+
+                                <span>Overview</span>
+
+                                <span class="workflow-active">
+                                    <i class="bi bi-inbox"></i>
+                                    Inbox
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-calendar3"></i>
+                                    Bookings
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-folder"></i>
+                                    Projects
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-people"></i>
+                                    Clients
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-images"></i>
+                                    Galleries
+                                </span>
+
+                            </aside>
+
+
+                            <div class="workflow-main">
+
+                                <div class="workflow-ui-heading">
+
+                                    <strong>Inbox</strong>
+
+                                    <button>
+                                        <i class="bi bi-search"></i>
+                                    </button>
+
+                                </div>
+
+
+                                <div class="workflow-tabs">
+
+                                    <span class="active">
+                                        All
+                                    </span>
+
+                                    <span>
+                                        Unread
+                                    </span>
+
+                                    <span>
+                                        Inquiries
+                                    </span>
+
+                                </div>
+
+
+                                <div class="workflow-inquiry">
+
+                                    <div class="workflow-avatar">
+                                        OP
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Olivia Parker
+                                        </strong>
+
+                                        <span>
+                                            New inquiry · Portrait Session
+                                        </span>
+
+                                        <small>
+                                            Hi! I'm interested in booking
+                                            a portrait session...
+                                        </small>
+
+                                    </div>
+
+                                    <time>
+                                        10:24 AM
+                                    </time>
+
+                                </div>
+
+
+                                <div class="workflow-inquiry">
+
+                                    <div class="workflow-avatar">
+                                        JT
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            James Turner
+                                        </strong>
+
+                                        <span>
+                                            New inquiry · Wedding
+                                        </span>
+
+                                        <small>
+                                            Please can I get your wedding
+                                            collections?
+                                        </small>
+
+                                    </div>
+
+                                    <time>
+                                        Yesterday
+                                    </time>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 STEP 02
+            ================================== -->
+
+            <article class="workflow-step">
+
+                <div class="workflow-step-content">
+
+                    <div class="workflow-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Book the session
+                    </h3>
+
+                    <p>
+                        Manage dates, packages, contracts and
+                        payments. Everything you need to book
+                        with confidence.
+                    </p>
+
+                </div>
+
+
+                <div class="workflow-connector workflow-connector-right">
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="workflow-mockup">
+
+                    <div class="workflow-browser">
+
+                        <div class="workflow-browser-bar">
+
+                            <div class="workflow-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <span class="workflow-url">
+                                app.velora.com
+                            </span>
+
+                        </div>
+
+
+                        <div class="workflow-ui">
+
+                            <aside class="workflow-sidebar">
+
+                                <div class="workflow-logo">
+                                    VELORA
+                                </div>
+
+                                <span>Overview</span>
+
+                                <span>
+                                    <i class="bi bi-inbox"></i>
+                                    Inbox
+                                </span>
+
+                                <span class="workflow-active">
+                                    <i class="bi bi-calendar3"></i>
+                                    Bookings
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-folder"></i>
+                                    Projects
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-people"></i>
+                                    Clients
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-images"></i>
+                                    Galleries
+                                </span>
+
+                            </aside>
+
+
+                            <div class="workflow-main">
+
+                                <div class="workflow-ui-heading">
+
+                                    <strong>
+                                        Booking #BK-0284
+                                    </strong>
+
+                                    <small class="workflow-status">
+                                        Confirmed
+                                    </small>
+
+                                </div>
+
+
+                                <div class="workflow-client-card">
+
+                                    <div class="workflow-avatar large">
+                                        OP
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Olivia Parker
+                                        </strong>
+
+                                        <span>
+                                            olivia@example.com
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="workflow-info-grid">
+
+                                    <div>
+
+                                        <small>
+                                            SESSION
+                                        </small>
+
+                                        <strong>
+                                            Portrait Session
+                                        </strong>
+
+                                    </div>
+
+                                    <div>
+
+                                        <small>
+                                            DATE
+                                        </small>
+
+                                        <strong>
+                                            May 24, 2026
+                                        </strong>
+
+                                    </div>
+
+                                    <div>
+
+                                        <small>
+                                            PACKAGE
+                                        </small>
+
+                                        <strong>
+                                            Signature Portrait
+                                        </strong>
+
+                                    </div>
+
+                                    <div>
+
+                                        <small>
+                                            PAYMENT
+                                        </small>
+
+                                        <strong>
+                                            ₦150,000
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="workflow-progress">
+
+                                    <div>
+
+                                        <span>
+                                            Booking progress
+                                        </span>
+
+                                        <strong>
+                                            75%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="workflow-progress-bar">
+
+                                        <span></span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 STEP 03
+            ================================== -->
+
+            <article class="workflow-step">
+
+                <div class="workflow-step-content">
+
+                    <div class="workflow-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Shoot & organize
+                    </h3>
+
+                    <p>
+                        Keep every project, file and note in one
+                        beautifully organized workspace.
+                    </p>
+
+                </div>
+
+
+                <div class="workflow-connector workflow-connector-right">
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="workflow-mockup">
+
+                    <div class="workflow-browser">
+
+                        <div class="workflow-browser-bar">
+
+                            <div class="workflow-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <span class="workflow-url">
+                                app.velora.com
+                            </span>
+
+                        </div>
+
+
+                        <div class="workflow-ui">
+
+                            <aside class="workflow-sidebar">
+
+                                <div class="workflow-logo">
+                                    VELORA
+                                </div>
+
+                                <span>Overview</span>
+
+                                <span>
+                                    <i class="bi bi-inbox"></i>
+                                    Inbox
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-calendar3"></i>
+                                    Bookings
+                                </span>
+
+                                <span class="workflow-active">
+                                    <i class="bi bi-folder"></i>
+                                    Projects
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-people"></i>
+                                    Clients
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-images"></i>
+                                    Galleries
+                                </span>
+
+                            </aside>
+
+
+                            <div class="workflow-main">
+
+                                <div class="workflow-ui-heading">
+
+                                    <strong>
+                                        Olivia Parker
+                                    </strong>
+
+                                    <button>
+                                        Upload files
+                                    </button>
+
+                                </div>
+
+
+                                <div class="workflow-project-tabs">
+
+                                    <span class="active">
+                                        Overview
+                                    </span>
+
+                                    <span>
+                                        Files
+                                    </span>
+
+                                    <span>
+                                        Tasks
+                                    </span>
+
+                                    <span>
+                                        Notes
+                                    </span>
+
+                                </div>
+
+
+                                <div class="workflow-photo-grid">
+
+                                    <div>
+                                        <div class="photo-placeholder photo-one"></div>
+                                    </div>
+
+                                    <div>
+                                        <div class="photo-placeholder photo-two"></div>
+                                    </div>
+
+                                    <div>
+                                        <div class="photo-placeholder photo-three"></div>
+                                    </div>
+
+                                    <div>
+                                        <div class="photo-placeholder photo-four"></div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="workflow-project-progress">
+
+                                    <div>
+
+                                        <span>
+                                            Project progress
+                                        </span>
+
+                                        <strong>
+                                            60%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="workflow-progress-bar">
+
+                                        <span style="width:60%;"></span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 STEP 04
+            ================================== -->
+
+            <article class="workflow-step">
+
+                <div class="workflow-step-content">
+
+                    <div class="workflow-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Deliver the gallery
+                    </h3>
+
+                    <p>
+                        Deliver a stunning branded gallery your
+                        clients will love — and share.
+                    </p>
+
+                </div>
+
+
+                <div class="workflow-mockup">
+
+                    <div class="workflow-browser">
+
+                        <div class="workflow-browser-bar">
+
+                            <div class="workflow-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <span class="workflow-url">
+                                app.velora.com
+                            </span>
+
+                        </div>
+
+
+                        <div class="workflow-ui">
+
+                            <aside class="workflow-sidebar">
+
+                                <div class="workflow-logo">
+                                    VELORA
+                                </div>
+
+                                <span>Overview</span>
+
+                                <span>
+                                    <i class="bi bi-inbox"></i>
+                                    Inbox
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-calendar3"></i>
+                                    Bookings
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-folder"></i>
+                                    Projects
+                                </span>
+
+                                <span>
+                                    <i class="bi bi-people"></i>
+                                    Clients
+                                </span>
+
+                                <span class="workflow-active">
+                                    <i class="bi bi-images"></i>
+                                    Galleries
+                                </span>
+
+                            </aside>
+
+
+                            <div class="workflow-main">
+
+                                <div class="workflow-ui-heading">
+
+                                    <strong>
+                                        Galleries
+                                    </strong>
+
+                                    <button>
+                                        + New Gallery
+                                    </button>
+
+                                </div>
+
+
+                                <div class="workflow-gallery-card">
+
+                                    <div class="gallery-cover">
+
+                                        <div class="gallery-cover-image"></div>
+
+                                        <span class="gallery-delivered">
+                                            Delivered
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="gallery-details">
+
+                                        <strong>
+                                            Olivia Parker
+                                        </strong>
+
+                                        <span>
+                                            Portrait Session
+                                        </span>
+
+                                        <small>
+                                            Delivered May 27, 2026
+                                        </small>
+
+                                        <div class="gallery-actions">
+
+                                            <button>
+                                                View Gallery
+                                            </button>
+
+                                            <button>
+                                                Share
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="gallery-stats">
+
+                                    <div>
+                                        <strong>48</strong>
+                                        <span>Photos</span>
+                                    </div>
+
+                                    <div>
+                                        <strong>12</strong>
+                                        <span>Favorites</span>
+                                    </div>
+
+                                    <div>
+                                        <strong>5</strong>
+                                        <span>Downloads</span>
+                                    </div>
+
+                                    <div>
+                                        <strong>98</strong>
+                                        <span>Views</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- =================================
+             BOTTOM CTA
+        ================================== -->
+
+        <div class="workflow-bottom">
+
+            <div class="workflow-bottom-icon">
+
+                <!-- <i class="bi bi-"></i> -->
+
+            </div>
+
+            <div class="workflow-bottom-copy">
+
+                <strong>
+                    One seamless flow.
+                    <br>
+                    More time for what matters.
+                </strong>
+
+            </div>
+
+            <div class="workflow-bottom-divider"></div>
+
+            <p>
+                No more jumping between tools or chasing emails.
+                Velora keeps your entire workflow simple,
+                connected and stress-free.
+            </p>
+
+            <a href="#features" class="workflow-bottom-btn">
+
+                See Velora in action
+
+                <i class="bi bi-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+```
+<!-- =========================================
+     MADE FOR PHOTOGRAPHERS
+========================================= -->
+
+<section class="velora-photographers">
+
+    <div class="container">
+
+        <div class="photographers-showcase">
+
+            <!-- CONTENT -->
+
+            <div class="photographers-content">
+
+                <span class="photographers-eyebrow">
+                    MADE FOR PHOTOGRAPHERS
+                </span>
+
+                <h2>
+                    Your work deserves
+                    a business that feels
+                    just as <span>considered.</span>
+                </h2>
+
+                <p>
+                    Velora gives photographers a calmer way to manage
+                    their business — from the first client inquiry to
+                    the final gallery delivery.
+                </p>
+
+                <a
+                    href="register.html"
+                    class="btn velora-btn-primary"
+                >
+                    Start building your Velora
+                </a>
+
+            </div>
+
+
+            <!-- VISUAL -->
+
+            <div class="photographers-visual">
+
+                <div class="photographers-image">
+
+                    <img
+                        src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.13.jpeg"
+                        alt="Photography portfolio"
+                    >
+
+                    <div class="photographers-floating-card">
+
+                        <span>
+                            YOUR WORK
+                        </span>
+
+                        <strong>
+                            Olivia Parker
+                        </strong>
+
+                        <small>
+                            Portrait Collection · 2026
+                        </small>
+
+                    </div>
+
+                    <div class="photographers-index">
+                        01
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             PROOF ROW
+        ================================== -->
+
+        <div class="photographers-proof">
+
+            <div class="proof-item">
+
+                <span class="proof-icon">
+                   <i class="bi bi-magic"></i>
+                </span>
+
+                <div>
+
+                    <strong>
+                        Beautiful by default
+                    </strong>
+
+                    <span>
+                        Every detail is designed around your work.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="proof-item">
+
+                <span class="proof-icon">
+                    <i class="bi bi-lightning-charge"></i>
+                </span>
+
+                <div>
+
+                    <strong>
+                        Simple to manage
+                    </strong>
+
+                    <span>
+                        Spend less time managing your business.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="proof-item">
+
+                <span class="proof-icon">
+                    <i class="bi bi-palette"></i>
+                </span>
+
+                <div>
+
+                    <strong>
+                        Yours to brand
+                    </strong>
+
+                    <span>
+                        Make every client touchpoint feel like you.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     PHOTOGRAPHER TESTIMONIAL MARQUEE
+========================================= -->
+
+<section class="velora-testimonials">
+
+    <div class="container-fluid">
+
+
+        <!-- SECTION HEADER -->
+
+        <div class="testimonial-header">
+
+            <span class="testimonial-eyebrow">
+                PHOTOGRAPHERS LOVE VELORA
+            </span>
+
+            <h2>
+                Built to make the
+                <span>business side</span> easier.
+            </h2>
+
+            <p>
+                Less time managing your workflow.
+                More time doing the work you love.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================
+             MARQUEE ROW ONE
+        ================================== -->
+
+        <div class="testimonial-marquee">
+
+            <div class="testimonial-track testimonial-track-left">
+
+
+                <!-- Card 1 -->
+
+                <article class="testimonial-card">
+
+                    <div class="testimonial-quote">
+                        “
+                    </div>
+
+                    <p>
+                        Velora gives my photography business
+                        the kind of structure I always wanted
+                        without making everything feel complicated.
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar">
+                            OP
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Olivia
+                            </strong>
+
+                            <span>
+                                Portrait Photographer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Card 2 -->
+
+                <article class="testimonial-card">
+
+                    <div class="testimonial-quote">
+                        “
+                    </div>
+
+                    <p>
+                        My clients get a beautiful experience
+                        from the first inquiry all the way to
+                        gallery delivery.
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar">
+                            JM
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                James
+                            </strong>
+
+                            <span>
+                                Wedding Photographer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Card 3 -->
+
+                <article class="testimonial-card">
+
+                    <div class="testimonial-quote">
+                        “
+                    </div>
+
+                    <p>
+                        I love that my portfolio, bookings and
+                        galleries can finally feel like one
+                        cohesive brand.
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar">
+                            A
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Abigail
+                            </strong>
+
+                            <span>
+                                Editorial Photographer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Card 4 -->
+
+                <article class="testimonial-card">
+
+                    <div class="testimonial-quote">
+                        “
+                    </div>
+
+                    <p>
+                        It feels like the tools were actually
+                        designed for photographers instead of
+                        adapted from another industry.
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar">
+                            DN
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Daniel Norris
+                            </strong>
+
+                            <span>
+                                Commercial Photographer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- DUPLICATES -->
+
+                <article class="testimonial-card">
+
+                    <div class="testimonial-quote">
+                        “
+                    </div>
+
+                    <p>
+                        Velora gives my photography business
+                        the kind of structure I always wanted
+                        without making everything feel complicated.
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar">
+                            OP
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                David
+                            </strong>
+
+                            <span>
+                                Portrait Photographer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="testimonial-card">
+
+                    <div class="testimonial-quote">
+                        “
+                    </div>
+
+                    <p>
+                        My clients get a beautiful experience
+                        from the first inquiry all the way to
+                        gallery delivery.
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar">
+                            JM
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                James Morgan
+                            </strong>
+
+                            <span>
+                                Wedding Photographer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="testimonial-card">
+
+                    <div class="testimonial-quote">
+                        “
+                    </div>
+
+                    <p>
+                        I love that my portfolio, bookings and
+                        galleries can finally feel like one
+                        cohesive brand.
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar">
+                            AC
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Amelia Carter
+                            </strong>
+
+                            <span>
+                                Editorial Photographer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="testimonial-card">
+
+                    <div class="testimonial-quote">
+                        “
+                    </div>
+
+                    <p>
+                        It feels like the tools were actually
+                        designed for photographers instead of
+                        adapted from another industry.
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar">
+                            DN
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Daniel Norris
+                            </strong>
+
+                            <span>
+                                Commercial Photographer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             MARQUEE ROW TWO
+        ================================== -->
+
+        <div class="testimonial-marquee testimonial-marquee-second">
+
+            <div class="testimonial-track testimonial-track-right">
+
+
+                <article class="testimonial-card">
+
+                    <div class="testimonial-quote">
+                        “
+                    </div>
+
+                    <p>
+                        Everything feels calmer when the
+                        business side of photography is finally
+                        organized.
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar">
+                            SL
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Judeson Ataisi
+                            </strong>
+
+                            <span>
+                                Lifestyle Photographer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="testimonial-card">
+
+                    <div class="testimonial-quote">
+                        “
+                    </div>
+
+                    <p>
+                        The gallery experience makes delivering
+                        work feel like part of the photography,
+                        not an afterthought.
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar">
+                            RK
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Patrick Obialor
+                            </strong>
+
+                            <span>
+                                Wedding Photographer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="testimonial-card">
+
+                    <div class="testimonial-quote">
+                        “
+                    </div>
+
+                    <p>
+                        I can finally see what's happening across
+                        my entire business without opening five
+                        different tools.
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar">
+                            I
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Ikedinachi
+                            </strong>
+
+                            <span>
+                                Family Photographer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="testimonial-card">
+
+                    <div class="testimonial-quote">
+                        “
+                    </div>
+
+                    <p>
+                        Velora feels premium without feeling
+                        overwhelming. That balance is exactly
+                        what I needed.
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar">
+                            BT
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                BOY TONY
+                            </strong>
+
+                            <span>
+                                Fashion Photographer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- DUPLICATES -->
+
+                <article class="testimonial-card">
+
+                    <div class="testimonial-quote">
+                        “
+                    </div>
+
+                    <p>
+                        Everything feels calmer when the
+                        business side of photography is finally
+                        organized.
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar">
+                            SL
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Judeson Ataisi
+                            </strong>
+
+                            <span>
+                                Lifestyle Photographer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="testimonial-card">
+
+                    <div class="testimonial-quote">
+                        “
+                    </div>
+
+                    <p>
+                        The gallery experience makes delivering
+                        work feel like part of the photography,
+                        not an afterthought.
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar">
+                            PO
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Patrick Obialor
+                            </strong>
+
+                            <span>
+                                Wedding Photographer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="testimonial-card">
+
+                    <div class="testimonial-quote">
+                        “
+                    </div>
+
+                    <p>
+                        I can finally see what's happening across
+                        my entire business without opening five
+                        different tools.
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar">
+                            I
+                        </div>
+
+                        <div>
+
+                            <strong>
+                              Ikedinachi
+                            </strong>
+
+                            <span>
+                                Family Photographer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="testimonial-card">
+
+                    <div class="testimonial-quote">
+                        “
+                    </div>
+
+                    <p>
+                        Velora feels premium without feeling
+                        overwhelming. That balance is exactly
+                        what I needed.
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar">
+                            BT
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Boy Tony
+                            </strong>
+
+                            <span>
+                                Fashion Photographer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+const swiper = new Swiper(".veloraSwiper", {
+
+    slidesPerView: 3,
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 30,
+
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+
+    breakpoints:{
+
+        0:{
+            slidesPerView:1.15,
+            spaceBetween:20
+        },
+
+        768:{
+            slidesPerView:2,
+            spaceBetween:25
+        },
+
+        1200:{
+            slidesPerView:3,
+            spaceBetween:30
+        }
+
+    }
+
+});
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const features =
+        document.querySelectorAll(".business-feature");
+
+    const dashboard =
+        document.querySelector("#businessDashboardImage");
+
+
+    features.forEach(function (feature) {
+
+        feature.addEventListener("click", function () {
+
+            const image =
+                this.getAttribute("data-image");
+
+
+            /* Remove active state */
+
+            features.forEach(function (item) {
+
+                item.classList.remove("active");
+
+            });
+
+
+            /* Activate selected feature */
+
+            this.classList.add("active");
+
+
+            /* Fade dashboard out */
+
+            dashboard.classList.add("is-changing");
+
+
+            setTimeout(function () {
+
+                dashboard.src = image;
+
+                dashboard.onload = function () {
+
+                    dashboard.classList.remove("is-changing");
+
+                };
+
+            }, 220);
+
+        });
+
+    });
+
+});
+
+</script>
+</script>
 </body>
+
 </html>
