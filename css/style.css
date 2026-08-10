@@ -4749,3 +4749,563 @@ font-size:15px;
     }
 
 }
+
+/*=========================================
+              VELORA FAQ
+=========================================*/
+
+.velora-faq {
+
+    padding: 150px 0;
+
+    background: var(--velora-paper);
+
+    border-top: 1px solid var(--velora-line);
+
+}
+
+
+/*=========================================
+              LAYOUT
+=========================================*/
+
+.faq-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, .75fr)
+        minmax(0, 1.25fr);
+
+    gap: 100px;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    align-items: start;
+
+}
+
+
+/*=========================================
+              INTRO
+=========================================*/
+
+.faq-intro {
+
+    position: sticky;
+
+    top: 100px;
+
+}
+
+
+.faq-eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--velora-green);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+}
+
+
+.faq-intro h2 {
+
+    margin: 0 0 22px;
+
+    color: var(--velora-ink);
+
+    font-size: clamp(40px, 4vw, 54px);
+
+    font-weight: 500;
+
+    line-height: 1.08;
+
+    letter-spacing: -.05em;
+
+}
+
+
+.faq-intro h2 span {
+
+    display: block;
+
+    color: var(--velora-green);
+
+}
+
+
+.faq-intro > p {
+
+    max-width: 410px;
+
+    margin: 0;
+
+    color: var(--velora-muted);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+}
+
+
+/*=========================================
+              HELP CARD
+=========================================*/
+
+.faq-help-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 40px;
+
+    padding: 17px;
+
+    border: 1px solid var(--velora-line);
+
+    border-radius: 14px;
+
+    background: #fafafa;
+
+}
+
+
+.faq-help-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--velora-green-tint);
+
+    color: var(--velora-green);
+
+}
+
+
+.faq-help-card strong {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--velora-ink);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.faq-help-card span {
+
+    display: block;
+
+    color: var(--velora-muted);
+
+    font-size: 12px;
+
+}
+
+
+/*=========================================
+              CONTACT LINK
+=========================================*/
+
+.faq-contact-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 22px;
+
+    color: var(--velora-ink);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+}
+
+
+.faq-contact-link:hover {
+
+    color: var(--velora-green);
+
+}
+
+
+.faq-contact-link i {
+
+    transition:
+        transform .2s ease;
+
+}
+
+
+.faq-contact-link:hover i {
+
+    transform:
+        translateX(4px);
+
+}
+
+
+/*=========================================
+              FAQ LIST
+=========================================*/
+
+.faq-list {
+
+    width: 100%;
+
+    border-top: 1px solid var(--velora-line);
+
+}
+
+
+/*=========================================
+              FAQ ITEM
+=========================================*/
+
+.faq-item {
+
+    border-bottom: 1px solid var(--velora-line);
+
+}
+
+
+/*=========================================
+              QUESTION
+=========================================*/
+
+.faq-question {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 25px 4px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--velora-ink);
+
+    font-family: "Lato", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    text-align: left;
+
+    cursor: pointer;
+
+}
+
+
+.faq-question:hover {
+
+    color: var(--velora-green);
+
+}
+
+
+.faq-question i {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 28px;
+
+    height: 28px;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--velora-line);
+
+    border-radius: 50%;
+
+    color: var(--velora-muted);
+
+    font-size: 14px;
+
+    transition:
+        transform .3s ease,
+        background-color .3s ease,
+        color .3s ease,
+        border-color .3s ease;
+
+}
+
+
+/*=========================================
+              ANSWER
+=========================================*/
+
+.faq-answer {
+
+    display: grid;
+
+    grid-template-rows: 0fr;
+
+    overflow: hidden;
+
+    transition:
+        grid-template-rows .35s ease;
+
+}
+
+
+.faq-answer p {
+
+    min-height: 0;
+
+    margin: 0;
+
+    padding: 0 50px 0 4px;
+
+    overflow: hidden;
+
+    color: var(--velora-muted);
+
+    font-size: 14px;
+
+    line-height: 1.75;
+
+    opacity: 0;
+
+    transition:
+        opacity .25s ease,
+        padding .35s ease;
+
+}
+
+
+/*=========================================
+              ACTIVE FAQ
+=========================================*/
+
+.faq-item.active
+.faq-answer {
+
+    grid-template-rows: 1fr;
+
+}
+
+
+.faq-item.active
+.faq-answer p {
+
+    padding-bottom: 25px;
+
+    opacity: 1;
+
+}
+
+
+.faq-item.active
+.faq-question {
+
+    color: var(--velora-green);
+
+}
+
+
+.faq-item.active
+.faq-question i {
+
+    transform: rotate(45deg);
+
+    border-color: var(--velora-green);
+
+    background: var(--velora-green-tint);
+
+    color: var(--velora-green);
+
+}
+
+
+/*=========================================
+              TABLET
+=========================================*/
+
+@media (max-width: 991px) {
+
+    .velora-faq {
+
+        padding: 110px 0;
+
+    }
+
+
+    .faq-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 65px;
+
+        max-width: 700px;
+
+    }
+
+
+    .faq-intro {
+
+        position: static;
+
+        text-align: center;
+
+    }
+
+
+    .faq-intro > p {
+
+        margin: 0 auto;
+
+    }
+
+
+    .faq-help-card {
+
+        max-width: 350px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+        text-align: left;
+
+    }
+
+
+    .faq-contact-link {
+
+        margin-top: 18px;
+
+    }
+
+}
+
+
+/*=========================================
+              MOBILE
+=========================================*/
+
+@media (max-width: 767px) {
+
+    .velora-faq {
+
+        padding: 85px 0;
+
+    }
+
+
+    .faq-layout {
+
+        gap: 50px;
+
+    }
+
+
+    .faq-intro {
+
+        padding: 0 10px;
+
+    }
+
+
+    .faq-intro h2 {
+
+        font-size: 40px;
+
+    }
+
+
+    .faq-intro > p {
+
+        font-size: 15px;
+
+    }
+
+
+    .faq-question {
+
+        padding: 22px 2px;
+
+        font-size: 14px;
+
+    }
+
+
+    .faq-question i {
+
+        width: 26px;
+
+        height: 26px;
+
+        font-size: 13px;
+
+    }
+
+
+    .faq-answer p {
+
+        padding-left: 2px;
+
+        padding-right: 25px;
+
+        font-size: 13px;
+
+    }
+
+
+    .faq-item.active
+    .faq-answer p {
+
+        padding-bottom: 22px;
+
+    }
+
+}
