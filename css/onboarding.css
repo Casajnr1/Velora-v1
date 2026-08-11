@@ -1,0 +1,1054 @@
+/*==========================================================
+    VELORA ONBOARDING — V1
+    Component: VLR-AUTH-ONB-001
+    Status: Approved
+    Maturity: L2 Stable
+==========================================================*/
+
+
+/*==========================================================
+    TOKENS
+==========================================================*/
+
+:root {
+
+    --velora-ink: #17181a;
+
+    --velora-paper: #ffffff;
+
+    --velora-surface: #fafafa;
+
+    --velora-line: #ececec;
+
+    --velora-line-strong: #d9ddda;
+
+    --velora-muted: #63676c;
+
+    --velora-muted-light: #8b9092;
+
+    --velora-green: #1b4332;
+
+    --velora-green-dark: #123325;
+
+    --velora-green-tint: #e9f0ec;
+
+    --velora-error: #b42318;
+
+}
+
+
+/*==========================================================
+    GLOBAL
+==========================================================*/
+
+*,
+*::before,
+*::after {
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    min-height: 100%;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    background:
+        var(--velora-surface);
+
+    color:
+        var(--velora-ink);
+
+    font-family:
+        "Lato",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    -webkit-font-smoothing:
+        antialiased;
+
+}
+
+
+/*==========================================================
+    PAGE
+==========================================================*/
+
+.velora-onboarding {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/*==========================================================
+    HEADER
+==========================================================*/
+
+.velora-onboarding-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        28px 42px;
+
+}
+
+
+.velora-onboarding-logo {
+
+    display: inline-flex;
+
+    align-items: center;
+
+}
+
+
+.velora-onboarding-logo img {
+
+    width: 140px;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+.velora-onboarding-step-label {
+
+    color:
+        var(--velora-muted);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+/*==========================================================
+    PROGRESS
+==========================================================*/
+
+.velora-onboarding-progress {
+
+    width: 100%;
+
+    height: 2px;
+
+    background:
+        var(--velora-line);
+
+}
+
+
+.velora-progress-bar {
+
+    width: 33.333%;
+
+    height: 100%;
+
+    background:
+        var(--velora-green);
+
+    transition:
+        width .35s cubic-bezier(.2,.65,.25,1);
+
+}
+
+
+/*==========================================================
+    CONTENT
+==========================================================*/
+
+.velora-onboarding-content {
+
+    flex: 1;
+
+    width: 100%;
+
+    max-width: 680px;
+
+    margin:
+        0 auto;
+
+    padding:
+        80px 25px 45px;
+
+}
+
+
+/*==========================================================
+    STEP
+==========================================================*/
+
+.velora-onboarding-step {
+
+    display: none;
+
+    animation:
+        veloraStepIn .35s ease both;
+
+}
+
+
+.velora-onboarding-step.is-active {
+
+    display: block;
+
+}
+
+
+@keyframes veloraStepIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/*==========================================================
+    HEADING
+==========================================================*/
+
+.velora-onboarding-heading {
+
+    margin-bottom: 42px;
+
+}
+
+
+.velora-onboarding-eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    color:
+        var(--velora-green);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .14em;
+
+    line-height: 1;
+
+}
+
+
+.velora-onboarding-heading h1 {
+
+    max-width: 620px;
+
+    margin:
+        0 0 16px;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        clamp(40px, 5vw, 58px);
+
+    font-weight: 500;
+
+    line-height: 1.03;
+
+    letter-spacing:
+        -.055em;
+
+}
+
+
+.velora-onboarding-heading p {
+
+    max-width: 510px;
+
+    margin: 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+}
+
+
+/*==========================================================
+    FORM
+==========================================================*/
+
+.velora-onboarding-form {
+
+    width: 100%;
+
+}
+
+
+.velora-onboarding-group {
+
+    margin-bottom: 22px;
+
+}
+
+
+.velora-onboarding-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.velora-onboarding-input {
+
+    width: 100%;
+
+    height: 54px;
+
+    padding:
+        0 16px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-ink);
+
+    font-family:
+        "Lato",
+        sans-serif;
+
+    font-size: 14px;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.velora-onboarding-input::placeholder {
+
+    color:
+        #a4a8aa;
+
+}
+
+
+.velora-onboarding-input:hover {
+
+    border-color:
+        var(--velora-line-strong);
+
+}
+
+
+.velora-onboarding-input:focus {
+
+    border-color:
+        var(--velora-green);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(27,67,50,.08);
+
+}
+
+
+.velora-onboarding-input.has-error {
+
+    border-color:
+        var(--velora-error);
+
+    background:
+        #fdf5f4;
+
+}
+
+
+/*==========================================================
+    CATEGORY GRID
+==========================================================*/
+
+.velora-category-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+
+}
+
+
+.velora-category {
+
+    min-height: 125px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 20px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius: 16px;
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-muted);
+
+    font-family:
+        "Lato",
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        border-color .2s ease,
+        background-color .2s ease,
+        color .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.velora-category i {
+
+    font-size: 22px;
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-category:hover {
+
+    border-color:
+        rgba(27,67,50,.35);
+
+    color:
+        var(--velora-green);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(23,24,26,.05);
+
+}
+
+
+.velora-category.is-selected {
+
+    border-color:
+        var(--velora-green);
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+    box-shadow:
+        inset 0 0 0 1px
+        var(--velora-green);
+
+}
+
+
+.velora-category-grid.has-error
+.velora-category {
+
+    border-color:
+        rgba(180,35,24,.25);
+
+}
+
+
+/*==========================================================
+    WORKSPACE
+==========================================================*/
+
+.velora-workspace-input {
+
+    width: 100%;
+
+    min-height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        0 18px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius: 14px;
+
+    background:
+        var(--velora-paper);
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.velora-workspace-input:focus-within {
+
+    border-color:
+        var(--velora-green);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(27,67,50,.08);
+
+}
+
+
+.velora-workspace-input span {
+
+    flex-shrink: 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 14px;
+
+}
+
+
+.velora-workspace-input input {
+
+    width: 100%;
+
+    min-width: 0;
+
+    height: 54px;
+
+    padding:
+        0 5px;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    color:
+        var(--velora-ink);
+
+    font-family:
+        "Lato",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+.velora-workspace-input input::placeholder {
+
+    color:
+        #a4a8aa;
+
+    font-weight: 400;
+
+}
+
+
+.velora-workspace-input input.has-error {
+
+    color:
+        var(--velora-error);
+
+}
+
+
+.velora-workspace-hint {
+
+    margin:
+        10px 0 0;
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 11px;
+
+}
+
+
+/*==========================================================
+    NAVIGATION
+==========================================================*/
+
+.velora-onboarding-navigation {
+
+    width: 100%;
+
+    max-width: 680px;
+
+    margin:
+        0 auto;
+
+    padding:
+        0 25px 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.velora-onboarding-back,
+.velora-onboarding-next {
+
+    min-height: 48px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    font-family:
+        "Lato",
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        transform .2s ease;
+
+}
+
+
+.velora-onboarding-back {
+
+    padding:
+        0 17px;
+
+    border: 0;
+
+    background: transparent;
+
+    color:
+        var(--velora-muted);
+
+}
+
+
+.velora-onboarding-back:hover {
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-onboarding-back i {
+
+    transition:
+        transform .2s ease;
+
+}
+
+
+.velora-onboarding-back:hover i {
+
+    transform:
+        translateX(-3px);
+
+}
+
+
+.velora-onboarding-next {
+
+    min-width: 125px;
+
+    padding:
+        0 22px;
+
+    border:
+        1px solid var(--velora-green);
+
+    border-radius: 999px;
+
+    background:
+        var(--velora-green);
+
+    color:
+        white;
+
+}
+
+
+.velora-onboarding-next:hover {
+
+    border-color:
+        var(--velora-green-dark);
+
+    background:
+        var(--velora-green-dark);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.velora-onboarding-next i {
+
+    transition:
+        transform .2s ease;
+
+}
+
+
+.velora-onboarding-next:hover i {
+
+    transform:
+        translateX(4px);
+
+}
+
+
+.velora-onboarding-back:focus-visible,
+.velora-onboarding-next:focus-visible,
+.velora-category:focus-visible {
+
+    outline:
+        2px solid var(--velora-green);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/*==========================================================
+    FOOTER
+==========================================================*/
+
+.velora-onboarding-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        0 42px 25px;
+
+    color:
+        #9a9ea0;
+
+    font-size: 10px;
+
+}
+
+
+/*==========================================================
+    TABLET
+==========================================================*/
+
+@media (max-width: 767px) {
+
+    .velora-onboarding-header {
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .velora-onboarding-logo img {
+
+        width: 120px;
+
+    }
+
+
+    .velora-onboarding-content {
+
+        padding:
+            55px 20px 35px;
+
+    }
+
+
+    .velora-onboarding-heading {
+
+        margin-bottom: 34px;
+
+    }
+
+
+    .velora-onboarding-heading h1 {
+
+        font-size:
+            clamp(36px, 10vw, 46px);
+
+    }
+
+
+    .velora-onboarding-heading p {
+
+        font-size: 14px;
+
+    }
+
+
+    .velora-category-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .velora-onboarding-navigation {
+
+        padding:
+            0 20px 22px;
+
+    }
+
+
+    .velora-onboarding-footer {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 6px;
+
+        padding:
+            0 20px 20px;
+
+    }
+
+}
+
+
+/*==========================================================
+    SMALL PHONES
+==========================================================*/
+
+@media (max-width: 380px) {
+
+    .velora-onboarding-header {
+
+        padding:
+            22px 17px;
+
+    }
+
+
+    .velora-onboarding-content {
+
+        padding:
+            42px 17px 30px;
+
+    }
+
+
+    .velora-onboarding-heading h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .velora-onboarding-heading p {
+
+        font-size: 13px;
+
+    }
+
+
+    .velora-category-grid {
+
+        gap: 10px;
+
+    }
+
+
+    .velora-category {
+
+        min-height: 105px;
+
+        padding: 15px;
+
+    }
+
+
+    .velora-category i {
+
+        font-size: 19px;
+
+    }
+
+
+    .velora-onboarding-navigation {
+
+        padding:
+            0 17px 20px;
+
+    }
+
+
+    .velora-onboarding-next {
+
+        min-width: 112px;
+
+    }
+
+}
+
+
+/*==========================================================
+    REDUCED MOTION
+==========================================================*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        transition-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+    }
+
+}
+
+
+/*==========================================================
+    TOUCH
+==========================================================*/
+
+@media (hover: none) {
+
+    .velora-category:hover {
+
+        transform: none;
+
+    }
+
+
+    .velora-onboarding-next:hover {
+
+        transform: none;
+
+    }
+
+
+    .velora-onboarding-back:hover i {
+
+        transform: none;
+
+    }
+
+}

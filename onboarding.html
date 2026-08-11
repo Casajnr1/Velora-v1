@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Velora | Set up your workspace</title>
+
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- Lato -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Velora Onboarding CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/onboarding.css"
+    >
+
+
+    <!-- Favicon -->
+
+    <link
+        rel="shortcut icon"
+        href="media/favicon/favicon.png"
+        type="image/x-icon"
+    >
+
+</head>
+
+
+<body>
+
+
+<main class="velora-onboarding">
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="velora-onboarding-header">
+
+        <a
+            href="index.html"
+            class="velora-onboarding-logo"
+        >
+
+            <img
+                src="media/logo/logo-1-main.png"
+                alt="Velora"
+            >
+
+        </a>
+
+
+        <span class="velora-onboarding-step-label">
+            Step <span id="currentStep">1</span> of 3
+        </span>
+
+    </header>
+
+
+
+    <!-- =========================================
+         PROGRESS
+    ========================================== -->
+
+    <div class="velora-onboarding-progress">
+
+        <div
+            class="velora-progress-bar"
+            id="progressBar"
+        ></div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         CONTENT
+    ========================================== -->
+
+    <section class="velora-onboarding-content">
+
+
+        <!-- =====================================
+             STEP 1
+        ====================================== -->
+
+        <div
+            class="velora-onboarding-step is-active"
+            data-step="1"
+        >
+
+            <div class="velora-onboarding-heading">
+
+                <span class="velora-onboarding-eyebrow">
+                    WELCOME TO VELORA
+                </span>
+
+                <h1>
+                    Let's set up your workspace.
+                </h1>
+
+                <p>
+                    Start with the basics. You can change
+                    everything later from your dashboard.
+                </p>
+
+            </div>
+
+
+            <div class="velora-onboarding-form">
+
+
+                <div class="velora-onboarding-group">
+
+                    <label for="studioName">
+                        Business or studio name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studioName"
+                        class="velora-onboarding-input"
+                        placeholder="e.g. Patrick Visuals"
+                        autocomplete="organization"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="velora-onboarding-group">
+
+                    <label for="photographerName">
+                        Your name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="photographerName"
+                        class="velora-onboarding-input"
+                        placeholder="Your name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             STEP 2
+        ====================================== -->
+
+        <div
+            class="velora-onboarding-step"
+            data-step="2"
+        >
+
+            <div class="velora-onboarding-heading">
+
+                <span class="velora-onboarding-eyebrow">
+                    YOUR WORK
+                </span>
+
+                <h1>
+                    Tell us about your photography.
+                </h1>
+
+                <p>
+                    Choose the category that best describes
+                    the work you want to showcase.
+                </p>
+
+            </div>
+
+
+            <div
+                class="velora-category-grid"
+                id="categoryGrid"
+            >
+
+                <button
+                    type="button"
+                    class="velora-category"
+                    data-category="Wedding"
+                >
+                    <i class="bi bi-heart"></i>
+                    <span>Wedding</span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-category"
+                    data-category="Portrait"
+                >
+                    <i class="bi bi-person"></i>
+                    <span>Portrait</span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-category"
+                    data-category="Fashion"
+                >
+                    <i class="bi bi-stars"></i>
+                    <span>Fashion</span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-category"
+                    data-category="Commercial"
+                >
+                    <i class="bi bi-building"></i>
+                    <span>Commercial</span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-category"
+                    data-category="Events"
+                >
+                    <i class="bi bi-calendar-event"></i>
+                    <span>Events</span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-category"
+                    data-category="Other"
+                >
+                    <i class="bi bi-grid"></i>
+                    <span>Other</span>
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             STEP 3
+        ====================================== -->
+
+        <div
+            class="velora-onboarding-step"
+            data-step="3"
+        >
+
+            <div class="velora-onboarding-heading">
+
+                <span class="velora-onboarding-eyebrow">
+                    YOUR WORKSPACE
+                </span>
+
+                <h1>
+                    Choose your workspace address.
+                </h1>
+
+                <p>
+                    This will become the address for your
+                    public Velora portfolio.
+                </p>
+
+            </div>
+
+
+            <div class="velora-workspace-input">
+
+
+                <span>
+                    velora.com/
+                </span>
+
+
+                <input
+                    type="text"
+                    id="workspaceName"
+                    placeholder="your-studio"
+                    autocomplete="off"
+                    required
+                >
+
+            </div>
+
+
+            <p class="velora-workspace-hint">
+
+                You can connect a custom domain later.
+
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <div class="velora-onboarding-navigation">
+
+        <button
+            type="button"
+            class="velora-onboarding-back"
+            id="backButton"
+        >
+
+            <i class="bi bi-arrow-left"></i>
+
+            Back
+
+        </button>
+
+
+        <button
+            type="button"
+            class="velora-onboarding-next"
+            id="nextButton"
+        >
+
+            <span>
+                Continue
+            </span>
+
+            <i class="bi bi-arrow-right"></i>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="velora-onboarding-footer">
+
+        <span>
+            © 2026 Velora
+        </span>
+
+        <span>
+            Built for photographers
+        </span>
+
+    </footer>
+
+
+</main>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+let currentStep = 1;
+
+let selectedCategory = "";
+
+
+const steps =
+    document.querySelectorAll(
+        ".velora-onboarding-step"
+    );
+
+
+const currentStepLabel =
+    document.getElementById(
+        "currentStep"
+    );
+
+
+const progressBar =
+    document.getElementById(
+        "progressBar"
+    );
+
+
+const nextButton =
+    document.getElementById(
+        "nextButton"
+    );
+
+
+const backButton =
+    document.getElementById(
+        "backButton"
+    );
+
+
+/*=========================================
+        CATEGORY SELECTION
+=========================================*/
+
+document
+    .querySelectorAll(
+        ".velora-category"
+    )
+    .forEach(category => {
+
+        category.addEventListener(
+            "click",
+            function () {
+
+                document
+                    .querySelectorAll(
+                        ".velora-category"
+                    )
+                    .forEach(item => {
+
+                        item.classList.remove(
+                            "is-selected"
+                        );
+
+                    });
+
+
+                this.classList.add(
+                    "is-selected"
+                );
+
+
+                selectedCategory =
+                    this.dataset.category;
+
+            }
+        );
+
+    });
+
+
+
+/*=========================================
+        UPDATE STEP
+=========================================*/
+
+function updateStep() {
+
+
+    steps.forEach(step => {
+
+        step.classList.remove(
+            "is-active"
+        );
+
+    });
+
+
+    const activeStep =
+        document.querySelector(
+            `[data-step="${currentStep}"]`
+        );
+
+
+    activeStep.classList.add(
+        "is-active"
+    );
+
+
+    currentStepLabel.textContent =
+        currentStep;
+
+
+    progressBar.style.width =
+        `${(currentStep / 3) * 100}%`;
+
+
+    backButton.style.visibility =
+        currentStep === 1
+            ? "hidden"
+            : "visible";
+
+
+    nextButton.querySelector(
+        "span"
+    ).textContent =
+        currentStep === 3
+            ? "Enter Velora"
+            : "Continue";
+
+}
+
+
+/*=========================================
+        NEXT
+=========================================*/
+
+nextButton.addEventListener(
+    "click",
+    function () {
+
+
+        if (currentStep === 1) {
+
+            const studio =
+                document.getElementById(
+                    "studioName"
+                );
+
+            const name =
+                document.getElementById(
+                    "photographerName"
+                );
+
+
+            if (
+                !studio.value.trim() ||
+                !name.value.trim()
+            ) {
+
+                if (!studio.value.trim()) {
+
+                    studio.classList.add(
+                        "has-error"
+                    );
+
+                }
+
+
+                if (!name.value.trim()) {
+
+                    name.classList.add(
+                        "has-error"
+                    );
+
+                }
+
+                return;
+
+            }
+
+        }
+
+
+        if (currentStep === 2) {
+
+            if (!selectedCategory) {
+
+                document
+                    .getElementById(
+                        "categoryGrid"
+                    )
+                    .classList.add(
+                        "has-error"
+                    );
+
+                return;
+
+            }
+
+        }
+
+
+        if (currentStep === 3) {
+
+            const workspace =
+                document.getElementById(
+                    "workspaceName"
+                );
+
+
+            if (!workspace.value.trim()) {
+
+                workspace.classList.add(
+                    "has-error"
+                );
+
+                return;
+
+            }
+
+
+            /*
+             * Backend onboarding completion
+             * will be connected here.
+             */
+
+            console.log(
+                "Onboarding complete."
+            );
+
+
+            window.location.href =
+                "dashboard.html";
+
+            return;
+
+        }
+
+
+        currentStep++;
+
+        updateStep();
+
+    }
+);
+
+
+
+/*=========================================
+        BACK
+=========================================*/
+
+backButton.addEventListener(
+    "click",
+    function () {
+
+        if (currentStep > 1) {
+
+            currentStep--;
+
+            updateStep();
+
+        }
+
+    }
+);
+
+
+
+/*=========================================
+        REMOVE INPUT ERRORS
+=========================================*/
+
+document
+    .querySelectorAll(
+        ".velora-onboarding-input, #workspaceName"
+    )
+    .forEach(input => {
+
+        input.addEventListener(
+            "input",
+            function () {
+
+                this.classList.remove(
+                    "has-error"
+                );
+
+            }
+        );
+
+    });
+
+
+
+/*=========================================
+        INITIALIZE
+=========================================*/
+
+updateStep();
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Velora | Sign in</title>
+
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- Bootstrap -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous"
+    >
+
+
+    <!-- Lato -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Velora Login CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/login.css"
+    >
+
+
+    <!-- Favicon -->
+
+    <link
+        rel="shortcut icon"
+        href="media/favicon/favicon.png"
+        type="image/x-icon"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     VELORA LOGIN
+========================================= -->
+
+<main class="velora-login">
+
+
+    <!-- =====================================
+         LEFT VISUAL
+    ====================================== -->
+
+    <section class="velora-login-visual">
+
+
+        <!-- Brand -->
+
+        <div class="velora-login-brand">
+
+            <a href="index.html">
+
+                <img
+                    src="media/logo/logo-1-main.png"
+                    alt="Velora"
+                >
+
+            </a>
+
+        </div>
+
+
+        <!-- Photography -->
+
+        <div class="velora-login-image">
+
+            <img
+                src="media/banner/CASA_8430-2.jpg"
+                alt="Photography portfolio"
+            >
+
+        </div>
+
+
+        <!-- Quote -->
+
+        <div class="velora-login-quote">
+
+            <p>
+                Your business,
+                beautifully organized.
+            </p>
+
+            <span>
+                Velora
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         RIGHT FORM
+    ====================================== -->
+
+    <section class="velora-login-form">
+
+        <div class="velora-login-form-inner">
+
+
+            <!-- Mobile logo -->
+
+            <a
+                href="index.html"
+                class="velora-login-mobile-logo"
+            >
+
+                <img
+                    src="media/logo/logo-1-main.png"
+                    alt="Velora"
+                >
+
+            </a>
+
+
+            <!-- Header -->
+
+            <div class="velora-login-header">
+
+                <span class="velora-login-eyebrow">
+                    WELCOME BACK
+                </span>
+
+                <h1>
+                    Sign in to Velora.
+                </h1>
+
+                <p>
+                    Continue managing your photography
+                    business from one calm place.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================
+                 LOGIN FORM
+            ================================== -->
+
+            <form
+                class="velora-login-form-element"
+                id="veloraLoginForm"
+                novalidate
+            >
+
+
+                <!-- Email -->
+
+                <div class="velora-login-form-group">
+
+                    <label for="loginEmail">
+                        Email address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        name="email"
+                        class="velora-login-input"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <small class="velora-login-error">
+                        Please enter a valid email address.
+                    </small>
+
+                </div>
+
+
+
+                <!-- Password -->
+
+                <div class="velora-login-form-group">
+
+                    <div class="velora-login-password-label">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+                        <a href="forgot-password.html">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <div class="velora-login-password">
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="password"
+                            class="velora-login-input"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            class="velora-login-password-toggle"
+                            id="loginPasswordToggle"
+                            aria-label="Show password"
+                        >
+
+                            <i class="bi bi-eye"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <small class="velora-login-error">
+                        Please enter your password.
+                    </small>
+
+                </div>
+
+
+
+                <!-- Remember me -->
+
+                <div class="velora-login-options">
+
+                    <label class="velora-remember">
+
+                        <input
+                            type="checkbox"
+                            name="remember"
+                        >
+
+                        <span>
+                            Remember me
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="velora-login-button"
+                >
+
+                    <span>
+                        Sign in
+                    </span>
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </button>
+
+
+                <!-- Register -->
+
+                <p class="velora-register-link">
+
+                    Don't have an account?
+
+                    <a href="register.html">
+                        Create one
+                    </a>
+
+                </p>
+
+            </form>
+
+
+
+            <!-- Footer -->
+
+            <div class="velora-login-footer">
+
+                <span>
+                    © 2026 Velora
+                </span>
+
+                <span>
+                    Built for photographers
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================
+     LOGIN JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+/*=========================================
+        PASSWORD VISIBILITY
+=========================================*/
+
+const loginPassword =
+    document.getElementById(
+        "loginPassword"
+    );
+
+
+const loginPasswordToggle =
+    document.getElementById(
+        "loginPasswordToggle"
+    );
+
+
+loginPasswordToggle.addEventListener(
+    "click",
+    function () {
+
+        const isPassword =
+            loginPassword.type === "password";
+
+
+        loginPassword.type =
+            isPassword
+                ? "text"
+                : "password";
+
+
+        this.innerHTML =
+            isPassword
+                ? '<i class="bi bi-eye-slash"></i>'
+                : '<i class="bi bi-eye"></i>';
+
+
+        this.setAttribute(
+            "aria-label",
+            isPassword
+                ? "Hide password"
+                : "Show password"
+        );
+
+    }
+);
+
+
+
+/*=========================================
+        FORM VALIDATION
+=========================================*/
+
+const loginForm =
+    document.getElementById(
+        "veloraLoginForm"
+    );
+
+
+loginForm.addEventListener(
+    "submit",
+    function (event) {
+
+        event.preventDefault();
+
+
+        const fields =
+            loginForm.querySelectorAll(
+                "input[required]"
+            );
+
+
+        let valid = true;
+
+
+        fields.forEach(field => {
+
+            const group =
+                field.closest(
+                    ".velora-login-form-group"
+                );
+
+
+            if (!field.checkValidity()) {
+
+                valid = false;
+
+                group.classList.add(
+                    "has-error"
+                );
+
+            } else {
+
+                group.classList.remove(
+                    "has-error"
+                );
+
+            }
+
+        });
+
+
+        if (valid) {
+
+            /*
+             * Authentication backend
+             * will be connected here.
+             */
+
+            console.log(
+                "Login form is valid."
+            );
+
+        }
+
+    }
+);
+
+
+
+/*=========================================
+        REMOVE ERRORS WHILE TYPING
+=========================================*/
+
+document
+    .querySelectorAll(
+        ".velora-login-input"
+    )
+    .forEach(input => {
+
+        input.addEventListener(
+            "input",
+            function () {
+
+                const group =
+                    this.closest(
+                        ".velora-login-form-group"
+                    );
+
+
+                if (
+                    group &&
+                    this.checkValidity()
+                ) {
+
+                    group.classList.remove(
+                        "has-error"
+                    );
+
+                }
+
+            }
+        );
+
+    });
+
+</script>
+
+
+</body>
+
+</html>

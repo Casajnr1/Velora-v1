@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Velora | Overview</title>
+
+
+    <!-- =========================
+         BOOTSTRAP ICONS
+    ========================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- =========================
+         GOOGLE FONT — LATO
+    ========================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================
+         DASHBOARD CSS
+    ========================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+
+    <!-- =========================
+         FAVICON
+    ========================== -->
+
+    <link
+        rel="shortcut icon"
+        href="media/favicon/favicon.png"
+        type="image/x-icon"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     DASHBOARD
+====================================================== -->
+
+<div class="velora-dashboard">
+
+
+    <!-- =================================================
+         MOBILE SIDEBAR OVERLAY
+    ================================================== -->
+
+    <div
+        class="velora-sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside
+        class="velora-sidebar"
+        id="veloraSidebar"
+    >
+
+
+        <!-- =========================
+             SIDEBAR HEADER
+        ========================== -->
+
+        <div class="velora-sidebar-header">
+
+            <a
+                href="dashboard.html"
+                class="velora-dashboard-brand"
+            >
+
+                <img
+                    src="media/logo/logo-1-main.png"
+                    alt="Velora"
+                >
+
+            </a>
+
+
+            <button
+                type="button"
+                class="velora-sidebar-close"
+                id="sidebarClose"
+                aria-label="Close navigation"
+            >
+
+                <i class="bi bi-x-lg"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================== -->
+
+        <nav
+            class="velora-sidebar-nav"
+            aria-label="Dashboard navigation"
+        >
+
+
+            <div class="velora-nav-section">
+
+                <span class="velora-nav-label">
+                    WORKSPACE
+                </span>
+
+
+                <!-- Overview -->
+
+                <a
+                    href="dashboard.html"
+                    class="velora-dashboard-nav-link is-active"
+                    aria-current="page"
+                >
+
+                    <i class="bi bi-grid-1x2"></i>
+
+                    <span>
+                        Overview
+                    </span>
+
+                </a>
+
+
+                <!-- Galleries -->
+
+                <a
+                    href="galleries.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-images"></i>
+
+                    <span>
+                        Galleries
+                    </span>
+
+                </a>
+
+
+                <!-- Bookings -->
+
+                <a
+                    href="bookings.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-calendar2-week"></i>
+
+                    <span>
+                        Bookings
+                    </span>
+
+                </a>
+
+
+                <!-- Clients -->
+
+                <a
+                    href="clients.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-people"></i>
+
+                    <span>
+                        Clients
+                    </span>
+
+                </a>
+
+
+                <!-- Analytics -->
+
+                <a
+                    href="analytics.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-bar-chart"></i>
+
+                    <span>
+                        Analytics
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- =========================
+                 MANAGE
+            ========================== -->
+
+            <div class="velora-nav-section">
+
+                <span class="velora-nav-label">
+                    MANAGE
+                </span>
+
+
+                <!-- Settings -->
+
+                <a
+                    href="settings.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-sliders2"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="velora-sidebar-bottom">
+
+
+            <!-- =========================
+                 UPGRADE
+            ========================== -->
+
+            <a
+                href="pricing.html"
+                class="velora-upgrade-card"
+            >
+
+                <div class="velora-upgrade-icon">
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </div>
+
+
+                <div class="velora-upgrade-content">
+
+                    <strong>
+                        Upgrade your plan
+                    </strong>
+
+                    <span>
+                        Get more space for your work.
+                    </span>
+
+                </div>
+
+
+                <i class="bi bi-chevron-right"></i>
+
+            </a>
+
+
+
+            <!-- =========================
+                 USER
+            ========================== -->
+
+            <button
+                type="button"
+                class="velora-sidebar-user"
+            >
+
+                <span class="velora-user-avatar">
+                    P
+                </span>
+
+
+                <span class="velora-user-details">
+
+                    <strong>
+                        Patrick
+                    </strong>
+
+                    <small>
+                        Photographer
+                    </small>
+
+                </span>
+
+
+                <i class="bi bi-three-dots"></i>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN
+    ================================================== -->
+
+    <div class="velora-dashboard-main">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="velora-dashboard-topbar">
+
+
+            <!-- Mobile menu -->
+
+            <button
+                type="button"
+                class="velora-mobile-menu"
+                id="sidebarOpen"
+                aria-label="Open navigation"
+                aria-controls="veloraSidebar"
+                aria-expanded="false"
+            >
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+
+
+            <!-- Search -->
+
+            <div class="velora-dashboard-search">
+
+                <i class="bi bi-search"></i>
+
+
+                <input
+                    type="search"
+                    placeholder="Search..."
+                    aria-label="Search dashboard"
+                >
+
+
+                <span class="velora-search-shortcut">
+                    /
+                </span>
+
+            </div>
+
+
+
+            <!-- Topbar actions -->
+
+            <div class="velora-topbar-actions">
+
+
+                <!-- View site -->
+
+                <a
+                    href="#"
+                    class="velora-view-site"
+                >
+
+                    <i class="bi bi-box-arrow-up-right"></i>
+
+                    <span>
+                        View site
+                    </span>
+
+                </a>
+
+
+                <!-- Notifications -->
+
+                <button
+                    type="button"
+                    class="velora-topbar-icon"
+                    aria-label="Notifications"
+                >
+
+                    <i class="bi bi-bell"></i>
+
+                    <span class="velora-notification-dot"></span>
+
+                </button>
+
+
+                <!-- Profile -->
+
+                <button
+                    type="button"
+                    class="velora-topbar-profile"
+                    aria-label="Open profile"
+                >
+
+                    <span class="velora-topbar-avatar">
+                        P
+                    </span>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             OVERVIEW CONTENT
+        ================================================== -->
+
+        <main class="velora-dashboard-content">
+
+
+            <!-- =========================
+                 BREADCRUMB
+            ========================== -->
+
+            <div class="velora-dashboard-breadcrumb">
+
+                <span>
+                    Workspace
+                </span>
+
+                <i class="bi bi-chevron-right"></i>
+
+                <strong>
+                    Overview
+                </strong>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 WELCOME HEADER
+            ================================================== -->
+
+            <section class="velora-overview-header">
+
+
+                <div class="velora-overview-heading">
+
+                    <span class="velora-page-eyebrow">
+                        OVERVIEW
+                    </span>
+
+
+                    <h1>
+                        Good morning, Patrick
+                    </h1>
+
+
+                    <p>
+                        Here's what's happening with your studio.
+                    </p>
+
+                </div>
+
+
+                <div class="velora-overview-actions">
+
+                    <a
+                        href="galleries.html"
+                        class="velora-dashboard-secondary-button"
+                    >
+
+                        <i class="bi bi-plus-lg"></i>
+
+                        New gallery
+
+                    </a>
+
+
+                    <a
+                        href="bookings.html"
+                        class="velora-dashboard-primary-button"
+                    >
+
+                        New booking
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 KPI CARDS
+            ================================================== -->
+
+            <section
+                class="velora-overview-stats"
+                aria-label="Workspace statistics"
+            >
+
+
+                <!-- Galleries -->
+
+                <article class="velora-stat-card">
+
+                    <div class="velora-stat-top">
+
+                        <span class="velora-stat-label">
+                            Galleries
+                        </span>
+
+                        <span class="velora-stat-icon">
+                            <i class="bi bi-images"></i>
+                        </span>
+
+                    </div>
+
+
+                    <div class="velora-stat-value">
+                        12
+                    </div>
+
+
+                    <div class="velora-stat-meta">
+
+                        <span class="velora-stat-positive">
+                            +2
+                        </span>
+
+                        <span>
+                            this month
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Clients -->
+
+                <article class="velora-stat-card">
+
+                    <div class="velora-stat-top">
+
+                        <span class="velora-stat-label">
+                            Clients
+                        </span>
+
+                        <span class="velora-stat-icon">
+                            <i class="bi bi-people"></i>
+                        </span>
+
+                    </div>
+
+
+                    <div class="velora-stat-value">
+                        48
+                    </div>
+
+
+                    <div class="velora-stat-meta">
+
+                        <span class="velora-stat-positive">
+                            +6
+                        </span>
+
+                        <span>
+                            this month
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Bookings -->
+
+                <article class="velora-stat-card">
+
+                    <div class="velora-stat-top">
+
+                        <span class="velora-stat-label">
+                            Bookings
+                        </span>
+
+                        <span class="velora-stat-icon">
+                            <i class="bi bi-calendar2-week"></i>
+                        </span>
+
+                    </div>
+
+
+                    <div class="velora-stat-value">
+                        08
+                    </div>
+
+
+                    <div class="velora-stat-meta">
+
+                        <span class="velora-stat-positive">
+                            +3
+                        </span>
+
+                        <span>
+                            this month
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Views -->
+
+                <article class="velora-stat-card">
+
+                    <div class="velora-stat-top">
+
+                        <span class="velora-stat-label">
+                            Views
+                        </span>
+
+                        <span class="velora-stat-icon">
+                            <i class="bi bi-eye"></i>
+                        </span>
+
+                    </div>
+
+
+                    <div class="velora-stat-value">
+                        2.4k
+                    </div>
+
+
+                    <div class="velora-stat-meta">
+
+                        <span class="velora-stat-positive">
+                            +18%
+                        </span>
+
+                        <span>
+                            this month
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RECENT ACTIVITY + QUICK ACTION
+            ================================================== -->
+
+            <section class="velora-overview-middle">
+
+
+                <!-- =========================
+                     RECENT ACTIVITY
+                ========================== -->
+
+                <article class="velora-dashboard-panel velora-activity-panel">
+
+
+                    <div class="velora-panel-header">
+
+                        <div>
+
+                            <span class="velora-panel-eyebrow">
+                                ACTIVITY
+                            </span>
+
+                            <h2>
+                                Recent activity
+                            </h2>
+
+                        </div>
+
+
+                        <a
+                            href="#"
+                            class="velora-panel-link"
+                        >
+
+                            View all
+
+                            <i class="bi bi-arrow-up-right"></i>
+
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="velora-activity-list">
+
+
+                        <!-- Activity 1 -->
+
+                        <div class="velora-activity-item">
+
+                            <span class="velora-activity-icon">
+                                <i class="bi bi-calendar2-check"></i>
+                            </span>
+
+
+                            <div class="velora-activity-content">
+
+                                <strong>
+                                    New booking received
+                                </strong>
+
+                                <span>
+                                    Sarah & Michael booked a session.
+                                </span>
+
+                            </div>
+
+
+                            <time>
+                                12m
+                            </time>
+
+                        </div>
+
+
+
+                        <!-- Activity 2 -->
+
+                        <div class="velora-activity-item">
+
+                            <span class="velora-activity-icon">
+                                <i class="bi bi-images"></i>
+                            </span>
+
+
+                            <div class="velora-activity-content">
+
+                                <strong>
+                                    Gallery viewed
+                                </strong>
+
+                                <span>
+                                    Wedding Collection was viewed 24 times.
+                                </span>
+
+                            </div>
+
+
+                            <time>
+                                1h
+                            </time>
+
+                        </div>
+
+
+
+                        <!-- Activity 3 -->
+
+                        <div class="velora-activity-item">
+
+                            <span class="velora-activity-icon">
+                                <i class="bi bi-person-plus"></i>
+                            </span>
+
+
+                            <div class="velora-activity-content">
+
+                                <strong>
+                                    New client added
+                                </strong>
+
+                                <span>
+                                    Daniel Okoro was added to your clients.
+                                </span>
+
+                            </div>
+
+
+                            <time>
+                                3h
+                            </time>
+
+                        </div>
+
+
+
+                        <!-- Activity 4 -->
+
+                        <div class="velora-activity-item">
+
+                            <span class="velora-activity-icon">
+                                <i class="bi bi-eye"></i>
+                            </span>
+
+
+                            <div class="velora-activity-content">
+
+                                <strong>
+                                    Portfolio views increased
+                                </strong>
+
+                                <span>
+                                    Your site received 18% more views.
+                                </span>
+
+                            </div>
+
+
+                            <time>
+                                5h
+                            </time>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================
+                     UPCOMING BOOKING
+                ========================== -->
+
+                <article class="velora-dashboard-panel velora-upcoming-panel">
+
+
+                    <div class="velora-panel-header">
+
+                        <div>
+
+                            <span class="velora-panel-eyebrow">
+                                NEXT UP
+                            </span>
+
+                            <h2>
+                                Upcoming booking
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="velora-upcoming-card">
+
+
+                        <div class="velora-upcoming-date">
+
+                            <span>
+                                SEP
+                            </span>
+
+                            <strong>
+                                18
+                            </strong>
+
+                        </div>
+
+
+                        <div class="velora-upcoming-details">
+
+                            <strong>
+                                Sarah & Michael
+                            </strong>
+
+                            <span>
+                                Wedding photography
+                            </span>
+
+                            <small>
+                                <i class="bi bi-clock"></i>
+                                10:00 AM
+                            </small>
+
+                        </div>
+
+
+                        <a
+                            href="bookings.html"
+                            class="velora-upcoming-arrow"
+                            aria-label="View booking"
+                        >
+
+                            <i class="bi bi-arrow-up-right"></i>
+
+                        </a>
+
+                    </div>
+
+
+
+                    <a
+                        href="bookings.html"
+                        class="velora-view-bookings"
+                    >
+
+                        View all bookings
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 YOUR GALLERIES
+            ================================================== -->
+
+            <section class="velora-galleries-section">
+
+
+                <div class="velora-panel-header">
+
+                    <div>
+
+                        <span class="velora-panel-eyebrow">
+                            YOUR WORK
+                        </span>
+
+                        <h2>
+                            Your galleries
+                        </h2>
+
+                    </div>
+
+
+                    <a
+                        href="galleries.html"
+                        class="velora-panel-link"
+                    >
+
+                        View all
+
+                        <i class="bi bi-arrow-up-right"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- Gallery Grid -->
+
+                <div class="velora-gallery-grid">
+
+
+                    <!-- Gallery 1 -->
+
+                    <article class="velora-gallery-card">
+
+                        <a
+                            href="galleries.html"
+                            class="velora-gallery-image"
+                        >
+
+                            <img
+                                src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.15.jpeg"
+                                alt="Wedding photography gallery"
+                            >
+
+                            <span class="velora-gallery-status">
+                                Published
+                            </span>
+
+                        </a>
+
+
+                        <div class="velora-gallery-info">
+
+                            <div>
+
+                                <h3>
+                                    Wedding Collection
+                                </h3>
+
+                                <span>
+                                    48 images · 126 views
+                                </span>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="velora-gallery-menu"
+                                aria-label="Gallery options"
+                            >
+
+                                <i class="bi bi-three-dots"></i>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Gallery 2 -->
+
+                    <article class="velora-gallery-card">
+
+                        <a
+                            href="galleries.html"
+                            class="velora-gallery-image"
+                        >
+
+                            <img
+                                src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.11.jpeg"
+                                alt="Portrait photography gallery"
+                            >
+
+                            <span class="velora-gallery-status">
+                                Published
+                            </span>
+
+                        </a>
+
+
+                        <div class="velora-gallery-info">
+
+                            <div>
+
+                                <h3>
+                                    Portrait Sessions
+                                </h3>
+
+                                <span>
+                                    36 images · 84 views
+                                </span>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="velora-gallery-menu"
+                                aria-label="Gallery options"
+                            >
+
+                                <i class="bi bi-three-dots"></i>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Gallery 3 -->
+
+                    <article class="velora-gallery-card">
+
+                        <a
+                            href="galleries.html"
+                            class="velora-gallery-image"
+                        >
+
+                            <img
+                                src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.13.jpeg"
+                                alt="Editorial photography gallery"
+                            >
+
+                            <span class="velora-gallery-status">
+                                Draft
+                            </span>
+
+                        </a>
+
+
+                        <div class="velora-gallery-info">
+
+                            <div>
+
+                                <h3>
+                                    Editorial Stories
+                                </h3>
+
+                                <span>
+                                    24 images · Draft
+                                </span>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="velora-gallery-menu"
+                                aria-label="Gallery options"
+                            >
+
+                                <i class="bi bi-three-dots"></i>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Create gallery -->
+
+                    <a
+                        href="galleries.html"
+                        class="velora-create-gallery"
+                    >
+
+                        <span class="velora-create-gallery-icon">
+
+                            <i class="bi bi-plus-lg"></i>
+
+                        </span>
+
+
+                        <strong>
+                            Create new gallery
+                        </strong>
+
+
+                        <span>
+                            Start showcasing new work
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+const sidebar =
+    document.getElementById(
+        "veloraSidebar"
+    );
+
+
+const sidebarOpen =
+    document.getElementById(
+        "sidebarOpen"
+    );
+
+
+const sidebarClose =
+    document.getElementById(
+        "sidebarClose"
+    );
+
+
+const sidebarOverlay =
+    document.getElementById(
+        "sidebarOverlay"
+    );
+
+
+
+function openSidebar() {
+
+    sidebar.classList.add(
+        "is-open"
+    );
+
+    sidebarOverlay.classList.add(
+        "is-visible"
+    );
+
+    sidebarOpen.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+    document.body.classList.add(
+        "velora-sidebar-open"
+    );
+
+}
+
+
+
+function closeSidebar() {
+
+    sidebar.classList.remove(
+        "is-open"
+    );
+
+    sidebarOverlay.classList.remove(
+        "is-visible"
+    );
+
+    sidebarOpen.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+    document.body.classList.remove(
+        "velora-sidebar-open"
+    );
+
+}
+
+
+
+sidebarOpen.addEventListener(
+    "click",
+    openSidebar
+);
+
+
+sidebarClose.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+sidebarOverlay.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+
+/* =====================================================
+   ESCAPE KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "Escape" &&
+            sidebar.classList.contains("is-open")
+        ) {
+
+            closeSidebar();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   SEARCH SHORTCUT
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "/" &&
+            !["INPUT", "TEXTAREA"].includes(
+                document.activeElement.tagName
+            )
+        ) {
+
+            event.preventDefault();
+
+
+            const search =
+                document.querySelector(
+                    ".velora-dashboard-search input"
+                );
+
+
+            if (search) {
+
+                search.focus();
+
+            }
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
