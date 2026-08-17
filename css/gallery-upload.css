@@ -1,0 +1,2372 @@
+/* =========================================================
+   VELORA — GALLERY UPLOAD
+   Component: VLR-GAL-UPLOAD-001
+   Status: Draft
+   Maturity: L2 Stable
+
+   Purpose:
+   Gallery photo upload and queue management
+
+   Theme:
+   Light mode — V1
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.velora-gallery-upload-page {
+
+    width: 100%;
+
+    max-width: 1440px;
+
+    margin-inline: auto;
+
+    padding-bottom: 70px;
+
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.velora-upload-breadcrumb-link {
+
+    color:
+        var(--velora-muted);
+
+    text-decoration:
+        none;
+
+    transition:
+        color 160ms ease;
+
+}
+
+
+.velora-upload-breadcrumb-link:hover {
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.velora-upload-header {
+
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
+    justify-content:
+        space-between;
+
+    gap:
+        32px;
+
+    margin:
+        18px 0 30px;
+
+}
+
+
+.velora-upload-header h1 {
+
+    margin:
+        6px 0 8px;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        clamp(30px, 4vw, 45px);
+
+    font-weight:
+        500;
+
+    line-height:
+        1.04;
+
+    letter-spacing:
+        -.055em;
+
+}
+
+
+.velora-upload-header p {
+
+    max-width:
+        650px;
+
+    margin:
+        0;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        9px;
+
+    line-height:
+        1.6;
+
+}
+
+
+.velora-upload-header p strong {
+
+    color:
+        var(--velora-ink);
+
+    font-weight:
+        700;
+
+}
+
+
+.velora-upload-back {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    margin-bottom:
+        21px;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        8px;
+
+    font-weight:
+        600;
+
+    text-decoration:
+        none;
+
+    transition:
+        color 160ms ease,
+        transform 160ms ease;
+
+}
+
+
+.velora-upload-back i {
+
+    font-size:
+        10px;
+
+    transition:
+        transform 160ms ease;
+
+}
+
+
+.velora-upload-back:hover {
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+.velora-upload-back:hover i {
+
+    transform:
+        translateX(-3px);
+
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.velora-upload-header-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    flex-shrink:
+        0;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.velora-upload-button {
+
+    min-height:
+        38px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    font-family:
+        inherit;
+
+    font-size:
+        7px;
+
+    font-weight:
+        700;
+
+    text-decoration:
+        none;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform 160ms ease,
+        background 160ms ease,
+        border-color 160ms ease,
+        color 160ms ease,
+        opacity 160ms ease;
+
+}
+
+
+.velora-upload-button:hover {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.velora-upload-button.secondary {
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+.velora-upload-button.secondary:hover {
+
+    border-color:
+        #d2d8d4;
+
+    background:
+        var(--velora-surface);
+
+}
+
+
+.velora-upload-button.primary {
+
+    border-color:
+        var(--velora-green);
+
+    background:
+        var(--velora-green);
+
+    color:
+        #ffffff;
+
+}
+
+
+.velora-upload-button.primary:hover {
+
+    border-color:
+        var(--velora-green-dark);
+
+    background:
+        var(--velora-green-dark);
+
+}
+
+
+.velora-upload-button:disabled {
+
+    cursor:
+        not-allowed;
+
+    opacity:
+        .48;
+
+    transform:
+        none;
+
+}
+
+
+.velora-upload-button:focus-visible {
+
+    outline:
+        2px solid var(--velora-green);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.velora-upload-layout {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) 300px;
+
+    gap:
+        22px;
+
+    align-items:
+        start;
+
+}
+
+
+.velora-upload-main {
+
+    min-width:
+        0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        16px;
+
+}
+
+
+.velora-upload-sidebar {
+
+    min-width:
+        0;
+
+    position:
+        sticky;
+
+    top:
+        22px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        12px;
+
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.velora-upload-card {
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-lg);
+
+    background:
+        var(--velora-paper);
+
+}
+
+
+.velora-upload-card-header {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    padding:
+        20px 21px 17px;
+
+    border-bottom:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-upload-card-header h2 {
+
+    margin:
+        5px 0 0;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        15px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        -.025em;
+
+}
+
+
+.velora-upload-card-header p {
+
+    max-width:
+        580px;
+
+    margin:
+        6px 0 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        7px;
+
+    line-height:
+        1.5;
+
+}
+
+
+/* =========================================================
+   DROPZONE
+========================================================= */
+
+.velora-upload-dropzone {
+
+    position:
+        relative;
+
+    min-height:
+        360px;
+
+    margin:
+        20px;
+
+    overflow:
+        hidden;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px dashed #cbd5ce;
+
+    border-radius:
+        var(--velora-radius-md);
+
+    background:
+        var(--velora-surface);
+
+    cursor:
+        pointer;
+
+    transition:
+        border-color 180ms ease,
+        background 180ms ease,
+        transform 180ms ease,
+        box-shadow 180ms ease;
+
+}
+
+
+.velora-upload-dropzone:hover {
+
+    border-color:
+        #aebdb4;
+
+    background:
+        #fbfcfb;
+
+}
+
+
+.velora-upload-dropzone.is-dragging {
+
+    border-color:
+        var(--velora-green);
+
+    background:
+        var(--velora-green-tint);
+
+    box-shadow:
+        inset 0 0 0 1px var(--velora-green);
+
+    transform:
+        scale(1.004);
+
+}
+
+
+/* =========================================================
+   DROP CONTENT
+========================================================= */
+
+.velora-upload-drop-content {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    max-width:
+        400px;
+
+    padding:
+        35px;
+
+    text-align:
+        center;
+
+}
+
+
+.velora-upload-drop-icon {
+
+    width:
+        58px;
+
+    height:
+        58px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        16px;
+
+    border:
+        1px solid #dbe4de;
+
+    border-radius:
+        16px;
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-green);
+
+    font-size:
+        22px;
+
+    box-shadow:
+        0 6px 18px rgba(23,24,26,.035);
+
+}
+
+
+.velora-upload-drop-content h3 {
+
+    margin:
+        0 0 6px;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        -.02em;
+
+}
+
+
+.velora-upload-drop-content p {
+
+    margin:
+        0;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        7px;
+
+    line-height:
+        1.5;
+
+}
+
+
+.velora-upload-or {
+
+    margin:
+        13px 0;
+
+    color:
+        var(--velora-muted-light);
+
+    font-size:
+        6px;
+
+}
+
+
+.velora-upload-browse {
+
+    min-height:
+        37px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-ink);
+
+    font-family:
+        inherit;
+
+    font-size:
+        7px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        border-color 160ms ease,
+        background 160ms ease,
+        color 160ms ease,
+        transform 160ms ease;
+
+}
+
+
+.velora-upload-browse:hover {
+
+    border-color:
+        var(--velora-green);
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.velora-upload-drop-content small {
+
+    margin-top:
+        15px;
+
+    color:
+        var(--velora-muted-light);
+
+    font-size:
+        6px;
+
+}
+
+
+/* =========================================================
+   QUEUE HEADER
+========================================================= */
+
+.queue-header {
+
+    align-items:
+        center;
+
+}
+
+
+.velora-upload-clear {
+
+    min-height:
+        30px;
+
+    padding:
+        0 9px;
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-muted);
+
+    font-family:
+        inherit;
+
+    font-size:
+        6px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        background 160ms ease,
+        color 160ms ease;
+
+}
+
+
+.velora-upload-clear:hover {
+
+    background:
+        #f8eeee;
+
+    color:
+        #9d4f4f;
+
+}
+
+
+/* =========================================================
+   TOTAL PROGRESS
+========================================================= */
+
+.velora-upload-total {
+
+    padding:
+        16px 21px;
+
+    border-bottom:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-upload-total-top {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        10px;
+
+    margin-bottom:
+        8px;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        6px;
+
+}
+
+
+.velora-upload-total-top strong {
+
+    color:
+        var(--velora-ink);
+
+    font-weight:
+        700;
+
+}
+
+
+.velora-upload-progress {
+
+    width:
+        100%;
+
+    height:
+        4px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        999px;
+
+    background:
+        #edf0ee;
+
+}
+
+
+.velora-upload-progress span {
+
+    display:
+        block;
+
+    width:
+        0;
+
+    height:
+        100%;
+
+    border-radius:
+        inherit;
+
+    background:
+        var(--velora-green);
+
+    transition:
+        width 180ms ease;
+
+}
+
+
+/* =========================================================
+   QUEUE
+========================================================= */
+
+.velora-upload-queue {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+}
+
+
+.velora-upload-item {
+
+    min-height:
+        82px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        52px minmax(0, 1fr) auto;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    padding:
+        12px 21px;
+
+    border-bottom:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-upload-item:last-child {
+
+    border-bottom:
+        0;
+
+}
+
+
+/* =========================================================
+   ITEM PREVIEW
+========================================================= */
+
+.velora-upload-item-preview {
+
+    width:
+        52px;
+
+    height:
+        52px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        8px;
+
+    background:
+        var(--velora-surface);
+
+}
+
+
+.velora-upload-item-preview img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    display:
+        block;
+
+    object-fit:
+        cover;
+
+}
+
+
+/* =========================================================
+   ITEM INFO
+========================================================= */
+
+.velora-upload-item-info {
+
+    min-width:
+        0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        5px;
+
+}
+
+
+.velora-upload-item-info > strong {
+
+    overflow:
+        hidden;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        7px;
+
+    font-weight:
+        700;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.velora-upload-item-info > span {
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        6px;
+
+}
+
+
+.velora-upload-item-progress {
+
+    width:
+        min(100%, 300px);
+
+    height:
+        3px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        999px;
+
+    background:
+        #eef1ef;
+
+}
+
+
+.velora-upload-item-progress span {
+
+    display:
+        block;
+
+    width:
+        0;
+
+    height:
+        100%;
+
+    border-radius:
+        inherit;
+
+    background:
+        var(--velora-green);
+
+    transition:
+        width 150ms ease;
+
+}
+
+
+.velora-upload-item-status {
+
+    min-height:
+        12px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+    color:
+        var(--velora-muted-light);
+
+    font-size:
+        5px !important;
+
+}
+
+
+.velora-upload-item-status i {
+
+    color:
+        var(--velora-green);
+
+    font-size:
+        7px;
+
+}
+
+
+.velora-upload-item-status.is-error {
+
+    color:
+        #a45252;
+
+}
+
+
+/* =========================================================
+   ITEM ACTIONS
+========================================================= */
+
+.velora-upload-item-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+}
+
+
+.velora-upload-item-actions button {
+
+    width:
+        29px;
+
+    height:
+        29px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        7px;
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        9px;
+
+    cursor:
+        pointer;
+
+    transition:
+        background 160ms ease,
+        color 160ms ease,
+        border-color 160ms ease;
+
+}
+
+
+.velora-upload-item-actions button:hover {
+
+    border-color:
+        var(--velora-line);
+
+    background:
+        var(--velora-surface);
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+.velora-upload-item-actions button:first-child:hover {
+
+    color:
+        var(--velora-green);
+
+}
+
+
+/* =========================================================
+   COMPLETE STATE
+========================================================= */
+
+.velora-upload-complete {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        auto minmax(0, 1fr) auto;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    padding:
+        20px;
+
+    border:
+        1px solid #dce7e0;
+
+    border-radius:
+        var(--velora-radius-lg);
+
+    background:
+        var(--velora-green-tint);
+
+}
+
+
+.velora-upload-complete-icon {
+
+    width:
+        44px;
+
+    height:
+        44px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-green);
+
+    font-size:
+        17px;
+
+}
+
+
+.velora-upload-complete h2 {
+
+    margin:
+        5px 0;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        -.02em;
+
+}
+
+
+.velora-upload-complete p {
+
+    margin:
+        0;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        6px;
+
+    line-height:
+        1.5;
+
+}
+
+
+/* =========================================================
+   SIDEBAR CARDS
+========================================================= */
+
+.velora-upload-info-card,
+.velora-upload-guidelines,
+.velora-upload-storage {
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-lg);
+
+    background:
+        var(--velora-paper);
+
+}
+
+
+/* =========================================================
+   INFO CARD
+========================================================= */
+
+.velora-upload-info-card {
+
+    padding:
+        17px;
+
+}
+
+
+.velora-upload-info-card h2 {
+
+    margin:
+        5px 0 16px;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        15px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        -.025em;
+
+}
+
+
+.velora-upload-info-row {
+
+    min-height:
+        35px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        10px;
+
+    border-top:
+        1px solid var(--velora-line);
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        6px;
+
+}
+
+
+.velora-upload-info-row span {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+}
+
+
+.velora-upload-info-row i {
+
+    color:
+        var(--velora-green);
+
+    font-size:
+        8px;
+
+}
+
+
+.velora-upload-info-row strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        7px;
+
+    font-weight:
+        700;
+
+}
+
+
+/* =========================================================
+   GUIDELINES
+========================================================= */
+
+.velora-upload-guidelines {
+
+    padding:
+        17px;
+
+}
+
+
+.velora-upload-guidelines h2 {
+
+    margin:
+        5px 0 14px;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        14px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        -.025em;
+
+}
+
+
+.velora-guideline {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        8px;
+
+    padding:
+        9px 0;
+
+    border-top:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-guideline > span {
+
+    width:
+        17px;
+
+    height:
+        17px;
+
+    flex:
+        0 0 17px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+    font-size:
+        7px;
+
+}
+
+
+.velora-guideline p {
+
+    margin:
+        1px 0 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        6px;
+
+    line-height:
+        1.5;
+
+}
+
+
+/* =========================================================
+   STORAGE
+========================================================= */
+
+.velora-upload-storage {
+
+    padding:
+        17px;
+
+}
+
+
+.velora-storage-top {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    margin-bottom:
+        8px;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        6px;
+
+}
+
+
+.velora-storage-top strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        7px;
+
+}
+
+
+.velora-storage-bar {
+
+    width:
+        100%;
+
+    height:
+        5px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        999px;
+
+    background:
+        #edf0ee;
+
+}
+
+
+.velora-storage-bar span {
+
+    display:
+        block;
+
+    width:
+        18%;
+
+    height:
+        100%;
+
+    border-radius:
+        inherit;
+
+    background:
+        var(--velora-green);
+
+}
+
+
+.velora-upload-storage p {
+
+    margin:
+        8px 0 12px;
+
+    color:
+        var(--velora-muted-light);
+
+    font-size:
+        6px;
+
+}
+
+
+.velora-upload-storage a {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    color:
+        var(--velora-green);
+
+    font-size:
+        6px;
+
+    font-weight:
+        700;
+
+    text-decoration:
+        none;
+
+}
+
+
+.velora-upload-storage a:hover {
+
+    text-decoration:
+        underline;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.velora-upload-footer {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        flex-end;
+
+    gap:
+        8px;
+
+    margin-top:
+        20px;
+
+    padding-top:
+        18px;
+
+    border-top:
+        1px solid var(--velora-line);
+
+}
+
+
+/* =========================================================
+   ERROR TOAST
+========================================================= */
+
+.velora-upload-toast {
+
+    position:
+        fixed;
+
+    right:
+        22px;
+
+    bottom:
+        22px;
+
+    z-index:
+        5000;
+
+    width:
+        min(340px, calc(100% - 30px));
+
+    display:
+        grid;
+
+    grid-template-columns:
+        32px minmax(0, 1fr);
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    padding:
+        12px;
+
+    border:
+        1px solid #efdada;
+
+    border-radius:
+        var(--velora-radius-md);
+
+    background:
+        var(--velora-paper);
+
+    box-shadow:
+        0 16px 40px rgba(0,0,0,.12);
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    transform:
+        translateY(12px);
+
+    transition:
+        opacity 180ms ease,
+        visibility 180ms ease,
+        transform 180ms ease;
+
+}
+
+
+.velora-upload-toast.is-visible {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.velora-upload-toast > span {
+
+    width:
+        32px;
+
+    height:
+        32px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        9px;
+
+    background:
+        #faeeee;
+
+    color:
+        #a45252;
+
+}
+
+
+.velora-upload-toast strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        2px;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        7px;
+
+}
+
+
+.velora-upload-toast small {
+
+    display:
+        block;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        6px;
+
+    line-height:
+        1.4;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1100PX
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .velora-upload-layout {
+
+        grid-template-columns:
+            minmax(0, 1fr) 270px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 900PX
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .velora-upload-header {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .velora-upload-header-actions {
+
+        width:
+            100%;
+
+    }
+
+
+    .velora-upload-header-actions
+    .velora-upload-button {
+
+        flex:
+            1;
+
+    }
+
+
+    .velora-upload-layout {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .velora-upload-sidebar {
+
+        position:
+            static;
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        align-items:
+            start;
+
+    }
+
+
+    .velora-upload-storage {
+
+        grid-column:
+            1 / -1;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 700PX
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .velora-upload-sidebar {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .velora-upload-storage {
+
+        grid-column:
+            auto;
+
+    }
+
+
+    .velora-upload-dropzone {
+
+        min-height:
+            310px;
+
+        margin:
+            17px;
+
+    }
+
+
+    .velora-upload-complete {
+
+        grid-template-columns:
+            auto minmax(0, 1fr);
+
+    }
+
+
+    .velora-upload-complete
+    .velora-upload-button {
+
+        grid-column:
+            1 / -1;
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 600PX
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .velora-gallery-upload-page {
+
+        padding-bottom:
+            45px;
+
+    }
+
+
+    .velora-upload-header {
+
+        margin:
+            12px 0 22px;
+
+    }
+
+
+    .velora-upload-header h1 {
+
+        font-size:
+            clamp(29px, 9vw, 38px);
+
+    }
+
+
+    .velora-upload-header p {
+
+        font-size:
+            8px;
+
+    }
+
+
+    .velora-upload-header-actions {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1.35fr;
+
+    }
+
+
+    .velora-upload-header-actions
+    .velora-upload-button {
+
+        width:
+            100%;
+
+    }
+
+
+    .velora-upload-card-header {
+
+        padding:
+            17px;
+
+    }
+
+
+    .velora-upload-dropzone {
+
+        min-height:
+            280px;
+
+    }
+
+
+    .velora-upload-drop-content {
+
+        padding:
+            25px;
+
+    }
+
+
+    .velora-upload-item {
+
+        grid-template-columns:
+            45px minmax(0, 1fr) auto;
+
+        gap:
+            9px;
+
+        padding:
+            11px 15px;
+
+    }
+
+
+    .velora-upload-item-preview {
+
+        width:
+            45px;
+
+        height:
+            45px;
+
+    }
+
+
+    .velora-upload-item-progress {
+
+        max-width:
+            100%;
+
+    }
+
+
+    .velora-upload-total {
+
+        padding:
+            14px 15px;
+
+    }
+
+
+    .velora-upload-footer {
+
+        position:
+            sticky;
+
+        bottom:
+            0;
+
+        z-index:
+            50;
+
+        margin:
+            0 -1px;
+
+        padding:
+            12px 0;
+
+        background:
+            rgba(255,255,255,.94);
+
+        backdrop-filter:
+            blur(10px);
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 450PX
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .velora-upload-header-actions {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .velora-upload-header-actions
+    .velora-upload-button.primary {
+
+        order:
+            -1;
+
+    }
+
+
+    .velora-upload-dropzone {
+
+        min-height:
+            250px;
+
+        margin:
+            13px;
+
+    }
+
+
+    .velora-upload-drop-content {
+
+        padding:
+            20px;
+
+    }
+
+
+    .velora-upload-drop-icon {
+
+        width:
+            48px;
+
+        height:
+            48px;
+
+        font-size:
+            18px;
+
+    }
+
+
+    .velora-upload-drop-content h3 {
+
+        font-size:
+            11px;
+
+    }
+
+
+    .velora-upload-item {
+
+        grid-template-columns:
+            42px minmax(0, 1fr);
+
+        align-items:
+            start;
+
+    }
+
+
+    .velora-upload-item-preview {
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+    }
+
+
+    .velora-upload-item-actions {
+
+        grid-column:
+            2;
+
+        justify-content:
+            flex-start;
+
+        margin-top:
+            -2px;
+
+    }
+
+
+    .velora-upload-complete {
+
+        grid-template-columns:
+            1fr;
+
+        text-align:
+            center;
+
+    }
+
+
+    .velora-upload-complete-icon {
+
+        margin-inline:
+            auto;
+
+    }
+
+
+    .velora-upload-complete
+    .velora-upload-button {
+
+        width:
+            100%;
+
+    }
+
+
+    .velora-upload-footer {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1.35fr;
+
+    }
+
+
+    .velora-upload-footer
+    .velora-upload-button {
+
+        width:
+            100%;
+
+    }
+
+
+    .velora-upload-toast {
+
+        right:
+            15px;
+
+        bottom:
+            15px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.velora-upload-back:focus-visible,
+.velora-upload-breadcrumb-link:focus-visible,
+.velora-upload-button:focus-visible,
+.velora-upload-browse:focus-visible,
+.velora-upload-clear:focus-visible,
+.velora-upload-item-actions button:focus-visible,
+.velora-upload-storage a:focus-visible {
+
+    outline:
+        2px solid var(--velora-green);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .velora-upload-button,
+    .velora-upload-dropzone,
+    .velora-upload-browse,
+    .velora-upload-progress span,
+    .velora-upload-item-progress span,
+    .velora-upload-toast {
+
+        transition:
+            none;
+
+    }
+
+}

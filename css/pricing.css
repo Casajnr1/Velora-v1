@@ -1,0 +1,1321 @@
+/*==========================================================
+    VELORA PRICING / UPGRADE
+    Component: VLR-UPG-001
+    Status: Approved
+    Maturity: L2 Stable
+==========================================================*/
+
+
+/*==========================================================
+    PAGE
+==========================================================*/
+
+.velora-pricing-page {
+
+    max-width: 1280px;
+
+    margin-inline: auto;
+
+}
+
+
+/*==========================================================
+    HERO
+==========================================================*/
+
+.velora-pricing-hero {
+
+    max-width: 650px;
+
+    margin:
+        18px auto 38px;
+
+    text-align: center;
+
+}
+
+
+.velora-pricing-hero h1 {
+
+    margin:
+        10px 0 14px;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        clamp(32px, 5vw, 54px);
+
+    font-weight: 500;
+
+    line-height: 1.04;
+
+    letter-spacing:
+        -.055em;
+
+}
+
+
+.velora-pricing-hero p {
+
+    max-width: 500px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+}
+
+
+/*==========================================================
+    BILLING TOGGLE
+==========================================================*/
+
+.velora-billing-toggle {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 3px;
+
+    margin-top: 25px;
+
+    padding: 4px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        999px;
+
+    background:
+        var(--velora-surface);
+
+}
+
+
+.velora-billing-toggle button {
+
+    min-height: 31px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding:
+        0 12px;
+
+    border: 0;
+
+    border-radius:
+        999px;
+
+    background: transparent;
+
+    color:
+        var(--velora-muted);
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.velora-billing-toggle button.is-active {
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-ink);
+
+    box-shadow:
+        0 1px 4px rgba(0,0,0,.06);
+
+}
+
+
+.velora-billing-toggle button span {
+
+    padding:
+        3px 6px;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+}
+
+
+/*==========================================================
+    PRICING GRID
+==========================================================*/
+
+.velora-pricing-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+    max-width: 1050px;
+
+    margin-inline: auto;
+
+}
+
+
+/*==========================================================
+    PLAN CARD
+==========================================================*/
+
+.velora-plan-card {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 545px;
+
+    padding:
+        26px 24px 23px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-lg);
+
+    background:
+        var(--velora-paper);
+
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+
+}
+
+
+.velora-plan-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        #d9dedb;
+
+    box-shadow:
+        0 12px 35px rgba(20,30,25,.07);
+
+}
+
+
+.velora-plan-card.featured {
+
+    border:
+        1px solid var(--velora-green);
+
+    box-shadow:
+        0 10px 35px rgba(27,67,50,.09);
+
+}
+
+
+.velora-plan-card.featured:hover {
+
+    box-shadow:
+        0 16px 42px rgba(27,67,50,.12);
+
+}
+
+
+/*==========================================================
+    POPULAR LABEL
+==========================================================*/
+
+.velora-plan-popular {
+
+    position: absolute;
+
+    top: 0;
+
+    right: 23px;
+
+    padding:
+        6px 9px;
+
+    border-radius:
+        0 0 6px 6px;
+
+    background:
+        var(--velora-green);
+
+    color:
+        #fff;
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+}
+
+
+/*==========================================================
+    PLAN TOP
+==========================================================*/
+
+.velora-plan-icon {
+
+    width: 36px;
+
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--velora-surface);
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-plan-label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+    letter-spacing: .11em;
+
+}
+
+
+.velora-plan-top h2 {
+
+    margin:
+        0 0 7px;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        -.035em;
+
+}
+
+
+.velora-plan-top p {
+
+    min-height: 34px;
+
+    margin: 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+    line-height: 1.55;
+
+}
+
+
+/*==========================================================
+    PRICE
+==========================================================*/
+
+.velora-plan-price {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 4px;
+
+    margin-top: 27px;
+
+}
+
+
+.velora-plan-price strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 39px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing:
+        -.055em;
+
+}
+
+
+.velora-plan-price span {
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+}
+
+
+.velora-plan-billing-note {
+
+    min-height: 14px;
+
+    margin-top: 5px;
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 6px;
+
+}
+
+
+/*==========================================================
+    STORAGE
+==========================================================*/
+
+.velora-plan-storage {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 18px;
+
+    padding:
+        11px 12px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    background:
+        var(--velora-surface);
+
+}
+
+
+.velora-plan-storage i {
+
+    color:
+        var(--velora-green);
+
+    font-size: 11px;
+
+}
+
+
+.velora-plan-storage strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+}
+
+
+.velora-plan-storage span {
+
+    margin-left: auto;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 7px;
+
+}
+
+
+/*==========================================================
+    FEATURES
+==========================================================*/
+
+.velora-plan-features {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin:
+        22px 0;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+.velora-plan-features li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+    line-height: 1.3;
+
+}
+
+
+.velora-plan-features li i {
+
+    flex: 0 0 auto;
+
+    color:
+        var(--velora-green);
+
+    font-size: 10px;
+
+}
+
+
+/*==========================================================
+    PLAN BUTTON
+==========================================================*/
+
+.velora-plan-button {
+
+    width: 100%;
+
+    min-height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: auto;
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease;
+
+}
+
+
+.velora-plan-button.primary {
+
+    border:
+        1px solid var(--velora-green);
+
+    background:
+        var(--velora-green);
+
+    color:
+        #fff;
+
+}
+
+
+.velora-plan-button.primary:hover {
+
+    background:
+        var(--velora-green-dark);
+
+    border-color:
+        var(--velora-green-dark);
+
+}
+
+
+.velora-plan-button.secondary {
+
+    border:
+        1px solid var(--velora-line);
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+.velora-plan-button.secondary:hover {
+
+    border-color:
+        var(--velora-green);
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-plan-button:focus-visible {
+
+    outline:
+        2px solid var(--velora-green);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/*==========================================================
+    STORAGE CALLOUT
+==========================================================*/
+
+.velora-pricing-storage-callout {
+
+    max-width: 1050px;
+
+    display: grid;
+
+    grid-template-columns:
+        auto minmax(0, 1fr) 220px;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin:
+        16px auto 0;
+
+    padding:
+        18px 20px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-lg);
+
+    background:
+        var(--velora-paper);
+
+}
+
+
+.velora-storage-callout-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-storage-callout-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.velora-storage-callout-content span {
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+    letter-spacing: .1em;
+
+}
+
+
+.velora-storage-callout-content strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+}
+
+
+.velora-storage-callout-content p {
+
+    margin: 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 7px;
+
+}
+
+
+.velora-storage-meter {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+}
+
+
+.velora-storage-meter > div {
+
+    height: 5px;
+
+    flex: 1;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background:
+        var(--velora-line);
+
+}
+
+
+.velora-storage-meter > div span {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        var(--velora-green);
+
+}
+
+
+.velora-storage-meter small {
+
+    color:
+        var(--velora-muted);
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+}
+
+
+/*==========================================================
+    TRUST FOOTER
+==========================================================*/
+
+.velora-pricing-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    padding:
+        25px 0 10px;
+
+}
+
+
+.velora-pricing-footer div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 7px;
+
+}
+
+
+.velora-pricing-footer i {
+
+    color:
+        var(--velora-green);
+
+    font-size: 10px;
+
+}
+
+
+/*==========================================================
+    UPGRADE MODAL
+==========================================================*/
+
+.velora-upgrade-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 3000;
+
+    display: none;
+
+}
+
+
+.velora-upgrade-modal.is-open {
+
+    display: block;
+
+}
+
+
+.velora-upgrade-modal-backdrop {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(15,20,18,.42);
+
+    backdrop-filter:
+        blur(5px);
+
+}
+
+
+.velora-upgrade-dialog {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    width:
+        min(420px, calc(100% - 30px));
+
+    transform:
+        translate(-50%, -50%);
+
+    padding:
+        31px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-lg);
+
+    background:
+        var(--velora-paper);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.18);
+
+    text-align: center;
+
+}
+
+
+.velora-upgrade-modal-close {
+
+    position: absolute;
+
+    top: 14px;
+
+    right: 14px;
+
+    width: 29px;
+
+    height: 29px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-surface);
+
+    color:
+        var(--velora-muted);
+
+    cursor: pointer;
+
+}
+
+
+.velora-upgrade-dialog-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin:
+        0 auto 17px;
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+    font-size: 17px;
+
+}
+
+
+.velora-upgrade-dialog h2 {
+
+    margin:
+        9px 0 7px;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 21px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        -.035em;
+
+}
+
+
+.velora-upgrade-dialog > p {
+
+    margin:
+        0 auto 21px;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+}
+
+
+.velora-upgrade-summary {
+
+    overflow: hidden;
+
+    margin-bottom: 18px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    text-align: left;
+
+}
+
+
+.velora-upgrade-summary div {
+
+    min-height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 13px;
+
+}
+
+
+.velora-upgrade-summary div + div {
+
+    border-top:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-upgrade-summary span {
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+}
+
+
+.velora-upgrade-summary strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+}
+
+
+.velora-confirm-upgrade {
+
+    width: 100%;
+
+    min-height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    border:
+        1px solid var(--velora-green);
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    background:
+        var(--velora-green);
+
+    color:
+        #fff;
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.velora-confirm-upgrade:hover {
+
+    background:
+        var(--velora-green-dark);
+
+}
+
+
+.velora-confirm-upgrade:disabled {
+
+    opacity: .75;
+
+    cursor: default;
+
+}
+
+
+.velora-cancel-upgrade {
+
+    margin-top: 13px;
+
+    border: 0;
+
+    background: transparent;
+
+    color:
+        var(--velora-muted);
+
+    font-family: inherit;
+
+    font-size: 7px;
+
+    cursor: pointer;
+
+}
+
+
+.velora-cancel-upgrade:hover {
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+/*==========================================================
+    MOBILE
+==========================================================*/
+
+@media (max-width: 1000px) {
+
+    .velora-pricing-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .velora-plan-card.featured {
+
+        order: -1;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .velora-pricing-hero {
+
+        margin-top: 12px;
+
+    }
+
+
+    .velora-pricing-hero h1 {
+
+        font-size:
+            clamp(30px, 10vw, 42px);
+
+    }
+
+
+    .velora-pricing-grid {
+
+        grid-template-columns:
+            1fr;
+
+        max-width: 460px;
+
+    }
+
+
+    .velora-plan-card {
+
+        min-height: auto;
+
+        padding:
+            24px 21px 21px;
+
+    }
+
+
+    .velora-plan-top p {
+
+        min-height: 0;
+
+    }
+
+
+    .velora-plan-features {
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .velora-pricing-storage-callout {
+
+        grid-template-columns:
+            auto minmax(0, 1fr);
+
+    }
+
+
+    .velora-storage-meter {
+
+        grid-column:
+            1 / -1;
+
+    }
+
+
+    .velora-pricing-footer {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .velora-pricing-hero p {
+
+        font-size: 9px;
+
+    }
+
+
+    .velora-billing-toggle button {
+
+        padding:
+            0 10px;
+
+    }
+
+
+    .velora-pricing-storage-callout {
+
+        padding:
+            16px;
+
+    }
+
+
+    .velora-upgrade-dialog {
+
+        padding:
+            27px 20px;
+
+    }
+
+}
+
+
+/*==========================================================
+    REDUCED MOTION
+==========================================================*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .velora-plan-card {
+
+        transition: none;
+
+    }
+
+}

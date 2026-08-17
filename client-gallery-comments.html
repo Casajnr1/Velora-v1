@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Velora client gallery comments"
+    >
+
+    <title>
+        Comments — Velora
+    </title>
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+        rel="shortcut icon"
+        href="media/favicon/favicon.png"
+        type="image/x-icon"
+    >
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- =====================================================
+         COMMENTS CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/client-gallery-comments.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         PAGE
+    ====================================================== -->
+
+    <main class="velora-comments-page">
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header class="velora-comments-header">
+
+
+            <!-- =================================================
+                 REAL VELORA LOGO
+            ================================================== -->
+
+            <a
+                href="index.html"
+                class="velora-comments-brand"
+                aria-label="Velora home"
+            >
+
+                <img
+                    src="media/logo/logo-1-main.png"
+                    alt="Velora"
+                    class="velora-comments-logo"
+                >
+
+            </a>
+
+
+            <!-- =================================================
+                 GALLERY TITLE
+            ================================================== -->
+
+            <div class="velora-comments-gallery-title">
+
+                <span>
+                    GALLERY
+                </span>
+
+                <strong>
+                    Wedding Collection
+                </strong>
+
+            </div>
+
+
+            <!-- =================================================
+                 HEADER ACTIONS
+            ================================================== -->
+
+            <div class="velora-comments-header-actions">
+
+                <a
+                    href="client-gallery.html"
+                    class="velora-comments-gallery-link"
+                >
+
+                    <i class="bi bi-grid-3x3-gap"></i>
+
+                    <span>
+                        Gallery
+                    </span>
+
+                </a>
+
+
+                <div
+                    class="velora-comments-avatar"
+                    aria-label="Patrick"
+                >
+                    P
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <section class="velora-comments-main">
+
+
+            <!-- =================================================
+                 INTRO
+            ================================================== -->
+
+            <section class="velora-comments-intro">
+
+                <div class="velora-comments-intro-copy">
+
+                    
+                    <h1>
+                        Leave a note.
+                    </h1>
+
+                    <p>
+                        Add comments to photographs or leave
+                        general feedback for your photographer.
+                        Your notes help make sure every detail
+                        is exactly how you want it.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     SUMMARY
+                ================================================== -->
+
+                <div class="velora-comments-summary">
+
+                    <div class="velora-comments-summary-icon">
+
+                        <i class="bi bi-chat-left-text"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            6
+                        </strong>
+
+                        <span>
+                            Comments
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 TOOLBAR
+            ================================================== -->
+
+            <section class="velora-comments-toolbar">
+
+
+                <!-- =================================================
+                     TABS
+                ================================================== -->
+
+                <div
+                    class="velora-comments-tabs"
+                    role="tablist"
+                    aria-label="Comment filters"
+                >
+
+                    <button
+                        type="button"
+                        class="velora-comments-tab is-active"
+                        data-filter="all"
+                        role="tab"
+                        aria-selected="true"
+                    >
+
+                        All
+
+                        <span>
+                            6
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="velora-comments-tab"
+                        data-filter="open"
+                        role="tab"
+                        aria-selected="false"
+                    >
+
+                        Open
+
+                        <span>
+                            4
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="velora-comments-tab"
+                        data-filter="resolved"
+                        role="tab"
+                        aria-selected="false"
+                    >
+
+                        Resolved
+
+                        <span>
+                            2
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     NEW NOTE
+                ================================================== -->
+
+                <button
+                    type="button"
+                    class="velora-comments-new-button"
+                    id="openCommentModal"
+                >
+
+                    <i class="bi bi-plus-lg"></i>
+
+                    New note
+
+                </button>
+
+            </section>
+
+
+            <!-- =================================================
+                 LAYOUT
+            ================================================== -->
+
+            <div class="velora-comments-layout">
+
+
+                <!-- =================================================
+                     COMMENT LIST
+                ================================================== -->
+
+                <section
+                    class="velora-comments-list"
+                    id="commentsList"
+                >
+
+
+                    <!-- =================================================
+                         COMMENT 001
+                    ================================================== -->
+
+                    <article
+                        class="velora-comment-card"
+                        data-status="open"
+                        data-comment="1"
+                    >
+
+                        <div class="velora-comment-card-top">
+
+                            <div class="velora-comment-photo-reference">
+
+                                <div class="velora-comment-thumbnail">
+
+                                    <img
+                                        src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=80"
+                                        alt="Wedding photograph"
+                                    >
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        PHOTO 001
+                                    </span>
+
+                                    <strong>
+                                        Wedding Portrait
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="velora-comment-status">
+                                Open
+                            </span>
+
+                        </div>
+
+
+                        <div class="velora-comment-body">
+
+                            <div class="velora-comment-author">
+
+                                <div class="velora-comment-avatar">
+                                    A
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Amara
+                                    </strong>
+
+                                    <span>
+                                        Added 18 May 2026
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <p>
+                                I really love this one. Could we
+                                keep this photograph exactly as it
+                                is? The expression feels perfect.
+                            </p>
+
+                        </div>
+
+
+                        <div class="velora-comment-actions">
+
+                            <button
+                                type="button"
+                                class="velora-comment-reply"
+                            >
+
+                                <i class="bi bi-reply"></i>
+
+                                Reply
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="velora-comment-resolve"
+                            >
+
+                                <i class="bi bi-check2"></i>
+
+                                Resolve
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="velora-comment-reply-area">
+
+                            <textarea
+                                placeholder="Write a reply..."
+                            ></textarea>
+
+                            <div>
+
+                                <button
+                                    type="button"
+                                    class="velora-comment-cancel-reply"
+                                >
+                                    Cancel
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="velora-comment-send-reply"
+                                >
+                                    Send reply
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         COMMENT 002
+                    ================================================== -->
+
+                    <article
+                        class="velora-comment-card"
+                        data-status="open"
+                        data-comment="2"
+                    >
+
+                        <div class="velora-comment-card-top">
+
+                            <div class="velora-comment-photo-reference">
+
+                                <div class="velora-comment-thumbnail">
+
+                                    <img
+                                        src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=80"
+                                        alt="Wedding ceremony"
+                                    >
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        PHOTO 002
+                                    </span>
+
+                                    <strong>
+                                        Ceremony
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="velora-comment-status">
+                                Open
+                            </span>
+
+                        </div>
+
+
+                        <div class="velora-comment-body">
+
+                            <div class="velora-comment-author">
+
+                                <div class="velora-comment-avatar">
+                                    P
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Patrick
+                                    </strong>
+
+                                    <span>
+                                        Added 18 May 2026
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <p>
+                                Can we brighten the shadows slightly
+                                around the left side of the image?
+                            </p>
+
+                        </div>
+
+
+                        <div class="velora-comment-actions">
+
+                            <button
+                                type="button"
+                                class="velora-comment-reply"
+                            >
+
+                                <i class="bi bi-reply"></i>
+
+                                Reply
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="velora-comment-resolve"
+                            >
+
+                                <i class="bi bi-check2"></i>
+
+                                Resolve
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="velora-comment-reply-area">
+
+                            <textarea
+                                placeholder="Write a reply..."
+                            ></textarea>
+
+                            <div>
+
+                                <button
+                                    type="button"
+                                    class="velora-comment-cancel-reply"
+                                >
+                                    Cancel
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="velora-comment-send-reply"
+                                >
+                                    Send reply
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         COMMENT 003
+                    ================================================== -->
+
+                    <article
+                        class="velora-comment-card"
+                        data-status="resolved"
+                        data-comment="3"
+                    >
+
+                        <div class="velora-comment-card-top">
+
+                            <div class="velora-comment-photo-reference">
+
+                                <div class="velora-comment-thumbnail">
+
+                                    <img
+                                        src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=400&q=80"
+                                        alt="Wedding reception"
+                                    >
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        PHOTO 003
+                                    </span>
+
+                                    <strong>
+                                        Reception
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="velora-comment-status is-resolved">
+                                Resolved
+                            </span>
+
+                        </div>
+
+
+                        <div class="velora-comment-body">
+
+                            <div class="velora-comment-author">
+
+                                <div class="velora-comment-avatar">
+                                    A
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Amara
+                                    </strong>
+
+                                    <span>
+                                        Added 18 May 2026
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <p>
+                                This is beautiful. Thank you.
+                                No changes needed.
+                            </p>
+
+                        </div>
+
+
+                        <div class="velora-comment-actions">
+
+                            <span class="velora-comment-resolved-label">
+
+                                <i class="bi bi-check-circle-fill"></i>
+
+                                Resolved
+
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         COMMENT 004
+                    ================================================== -->
+
+                    <article
+                        class="velora-comment-card"
+                        data-status="open"
+                        data-comment="4"
+                    >
+
+                        <div class="velora-comment-card-top">
+
+                            <div class="velora-comment-photo-reference">
+
+                                <div class="velora-comment-thumbnail">
+
+                                    <img
+                                        src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=400&q=80"
+                                        alt="Bride portrait"
+                                    >
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        PHOTO 004
+                                    </span>
+
+                                    <strong>
+                                        Bridal Portrait
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="velora-comment-status">
+                                Open
+                            </span>
+
+                        </div>
+
+
+                        <div class="velora-comment-body">
+
+                            <div class="velora-comment-author">
+
+                                <div class="velora-comment-avatar">
+                                    A
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Amara
+                                    </strong>
+
+                                    <span>
+                                        Added 18 May 2026
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <p>
+                                Is there another crop of this one
+                                that shows a little more of the dress?
+                            </p>
+
+                        </div>
+
+
+                        <div class="velora-comment-actions">
+
+                            <button
+                                type="button"
+                                class="velora-comment-reply"
+                            >
+
+                                <i class="bi bi-reply"></i>
+
+                                Reply
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="velora-comment-resolve"
+                            >
+
+                                <i class="bi bi-check2"></i>
+
+                                Resolve
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="velora-comment-reply-area">
+
+                            <textarea
+                                placeholder="Write a reply..."
+                            ></textarea>
+
+                            <div>
+
+                                <button
+                                    type="button"
+                                    class="velora-comment-cancel-reply"
+                                >
+                                    Cancel
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="velora-comment-send-reply"
+                                >
+                                    Send reply
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         COMMENT 005
+                    ================================================== -->
+
+                    <article
+                        class="velora-comment-card"
+                        data-status="resolved"
+                        data-comment="5"
+                    >
+
+                        <div class="velora-comment-card-top">
+
+                            <div class="velora-comment-general-reference">
+
+                                <div class="velora-comment-general-icon">
+
+                                    <i class="bi bi-chat-heart"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        GENERAL NOTE
+                                    </span>
+
+                                    <strong>
+                                        Overall Gallery
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="velora-comment-status is-resolved">
+                                Resolved
+                            </span>
+
+                        </div>
+
+
+                        <div class="velora-comment-body">
+
+                            <div class="velora-comment-author">
+
+                                <div class="velora-comment-avatar">
+                                    A
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Amara
+                                    </strong>
+
+                                    <span>
+                                        Added 18 May 2026
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <p>
+                                The gallery looks amazing. We are
+                                really happy with the collection.
+                            </p>
+
+                        </div>
+
+
+                        <div class="velora-comment-actions">
+
+                            <span class="velora-comment-resolved-label">
+
+                                <i class="bi bi-check-circle-fill"></i>
+
+                                Resolved
+
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         COMMENT 006
+                    ================================================== -->
+
+                    <article
+                        class="velora-comment-card"
+                        data-status="open"
+                        data-comment="6"
+                    >
+
+                        <div class="velora-comment-card-top">
+
+                            <div class="velora-comment-photo-reference">
+
+                                <div class="velora-comment-thumbnail">
+
+                                    <img
+                                        src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=400&q=80"
+                                        alt="Wedding details"
+                                    >
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        PHOTO 005
+                                    </span>
+
+                                    <strong>
+                                        Wedding Details
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="velora-comment-status">
+                                Open
+                            </span>
+
+                        </div>
+
+
+                        <div class="velora-comment-body">
+
+                            <div class="velora-comment-author">
+
+                                <div class="velora-comment-avatar">
+                                    P
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Patrick
+                                    </strong>
+
+                                    <span>
+                                        Added 18 May 2026
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <p>
+                                Please let me know if you would like
+                                this image included in the final
+                                selection.
+                            </p>
+
+                        </div>
+
+
+                        <div class="velora-comment-actions">
+
+                            <button
+                                type="button"
+                                class="velora-comment-reply"
+                            >
+
+                                <i class="bi bi-reply"></i>
+
+                                Reply
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="velora-comment-resolve"
+                            >
+
+                                <i class="bi bi-check2"></i>
+
+                                Resolve
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="velora-comment-reply-area">
+
+                            <textarea
+                                placeholder="Write a reply..."
+                            ></textarea>
+
+                            <div>
+
+                                <button
+                                    type="button"
+                                    class="velora-comment-cancel-reply"
+                                >
+                                    Cancel
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="velora-comment-send-reply"
+                                >
+                                    Send reply
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =================================================
+                     SIDEBAR
+                ================================================== -->
+
+                <aside class="velora-comments-sidebar">
+
+
+                    <!-- =================================================
+                         COMPOSE
+                    ================================================== -->
+
+                    <section class="velora-comments-compose">
+
+                        <div class="velora-comments-compose-heading">
+
+                            <div class="velora-comments-compose-icon">
+
+                                <i class="bi bi-pencil"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    QUICK NOTE
+                                </span>
+
+                                <h2>
+                                    Leave feedback
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <p>
+                            Have something to say about the
+                            gallery? Leave a general note for
+                            your photographer.
+                        </p>
+
+
+                        <textarea
+                            id="quickComment"
+                            maxlength="500"
+                            placeholder="Write your note..."
+                        ></textarea>
+
+
+                        <div class="velora-comments-compose-footer">
+
+                            <span id="characterCount">
+                                0 / 500
+                            </span>
+
+                            <button
+                                type="button"
+                                class="velora-comments-send-button"
+                                id="sendQuickComment"
+                            >
+
+                                <i class="bi bi-send"></i>
+
+                                Send note
+
+                            </button>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         INFORMATION
+                    ================================================== -->
+
+                    <section class="velora-comments-info">
+
+                        <span class="velora-comments-eyebrow">
+                            HOW IT WORKS
+                        </span>
+
+                        <h2>
+                            Make your feedback
+                            part of the process.
+                        </h2>
+
+
+                        <div class="velora-comments-info-list">
+
+                            <div>
+
+                                <span class="velora-comments-info-number">
+                                    01
+                                </span>
+
+                                <p>
+                                    Select a photograph and
+                                    leave a specific note.
+                                </p>
+
+                            </div>
+
+
+                            <div>
+
+                                <span class="velora-comments-info-number">
+                                    02
+                                </span>
+
+                                <p>
+                                    Your photographer can
+                                    reply directly to your note.
+                                </p>
+
+                            </div>
+
+
+                            <div>
+
+                                <span class="velora-comments-info-number">
+                                    03
+                                </span>
+
+                                <p>
+                                    Resolve the comment once
+                                    everything looks right.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NEW COMMENT MODAL
+        ================================================== -->
+
+        <div
+            class="velora-comments-modal"
+            id="commentModal"
+            aria-hidden="true"
+        >
+
+            <div
+                class="velora-comments-modal-backdrop"
+                data-close-modal
+            ></div>
+
+
+            <section
+                class="velora-comments-modal-card"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="commentModalTitle"
+            >
+
+                <button
+                    type="button"
+                    class="velora-comments-modal-close"
+                    data-close-modal
+                    aria-label="Close"
+                >
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+
+                <span class="velora-comments-eyebrow">
+                    NEW COMMENT
+                </span>
+
+
+                <h2 id="commentModalTitle">
+                    Leave a note.
+                </h2>
+
+
+                <p>
+                    Add a general note for your photographer
+                    about this gallery.
+                </p>
+
+
+                <textarea
+                    id="modalComment"
+                    maxlength="500"
+                    placeholder="Write your note..."
+                ></textarea>
+
+
+                <div class="velora-comments-modal-footer">
+
+                    <span id="modalCharacterCount">
+                        0 / 500
+                    </span>
+
+
+                    <button
+                        type="button"
+                        class="velora-comments-send-button"
+                        id="sendModalComment"
+                    >
+
+                        <i class="bi bi-send"></i>
+
+                        Send note
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =================================================
+             TOAST
+        ================================================== -->
+
+        <div
+            class="velora-comments-toast"
+            id="commentsToast"
+            role="status"
+            aria-live="polite"
+        >
+
+            <i class="bi bi-check-circle-fill"></i>
+
+            <span id="commentsToastMessage">
+                Comment sent
+            </span>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* =================================================
+           ELEMENTS
+        ================================================= */
+
+        const commentModal =
+            document.getElementById(
+                "commentModal"
+            );
+
+
+        const openCommentModal =
+            document.getElementById(
+                "openCommentModal"
+            );
+
+
+        const quickComment =
+            document.getElementById(
+                "quickComment"
+            );
+
+
+        const modalComment =
+            document.getElementById(
+                "modalComment"
+            );
+
+
+        const characterCount =
+            document.getElementById(
+                "characterCount"
+            );
+
+
+        const modalCharacterCount =
+            document.getElementById(
+                "modalCharacterCount"
+            );
+
+
+        const commentsToast =
+            document.getElementById(
+                "commentsToast"
+            );
+
+
+        const commentsToastMessage =
+            document.getElementById(
+                "commentsToastMessage"
+            );
+
+
+        /* =================================================
+           MODAL
+        ================================================== */
+
+        function showCommentModal() {
+
+            commentModal.classList.add(
+                "is-visible"
+            );
+
+            commentModal.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.classList.add(
+                "velora-comments-modal-open"
+            );
+
+            setTimeout(() => {
+
+                modalComment.focus();
+
+            }, 100);
+
+        }
+
+
+        function hideCommentModal() {
+
+            commentModal.classList.remove(
+                "is-visible"
+            );
+
+            commentModal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.classList.remove(
+                "velora-comments-modal-open"
+            );
+
+        }
+
+
+        openCommentModal.addEventListener(
+            "click",
+            showCommentModal
+        );
+
+
+        document
+            .querySelectorAll(
+                "[data-close-modal]"
+            )
+            .forEach(element => {
+
+                element.addEventListener(
+                    "click",
+                    hideCommentModal
+                );
+
+            });
+
+
+        /* =================================================
+           CHARACTER COUNTERS
+        ================================================== */
+
+        function updateCounter(
+            input,
+            counter
+        ) {
+
+            counter.textContent =
+                `${input.value.length} / 500`;
+
+        }
+
+
+        quickComment.addEventListener(
+            "input",
+            () => {
+
+                updateCounter(
+                    quickComment,
+                    characterCount
+                );
+
+            }
+        );
+
+
+        modalComment.addEventListener(
+            "input",
+            () => {
+
+                updateCounter(
+                    modalComment,
+                    modalCharacterCount
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           TOAST
+        ================================================== */
+
+        let toastTimer;
+
+
+        function showToast(message) {
+
+            commentsToastMessage.textContent =
+                message;
+
+            commentsToast.classList.add(
+                "is-visible"
+            );
+
+            clearTimeout(
+                toastTimer
+            );
+
+            toastTimer =
+                setTimeout(() => {
+
+                    commentsToast.classList.remove(
+                        "is-visible"
+                    );
+
+                }, 2500);
+
+        }
+
+
+        /* =================================================
+           SEND QUICK COMMENT
+        ================================================== */
+
+        document
+            .getElementById(
+                "sendQuickComment"
+            )
+            .addEventListener(
+                "click",
+                () => {
+
+                    const value =
+                        quickComment.value.trim();
+
+
+                    if (!value) {
+
+                        quickComment.focus();
+
+                        return;
+
+                    }
+
+
+                    quickComment.value = "";
+
+                    updateCounter(
+                        quickComment,
+                        characterCount
+                    );
+
+
+                    showToast(
+                        "Your note has been sent"
+                    );
+
+                }
+            );
+
+
+        /* =================================================
+           SEND MODAL COMMENT
+        ================================================== */
+
+        document
+            .getElementById(
+                "sendModalComment"
+            )
+            .addEventListener(
+                "click",
+                () => {
+
+                    const value =
+                        modalComment.value.trim();
+
+
+                    if (!value) {
+
+                        modalComment.focus();
+
+                        return;
+
+                    }
+
+
+                    modalComment.value = "";
+
+                    updateCounter(
+                        modalComment,
+                        modalCharacterCount
+                    );
+
+
+                    hideCommentModal();
+
+                    showToast(
+                        "Your note has been sent"
+                    );
+
+                }
+            );
+
+
+        /* =================================================
+           FILTERS
+        ================================================== */
+
+        const filterTabs =
+            document.querySelectorAll(
+                ".velora-comments-tab"
+            );
+
+
+        const commentCards =
+            document.querySelectorAll(
+                ".velora-comment-card"
+            );
+
+
+        filterTabs.forEach(tab => {
+
+            tab.addEventListener(
+                "click",
+                () => {
+
+                    const filter =
+                        tab.dataset.filter;
+
+
+                    filterTabs.forEach(item => {
+
+                        item.classList.remove(
+                            "is-active"
+                        );
+
+                        item.setAttribute(
+                            "aria-selected",
+                            "false"
+                        );
+
+                    });
+
+
+                    tab.classList.add(
+                        "is-active"
+                    );
+
+                    tab.setAttribute(
+                        "aria-selected",
+                        "true"
+                    );
+
+
+                    commentCards.forEach(card => {
+
+                        const status =
+                            card.dataset.status;
+
+
+                        if (
+                            filter === "all"
+                            ||
+                            status === filter
+                        ) {
+
+                            card.classList.remove(
+                                "is-filtered"
+                            );
+
+                        } else {
+
+                            card.classList.add(
+                                "is-filtered"
+                            );
+
+                        }
+
+                    });
+
+                }
+            );
+
+        });
+
+
+        /* =================================================
+           REPLY SYSTEM
+        ================================================== */
+
+        document
+            .querySelectorAll(
+                ".velora-comment-reply"
+            )
+            .forEach(button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        const card =
+                            button.closest(
+                                ".velora-comment-card"
+                            );
+
+
+                        const replyArea =
+                            card.querySelector(
+                                ".velora-comment-reply-area"
+                            );
+
+
+                        replyArea.classList.toggle(
+                            "is-visible"
+                        );
+
+                    }
+                );
+
+            });
+
+
+        /* =================================================
+           CANCEL REPLY
+        ================================================== */
+
+        document
+            .querySelectorAll(
+                ".velora-comment-cancel-reply"
+            )
+            .forEach(button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        const card =
+                            button.closest(
+                                ".velora-comment-card"
+                            );
+
+
+                        const replyArea =
+                            card.querySelector(
+                                ".velora-comment-reply-area"
+                            );
+
+
+                        const textarea =
+                            replyArea.querySelector(
+                                "textarea"
+                            );
+
+
+                        textarea.value = "";
+
+                        replyArea.classList.remove(
+                            "is-visible"
+                        );
+
+                    }
+                );
+
+            });
+
+
+        /* =================================================
+           SEND REPLY
+        ================================================== */
+
+        document
+            .querySelectorAll(
+                ".velora-comment-send-reply"
+            )
+            .forEach(button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        const card =
+                            button.closest(
+                                ".velora-comment-card"
+                            );
+
+
+                        const replyArea =
+                            card.querySelector(
+                                ".velora-comment-reply-area"
+                            );
+
+
+                        const textarea =
+                            replyArea.querySelector(
+                                "textarea"
+                            );
+
+
+                        if (
+                            !textarea.value.trim()
+                        ) {
+
+                            textarea.focus();
+
+                            return;
+
+                        }
+
+
+                        textarea.value = "";
+
+                        replyArea.classList.remove(
+                            "is-visible"
+                        );
+
+
+                        showToast(
+                            "Reply sent"
+                        );
+
+                    }
+                );
+
+            });
+
+
+        /* =================================================
+           RESOLVE COMMENTS
+        ================================================== */
+
+        document
+            .querySelectorAll(
+                ".velora-comment-resolve"
+            )
+            .forEach(button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        const card =
+                            button.closest(
+                                ".velora-comment-card"
+                            );
+
+
+                        const status =
+                            card.querySelector(
+                                ".velora-comment-status"
+                            );
+
+
+                        const currentStatus =
+                            card.dataset.status;
+
+
+                        if (
+                            currentStatus === "resolved"
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        card.dataset.status =
+                            "resolved";
+
+
+                        status.textContent =
+                            "Resolved";
+
+
+                        status.classList.add(
+                            "is-resolved"
+                        );
+
+
+                        button.classList.add(
+                            "is-complete"
+                        );
+
+
+                        button.innerHTML =
+                            '<i class="bi bi-check-circle-fill"></i> Resolved';
+
+
+                        showToast(
+                            "Comment resolved"
+                        );
+
+                    }
+                );
+
+            });
+
+
+        /* =================================================
+           ESCAPE KEY
+        ================================================== */
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    if (
+                        commentModal.classList.contains(
+                            "is-visible"
+                        )
+                    ) {
+
+                        hideCommentModal();
+
+                    }
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

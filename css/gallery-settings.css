@@ -1,0 +1,3307 @@
+/* =========================================================
+   VELORA — GALLERY SETTINGS
+   Component: VLR-GAL-SET-001
+   Status: Draft
+   Maturity: L2 Stable
+
+   V1:
+   Gallery configuration workspace
+   Light mode
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.velora-gallery-settings-page {
+
+    width: 100%;
+    max-width: 1440px;
+
+    margin-inline: auto;
+
+    padding-bottom: 72px;
+
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.velora-settings-breadcrumb-link {
+
+    color: var(--velora-muted);
+
+    text-decoration: none;
+
+    transition:
+        color 160ms ease;
+
+}
+
+.velora-settings-breadcrumb-link:hover {
+
+    color: var(--velora-ink);
+
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.velora-settings-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 32px;
+
+    margin:
+        18px 0 30px;
+
+}
+
+
+.velora-settings-header > div:first-child {
+
+    min-width: 0;
+
+}
+
+
+.velora-settings-back {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 20px;
+
+    color: var(--velora-muted);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color 160ms ease;
+
+}
+
+
+.velora-settings-back i {
+
+    transition:
+        transform 160ms ease;
+
+}
+
+
+.velora-settings-back:hover {
+
+    color: var(--velora-ink);
+
+}
+
+
+.velora-settings-back:hover i {
+
+    transform:
+        translateX(-3px);
+
+}
+
+
+.velora-settings-header h1 {
+
+    margin:
+        6px 0 8px;
+
+    color: var(--velora-ink);
+
+    font-size:
+        clamp(30px, 4vw, 45px);
+
+    font-weight: 500;
+
+    line-height: 1.04;
+
+    letter-spacing: -.055em;
+
+}
+
+
+.velora-settings-header p {
+
+    max-width: 680px;
+
+    margin: 0;
+
+    color: var(--velora-muted);
+
+    font-size: 9px;
+
+    line-height: 1.65;
+
+}
+
+
+.velora-settings-header p strong {
+
+    color: var(--velora-ink);
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.velora-settings-header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.velora-settings-button {
+
+    min-height: 38px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    font-family: inherit;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 160ms ease,
+        border-color 160ms ease,
+        color 160ms ease,
+        transform 160ms ease,
+        opacity 160ms ease;
+
+}
+
+
+.velora-settings-button:hover {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.velora-settings-button.secondary {
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+.velora-settings-button.secondary:hover {
+
+    background:
+        var(--velora-surface);
+
+    border-color:
+        #d3dad5;
+
+}
+
+
+.velora-settings-button.primary {
+
+    border-color:
+        var(--velora-green);
+
+    background:
+        var(--velora-green);
+
+    color:
+        #ffffff;
+
+}
+
+
+.velora-settings-button.primary:hover {
+
+    border-color:
+        var(--velora-green-dark);
+
+    background:
+        var(--velora-green-dark);
+
+}
+
+
+.velora-settings-button.danger {
+
+    border-color:
+        #a84e4e;
+
+    background:
+        #a84e4e;
+
+    color:
+        #ffffff;
+
+}
+
+
+.velora-settings-button.danger:hover {
+
+    border-color:
+        #913f3f;
+
+    background:
+        #913f3f;
+
+}
+
+
+.velora-settings-button:disabled {
+
+    cursor:
+        not-allowed;
+
+    opacity:
+        .5;
+
+    transform:
+        none;
+
+}
+
+
+/* =========================================================
+   SETTINGS LAYOUT
+========================================================= */
+
+.velora-settings-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        205px minmax(0, 1fr);
+
+    align-items: start;
+
+    gap: 28px;
+
+}
+
+
+/* =========================================================
+   SETTINGS NAVIGATION
+========================================================= */
+
+.velora-settings-navigation {
+
+    position:
+        sticky;
+
+    top:
+        18px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    padding:
+        7px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-md);
+
+    background:
+        var(--velora-paper);
+
+}
+
+
+.velora-settings-nav-label {
+
+    padding:
+        9px 10px 7px;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        5px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .11em;
+
+}
+
+
+.velora-settings-nav-item {
+
+    width:
+        100%;
+
+    min-height:
+        39px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        28px minmax(0, 1fr) 14px;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+    padding:
+        0 8px;
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        7px;
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-muted);
+
+    font-family:
+        inherit;
+
+    text-align:
+        left;
+
+    cursor:
+        pointer;
+
+    transition:
+        background 160ms ease,
+        color 160ms ease,
+        border-color 160ms ease;
+
+}
+
+
+.velora-settings-nav-item:hover {
+
+    background:
+        var(--velora-surface);
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+.velora-settings-nav-item.is-active {
+
+    border-color:
+        #dbe5df;
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-settings-nav-item > span {
+
+    width:
+        25px;
+
+    height:
+        25px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        6px;
+
+    background:
+        transparent;
+
+    font-size:
+        9px;
+
+}
+
+
+.velora-settings-nav-item.is-active > span {
+
+    background:
+        rgba(255,255,255,.72);
+
+}
+
+
+.velora-settings-nav-item strong {
+
+    overflow:
+        hidden;
+
+    font-size:
+        6px;
+
+    font-weight:
+        700;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.velora-settings-nav-item > i {
+
+    font-size:
+        6px;
+
+    opacity:
+        .45;
+
+}
+
+
+.velora-settings-nav-divider {
+
+    height:
+        1px;
+
+    margin:
+        7px 8px;
+
+    background:
+        var(--velora-line);
+
+}
+
+
+.velora-settings-nav-item.danger {
+
+    color:
+        #a25454;
+
+}
+
+
+.velora-settings-nav-item.danger:hover {
+
+    border-color:
+        #f0dada;
+
+    background:
+        #fff5f5;
+
+}
+
+
+.velora-settings-nav-item.danger > span {
+
+    background:
+        transparent;
+
+}
+
+
+/* =========================================================
+   SETTINGS CONTENT
+========================================================= */
+
+.velora-settings-content {
+
+    min-width:
+        0;
+
+}
+
+
+.velora-settings-section {
+
+    display:
+        none;
+
+}
+
+
+.velora-settings-section.is-active {
+
+    display:
+        block;
+
+    animation:
+        veloraSettingsFade 180ms ease both;
+
+}
+
+
+@keyframes veloraSettingsFade {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(4px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.velora-settings-section-header {
+
+    margin-bottom:
+        13px;
+
+}
+
+
+.velora-panel-eyebrow {
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        5px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .12em;
+
+}
+
+
+.velora-settings-section-header h2 {
+
+    margin:
+        6px 0 6px;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        19px;
+
+    font-weight:
+        600;
+
+    line-height:
+        1.15;
+
+    letter-spacing:
+        -.035em;
+
+}
+
+
+.velora-settings-section-header p {
+
+    max-width:
+        620px;
+
+    margin:
+        0;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        7px;
+
+    line-height:
+        1.6;
+
+}
+
+
+.velora-panel-eyebrow.danger-label {
+
+    color:
+        #a25454;
+
+}
+
+
+/* =========================================================
+   SETTINGS CARD
+========================================================= */
+
+.velora-settings-card {
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-md);
+
+    background:
+        var(--velora-paper);
+
+}
+
+
+.velora-settings-card > .velora-settings-field,
+.velora-settings-card > .velora-choice-group,
+.velora-settings-card > .velora-toggle-row,
+.velora-settings-card > .velora-password-field,
+.velora-settings-card > .velora-publishing-status,
+.velora-settings-card > .velora-publish-link {
+
+    padding:
+        19px 20px;
+
+}
+
+
+.velora-settings-card
+.velora-settings-divider {
+
+    margin:
+        0 20px;
+
+}
+
+
+/* =========================================================
+   FORM FIELDS
+========================================================= */
+
+.velora-settings-field {
+
+    position:
+        relative;
+
+}
+
+
+.velora-settings-field label {
+
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        7px;
+
+    font-weight:
+        700;
+
+}
+
+
+.velora-settings-field small {
+
+    display:
+        block;
+
+    margin-top:
+        6px;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        5.5px;
+
+    line-height:
+        1.5;
+
+}
+
+
+.velora-settings-field input[type="text"],
+.velora-settings-field input[type="date"],
+.velora-settings-field input[type="password"],
+.velora-settings-field textarea {
+
+    width:
+        100%;
+
+    border:
+        1px solid #dfe4e1;
+
+    border-radius:
+        8px;
+
+    outline:
+        none;
+
+    background:
+        #ffffff;
+
+    color:
+        var(--velora-ink);
+
+    font-family:
+        inherit;
+
+    font-size:
+        7px;
+
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+
+}
+
+
+.velora-settings-field input[type="text"],
+.velora-settings-field input[type="date"],
+.velora-settings-field input[type="password"] {
+
+    min-height:
+        40px;
+
+    padding:
+        0 11px;
+
+}
+
+
+.velora-settings-field textarea {
+
+    min-height:
+        110px;
+
+    resize:
+        vertical;
+
+    padding:
+        11px;
+
+    line-height:
+        1.6;
+
+}
+
+
+.velora-settings-field input:hover,
+.velora-settings-field textarea:hover {
+
+    border-color:
+        #cdd5d0;
+
+}
+
+
+.velora-settings-field input:focus,
+.velora-settings-field textarea:focus {
+
+    border-color:
+        var(--velora-green);
+
+    box-shadow:
+        0 0 0 3px var(--velora-green-tint);
+
+}
+
+
+/* =========================================================
+   CHARACTER COUNT
+========================================================= */
+
+.velora-character-count {
+
+    position:
+        absolute;
+
+    right:
+        10px;
+
+    bottom:
+        8px;
+
+    padding:
+        3px 5px;
+
+    border-radius:
+        5px;
+
+    background:
+        #f4f6f4;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        5px;
+
+}
+
+
+/* =========================================================
+   URL FIELD
+========================================================= */
+
+.velora-url-field {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    min-height:
+        40px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid #dfe4e1;
+
+    border-radius:
+        8px;
+
+    background:
+        #ffffff;
+
+}
+
+
+.velora-url-field > span {
+
+    flex:
+        0 0 auto;
+
+    padding-left:
+        11px;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        7px;
+
+}
+
+
+.velora-url-field input {
+
+    min-width:
+        0;
+
+    flex:
+        1;
+
+    height:
+        38px;
+
+    padding:
+        0 10px 0 2px;
+
+    border:
+        0 !important;
+
+    outline:
+        0;
+
+    box-shadow:
+        none !important;
+
+}
+
+
+/* =========================================================
+   COVER
+========================================================= */
+
+.velora-settings-cover {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 180px;
+
+    gap:
+        22px;
+
+    padding:
+        20px;
+
+    border-top:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-settings-cover label {
+
+    display:
+        block;
+
+    margin-bottom:
+        5px;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        7px;
+
+    font-weight:
+        700;
+
+}
+
+
+.velora-settings-cover p {
+
+    max-width:
+        390px;
+
+    margin:
+        0;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        6px;
+
+    line-height:
+        1.6;
+
+}
+
+
+.velora-cover-preview {
+
+    position:
+        relative;
+
+    aspect-ratio:
+        4 / 3;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        9px;
+
+    background:
+        #eef1ef;
+
+}
+
+
+.velora-cover-preview img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    display:
+        block;
+
+    object-fit:
+        cover;
+
+}
+
+
+.velora-cover-overlay {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        rgba(10,15,12,.38);
+
+    opacity:
+        0;
+
+    transition:
+        opacity 160ms ease;
+
+}
+
+
+.velora-cover-preview:hover
+.velora-cover-overlay {
+
+    opacity:
+        1;
+
+}
+
+
+.velora-cover-overlay button {
+
+    min-height:
+        31px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    padding:
+        0 10px;
+
+    border:
+        1px solid rgba(255,255,255,.55);
+
+    border-radius:
+        7px;
+
+    background:
+        rgba(255,255,255,.92);
+
+    color:
+        var(--velora-ink);
+
+    font-family:
+        inherit;
+
+    font-size:
+        6px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.velora-settings-divider {
+
+    height:
+        1px;
+
+    background:
+        var(--velora-line);
+
+}
+
+
+/* =========================================================
+   CHOICE GROUP
+========================================================= */
+
+.velora-choice-group {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        9px;
+
+}
+
+
+.velora-choice {
+
+    position:
+        relative;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        18px minmax(0, 1fr);
+
+    gap:
+        10px;
+
+    padding:
+        12px;
+
+    border:
+        1px solid #e3e7e4;
+
+    border-radius:
+        9px;
+
+    cursor:
+        pointer;
+
+    transition:
+        border-color 160ms ease,
+        background 160ms ease;
+
+}
+
+
+.velora-choice:hover {
+
+    border-color:
+        #cad4cd;
+
+    background:
+        #fafcfa;
+
+}
+
+
+.velora-choice input {
+
+    position:
+        absolute;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+}
+
+
+.velora-choice-indicator {
+
+    width:
+        16px;
+
+    height:
+        16px;
+
+    margin-top:
+        2px;
+
+    border:
+        1px solid #cbd4ce;
+
+    border-radius:
+        50%;
+
+    background:
+        #ffffff;
+
+}
+
+
+.velora-choice input:checked
++
+.velora-choice-indicator {
+
+    border:
+        5px solid var(--velora-green);
+
+}
+
+
+.velora-choice-content {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        4px;
+
+}
+
+
+.velora-choice-content strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        7px;
+
+}
+
+
+.velora-choice-content small {
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        6px;
+
+    line-height:
+        1.5;
+
+}
+
+
+/* =========================================================
+   TOGGLE ROW
+========================================================= */
+
+.velora-toggle-row {
+
+    min-height:
+        67px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        25px;
+
+}
+
+
+.velora-toggle-row > div:first-child {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        4px;
+
+}
+
+
+.velora-toggle-row strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        7px;
+
+}
+
+
+.velora-toggle-row span {
+
+    max-width:
+        580px;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        6px;
+
+    line-height:
+        1.5;
+
+}
+
+
+/* =========================================================
+   SWITCH
+========================================================= */
+
+.velora-switch {
+
+    position:
+        relative;
+
+    display:
+        inline-flex;
+
+    width:
+        38px;
+
+    height:
+        22px;
+
+    flex:
+        0 0 auto;
+
+    cursor:
+        pointer;
+
+}
+
+
+.velora-switch input {
+
+    position:
+        absolute;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+}
+
+
+.velora-switch > span {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border-radius:
+        999px;
+
+    background:
+        #d9dfdb;
+
+    transition:
+        background 160ms ease;
+
+}
+
+
+.velora-switch > span::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        3px;
+
+    left:
+        3px;
+
+    width:
+        16px;
+
+    height:
+        16px;
+
+    border-radius:
+        50%;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 2px 5px rgba(0,0,0,.12);
+
+    transition:
+        transform 160ms ease;
+
+}
+
+
+.velora-switch input:checked
++
+span {
+
+    background:
+        var(--velora-green);
+
+}
+
+
+.velora-switch input:checked
++
+span::after {
+
+    transform:
+        translateX(16px);
+
+}
+
+
+.velora-switch input:focus-visible
++
+span {
+
+    outline:
+        2px solid var(--velora-green);
+
+    outline-offset:
+        3px;
+
+}
+
+
+.velora-switch.large {
+
+    width:
+        44px;
+
+    height:
+        25px;
+
+}
+
+
+.velora-switch.large > span::after {
+
+    width:
+        19px;
+
+    height:
+        19px;
+
+}
+
+
+.velora-switch.large input:checked
++
+span::after {
+
+    transform:
+        translateX(19px);
+
+}
+
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+.velora-password-field {
+
+    background:
+        #fafcfb;
+
+}
+
+
+.velora-password-input {
+
+    position:
+        relative;
+
+}
+
+
+.velora-password-input input {
+
+    padding-right:
+        40px !important;
+
+}
+
+
+.velora-password-input button {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    right:
+        6px;
+
+    width:
+        29px;
+
+    height:
+        29px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        0;
+
+    border-radius:
+        6px;
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-muted);
+
+    cursor:
+        pointer;
+
+}
+
+
+.velora-password-input button:hover {
+
+    background:
+        var(--velora-surface);
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.velora-select-wrapper {
+
+    position:
+        relative;
+
+}
+
+
+.velora-select-wrapper select {
+
+    width:
+        100%;
+
+    height:
+        40px;
+
+    appearance:
+        none;
+
+    padding:
+        0 35px 0 11px;
+
+    border:
+        1px solid #dfe4e1;
+
+    border-radius:
+        8px;
+
+    outline:
+        none;
+
+    background:
+        #ffffff;
+
+    color:
+        var(--velora-ink);
+
+    font-family:
+        inherit;
+
+    font-size:
+        7px;
+
+    cursor:
+        pointer;
+
+}
+
+
+.velora-select-wrapper select:focus {
+
+    border-color:
+        var(--velora-green);
+
+    box-shadow:
+        0 0 0 3px var(--velora-green-tint);
+
+}
+
+
+.velora-select-wrapper > i {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    right:
+        12px;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        7px;
+
+    pointer-events:
+        none;
+
+    transform:
+        translateY(-50%);
+
+}
+
+
+/* =========================================================
+   LAYOUT OPTIONS
+========================================================= */
+
+.velora-layout-options {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        9px;
+
+}
+
+
+.velora-layout-option {
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        4px;
+
+    padding:
+        9px;
+
+    border:
+        1px solid #e1e6e2;
+
+    border-radius:
+        9px;
+
+    cursor:
+        pointer;
+
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease,
+        background 160ms ease;
+
+}
+
+
+.velora-layout-option:hover {
+
+    border-color:
+        #cdd8d1;
+
+    background:
+        #fbfcfb;
+
+}
+
+
+.velora-layout-option input {
+
+    position:
+        absolute;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+}
+
+
+.velora-layout-option
+input:checked
++
+.velora-layout-preview {
+
+    border-color:
+        var(--velora-green);
+
+    box-shadow:
+        0 0 0 2px var(--velora-green-tint);
+
+}
+
+
+.velora-layout-option
+input:checked
+~
+strong {
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-layout-preview {
+
+    height:
+        92px;
+
+    display:
+        grid;
+
+    gap:
+        4px;
+
+    padding:
+        6px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid #e4e8e5;
+
+    border-radius:
+        6px;
+
+    background:
+        #f1f3f1;
+
+}
+
+
+.velora-layout-preview i {
+
+    display:
+        block;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        3px;
+
+    background:
+        #c7cfca;
+
+}
+
+
+.velora-layout-preview.masonry {
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    grid-template-rows:
+        1fr 1.35fr;
+
+}
+
+
+.velora-layout-preview.masonry i:nth-child(1) {
+
+    grid-row:
+        span 2;
+
+}
+
+
+.velora-layout-preview.masonry i:nth-child(2) {
+
+    grid-row:
+        span 1;
+
+}
+
+
+.velora-layout-preview.masonry i:nth-child(3) {
+
+    grid-row:
+        span 2;
+
+}
+
+
+.velora-layout-preview.grid {
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    grid-template-rows:
+        repeat(2, 1fr);
+
+}
+
+
+.velora-layout-preview.large {
+
+    grid-template-columns:
+        1fr;
+
+    grid-template-rows:
+        repeat(3, 1fr);
+
+}
+
+
+.velora-layout-option > strong {
+
+    margin-top:
+        3px;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        7px;
+
+}
+
+
+.velora-layout-option > small {
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        5.5px;
+
+}
+
+
+/* =========================================================
+   PUBLISHING
+========================================================= */
+
+.velora-publishing-status {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        44px minmax(0, 1fr) auto;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+}
+
+
+.velora-status-icon {
+
+    width:
+        44px;
+
+    height:
+        44px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        12px;
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+    font-size:
+        15px;
+
+}
+
+
+.velora-publishing-status > div:nth-child(2) {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        3px;
+
+}
+
+
+.velora-status-label {
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        5px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .1em;
+
+}
+
+
+.velora-publishing-status strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        9px;
+
+}
+
+
+.velora-publishing-status small {
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        6px;
+
+}
+
+
+/* =========================================================
+   PUBLISH LINK
+========================================================= */
+
+.velora-publish-link {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+}
+
+
+.velora-publish-link > div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        4px;
+
+}
+
+
+.velora-publish-link strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        7px;
+
+}
+
+
+.velora-publish-link span {
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        6px;
+
+}
+
+
+.velora-publish-link button {
+
+    min-height:
+        33px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    padding:
+        0 10px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        7px;
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-ink);
+
+    font-family:
+        inherit;
+
+    font-size:
+        6px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        background 160ms ease,
+        border-color 160ms ease;
+
+}
+
+
+.velora-publish-link button:hover {
+
+    background:
+        var(--velora-surface);
+
+    border-color:
+        #ccd5cf;
+
+}
+
+
+/* =========================================================
+   DANGER ZONE
+========================================================= */
+
+.velora-danger-card {
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid #ead6d6;
+
+    border-radius:
+        var(--velora-radius-md);
+
+    background:
+        #fffafa;
+
+}
+
+
+.velora-danger-row {
+
+    min-height:
+        100px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        25px;
+
+    padding:
+        20px;
+
+}
+
+
+.velora-danger-row > div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        5px;
+
+}
+
+
+.velora-danger-row strong {
+
+    color:
+        #874444;
+
+    font-size:
+        7px;
+
+}
+
+
+.velora-danger-row span {
+
+    max-width:
+        600px;
+
+    color:
+        #987070;
+
+    font-size:
+        6px;
+
+    line-height:
+        1.55;
+
+}
+
+
+.velora-danger-divider {
+
+    height:
+        1px;
+
+    margin:
+        0 20px;
+
+    background:
+        #eedddd;
+
+}
+
+
+.velora-danger-outline,
+.velora-danger-solid {
+
+    min-height:
+        35px;
+
+    flex:
+        0 0 auto;
+
+    padding:
+        0 11px;
+
+    border-radius:
+        7px;
+
+    font-family:
+        inherit;
+
+    font-size:
+        6px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        background 160ms ease,
+        border-color 160ms ease;
+
+}
+
+
+.velora-danger-outline {
+
+    border:
+        1px solid #d9baba;
+
+    background:
+        #ffffff;
+
+    color:
+        #934b4b;
+
+}
+
+
+.velora-danger-outline:hover {
+
+    border-color:
+        #b88787;
+
+    background:
+        #fff4f4;
+
+}
+
+
+.velora-danger-solid {
+
+    border:
+        1px solid #a84e4e;
+
+    background:
+        #a84e4e;
+
+    color:
+        #ffffff;
+
+}
+
+
+.velora-danger-solid:hover {
+
+    border-color:
+        #913f3f;
+
+    background:
+        #913f3f;
+
+}
+
+
+/* =========================================================
+   BOTTOM SAVE BAR
+========================================================= */
+
+.velora-settings-footer {
+
+    position:
+        sticky;
+
+    bottom:
+        15px;
+
+    z-index:
+        80;
+
+    min-height:
+        66px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    margin-top:
+        28px;
+
+    padding:
+        10px 13px 10px 16px;
+
+    border:
+        1px solid #dbe4de;
+
+    border-radius:
+        var(--velora-radius-md);
+
+    background:
+        rgba(255,255,255,.95);
+
+    box-shadow:
+        0 12px 35px rgba(23,24,26,.08);
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+
+.velora-settings-footer > div:first-child {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        4px;
+
+}
+
+
+.velora-settings-footer > div:first-child strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        7px;
+
+}
+
+
+.velora-settings-footer > div:first-child span {
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        5.5px;
+
+}
+
+
+.velora-settings-footer > div:last-child {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+}
+
+
+/* =========================================================
+   CONFIRM MODAL
+========================================================= */
+
+.velora-confirm-modal {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        5000;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        20px;
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    pointer-events:
+        none;
+
+    transition:
+        opacity 180ms ease,
+        visibility 180ms ease;
+
+}
+
+
+.velora-confirm-modal.is-visible {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+    pointer-events:
+        auto;
+
+}
+
+
+.velora-confirm-backdrop {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        rgba(16,20,18,.53);
+
+    backdrop-filter:
+        blur(5px);
+
+}
+
+
+.velora-confirm-dialog {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        min(410px, 100%);
+
+    padding:
+        25px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-lg);
+
+    background:
+        var(--velora-paper);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.2);
+
+}
+
+
+.velora-confirm-icon {
+
+    width:
+        43px;
+
+    height:
+        43px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        16px;
+
+    border-radius:
+        12px;
+
+    background:
+        #faeeee;
+
+    color:
+        #a45252;
+
+    font-size:
+        15px;
+
+}
+
+
+.velora-confirm-dialog h2 {
+
+    margin:
+        6px 0 8px;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        18px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        -.03em;
+
+}
+
+
+.velora-confirm-dialog p {
+
+    margin:
+        0;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        7px;
+
+    line-height:
+        1.65;
+
+}
+
+
+.velora-confirm-actions {
+
+    display:
+        flex;
+
+    justify-content:
+        flex-end;
+
+    gap:
+        8px;
+
+    margin-top:
+        24px;
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.velora-settings-toast {
+
+    position:
+        fixed;
+
+    right:
+        22px;
+
+    bottom:
+        22px;
+
+    z-index:
+        7000;
+
+    min-height:
+        46px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    padding:
+        7px 13px 7px 8px;
+
+    border:
+        1px solid #d8e4dc;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--velora-paper);
+
+    box-shadow:
+        0 16px 40px rgba(0,0,0,.12);
+
+    opacity:
+        0;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        opacity 180ms ease,
+        transform 180ms ease;
+
+}
+
+
+.velora-settings-toast.is-visible {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.velora-settings-toast > span {
+
+    width:
+        31px;
+
+    height:
+        31px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        8px;
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-settings-toast strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        7px;
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.velora-settings-button:focus-visible,
+.velora-settings-back:focus-visible,
+.velora-settings-nav-item:focus-visible,
+.velora-settings-field input:focus-visible,
+.velora-settings-field textarea:focus-visible,
+.velora-choice:focus-within,
+.velora-danger-outline:focus-visible,
+.velora-danger-solid:focus-visible,
+.velora-publish-link button:focus-visible,
+.velora-confirm-actions button:focus-visible {
+
+    outline:
+        2px solid var(--velora-green);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1100PX
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .velora-settings-layout {
+
+        grid-template-columns:
+            180px minmax(0, 1fr);
+
+        gap:
+            20px;
+
+    }
+
+
+    .velora-settings-cover {
+
+        grid-template-columns:
+            1fr 155px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 900PX
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .velora-settings-header {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .velora-settings-header-actions {
+
+        width:
+            100%;
+
+    }
+
+
+    .velora-settings-header-actions
+    .velora-settings-button {
+
+        flex:
+            1;
+
+    }
+
+
+    .velora-settings-layout {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .velora-settings-navigation {
+
+        position:
+            static;
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap:
+            4px;
+
+    }
+
+
+    .velora-settings-nav-label,
+    .velora-settings-nav-divider {
+
+        display:
+            none;
+
+    }
+
+
+    .velora-settings-nav-item {
+
+        grid-template-columns:
+            25px minmax(0, 1fr);
+
+    }
+
+
+    .velora-settings-nav-item > i {
+
+        display:
+            none;
+
+    }
+
+
+    .velora-settings-nav-item.danger {
+
+        grid-column:
+            span 1;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 700PX
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .velora-settings-navigation {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .velora-settings-cover {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .velora-cover-preview {
+
+        width:
+            min(100%, 300px);
+
+    }
+
+
+    .velora-layout-options {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .velora-layout-preview {
+
+        height:
+            75px;
+
+    }
+
+
+    .velora-settings-footer {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .velora-settings-footer > div:last-child {
+
+        width:
+            100%;
+
+    }
+
+
+    .velora-settings-footer > div:last-child
+    .velora-settings-button {
+
+        flex:
+            1;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 550PX
+========================================================= */
+
+@media (max-width: 550px) {
+
+    .velora-gallery-settings-page {
+
+        padding-bottom:
+            48px;
+
+    }
+
+
+    .velora-settings-header h1 {
+
+        font-size:
+            clamp(30px, 9vw, 39px);
+
+    }
+
+
+    .velora-settings-header-actions {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1.25fr;
+
+    }
+
+
+    .velora-settings-header-actions
+    .velora-settings-button {
+
+        width:
+            100%;
+
+    }
+
+
+    .velora-settings-navigation {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .velora-settings-nav-item {
+
+        min-height:
+            43px;
+
+    }
+
+
+    .velora-settings-card
+    .velora-settings-field,
+    .velora-settings-card
+    .velora-choice-group,
+    .velora-settings-card
+    .velora-toggle-row,
+    .velora-settings-card
+    .velora-password-field,
+    .velora-settings-card
+    .velora-publishing-status,
+    .velora-settings-card
+    .velora-publish-link {
+
+        padding:
+            16px;
+
+    }
+
+
+    .velora-settings-card
+    .velora-settings-divider {
+
+        margin:
+            0 16px;
+
+    }
+
+
+    .velora-settings-cover {
+
+        padding:
+            16px;
+
+    }
+
+
+    .velora-toggle-row {
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .velora-toggle-row > div:first-child {
+
+        flex:
+            1;
+
+    }
+
+
+    .velora-publishing-status {
+
+        grid-template-columns:
+            39px minmax(0, 1fr) auto;
+
+        gap:
+            9px;
+
+    }
+
+
+    .velora-status-icon {
+
+        width:
+            39px;
+
+        height:
+            39px;
+
+    }
+
+
+    .velora-publish-link {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .velora-publish-link button {
+
+        width:
+            100%;
+
+    }
+
+
+    .velora-danger-row {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .velora-danger-row button {
+
+        width:
+            100%;
+
+    }
+
+
+    .velora-confirm-actions {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .velora-confirm-actions
+    .velora-settings-button {
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 400PX
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .velora-settings-header-actions {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .velora-settings-header-actions
+    .velora-settings-button.primary {
+
+        order:
+            -1;
+
+    }
+
+
+    .velora-settings-navigation {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .velora-settings-nav-item {
+
+        grid-template-columns:
+            28px minmax(0, 1fr) 14px;
+
+    }
+
+
+    .velora-settings-nav-item > i {
+
+        display:
+            block;
+
+    }
+
+
+    .velora-settings-footer > div:last-child {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1.25fr;
+
+    }
+
+
+    .velora-settings-toast {
+
+        right:
+            15px;
+
+        bottom:
+            15px;
+
+        max-width:
+            calc(100% - 30px);
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .velora-settings-section,
+    .velora-settings-button,
+    .velora-settings-back,
+    .velora-settings-back i,
+    .velora-settings-nav-item,
+    .velora-settings-field input,
+    .velora-settings-field textarea,
+    .velora-choice,
+    .velora-switch > span,
+    .velora-switch > span::after,
+    .velora-cover-overlay,
+    .velora-settings-toast,
+    .velora-confirm-modal {
+
+        animation:
+            none;
+
+        transition:
+            none;
+
+    }
+
+}

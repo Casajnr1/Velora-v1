@@ -1,0 +1,1785 @@
+/*==========================================================
+        VELORA ANALYTICS — V1
+        Component: VLR-AN-001
+        Status: Approved
+        Maturity: L2 Stable
+==========================================================*/
+
+
+/*==========================================================
+        PAGE HEADER
+==========================================================*/
+
+.velora-analytics-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.velora-analytics-header h1 {
+
+    margin:
+        0 0 8px;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        clamp(32px, 3vw, 42px);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    letter-spacing:
+        -.045em;
+
+}
+
+
+.velora-analytics-header p {
+
+    margin: 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/*==========================================================
+        PERIOD SELECTOR
+==========================================================*/
+
+.velora-analytics-period {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 3px;
+
+    padding: 3px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-pill);
+
+    background:
+        var(--velora-paper);
+
+}
+
+
+.velora-period-button {
+
+    min-height: 29px;
+
+    padding:
+        0 11px;
+
+    border: 0;
+
+    border-radius:
+        var(--velora-radius-pill);
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        background-color .2s ease,
+        color .2s ease;
+
+}
+
+
+.velora-period-button:hover {
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+.velora-period-button.is-active {
+
+    background:
+        var(--velora-green);
+
+    color:
+        var(--velora-paper);
+
+}
+
+
+/*==========================================================
+        KPI GRID
+==========================================================*/
+
+.velora-analytics-kpis {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-bottom: 24px;
+
+}
+
+
+.velora-analytics-kpi {
+
+    min-width: 0;
+
+    padding:
+        17px 18px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-md);
+
+    background:
+        var(--velora-paper);
+
+    transition:
+        border-color .2s ease,
+        transform .2s ease;
+
+}
+
+
+.velora-analytics-kpi:hover {
+
+    border-color:
+        var(--velora-line-strong);
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.velora-kpi-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+
+}
+
+
+.velora-kpi-top > span {
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+}
+
+
+.velora-kpi-icon {
+
+    width: 28px;
+
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-kpi-icon i {
+
+    font-size: 11px;
+
+}
+
+
+.velora-analytics-kpi > strong {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing:
+        -.04em;
+
+}
+
+
+.velora-kpi-change {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+}
+
+
+.velora-kpi-change i {
+
+    font-size: 8px;
+
+}
+
+
+.velora-kpi-change.positive {
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-kpi-change span {
+
+    margin-left: 2px;
+
+    color:
+        var(--velora-muted-light);
+
+    font-weight: 400;
+
+}
+
+
+/*==========================================================
+        ANALYTICS GRID
+==========================================================*/
+
+.velora-analytics-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.75fr)
+        minmax(280px, .85fr);
+
+    gap: 14px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.velora-analytics-card {
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-lg);
+
+    background:
+        var(--velora-paper);
+
+}
+
+
+/*==========================================================
+        CARD HEADER
+==========================================================*/
+
+.velora-analytics-card-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        20px 21px 0;
+
+}
+
+
+.velora-card-eyebrow {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: .14em;
+
+}
+
+
+.velora-analytics-card-header h2 {
+
+    margin:
+        0 0 5px;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        -.025em;
+
+}
+
+
+.velora-analytics-card-header p {
+
+    margin: 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+}
+
+
+.velora-chart-menu {
+
+    width: 30px;
+
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-muted-light);
+
+}
+
+
+.velora-chart-menu:hover {
+
+    background:
+        var(--velora-surface);
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+/*==========================================================
+        PERFORMANCE CHART
+==========================================================*/
+
+.velora-performance-card {
+
+    min-height: 385px;
+
+}
+
+
+.velora-chart {
+
+    display: flex;
+
+    height: 270px;
+
+    margin:
+        27px 20px 0;
+
+}
+
+
+.velora-chart-y-axis {
+
+    width: 35px;
+
+    flex: 0 0 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding:
+        0 0 29px;
+
+}
+
+
+.velora-chart-y-axis span {
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 7px;
+
+    text-align: right;
+
+}
+
+
+.velora-chart-area {
+
+    position: relative;
+
+    flex: 1;
+
+    min-width: 0;
+
+    height: 100%;
+
+}
+
+
+.velora-chart-grid-line {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    height: 1px;
+
+    background:
+        var(--velora-line);
+
+}
+
+
+.velora-chart-grid-line.line-1 {
+
+    top: 0;
+
+}
+
+
+.velora-chart-grid-line.line-2 {
+
+    top: 25%;
+
+}
+
+
+.velora-chart-grid-line.line-3 {
+
+    top: 50%;
+
+}
+
+
+.velora-chart-grid-line.line-4 {
+
+    top: 75%;
+
+}
+
+
+.velora-chart-grid-line.line-5 {
+
+    top: 100%;
+
+}
+
+
+.velora-line-chart {
+
+    position: absolute;
+
+    inset:
+        0 0 29px;
+
+    width: 100%;
+
+    height: calc(100% - 29px);
+
+    overflow: visible;
+
+}
+
+
+.velora-chart-line {
+
+    fill: none;
+
+    stroke:
+        var(--velora-green);
+
+    stroke-width: 2.5;
+
+    vector-effect:
+        non-scaling-stroke;
+
+}
+
+
+.velora-chart-area-fill {
+
+    fill:
+        url(#analyticsGradient);
+
+}
+
+
+.velora-chart-point {
+
+    fill:
+        var(--velora-paper);
+
+    stroke:
+        var(--velora-green);
+
+    stroke-width: 2.5;
+
+    vector-effect:
+        non-scaling-stroke;
+
+}
+
+
+.velora-chart-x-axis {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    height: 20px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+}
+
+
+.velora-chart-x-axis span {
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 7px;
+
+}
+
+
+.velora-chart-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin:
+        0 21px;
+
+    padding:
+        13px 0 17px;
+
+    border-top:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-chart-footer > div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 7px;
+
+}
+
+
+.velora-chart-legend {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-green);
+
+}
+
+
+.velora-chart-footer strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+}
+
+
+/*==========================================================
+        TRAFFIC SOURCES
+==========================================================*/
+
+.velora-source-card {
+
+    min-height: 385px;
+
+}
+
+
+.velora-source-visual {
+
+    height: 180px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.velora-donut {
+
+    width: 128px;
+
+    height: 128px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            var(--velora-green) 0 42%,
+            #789286 42% 73%,
+            #b0beb7 73% 91%,
+            #dfe5e1 91% 100%
+        );
+
+}
+
+
+.velora-donut::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 88px;
+
+    height: 88px;
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-paper);
+
+}
+
+
+.velora-donut-center {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 3px;
+
+}
+
+
+.velora-donut-center strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        -.04em;
+
+}
+
+
+.velora-donut-center span {
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 7px;
+
+}
+
+
+.velora-source-list {
+
+    margin:
+        0 21px;
+
+    border-top:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-source-row {
+
+    min-height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-source-row:last-child {
+
+    border-bottom: 0;
+
+}
+
+
+.velora-source-row > div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.velora-source-row span:not(.velora-source-dot) {
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+}
+
+
+.velora-source-row strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+}
+
+
+.velora-source-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+}
+
+
+.velora-source-dot.instagram {
+
+    background:
+        var(--velora-green);
+
+}
+
+
+.velora-source-dot.direct {
+
+    background:
+        #789286;
+
+}
+
+
+.velora-source-dot.google {
+
+    background:
+        #b0beb7;
+
+}
+
+
+.velora-source-dot.other {
+
+    background:
+        #dfe5e1;
+
+}
+
+
+/*==========================================================
+        TOP GALLERIES
+==========================================================*/
+
+.velora-top-galleries {
+
+    overflow: hidden;
+
+    margin-bottom: 25px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-lg);
+
+    background:
+        var(--velora-paper);
+
+}
+
+
+.velora-top-galleries-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        20px 21px;
+
+    border-bottom:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-top-galleries-header h2 {
+
+    margin:
+        0 0 5px;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        -.025em;
+
+}
+
+
+.velora-top-galleries-header p {
+
+    margin: 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+}
+
+
+.velora-view-all {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color:
+        var(--velora-green);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+
+.velora-view-all:hover {
+
+    color:
+        var(--velora-green-dark);
+
+}
+
+
+.velora-gallery-performance {
+
+    min-height: 75px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(230px, 2fr)
+        100px
+        115px
+        minmax(100px, .7fr)
+        35px;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding:
+        10px 21px;
+
+    border-bottom:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-gallery-performance:last-child {
+
+    border-bottom: 0;
+
+}
+
+
+.velora-gallery-performance-info {
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+}
+
+
+.velora-gallery-thumb {
+
+    width: 45px;
+
+    height: 45px;
+
+    flex: 0 0 45px;
+
+    overflow: hidden;
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    background:
+        var(--velora-surface);
+
+}
+
+
+.velora-gallery-thumb img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+.velora-gallery-performance-info > div:last-child {
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.velora-gallery-performance-info strong {
+
+    overflow: hidden;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.velora-gallery-performance-info span {
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 7px;
+
+}
+
+
+.velora-gallery-performance-metric {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.velora-gallery-performance-metric span {
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 7px;
+
+}
+
+
+.velora-gallery-performance-metric strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+}
+
+
+.velora-gallery-performance-bar {
+
+    height: 4px;
+
+    overflow: hidden;
+
+    border-radius:
+        var(--velora-radius-pill);
+
+    background:
+        var(--velora-surface);
+
+}
+
+
+.velora-gallery-progress {
+
+    width:
+        var(--progress);
+
+    height: 100%;
+
+    border-radius:
+        inherit;
+
+    background:
+        var(--velora-green);
+
+}
+
+
+.velora-gallery-performance-more {
+
+    width: 29px;
+
+    height: 29px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-muted-light);
+
+}
+
+
+.velora-gallery-performance-more:hover {
+
+    background:
+        var(--velora-surface);
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+/*==========================================================
+        INSIGHT
+==========================================================*/
+
+.velora-analytics-insight {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding:
+        17px 19px;
+
+    margin-bottom: 40px;
+
+    border:
+        1px solid rgba(27,67,50,.14);
+
+    border-radius:
+        var(--velora-radius-lg);
+
+    background:
+        var(--velora-green-tint);
+
+}
+
+
+.velora-insight-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+    flex: 0 0 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-insight-icon i {
+
+    font-size: 13px;
+
+}
+
+
+.velora-insight-content {
+
+    min-width: 0;
+
+    flex: 1;
+
+}
+
+
+.velora-insight-content > span {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color:
+        var(--velora-green);
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+    letter-spacing: .14em;
+
+}
+
+
+.velora-insight-content h3 {
+
+    margin:
+        0 0 4px;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+
+.velora-insight-content p {
+
+    max-width: 650px;
+
+    margin: 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+    line-height: 1.55;
+
+}
+
+
+.velora-insight-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    flex-shrink: 0;
+
+    color:
+        var(--velora-green);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+
+.velora-insight-link:hover {
+
+    color:
+        var(--velora-green-dark);
+
+}
+
+
+/*==========================================================
+        TABLET
+==========================================================*/
+
+@media (max-width: 1100px) {
+
+    .velora-analytics-kpis {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .velora-analytics-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .velora-source-card {
+
+        min-height: auto;
+
+    }
+
+
+    .velora-source-visual {
+
+        height: 170px;
+
+    }
+
+}
+
+
+/*==========================================================
+        MEDIUM TABLET
+==========================================================*/
+
+@media (max-width: 900px) {
+
+    .velora-gallery-performance {
+
+        grid-template-columns:
+            minmax(200px, 2fr)
+            80px
+            100px
+            80px
+            30px;
+
+        gap: 12px;
+
+        padding:
+            10px 15px;
+
+    }
+
+
+    .velora-top-galleries-header {
+
+        padding:
+            17px 15px;
+
+    }
+
+}
+
+
+/*==========================================================
+        MOBILE
+==========================================================*/
+
+@media (max-width: 767px) {
+
+    .velora-analytics-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .velora-analytics-period {
+
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+
+    }
+
+
+    .velora-period-button {
+
+        width: 100%;
+
+        padding:
+            0 5px;
+
+    }
+
+
+    .velora-analytics-kpis {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+
+    }
+
+
+    .velora-analytics-kpi {
+
+        padding:
+            14px;
+
+    }
+
+
+    .velora-analytics-kpi > strong {
+
+        font-size: 22px;
+
+    }
+
+
+    .velora-kpi-change {
+
+        flex-wrap: wrap;
+
+        line-height: 1.4;
+
+    }
+
+
+    .velora-analytics-card-header {
+
+        padding:
+            17px 15px 0;
+
+    }
+
+
+    .velora-chart {
+
+        height: 240px;
+
+        margin:
+            24px 12px 0;
+
+    }
+
+
+    .velora-chart-footer {
+
+        margin:
+            0 15px;
+
+    }
+
+
+    .velora-source-list {
+
+        margin:
+            0 15px;
+
+    }
+
+
+    .velora-top-galleries-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding:
+            17px 15px;
+
+    }
+
+
+    .velora-gallery-performance {
+
+        grid-template-columns:
+            1fr auto;
+
+        gap: 14px;
+
+        padding:
+            14px 15px;
+
+    }
+
+
+    .velora-gallery-performance-info {
+
+        min-width: 0;
+
+    }
+
+
+    .velora-gallery-performance-metric {
+
+        display: none;
+
+    }
+
+
+    .velora-gallery-performance-bar {
+
+        grid-column:
+            1 / 2;
+
+        width: 100%;
+
+    }
+
+
+    .velora-gallery-performance-more {
+
+        grid-column:
+            2 / 3;
+
+        grid-row:
+            1 / 3;
+
+    }
+
+
+    .velora-analytics-insight {
+
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .velora-insight-content {
+
+        flex-basis:
+            calc(100% - 53px);
+
+    }
+
+
+    .velora-insight-link {
+
+        margin-left:
+            53px;
+
+    }
+
+}
+
+
+/*==========================================================
+        SMALL MOBILE
+==========================================================*/
+
+@media (max-width: 420px) {
+
+    .velora-analytics-kpis {
+
+        gap: 7px;
+
+    }
+
+
+    .velora-analytics-kpi {
+
+        min-height: 122px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: space-between;
+
+    }
+
+
+    .velora-kpi-top {
+
+        margin-bottom: 8px;
+
+    }
+
+
+    .velora-analytics-kpi > strong {
+
+        font-size: 20px;
+
+    }
+
+
+    .velora-chart {
+
+        height: 220px;
+
+    }
+
+
+    .velora-chart-y-axis {
+
+        width: 27px;
+
+        flex-basis: 27px;
+
+    }
+
+
+    .velora-chart-x-axis span {
+
+        font-size: 6px;
+
+    }
+
+
+    .velora-insight-content {
+
+        flex-basis: 100%;
+
+    }
+
+
+    .velora-insight-link {
+
+        margin-left: 53px;
+
+    }
+
+}
+
+
+/*==========================================================
+        ACCESSIBILITY
+==========================================================*/
+
+.velora-period-button:focus-visible,
+.velora-chart-menu:focus-visible,
+.velora-view-all:focus-visible,
+.velora-gallery-performance-more:focus-visible,
+.velora-insight-link:focus-visible {
+
+    outline:
+        2px solid var(--velora-green);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/*==========================================================
+        REDUCED MOTION
+==========================================================*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .velora-analytics-kpi {
+
+        transition: none;
+
+    }
+
+}

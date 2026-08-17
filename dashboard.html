@@ -34,7 +34,7 @@
 
     <link
         rel="preconnect"
-        href="https://fonts.gstatic.com"
+        href="https://fonts.googleapis.com"
         crossorigin
     >
 
@@ -63,6 +63,68 @@
         href="media/favicon/favicon.png"
         type="image/x-icon"
     >
+
+
+    <!-- =====================================================
+         CONNECTION STYLES
+    ====================================================== -->
+
+    <style>
+
+        /*
+        =====================================================
+        VELORA CONNECTION PASS
+        Navigation only.
+        Existing visual design is preserved.
+        =====================================================
+        */
+
+        .velora-stat-card {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+
+        .velora-stat-card:hover {
+            color: inherit;
+        }
+
+
+        .velora-stat-card:focus-visible {
+            outline: 2px solid var(--velora-green);
+            outline-offset: 3px;
+        }
+
+
+        .velora-activity-item {
+            cursor: pointer;
+        }
+
+
+        .velora-activity-item:focus-visible {
+            outline: 2px solid var(--velora-green);
+            outline-offset: 3px;
+        }
+
+
+        .velora-sidebar-user {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        .velora-sidebar-user:hover {
+            color: inherit;
+        }
+
+
+        .velora-sidebar-user:focus-visible {
+            outline: 2px solid var(--velora-green);
+            outline-offset: 3px;
+        }
+
+    </style>
 
 </head>
 
@@ -311,9 +373,10 @@
                  USER
             ========================== -->
 
-            <button
-                type="button"
+            <a
+                href="settings.html"
                 class="velora-sidebar-user"
+                aria-label="Open account settings"
             >
 
                 <span class="velora-user-avatar">
@@ -336,7 +399,7 @@
 
                 <i class="bi bi-three-dots"></i>
 
-            </button>
+            </a>
 
         </div>
 
@@ -405,7 +468,7 @@
                 <!-- View site -->
 
                 <a
-                    href="#"
+                    href="index.html"
                     class="velora-view-site"
                 >
 
@@ -435,10 +498,10 @@
 
                 <!-- Profile -->
 
-                <button
-                    type="button"
+                <a
+                    href="settings.html"
                     class="velora-topbar-profile"
-                    aria-label="Open profile"
+                    aria-label="Open profile settings"
                 >
 
                     <span class="velora-topbar-avatar">
@@ -447,7 +510,7 @@
 
                     <i class="bi bi-chevron-down"></i>
 
-                </button>
+                </a>
 
             </div>
 
@@ -510,6 +573,9 @@
 
                 <div class="velora-overview-actions">
 
+
+                    <!-- New Gallery -->
+
                     <a
                         href="galleries.html"
                         class="velora-dashboard-secondary-button"
@@ -521,6 +587,8 @@
 
                     </a>
 
+
+                    <!-- New Booking -->
 
                     <a
                         href="bookings.html"
@@ -549,9 +617,15 @@
             >
 
 
-                <!-- Galleries -->
+                <!-- =================================================
+                     GALLERIES
+                ================================================== -->
 
-                <article class="velora-stat-card">
+                <a
+                    href="galleries.html"
+                    class="velora-stat-card"
+                    aria-label="View your galleries"
+                >
 
                     <div class="velora-stat-top">
 
@@ -559,8 +633,11 @@
                             Galleries
                         </span>
 
+
                         <span class="velora-stat-icon">
+
                             <i class="bi bi-images"></i>
+
                         </span>
 
                     </div>
@@ -583,13 +660,19 @@
 
                     </div>
 
-                </article>
+                </a>
 
 
 
-                <!-- Clients -->
+                <!-- =================================================
+                     CLIENTS
+                ================================================== -->
 
-                <article class="velora-stat-card">
+                <a
+                    href="clients.html"
+                    class="velora-stat-card"
+                    aria-label="View your clients"
+                >
 
                     <div class="velora-stat-top">
 
@@ -597,8 +680,11 @@
                             Clients
                         </span>
 
+
                         <span class="velora-stat-icon">
+
                             <i class="bi bi-people"></i>
+
                         </span>
 
                     </div>
@@ -621,13 +707,19 @@
 
                     </div>
 
-                </article>
+                </a>
 
 
 
-                <!-- Bookings -->
+                <!-- =================================================
+                     BOOKINGS
+                ================================================== -->
 
-                <article class="velora-stat-card">
+                <a
+                    href="bookings.html"
+                    class="velora-stat-card"
+                    aria-label="View your bookings"
+                >
 
                     <div class="velora-stat-top">
 
@@ -635,8 +727,11 @@
                             Bookings
                         </span>
 
+
                         <span class="velora-stat-icon">
+
                             <i class="bi bi-calendar2-week"></i>
+
                         </span>
 
                     </div>
@@ -659,13 +754,19 @@
 
                     </div>
 
-                </article>
+                </a>
 
 
 
-                <!-- Views -->
+                <!-- =================================================
+                     VIEWS
+                ================================================== -->
 
-                <article class="velora-stat-card">
+                <a
+                    href="analytics.html"
+                    class="velora-stat-card"
+                    aria-label="View your analytics"
+                >
 
                     <div class="velora-stat-top">
 
@@ -673,8 +774,11 @@
                             Views
                         </span>
 
+
                         <span class="velora-stat-icon">
+
                             <i class="bi bi-eye"></i>
+
                         </span>
 
                     </div>
@@ -697,7 +801,7 @@
 
                     </div>
 
-                </article>
+                </a>
 
             </section>
 
@@ -710,9 +814,9 @@
             <section class="velora-overview-middle">
 
 
-                <!-- =========================
+                <!-- =================================================
                      RECENT ACTIVITY
-                ========================== -->
+                ================================================== -->
 
                 <article class="velora-dashboard-panel velora-activity-panel">
 
@@ -733,7 +837,7 @@
 
 
                         <a
-                            href="#"
+                            href="bookings.html"
                             class="velora-panel-link"
                         >
 
@@ -750,12 +854,22 @@
                     <div class="velora-activity-list">
 
 
-                        <!-- Activity 1 -->
+                        <!-- =================================================
+                             ACTIVITY 1
+                        ================================================== -->
 
-                        <div class="velora-activity-item">
+                        <div
+                            class="velora-activity-item"
+                            data-link="booking-details.html"
+                            role="link"
+                            tabindex="0"
+                            aria-label="Open Sarah and Michael booking"
+                        >
 
                             <span class="velora-activity-icon">
+
                                 <i class="bi bi-calendar2-check"></i>
+
                             </span>
 
 
@@ -780,12 +894,22 @@
 
 
 
-                        <!-- Activity 2 -->
+                        <!-- =================================================
+                             ACTIVITY 2
+                        ================================================== -->
 
-                        <div class="velora-activity-item">
+                        <div
+                            class="velora-activity-item"
+                            data-link="galleries.html"
+                            role="link"
+                            tabindex="0"
+                            aria-label="Open Wedding Collection gallery"
+                        >
 
                             <span class="velora-activity-icon">
+
                                 <i class="bi bi-images"></i>
+
                             </span>
 
 
@@ -810,12 +934,22 @@
 
 
 
-                        <!-- Activity 3 -->
+                        <!-- =================================================
+                             ACTIVITY 3
+                        ================================================== -->
 
-                        <div class="velora-activity-item">
+                        <div
+                            class="velora-activity-item"
+                            data-link="clients.html"
+                            role="link"
+                            tabindex="0"
+                            aria-label="Open clients"
+                        >
 
                             <span class="velora-activity-icon">
+
                                 <i class="bi bi-person-plus"></i>
+
                             </span>
 
 
@@ -840,12 +974,22 @@
 
 
 
-                        <!-- Activity 4 -->
+                        <!-- =================================================
+                             ACTIVITY 4
+                        ================================================== -->
 
-                        <div class="velora-activity-item">
+                        <div
+                            class="velora-activity-item"
+                            data-link="analytics.html"
+                            role="link"
+                            tabindex="0"
+                            aria-label="Open analytics"
+                        >
 
                             <span class="velora-activity-icon">
+
                                 <i class="bi bi-eye"></i>
+
                             </span>
 
 
@@ -874,9 +1018,9 @@
 
 
 
-                <!-- =========================
+                <!-- =================================================
                      UPCOMING BOOKING
-                ========================== -->
+                ================================================== -->
 
                 <article class="velora-dashboard-panel velora-upcoming-panel">
 
@@ -926,17 +1070,20 @@
                             </span>
 
                             <small>
+
                                 <i class="bi bi-clock"></i>
+
                                 10:00 AM
+
                             </small>
 
                         </div>
 
 
                         <a
-                            href="bookings.html"
+                            href="booking-details.html"
                             class="velora-upcoming-arrow"
-                            aria-label="View booking"
+                            aria-label="View Sarah and Michael booking"
                         >
 
                             <i class="bi bi-arrow-up-right"></i>
@@ -1006,13 +1153,16 @@
                 <div class="velora-gallery-grid">
 
 
-                    <!-- Gallery 1 -->
+                    <!-- =================================================
+                         GALLERY 1
+                    ================================================== -->
 
                     <article class="velora-gallery-card">
 
                         <a
                             href="galleries.html"
                             class="velora-gallery-image"
+                            aria-label="Open Wedding Collection"
                         >
 
                             <img
@@ -1058,13 +1208,16 @@
 
 
 
-                    <!-- Gallery 2 -->
+                    <!-- =================================================
+                         GALLERY 2
+                    ================================================== -->
 
                     <article class="velora-gallery-card">
 
                         <a
                             href="galleries.html"
                             class="velora-gallery-image"
+                            aria-label="Open Portrait Sessions"
                         >
 
                             <img
@@ -1110,13 +1263,16 @@
 
 
 
-                    <!-- Gallery 3 -->
+                    <!-- =================================================
+                         GALLERY 3
+                    ================================================== -->
 
                     <article class="velora-gallery-card">
 
                         <a
                             href="galleries.html"
                             class="velora-gallery-image"
+                            aria-label="Open Editorial Stories"
                         >
 
                             <img
@@ -1162,7 +1318,9 @@
 
 
 
-                    <!-- Create gallery -->
+                    <!-- =================================================
+                         CREATE GALLERY
+                    ================================================== -->
 
                     <a
                         href="galleries.html"
@@ -1274,92 +1432,4 @@ function closeSidebar() {
     );
 
     document.body.classList.remove(
-        "velora-sidebar-open"
-    );
-
-}
-
-
-
-sidebarOpen.addEventListener(
-    "click",
-    openSidebar
-);
-
-
-sidebarClose.addEventListener(
-    "click",
-    closeSidebar
-);
-
-
-sidebarOverlay.addEventListener(
-    "click",
-    closeSidebar
-);
-
-
-
-/* =====================================================
-   ESCAPE KEY
-===================================================== */
-
-document.addEventListener(
-    "keydown",
-    function (event) {
-
-        if (
-            event.key === "Escape" &&
-            sidebar.classList.contains("is-open")
-        ) {
-
-            closeSidebar();
-
-        }
-
-    }
-);
-
-
-
-/* =====================================================
-   SEARCH SHORTCUT
-===================================================== */
-
-document.addEventListener(
-    "keydown",
-    function (event) {
-
-        if (
-            event.key === "/" &&
-            !["INPUT", "TEXTAREA"].includes(
-                document.activeElement.tagName
-            )
-        ) {
-
-            event.preventDefault();
-
-
-            const search =
-                document.querySelector(
-                    ".velora-dashboard-search input"
-                );
-
-
-            if (search) {
-
-                search.focus();
-
-            }
-
-        }
-
-    }
-);
-
-</script>
-
-
-</body>
-
-</html>
+        "velora-sidebar-open

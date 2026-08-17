@@ -1,0 +1,3169 @@
+/* =========================================================
+   VELORA — CLIENT GALLERY SHARING & ACCESS
+   Component ID: VLR-SHR-001
+   Status: Approved
+   Maturity: L2 Stable
+   Version: V1.0
+
+   Gallery Phase:
+   Gallery → Selection → Downloads → Comments → Sharing
+
+   Design principles:
+   - Photography-first
+   - Premium simplicity
+   - Spacious
+   - Light mode
+   - Token-first
+   - Responsive
+========================================================= */
+
+
+/* =========================================================
+   01. TOKENS
+========================================================= */
+
+:root {
+
+    /* COLORS */
+
+    --velora-sharing-ink: #17181a;
+    --velora-sharing-paper: #ffffff;
+
+    --velora-sharing-surface: #f7f8f6;
+    --velora-sharing-surface-strong: #eef1ee;
+
+    --velora-sharing-line: #e5e9e6;
+    --velora-sharing-line-strong: #d5ddd8;
+
+    --velora-sharing-muted: #63676c;
+    --velora-sharing-subtle: #8b9094;
+
+    --velora-sharing-green: #1b4332;
+    --velora-sharing-green-dark: #123325;
+    --velora-sharing-green-tint: #e9f0ec;
+
+    --velora-sharing-danger: #a34d4d;
+    --velora-sharing-danger-tint: #f6eaea;
+
+    --velora-sharing-warning: #85633e;
+    --velora-sharing-warning-tint: #f5eee6;
+
+    --velora-sharing-white: #ffffff;
+
+
+    /* TYPOGRAPHY */
+
+    --v-sharing-xs: 12px;
+    --v-sharing-sm: 14px;
+    --v-sharing-md: 16px;
+    --v-sharing-lg: 18px;
+
+    --v-sharing-title:
+        clamp(48px, 6vw, 76px);
+
+    --v-sharing-heading:
+        clamp(28px, 3vw, 40px);
+
+    --v-sharing-card-title:
+        clamp(20px, 2vw, 26px);
+
+
+    /* LINE HEIGHT */
+
+    --v-sharing-lh-tight: 1.04;
+    --v-sharing-lh-heading: 1.12;
+    --v-sharing-lh-ui: 1.4;
+    --v-sharing-lh-body: 1.65;
+
+
+    /* WEIGHTS */
+
+    --v-sharing-weight-regular: 400;
+    --v-sharing-weight-medium: 500;
+    --v-sharing-weight-semibold: 600;
+    --v-sharing-weight-bold: 700;
+    --v-sharing-weight-heavy: 800;
+
+
+    /* SPACING */
+
+    --v-sharing-space-1: 4px;
+    --v-sharing-space-2: 8px;
+    --v-sharing-space-3: 12px;
+    --v-sharing-space-4: 16px;
+    --v-sharing-space-5: 20px;
+    --v-sharing-space-6: 24px;
+    --v-sharing-space-7: 32px;
+    --v-sharing-space-8: 40px;
+    --v-sharing-space-9: 48px;
+    --v-sharing-space-10: 64px;
+    --v-sharing-space-11: 80px;
+    --v-sharing-space-12: 96px;
+
+
+    /* RADIUS */
+
+    --v-sharing-radius-sm: 8px;
+    --v-sharing-radius-md: 12px;
+    --v-sharing-radius-lg: 16px;
+    --v-sharing-radius-xl: 20px;
+    --v-sharing-radius-pill: 999px;
+
+
+    /* SHADOWS */
+
+    --v-sharing-shadow-sm:
+        0 5px 18px rgba(23, 24, 26, .05);
+
+    --v-sharing-shadow-md:
+        0 16px 42px rgba(23, 24, 26, .08);
+
+    --v-sharing-shadow-lg:
+        0 30px 90px rgba(23, 24, 26, .18);
+
+
+    /* MOTION */
+
+    --v-sharing-motion-fast: 160ms;
+    --v-sharing-motion-normal: 240ms;
+    --v-sharing-motion-slow: 420ms;
+
+}
+
+
+/* =========================================================
+   02. RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    background:
+        var(--velora-sharing-paper);
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-family:
+        "Lato",
+        sans-serif;
+
+    font-size:
+        var(--v-sharing-md);
+
+    font-weight:
+        var(--v-sharing-weight-regular);
+
+    line-height:
+        var(--v-sharing-lh-body);
+
+    -webkit-font-smoothing:
+        antialiased;
+
+    -moz-osx-font-smoothing:
+        grayscale;
+}
+
+
+body.velora-access-modal-open {
+    overflow: hidden;
+}
+
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+a {
+    color: inherit;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   03. PAGE
+========================================================= */
+
+.velora-access-page {
+
+    min-height: 100vh;
+
+    background:
+        var(--velora-sharing-paper);
+}
+
+
+/* =========================================================
+   04. HEADER
+========================================================= */
+
+.velora-access-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    min-height: 72px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr auto 1fr;
+
+    align-items: center;
+
+    gap:
+        var(--v-sharing-space-6);
+
+    padding:
+        0 clamp(20px, 4vw, 64px);
+
+    border-bottom:
+        1px solid var(--velora-sharing-line);
+
+    background:
+        rgba(255, 255, 255, .96);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.velora-access-brand {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-self: start;
+
+    gap:
+        var(--v-sharing-space-3);
+
+    text-decoration: none;
+}
+
+
+.velora-access-brand-mark {
+
+    width: 30px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius:
+        var(--v-sharing-radius-sm);
+
+    background:
+        var(--velora-sharing-green);
+
+    color:
+        var(--velora-sharing-white);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    font-weight:
+        var(--v-sharing-weight-bold);
+
+    line-height: 1;
+}
+
+
+.velora-access-brand-name {
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    font-weight:
+        var(--v-sharing-weight-heavy);
+
+    letter-spacing:
+        .13em;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   GALLERY TITLE
+========================================================= */
+
+.velora-access-gallery-title {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap:
+        var(--v-sharing-space-1);
+
+    text-align: center;
+}
+
+
+.velora-access-gallery-title span {
+
+    color:
+        var(--velora-sharing-subtle);
+
+    font-size:
+        var(--v-sharing-xs);
+
+    font-weight:
+        var(--v-sharing-weight-heavy);
+
+    letter-spacing:
+        .14em;
+
+    line-height:
+        var(--v-sharing-lh-ui);
+}
+
+
+.velora-access-gallery-title strong {
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    font-weight:
+        var(--v-sharing-weight-semibold);
+
+    line-height:
+        var(--v-sharing-lh-ui);
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.velora-access-header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-self: end;
+
+    gap:
+        var(--v-sharing-space-2);
+}
+
+
+.velora-access-gallery-link {
+
+    min-height: 40px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap:
+        var(--v-sharing-space-2);
+
+    padding:
+        0 var(--v-sharing-space-3);
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        var(--v-sharing-radius-sm);
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-sharing-muted);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    font-weight:
+        var(--v-sharing-weight-semibold);
+
+    text-decoration: none;
+
+    transition:
+        background var(--v-sharing-motion-fast) ease,
+        border-color var(--v-sharing-motion-fast) ease,
+        color var(--v-sharing-motion-fast) ease;
+}
+
+
+.velora-access-gallery-link:hover {
+
+    border-color:
+        var(--velora-sharing-line);
+
+    background:
+        var(--velora-sharing-surface);
+
+    color:
+        var(--velora-sharing-ink);
+}
+
+
+.velora-access-avatar {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid var(--velora-sharing-line);
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-sharing-surface);
+
+    color:
+        var(--velora-sharing-green);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    font-weight:
+        var(--v-sharing-weight-bold);
+}
+
+
+/* =========================================================
+   05. MAIN
+========================================================= */
+
+.velora-access-main {
+
+    width:
+        min(1280px, 100%);
+
+    margin:
+        0 auto;
+
+    padding:
+        0 clamp(20px, 4vw, 64px)
+        120px;
+}
+
+
+/* =========================================================
+   06. INTRO
+========================================================= */
+
+.velora-access-intro {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap:
+        var(--v-sharing-space-10);
+
+    padding:
+        clamp(56px, 8vw, 112px)
+        0
+        clamp(48px, 6vw, 80px);
+
+    border-bottom:
+        1px solid var(--velora-sharing-line);
+}
+
+
+.velora-access-intro-copy {
+
+    max-width:
+        780px;
+}
+
+
+.velora-access-eyebrow {
+
+    display: block;
+
+    color:
+        var(--velora-sharing-muted);
+
+    font-size:
+        var(--v-sharing-xs);
+
+    font-weight:
+        var(--v-sharing-weight-heavy);
+
+    letter-spacing:
+        .14em;
+
+    line-height:
+        var(--v-sharing-lh-ui);
+}
+
+
+.velora-access-intro h1 {
+
+    max-width:
+        760px;
+
+    margin:
+        var(--v-sharing-space-3)
+        0
+        var(--v-sharing-space-5);
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-size:
+        var(--v-sharing-title);
+
+    font-weight:
+        var(--v-sharing-weight-regular);
+
+    line-height:
+        var(--v-sharing-lh-tight);
+
+    letter-spacing:
+        -.055em;
+}
+
+
+.velora-access-intro p {
+
+    max-width:
+        650px;
+
+    margin:
+        0;
+
+    color:
+        var(--velora-sharing-muted);
+
+    font-size:
+        var(--v-sharing-lg);
+
+    line-height:
+        var(--v-sharing-lh-body);
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.velora-access-status {
+
+    min-width:
+        250px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        var(--v-sharing-space-3);
+
+    padding:
+        var(--v-sharing-space-4);
+
+    border:
+        1px solid var(--velora-sharing-line);
+
+    border-radius:
+        var(--v-sharing-radius-md);
+
+    background:
+        var(--velora-sharing-surface);
+}
+
+
+.velora-access-status-dot {
+
+    width: 10px;
+
+    height: 10px;
+
+    flex: 0 0 10px;
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-sharing-green);
+
+    box-shadow:
+        0 0 0 5px var(--velora-sharing-green-tint);
+}
+
+
+.velora-access-status-dot.is-disabled {
+
+    background:
+        var(--velora-sharing-danger);
+
+    box-shadow:
+        0 0 0 5px var(--velora-sharing-danger-tint);
+}
+
+
+.velora-access-status div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap:
+        var(--v-sharing-space-1);
+}
+
+
+.velora-access-status strong {
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    font-weight:
+        var(--v-sharing-weight-semibold);
+
+    line-height:
+        var(--v-sharing-lh-ui);
+}
+
+
+.velora-access-status span:not(
+    .velora-access-status-dot
+) {
+
+    color:
+        var(--velora-sharing-muted);
+
+    font-size:
+        var(--v-sharing-xs);
+
+    line-height:
+        var(--v-sharing-lh-ui);
+}
+
+
+/* =========================================================
+   07. OVERVIEW
+========================================================= */
+
+.velora-access-overview {
+
+    padding:
+        var(--v-sharing-space-11)
+        0;
+}
+
+
+.velora-access-overview-heading {
+
+    margin-bottom:
+        var(--v-sharing-space-7);
+}
+
+
+.velora-access-overview-heading h2,
+.velora-access-section-heading h2 {
+
+    margin:
+        var(--v-sharing-space-3)
+        0
+        var(--v-sharing-space-3);
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-size:
+        var(--v-sharing-heading);
+
+    font-weight:
+        var(--v-sharing-weight-medium);
+
+    line-height:
+        var(--v-sharing-lh-heading);
+
+    letter-spacing:
+        -.035em;
+}
+
+
+/* =========================================================
+   OVERVIEW GRID
+========================================================= */
+
+.velora-access-overview-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:
+        var(--v-sharing-space-4);
+}
+
+
+.velora-access-overview-card {
+
+    min-height:
+        230px;
+
+    padding:
+        var(--v-sharing-space-6);
+
+    border:
+        1px solid var(--velora-sharing-line);
+
+    border-radius:
+        var(--v-sharing-radius-lg);
+
+    background:
+        var(--velora-sharing-paper);
+
+    transition:
+        border-color var(--v-sharing-motion-normal) ease,
+        box-shadow var(--v-sharing-motion-normal) ease,
+        transform var(--v-sharing-motion-normal) ease;
+}
+
+
+.velora-access-overview-card:hover {
+
+    border-color:
+        var(--velora-sharing-line-strong);
+
+    box-shadow:
+        var(--v-sharing-shadow-sm);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.velora-access-overview-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom:
+        var(--v-sharing-space-5);
+
+    border-radius:
+        var(--v-sharing-radius-sm);
+
+    background:
+        var(--velora-sharing-green-tint);
+
+    color:
+        var(--velora-sharing-green);
+
+    font-size:
+        19px;
+}
+
+
+.velora-access-overview-card > span {
+
+    display: block;
+
+    margin-bottom:
+        var(--v-sharing-space-2);
+
+    color:
+        var(--velora-sharing-subtle);
+
+    font-size:
+        10px;
+
+    font-weight:
+        var(--v-sharing-weight-heavy);
+
+    letter-spacing:
+        .12em;
+}
+
+
+.velora-access-overview-card > strong {
+
+    display: block;
+
+    margin-bottom:
+        var(--v-sharing-space-2);
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-size:
+        var(--v-sharing-lg);
+
+    font-weight:
+        var(--v-sharing-weight-semibold);
+}
+
+
+.velora-access-overview-card > p {
+
+    margin:
+        0;
+
+    color:
+        var(--velora-sharing-muted);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    line-height:
+        var(--v-sharing-lh-body);
+}
+
+
+/* =========================================================
+   08. SECTION HEADING
+========================================================= */
+
+.velora-access-section-heading {
+
+    max-width:
+        700px;
+
+    margin-bottom:
+        var(--v-sharing-space-7);
+}
+
+
+.velora-access-section-heading p {
+
+    max-width:
+        620px;
+
+    margin:
+        0;
+
+    color:
+        var(--velora-sharing-muted);
+
+    font-size:
+        var(--v-sharing-md);
+
+    line-height:
+        var(--v-sharing-lh-body);
+}
+
+
+/* =========================================================
+   09. SHARE SECTION
+========================================================= */
+
+.velora-access-share {
+
+    padding:
+        var(--v-sharing-space-11)
+        0;
+
+    border-top:
+        1px solid var(--velora-sharing-line);
+}
+
+
+.velora-access-share-box {
+
+    padding:
+        var(--v-sharing-space-6);
+
+    border:
+        1px solid var(--velora-sharing-line);
+
+    border-radius:
+        var(--v-sharing-radius-lg);
+
+    background:
+        var(--velora-sharing-surface);
+}
+
+
+/* =========================================================
+   LINK PREVIEW
+========================================================= */
+
+.velora-access-link-preview {
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        var(--v-sharing-space-4);
+
+    padding:
+        var(--v-sharing-space-5);
+
+    border:
+        1px solid var(--velora-sharing-line);
+
+    border-radius:
+        var(--v-sharing-radius-md);
+
+    background:
+        var(--velora-sharing-paper);
+}
+
+
+.velora-access-link-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius:
+        var(--v-sharing-radius-sm);
+
+    background:
+        var(--velora-sharing-green-tint);
+
+    color:
+        var(--velora-sharing-green);
+
+    font-size:
+        19px;
+}
+
+
+.velora-access-link-content {
+
+    min-width:
+        0;
+
+    flex: 1;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        var(--v-sharing-space-1);
+}
+
+
+.velora-access-link-content span {
+
+    color:
+        var(--velora-sharing-subtle);
+
+    font-size:
+        10px;
+
+    font-weight:
+        var(--v-sharing-weight-heavy);
+
+    letter-spacing:
+        .12em;
+}
+
+
+.velora-access-link-content strong {
+
+    overflow:
+        hidden;
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    font-weight:
+        var(--v-sharing-weight-semibold);
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+}
+
+
+/* =========================================================
+   COPY
+========================================================= */
+
+.velora-access-copy-button {
+
+    min-height:
+        42px;
+
+    flex:
+        0 0 auto;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        var(--v-sharing-space-2);
+
+    padding:
+        0 var(--v-sharing-space-4);
+
+    border:
+        1px solid var(--velora-sharing-line-strong);
+
+    border-radius:
+        var(--v-sharing-radius-sm);
+
+    background:
+        var(--velora-sharing-paper);
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-size:
+        var(--v-sharing-xs);
+
+    font-weight:
+        var(--v-sharing-weight-semibold);
+
+    transition:
+        border-color var(--v-sharing-motion-fast) ease,
+        background var(--v-sharing-motion-fast) ease,
+        color var(--v-sharing-motion-fast) ease;
+}
+
+
+.velora-access-copy-button:hover {
+
+    border-color:
+        var(--velora-sharing-green);
+
+    background:
+        var(--velora-sharing-green-tint);
+
+    color:
+        var(--velora-sharing-green);
+}
+
+
+/* =========================================================
+   SHARE ACTIONS
+========================================================= */
+
+.velora-access-share-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        var(--v-sharing-space-2);
+
+    margin-top:
+        var(--v-sharing-space-4);
+}
+
+
+.velora-access-share-button {
+
+    min-height:
+        44px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        var(--v-sharing-space-2);
+
+    padding:
+        0 var(--v-sharing-space-4);
+
+    border:
+        1px solid var(--velora-sharing-line);
+
+    border-radius:
+        var(--v-sharing-radius-sm);
+
+    background:
+        var(--velora-sharing-paper);
+
+    color:
+        var(--velora-sharing-muted);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    font-weight:
+        var(--v-sharing-weight-semibold);
+
+    transition:
+        border-color var(--v-sharing-motion-fast) ease,
+        color var(--v-sharing-motion-fast) ease,
+        background var(--v-sharing-motion-fast) ease,
+        transform var(--v-sharing-motion-fast) ease;
+}
+
+
+.velora-access-share-button:hover {
+
+    border-color:
+        var(--velora-sharing-green);
+
+    background:
+        var(--velora-sharing-green-tint);
+
+    color:
+        var(--velora-sharing-green);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   10. SECURITY
+========================================================= */
+
+.velora-access-security {
+
+    padding:
+        var(--v-sharing-space-11)
+        0;
+
+    border-top:
+        1px solid var(--velora-sharing-line);
+}
+
+
+.velora-access-settings {
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid var(--velora-sharing-line);
+
+    border-radius:
+        var(--v-sharing-radius-lg);
+
+    background:
+        var(--velora-sharing-paper);
+}
+
+
+.velora-access-setting {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        var(--v-sharing-space-5);
+
+    padding:
+        var(--v-sharing-space-6);
+
+    border-bottom:
+        1px solid var(--velora-sharing-line);
+
+    transition:
+        background var(--v-sharing-motion-fast) ease;
+}
+
+
+.velora-access-setting:last-child {
+
+    border-bottom:
+        0;
+}
+
+
+.velora-access-setting:hover {
+
+    background:
+        var(--velora-sharing-surface);
+}
+
+
+.velora-access-setting-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    flex:
+        0 0 48px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        var(--v-sharing-radius-sm);
+
+    background:
+        var(--velora-sharing-surface);
+
+    color:
+        var(--velora-sharing-green);
+
+    font-size:
+        18px;
+}
+
+
+.velora-access-setting-content {
+
+    min-width:
+        0;
+
+    flex:
+        1;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        var(--v-sharing-space-5);
+}
+
+
+.velora-access-setting-content > div:first-child {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        var(--v-sharing-space-2);
+}
+
+
+.velora-access-setting-content strong {
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-size:
+        var(--v-sharing-md);
+
+    font-weight:
+        var(--v-sharing-weight-semibold);
+}
+
+
+.velora-access-setting-content span {
+
+    max-width:
+        680px;
+
+    color:
+        var(--velora-sharing-muted);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    line-height:
+        var(--v-sharing-lh-body);
+}
+
+
+/* =========================================================
+   SWITCH
+========================================================= */
+
+.velora-access-switch {
+
+    position:
+        relative;
+
+    width:
+        48px;
+
+    height:
+        28px;
+
+    flex:
+        0 0 48px;
+
+    display:
+        block;
+}
+
+
+.velora-access-switch input {
+
+    position:
+        absolute;
+
+    width:
+        1px;
+
+    height:
+        1px;
+
+    opacity:
+        0;
+}
+
+
+.velora-access-switch span {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border-radius:
+        var(--v-sharing-radius-pill);
+
+    background:
+        var(--velora-sharing-line-strong);
+
+    cursor:
+        pointer;
+
+    transition:
+        background var(--v-sharing-motion-fast) ease;
+}
+
+
+.velora-access-switch span::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        4px;
+
+    left:
+        4px;
+
+    width:
+        20px;
+
+    height:
+        20px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--velora-sharing-white);
+
+    box-shadow:
+        0 1px 4px rgba(0, 0, 0, .15);
+
+    transition:
+        transform var(--v-sharing-motion-fast) ease;
+}
+
+
+.velora-access-switch input:checked + span {
+
+    background:
+        var(--velora-sharing-green);
+}
+
+
+.velora-access-switch input:checked + span::after {
+
+    transform:
+        translateX(20px);
+}
+
+
+/* =========================================================
+   DATE INPUT
+========================================================= */
+
+.velora-access-date input {
+
+    min-height:
+        42px;
+
+    padding:
+        0 var(--v-sharing-space-3);
+
+    border:
+        1px solid var(--velora-sharing-line-strong);
+
+    border-radius:
+        var(--v-sharing-radius-sm);
+
+    outline:
+        none;
+
+    background:
+        var(--velora-sharing-paper);
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-size:
+        var(--v-sharing-sm);
+}
+
+
+.velora-access-date input:focus {
+
+    border-color:
+        var(--velora-sharing-green);
+
+    box-shadow:
+        0 0 0 3px var(--velora-sharing-green-tint);
+}
+
+
+/* =========================================================
+   11. PASSWORD
+========================================================= */
+
+.velora-access-password {
+
+    padding:
+        var(--v-sharing-space-11)
+        0;
+
+    border-top:
+        1px solid var(--velora-sharing-line);
+}
+
+
+.velora-access-password-card {
+
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
+    gap:
+        var(--v-sharing-space-4);
+
+    padding:
+        var(--v-sharing-space-6);
+
+    border:
+        1px solid var(--velora-sharing-line);
+
+    border-radius:
+        var(--v-sharing-radius-lg);
+
+    background:
+        var(--velora-sharing-surface);
+}
+
+
+.velora-access-password-field {
+
+    min-width:
+        0;
+
+    flex:
+        1;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        var(--v-sharing-space-2);
+}
+
+
+.velora-access-password-field label {
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    font-weight:
+        var(--v-sharing-weight-semibold);
+}
+
+
+.velora-access-password-input {
+
+    position:
+        relative;
+}
+
+
+.velora-access-password-input input {
+
+    width:
+        100%;
+
+    min-height:
+        48px;
+
+    padding:
+        0 48px 0 var(--v-sharing-space-4);
+
+    border:
+        1px solid var(--velora-sharing-line-strong);
+
+    border-radius:
+        var(--v-sharing-radius-sm);
+
+    outline:
+        none;
+
+    background:
+        var(--velora-sharing-paper);
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-size:
+        var(--v-sharing-sm);
+}
+
+
+.velora-access-password-input input:focus {
+
+    border-color:
+        var(--velora-sharing-green);
+
+    box-shadow:
+        0 0 0 3px var(--velora-sharing-green-tint);
+}
+
+
+.velora-access-password-input button {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    right:
+        8px;
+
+    width:
+        36px;
+
+    height:
+        36px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        0;
+
+    border-radius:
+        var(--v-sharing-radius-sm);
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-sharing-muted);
+
+    transform:
+        translateY(-50%);
+}
+
+
+.velora-access-password-input button:hover {
+
+    background:
+        var(--velora-sharing-surface);
+
+    color:
+        var(--velora-sharing-ink);
+}
+
+
+.velora-access-save-button {
+
+    min-height:
+        48px;
+
+    flex:
+        0 0 auto;
+
+    padding:
+        0 var(--v-sharing-space-5);
+
+    border:
+        1px solid var(--velora-sharing-green);
+
+    border-radius:
+        var(--v-sharing-radius-sm);
+
+    background:
+        var(--velora-sharing-green);
+
+    color:
+        var(--velora-sharing-white);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    font-weight:
+        var(--v-sharing-weight-semibold);
+
+    transition:
+        background var(--v-sharing-motion-fast) ease,
+        transform var(--v-sharing-motion-fast) ease;
+}
+
+
+.velora-access-save-button:hover {
+
+    background:
+        var(--velora-sharing-green-dark);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   12. ACTIVITY
+========================================================= */
+
+.velora-access-activity {
+
+    padding:
+        var(--v-sharing-space-11)
+        0;
+
+    border-top:
+        1px solid var(--velora-sharing-line);
+}
+
+
+.velora-access-activity-list {
+
+    overflow:
+        hidden;
+
+    border-top:
+        1px solid var(--velora-sharing-line);
+
+    border-bottom:
+        1px solid var(--velora-sharing-line);
+}
+
+
+.velora-access-activity-item {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        auto minmax(160px, 1fr) auto auto;
+
+    align-items:
+        center;
+
+    gap:
+        var(--v-sharing-space-4);
+
+    padding:
+        var(--v-sharing-space-5)
+        0;
+
+    border-bottom:
+        1px solid var(--velora-sharing-line);
+}
+
+
+.velora-access-activity-item:last-child {
+
+    border-bottom:
+        0;
+}
+
+
+.velora-access-visitor-avatar {
+
+    width:
+        44px;
+
+    height:
+        44px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--velora-sharing-green-tint);
+
+    color:
+        var(--velora-sharing-green);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    font-weight:
+        var(--v-sharing-weight-bold);
+}
+
+
+.velora-access-visitor {
+
+    min-width:
+        0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        var(--v-sharing-space-1);
+}
+
+
+.velora-access-visitor strong {
+
+    overflow:
+        hidden;
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    font-weight:
+        var(--v-sharing-weight-semibold);
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+}
+
+
+.velora-access-visitor span {
+
+    color:
+        var(--velora-sharing-muted);
+
+    font-size:
+        var(--v-sharing-xs);
+}
+
+
+.velora-access-visitor-time {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-end;
+
+    gap:
+        var(--v-sharing-space-1);
+}
+
+
+.velora-access-visitor-time strong {
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-size:
+        var(--v-sharing-xs);
+
+    font-weight:
+        var(--v-sharing-weight-semibold);
+}
+
+
+.velora-access-visitor-time span {
+
+    color:
+        var(--velora-sharing-subtle);
+
+    font-size:
+        11px;
+}
+
+
+.velora-access-activity-status {
+
+    min-height:
+        30px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        var(--v-sharing-space-2);
+
+    padding:
+        0 var(--v-sharing-space-3);
+
+    border-radius:
+        var(--v-sharing-radius-pill);
+
+    background:
+        var(--velora-sharing-green-tint);
+
+    color:
+        var(--velora-sharing-green);
+
+    font-size:
+        11px;
+
+    font-weight:
+        var(--v-sharing-weight-semibold);
+}
+
+
+.velora-access-activity-status.is-neutral {
+
+    background:
+        var(--velora-sharing-surface-strong);
+
+    color:
+        var(--velora-sharing-muted);
+}
+
+
+/* =========================================================
+   13. DANGER ZONE
+========================================================= */
+
+.velora-access-danger {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        var(--v-sharing-space-6);
+
+    padding:
+        var(--v-sharing-space-7);
+
+    border:
+        1px solid #eadada;
+
+    border-radius:
+        var(--v-sharing-radius-lg);
+
+    background:
+        #fdf9f9;
+}
+
+
+.velora-access-danger h2 {
+
+    margin:
+        var(--v-sharing-space-2)
+        0
+        var(--v-sharing-space-2);
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-size:
+        var(--v-sharing-card-title);
+
+    font-weight:
+        var(--v-sharing-weight-medium);
+
+    line-height:
+        var(--v-sharing-lh-heading);
+}
+
+
+.velora-access-danger p {
+
+    max-width:
+        650px;
+
+    margin:
+        0;
+
+    color:
+        var(--velora-sharing-muted);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    line-height:
+        var(--v-sharing-lh-body);
+}
+
+
+.velora-access-disable-button {
+
+    min-height:
+        46px;
+
+    flex:
+        0 0 auto;
+
+    padding:
+        0 var(--v-sharing-space-5);
+
+    border:
+        1px solid #d9bcbc;
+
+    border-radius:
+        var(--v-sharing-radius-sm);
+
+    background:
+        var(--velora-sharing-white);
+
+    color:
+        var(--velora-sharing-danger);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    font-weight:
+        var(--v-sharing-weight-semibold);
+
+    transition:
+        background var(--v-sharing-motion-fast) ease,
+        border-color var(--v-sharing-motion-fast) ease,
+        color var(--v-sharing-motion-fast) ease;
+}
+
+
+.velora-access-disable-button:hover {
+
+    border-color:
+        var(--velora-sharing-danger);
+
+    background:
+        var(--velora-sharing-danger);
+
+    color:
+        var(--velora-sharing-white);
+}
+
+
+.velora-access-disable-button.is-disabled {
+
+    border-color:
+        var(--velora-sharing-green);
+
+    background:
+        var(--velora-sharing-green-tint);
+
+    color:
+        var(--velora-sharing-green);
+
+    cursor:
+        default;
+}
+
+
+/* =========================================================
+   14. MODAL
+========================================================= */
+
+.velora-access-modal {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        3000;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        var(--v-sharing-space-5);
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    pointer-events:
+        none;
+
+    transition:
+        opacity var(--v-sharing-motion-normal) ease,
+        visibility var(--v-sharing-motion-normal) ease;
+}
+
+
+.velora-access-modal.is-visible {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+    pointer-events:
+        auto;
+}
+
+
+.velora-access-modal-backdrop {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        rgba(15, 20, 17, .58);
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+}
+
+
+/* =========================================================
+   MODAL CARD
+========================================================= */
+
+.velora-access-modal-card {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        min(500px, 100%);
+
+    padding:
+        clamp(32px, 5vw, 48px);
+
+    border:
+        1px solid var(--velora-sharing-line);
+
+    border-radius:
+        var(--v-sharing-radius-lg);
+
+    background:
+        var(--velora-sharing-paper);
+
+    box-shadow:
+        var(--v-sharing-shadow-lg);
+
+    text-align:
+        center;
+
+    transform:
+        translateY(18px) scale(.98);
+
+    transition:
+        transform var(--v-sharing-motion-normal)
+        cubic-bezier(.2,.7,.2,1);
+}
+
+
+.velora-access-modal.is-visible
+.velora-access-modal-card {
+
+    transform:
+        translateY(0) scale(1);
+}
+
+
+.velora-access-modal-close {
+
+    position:
+        absolute;
+
+    top:
+        18px;
+
+    right:
+        18px;
+
+    width:
+        40px;
+
+    height:
+        40px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid var(--velora-sharing-line);
+
+    border-radius:
+        50%;
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-sharing-muted);
+}
+
+
+.velora-access-modal-close:hover {
+
+    background:
+        var(--velora-sharing-surface);
+
+    color:
+        var(--velora-sharing-ink);
+}
+
+
+.velora-access-modal-icon {
+
+    width:
+        68px;
+
+    height:
+        68px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin:
+        0 auto var(--v-sharing-space-6);
+
+    border-radius:
+        50%;
+
+    background:
+        var(--velora-sharing-danger-tint);
+
+    color:
+        var(--velora-sharing-danger);
+
+    font-size:
+        25px;
+}
+
+
+.velora-access-modal-card h2 {
+
+    margin:
+        var(--v-sharing-space-3)
+        0
+        var(--v-sharing-space-3);
+
+    color:
+        var(--velora-sharing-ink);
+
+    font-size:
+        var(--v-sharing-heading);
+
+    font-weight:
+        var(--v-sharing-weight-medium);
+
+    line-height:
+        var(--v-sharing-lh-heading);
+
+    letter-spacing:
+        -.035em;
+}
+
+
+.velora-access-modal-card p {
+
+    max-width:
+        410px;
+
+    margin:
+        0 auto var(--v-sharing-space-7);
+
+    color:
+        var(--velora-sharing-muted);
+
+    font-size:
+        var(--v-sharing-md);
+
+    line-height:
+        var(--v-sharing-lh-body);
+}
+
+
+/* =========================================================
+   MODAL ACTIONS
+========================================================= */
+
+.velora-access-modal-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        var(--v-sharing-space-3);
+}
+
+
+.velora-access-modal-cancel,
+.velora-access-modal-danger {
+
+    min-height:
+        46px;
+
+    padding:
+        0 var(--v-sharing-space-5);
+
+    border-radius:
+        var(--v-sharing-radius-sm);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    font-weight:
+        var(--v-sharing-weight-semibold);
+}
+
+
+.velora-access-modal-cancel {
+
+    border:
+        1px solid var(--velora-sharing-line-strong);
+
+    background:
+        var(--velora-sharing-paper);
+
+    color:
+        var(--velora-sharing-ink);
+}
+
+
+.velora-access-modal-cancel:hover {
+
+    background:
+        var(--velora-sharing-surface);
+}
+
+
+.velora-access-modal-danger {
+
+    border:
+        1px solid var(--velora-sharing-danger);
+
+    background:
+        var(--velora-sharing-danger);
+
+    color:
+        var(--velora-sharing-white);
+}
+
+
+.velora-access-modal-danger:hover {
+
+    background:
+        #893d3d;
+}
+
+
+/* =========================================================
+   15. TOAST
+========================================================= */
+
+.velora-access-toast {
+
+    position:
+        fixed;
+
+    right:
+        28px;
+
+    bottom:
+        28px;
+
+    z-index:
+        5000;
+
+    min-height:
+        48px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        var(--v-sharing-space-2);
+
+    padding:
+        0 var(--v-sharing-space-4);
+
+    border:
+        1px solid var(--velora-sharing-line);
+
+    border-radius:
+        var(--v-sharing-radius-md);
+
+    background:
+        var(--velora-sharing-ink);
+
+    color:
+        var(--velora-sharing-white);
+
+    box-shadow:
+        var(--v-sharing-shadow-md);
+
+    font-size:
+        var(--v-sharing-sm);
+
+    font-weight:
+        var(--v-sharing-weight-semibold);
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    transform:
+        translateY(12px);
+
+    transition:
+        opacity var(--v-sharing-motion-normal) ease,
+        visibility var(--v-sharing-motion-normal) ease,
+        transform var(--v-sharing-motion-normal) ease;
+}
+
+
+.velora-access-toast.is-visible {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+    transform:
+        translateY(0);
+}
+
+
+.velora-access-toast i {
+
+    color:
+        #b8d3c3;
+}
+
+
+/* =========================================================
+   16. FOCUS
+========================================================= */
+
+.velora-access-brand:focus-visible,
+.velora-access-gallery-link:focus-visible,
+.velora-access-avatar:focus-visible,
+.velora-access-copy-button:focus-visible,
+.velora-access-share-button:focus-visible,
+.velora-access-switch input:focus-visible + span,
+.velora-access-date input:focus-visible,
+.velora-access-password-input input:focus-visible,
+.velora-access-password-input button:focus-visible,
+.velora-access-save-button:focus-visible,
+.velora-access-disable-button:focus-visible,
+.velora-access-modal-close:focus-visible,
+.velora-access-modal-cancel:focus-visible,
+.velora-access-modal-danger:focus-visible {
+
+    outline:
+        2px solid var(--velora-sharing-green);
+
+    outline-offset:
+        3px;
+}
+
+
+/* =========================================================
+   17. RESPONSIVE — 1000PX
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .velora-access-intro {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .velora-access-overview-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .velora-access-overview-card:last-child {
+
+        grid-column:
+            1 / -1;
+
+    }
+
+}
+
+
+/* =========================================================
+   18. RESPONSIVE — 800PX
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .velora-access-header {
+
+        grid-template-columns:
+            1fr auto;
+
+    }
+
+
+    .velora-access-gallery-title {
+
+        display:
+            none;
+
+    }
+
+
+    .velora-access-overview-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .velora-access-overview-card:last-child {
+
+        grid-column:
+            auto;
+
+    }
+
+
+    .velora-access-password-card {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .velora-access-save-button {
+
+        width:
+            100%;
+
+    }
+
+
+    .velora-access-danger {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .velora-access-disable-button {
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   19. RESPONSIVE — 650PX
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .velora-access-link-preview {
+
+        align-items:
+            flex-start;
+
+        flex-wrap:
+            wrap;
+
+    }
+
+
+    .velora-access-link-content {
+
+        width:
+            calc(100% - 68px);
+
+        flex:
+            none;
+
+    }
+
+
+    .velora-access-copy-button {
+
+        width:
+            100%;
+
+    }
+
+
+    .velora-access-share-actions {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+
+    .velora-access-share-button {
+
+        padding:
+            0 var(--v-sharing-space-2);
+
+    }
+
+
+    .velora-access-setting {
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .velora-access-setting-content {
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .velora-access-setting-content > div:first-child {
+
+        flex:
+            1;
+
+    }
+
+
+    .velora-access-activity-item {
+
+        grid-template-columns:
+            auto minmax(0, 1fr);
+
+    }
+
+
+    .velora-access-visitor-time {
+
+        grid-column:
+            2;
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .velora-access-activity-status {
+
+        grid-column:
+            2;
+
+        justify-self:
+            start;
+
+    }
+
+}
+
+
+/* =========================================================
+   20. RESPONSIVE — 600PX
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .velora-access-header {
+
+        min-height:
+            64px;
+
+        padding:
+            0 16px;
+
+    }
+
+
+    .velora-access-brand-name {
+
+        font-size:
+            var(--v-sharing-xs);
+
+    }
+
+
+    .velora-access-gallery-link {
+
+        width:
+            40px;
+
+        padding:
+            0;
+
+    }
+
+
+    .velora-access-gallery-link span {
+
+        display:
+            none;
+
+    }
+
+
+    .velora-access-avatar {
+
+        width:
+            36px;
+
+        height:
+            36px;
+
+    }
+
+
+    .velora-access-main {
+
+        padding:
+            0 16px 100px;
+
+    }
+
+
+    .velora-access-intro {
+
+        padding:
+            52px 0 40px;
+
+    }
+
+
+    .velora-access-intro h1 {
+
+        font-size:
+            clamp(44px, 13vw, 60px);
+
+    }
+
+
+    .velora-access-intro p {
+
+        font-size:
+            var(--v-sharing-md);
+
+    }
+
+
+    .velora-access-status {
+
+        width:
+            100%;
+
+        min-width:
+            0;
+
+    }
+
+
+    .velora-access-overview,
+    .velora-access-share,
+    .velora-access-security,
+    .velora-access-password,
+    .velora-access-activity {
+
+        padding:
+            56px 0;
+
+    }
+
+
+    .velora-access-share-box {
+
+        padding:
+            16px;
+
+    }
+
+
+    .velora-access-share-actions {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .velora-access-share-button {
+
+        width:
+            100%;
+
+    }
+
+
+    .velora-access-setting {
+
+        padding:
+            20px;
+
+    }
+
+
+    .velora-access-setting-icon {
+
+        width:
+            44px;
+
+        height:
+            44px;
+
+        flex-basis:
+            44px;
+
+    }
+
+
+    .velora-access-setting-content {
+
+        gap:
+            16px;
+
+    }
+
+
+    .velora-access-setting-content strong {
+
+        font-size:
+            var(--v-sharing-sm);
+
+    }
+
+
+    .velora-access-setting-content span {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .velora-access-date input {
+
+        width:
+            100%;
+
+    }
+
+
+    .velora-access-password-card {
+
+        padding:
+            20px;
+
+    }
+
+
+    .velora-access-danger {
+
+        padding:
+            24px;
+
+    }
+
+
+    .velora-access-modal {
+
+        padding:
+            12px;
+
+    }
+
+
+    .velora-access-modal-card {
+
+        padding:
+            36px 20px 28px;
+
+    }
+
+
+    .velora-access-modal-actions {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column-reverse;
+
+    }
+
+
+    .velora-access-modal-cancel,
+    .velora-access-modal-danger {
+
+        width:
+            100%;
+
+    }
+
+
+    .velora-access-toast {
+
+        right:
+            16px;
+
+        bottom:
+            16px;
+
+        left:
+            16px;
+
+        justify-content:
+            center;
+
+    }
+
+}
+
+
+/* =========================================================
+   21. RESPONSIVE — 430PX
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .velora-access-brand-name {
+
+        display:
+            none;
+
+    }
+
+
+    .velora-access-intro h1 {
+
+        font-size:
+            42px;
+
+    }
+
+
+    .velora-access-link-icon {
+
+        width:
+            44px;
+
+        height:
+            44px;
+
+        flex-basis:
+            44px;
+
+    }
+
+
+    .velora-access-link-content {
+
+        width:
+            calc(100% - 60px);
+
+    }
+
+
+    .velora-access-link-content strong {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .velora-access-setting {
+
+        gap:
+            12px;
+
+    }
+
+
+    .velora-access-setting-content {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .velora-access-setting-content
+    > div:first-child {
+
+        width:
+            100%;
+
+    }
+
+
+    .velora-access-switch {
+
+        align-self:
+            flex-start;
+
+    }
+
+
+    .velora-access-visitor-avatar {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+    }
+
+}
+
+
+/* =========================================================
+   22. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior:
+            auto;
+
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+}

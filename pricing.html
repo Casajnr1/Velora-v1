@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Upgrade your Velora photography workspace."
+    >
+
+    <title>Velora | Upgrade Your Plan</title>
+
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- =====================================================
+         GOOGLE FONT — LATO
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         VELORA DASHBOARD
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+
+    <!-- =====================================================
+         PRICING
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/pricing.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="velora-dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY
+    ====================================================== -->
+
+    <div
+        class="velora-sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="velora-sidebar"
+        id="veloraSidebar"
+    >
+
+
+        <!-- SIDEBAR HEADER -->
+
+        <div class="velora-sidebar-header">
+
+            <a
+                href="dashboard.html"
+                class="velora-dashboard-brand"
+            >
+
+                <img
+                    src="media/logo/logo-1-main.png"
+                    alt="Velora"
+                >
+
+            </a>
+
+
+            <button
+                type="button"
+                class="velora-sidebar-close"
+                id="sidebarClose"
+                aria-label="Close navigation"
+            >
+
+                <i class="bi bi-x-lg"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================== -->
+
+        <nav
+            class="velora-sidebar-nav"
+            aria-label="Dashboard navigation"
+        >
+
+
+            <div class="velora-nav-section">
+
+                <span class="velora-nav-label">
+                    WORKSPACE
+                </span>
+
+
+                <a
+                    href="dashboard.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-grid-1x2"></i>
+
+                    <span>
+                        Overview
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="galleries.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-images"></i>
+
+                    <span>
+                        Galleries
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="bookings.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-calendar2-week"></i>
+
+                    <span>
+                        Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="clients.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-people"></i>
+
+                    <span>
+                        Clients
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="analytics.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-bar-chart"></i>
+
+                    <span>
+                        Analytics
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="velora-nav-section">
+
+                <span class="velora-nav-label">
+                    MANAGE
+                </span>
+
+
+                <a
+                    href="settings.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-sliders2"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="velora-sidebar-bottom">
+
+
+            <!-- UPGRADE CARD -->
+
+            <a
+                href="pricing.html"
+                class="velora-upgrade-card is-active"
+            >
+
+                <div class="velora-upgrade-icon">
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </div>
+
+
+                <div class="velora-upgrade-content">
+
+                    <strong>
+                        Upgrade your plan
+                    </strong>
+
+                    <span>
+                        Get more space for your work.
+                    </span>
+
+                </div>
+
+
+                <i class="bi bi-chevron-right"></i>
+
+            </a>
+
+
+
+            <!-- USER -->
+
+            <button
+                type="button"
+                class="velora-sidebar-user"
+            >
+
+                <span class="velora-user-avatar">
+                    P
+                </span>
+
+
+                <span class="velora-user-details">
+
+                    <strong>
+                        Patrick
+                    </strong>
+
+                    <small>
+                        Photographer
+                    </small>
+
+                </span>
+
+
+                <i class="bi bi-three-dots"></i>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <div class="velora-dashboard-main">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="velora-dashboard-topbar">
+
+
+            <button
+                type="button"
+                class="velora-mobile-menu"
+                id="sidebarOpen"
+                aria-label="Open navigation"
+                aria-expanded="false"
+            >
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+
+            <div class="velora-dashboard-search">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="search"
+                    placeholder="Search..."
+                    aria-label="Search dashboard"
+                >
+
+                <span class="velora-search-shortcut">
+                    /
+                </span>
+
+            </div>
+
+
+            <div class="velora-topbar-actions">
+
+
+                <a
+                    href="#"
+                    class="velora-view-site"
+                >
+
+                    <i class="bi bi-box-arrow-up-right"></i>
+
+                    <span>
+                        View site
+                    </span>
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="velora-topbar-icon"
+                    aria-label="Notifications"
+                >
+
+                    <i class="bi bi-bell"></i>
+
+                    <span class="velora-notification-dot"></span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-topbar-profile"
+                    aria-label="Open profile"
+                >
+
+                    <span class="velora-topbar-avatar">
+                        P
+                    </span>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <main class="velora-dashboard-content velora-pricing-page">
+
+
+            <!-- =================================================
+                 BREADCRUMB
+            ================================================== -->
+
+            <div class="velora-dashboard-breadcrumb">
+
+                <a href="dashboard.html">
+                    Workspace
+                </a>
+
+                <i class="bi bi-chevron-right"></i>
+
+                <strong>
+                    Upgrade
+                </strong>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 HERO
+            ================================================== -->
+
+            <section class="velora-pricing-hero">
+
+                <span class="velora-page-eyebrow">
+                    VELORA PLANS
+                </span>
+
+
+                <h1>
+                    Choose the space<br>
+                    your work deserves.
+                </h1>
+
+
+                <p>
+                    Start simple and upgrade when your photography
+                    business needs more room to grow.
+                </p>
+
+
+                <!-- BILLING -->
+
+                <div
+                    class="velora-billing-toggle"
+                    role="group"
+                    aria-label="Billing frequency"
+                >
+
+                    <button
+                        type="button"
+                        class="is-active"
+                        data-billing="monthly"
+                    >
+                        Monthly
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-billing="yearly"
+                    >
+
+                        Yearly
+
+                        <span>
+                            Save
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PRICING CARDS
+            ================================================== -->
+
+            <section
+                class="velora-pricing-grid"
+                aria-label="Velora plans"
+            >
+
+
+                <!-- =================================================
+                     FREE
+                ================================================== -->
+
+                <article
+                    class="velora-plan-card"
+                    data-plan="free"
+                >
+
+
+                    <div class="velora-plan-top">
+
+                        <div class="velora-plan-icon">
+
+                            <i class="bi bi-circle"></i>
+
+                        </div>
+
+
+                        <span class="velora-plan-label">
+                            FOR GETTING STARTED
+                        </span>
+
+
+                        <h2>
+                            Free
+                        </h2>
+
+
+                        <p>
+                            A simple home for your photography.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="velora-plan-price">
+
+                        <strong>
+                            $0
+                        </strong>
+
+                        <span>
+                            / month
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="velora-plan-storage">
+
+                        <i class="bi bi-cloud"></i>
+
+                        <strong>
+                            1 GB
+                        </strong>
+
+                        <span>
+                            storage
+                        </span>
+
+                    </div>
+
+
+
+                    <ul class="velora-plan-features">
+
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Personal portfolio
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Client galleries
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Basic booking tools
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Shareable gallery links
+                        </li>
+
+                    </ul>
+
+
+
+                    <button
+                        type="button"
+                        class="velora-plan-button secondary"
+                        data-plan-button="free"
+                    >
+                        Current plan
+                    </button>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     STUDIO
+                ================================================== -->
+
+                <article
+                    class="velora-plan-card featured"
+                    data-plan="studio"
+                >
+
+
+                    <div class="velora-plan-popular">
+                        MOST POPULAR
+                    </div>
+
+
+                    <div class="velora-plan-top">
+
+                        <div class="velora-plan-icon">
+
+                            <i class="bi bi-camera"></i>
+
+                        </div>
+
+
+                        <span class="velora-plan-label">
+                            FOR WORKING PHOTOGRAPHERS
+                        </span>
+
+
+                        <h2>
+                            Studio
+                        </h2>
+
+
+                        <p>
+                            Everything you need to run your studio.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="velora-plan-price">
+
+                        <strong
+                            data-monthly="$10"
+                            data-yearly="$8"
+                        >
+                            $10
+                        </strong>
+
+                        <span>
+                            / month
+                        </span>
+
+                    </div>
+
+
+                    <div class="velora-plan-billing-note">
+                        billed monthly
+                    </div>
+
+
+
+                    <div class="velora-plan-storage">
+
+                        <i class="bi bi-cloud"></i>
+
+                        <strong>
+                            25 GB
+                        </strong>
+
+                        <span>
+                            storage
+                        </span>
+
+                    </div>
+
+
+
+                    <ul class="velora-plan-features">
+
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Everything in Free
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            25 GB photo storage
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Unlimited galleries
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Advanced booking tools
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Client management
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Analytics
+                        </li>
+
+                    </ul>
+
+
+
+                    <button
+                        type="button"
+                        class="velora-plan-button primary"
+                        data-plan-button="studio"
+                    >
+
+                        Upgrade to Studio
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </button>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     PRO
+                ================================================== -->
+
+                <article
+                    class="velora-plan-card"
+                    data-plan="pro"
+                >
+
+
+                    <div class="velora-plan-top">
+
+                        <div class="velora-plan-icon">
+
+                            <i class="bi bi-stars"></i>
+
+                        </div>
+
+
+                        <span class="velora-plan-label">
+                            FOR ESTABLISHED STUDIOS
+                        </span>
+
+
+                        <h2>
+                            Pro
+                        </h2>
+
+
+                        <p>
+                            More space for photographers at scale.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="velora-plan-price">
+
+                        <strong
+                            data-monthly="$25"
+                            data-yearly="$20"
+                        >
+                            $25
+                        </strong>
+
+                        <span>
+                            / month
+                        </span>
+
+                    </div>
+
+
+                    <div class="velora-plan-billing-note">
+                        billed monthly
+                    </div>
+
+
+
+                    <div class="velora-plan-storage">
+
+                        <i class="bi bi-cloud"></i>
+
+                        <strong>
+                            250 GB
+                        </strong>
+
+                        <span>
+                            storage
+                        </span>
+
+                    </div>
+
+
+
+                    <ul class="velora-plan-features">
+
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Everything in Studio
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            250 GB photo storage
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Priority support
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Advanced analytics
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Professional tools
+                        </li>
+
+                    </ul>
+
+
+
+                    <button
+                        type="button"
+                        class="velora-plan-button secondary"
+                        data-plan-button="pro"
+                    >
+
+                        Upgrade to Pro
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </button>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 STORAGE CALLOUT
+            ================================================== -->
+
+            <section class="velora-pricing-storage-callout">
+
+
+                <div class="velora-storage-callout-icon">
+
+                    <i class="bi bi-cloud-check"></i>
+
+                </div>
+
+
+                <div class="velora-storage-callout-content">
+
+                    <span>
+                        YOUR STORAGE
+                    </span>
+
+                    <strong>
+                        1 GB of 1 GB used
+                    </strong>
+
+                    <p>
+                        You're currently on the Free plan.
+                        Upgrade when you need more room.
+                    </p>
+
+                </div>
+
+
+                <div class="velora-storage-meter">
+
+                    <div>
+                        <span></span>
+                    </div>
+
+                    <small>
+                        100%
+                    </small>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FAQ / TRUST
+            ================================================== -->
+
+            <section class="velora-pricing-footer">
+
+
+                <div>
+
+                    <i class="bi bi-shield-check"></i>
+
+                    <span>
+                        Secure payments
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <i class="bi bi-arrow-repeat"></i>
+
+                    <span>
+                        Change plans anytime
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <i class="bi bi-x-circle"></i>
+
+                    <span>
+                        Cancel anytime
+                    </span>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PLAN CONFIRMATION MODAL
+====================================================== -->
+
+<div
+    class="velora-upgrade-modal"
+    id="upgradeModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="velora-upgrade-modal-backdrop"
+        id="upgradeModalBackdrop"
+    ></div>
+
+
+    <section
+        class="velora-upgrade-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="upgradeModalTitle"
+    >
+
+
+        <button
+            type="button"
+            class="velora-upgrade-modal-close"
+            id="closeUpgradeModal"
+            aria-label="Close"
+        >
+
+            <i class="bi bi-x-lg"></i>
+
+        </button>
+
+
+        <div class="velora-upgrade-dialog-icon">
+
+            <i class="bi bi-arrow-up-right"></i>
+
+        </div>
+
+
+        <span class="velora-page-eyebrow">
+            PLAN UPGRADE
+        </span>
+
+
+        <h2 id="upgradeModalTitle">
+            Upgrade to Studio
+        </h2>
+
+
+        <p>
+            You're about to upgrade your Velora workspace.
+        </p>
+
+
+        <div class="velora-upgrade-summary">
+
+            <div>
+
+                <span>
+                    PLAN
+                </span>
+
+                <strong id="modalPlanName">
+                    Studio
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    STORAGE
+                </span>
+
+                <strong id="modalPlanStorage">
+                    25 GB
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    PRICE
+                </span>
+
+                <strong id="modalPlanPrice">
+                    $10 / month
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="velora-confirm-upgrade"
+            id="confirmUpgrade"
+        >
+
+            Continue to payment
+
+            <i class="bi bi-arrow-right"></i>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="velora-cancel-upgrade"
+            id="cancelUpgrade"
+        >
+            Not now
+        </button>
+
+    </section>
+
+</div>
+
+
+
+<script>
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+const sidebar =
+    document.getElementById("veloraSidebar");
+
+const sidebarOpen =
+    document.getElementById("sidebarOpen");
+
+const sidebarClose =
+    document.getElementById("sidebarClose");
+
+const sidebarOverlay =
+    document.getElementById("sidebarOverlay");
+
+
+function openSidebar() {
+
+    sidebar.classList.add("is-open");
+
+    sidebarOverlay.classList.add("is-visible");
+
+    sidebarOpen.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+}
+
+
+function closeSidebar() {
+
+    sidebar.classList.remove("is-open");
+
+    sidebarOverlay.classList.remove("is-visible");
+
+    sidebarOpen.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+}
+
+
+sidebarOpen.addEventListener(
+    "click",
+    openSidebar
+);
+
+
+sidebarClose.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+sidebarOverlay.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+
+/* =====================================================
+   BILLING TOGGLE
+===================================================== */
+
+const billingButtons =
+    document.querySelectorAll(
+        ".velora-billing-toggle button"
+    );
+
+
+const priceElements =
+    document.querySelectorAll(
+        "[data-monthly]"
+    );
+
+
+const billingNotes =
+    document.querySelectorAll(
+        ".velora-plan-billing-note"
+    );
+
+
+billingButtons.forEach(
+    function (button) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                billingButtons.forEach(
+                    function (item) {
+
+                        item.classList.remove(
+                            "is-active"
+                        );
+
+                    }
+                );
+
+
+                this.classList.add(
+                    "is-active"
+                );
+
+
+                const billing =
+                    this.dataset.billing;
+
+
+                priceElements.forEach(
+                    function (price) {
+
+                        price.textContent =
+                            price.dataset[
+                                billing
+                            ];
+
+                    }
+                );
+
+
+                billingNotes.forEach(
+                    function (note) {
+
+                        note.textContent =
+                            billing === "yearly"
+                                ? "billed annually"
+                                : "billed monthly";
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   UPGRADE MODAL
+===================================================== */
+
+const upgradeModal =
+    document.getElementById(
+        "upgradeModal"
+    );
+
+
+const upgradeModalBackdrop =
+    document.getElementById(
+        "upgradeModalBackdrop"
+    );
+
+
+const closeUpgradeModal =
+    document.getElementById(
+        "closeUpgradeModal"
+    );
+
+
+const cancelUpgrade =
+    document.getElementById(
+        "cancelUpgrade"
+    );
+
+
+const modalPlanName =
+    document.getElementById(
+        "modalPlanName"
+    );
+
+
+const modalPlanStorage =
+    document.getElementById(
+        "modalPlanStorage"
+    );
+
+
+const modalPlanPrice =
+    document.getElementById(
+        "modalPlanPrice"
+    );
+
+
+const upgradeModalTitle =
+    document.getElementById(
+        "upgradeModalTitle"
+    );
+
+
+let selectedPlan =
+    null;
+
+
+function openUpgradeModal(
+    plan,
+    name,
+    storage,
+    price
+) {
+
+    selectedPlan = plan;
+
+
+    modalPlanName.textContent =
+        name;
+
+
+    modalPlanStorage.textContent =
+        storage;
+
+
+    modalPlanPrice.textContent =
+        price + " / month";
+
+
+    upgradeModalTitle.textContent =
+        "Upgrade to " + name;
+
+
+    upgradeModal.classList.add(
+        "is-open"
+    );
+
+
+    upgradeModal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.classList.add(
+        "velora-modal-open"
+    );
+
+}
+
+
+function closeUpgrade() {
+
+    upgradeModal.classList.remove(
+        "is-open"
+    );
+
+
+    upgradeModal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.classList.remove(
+        "velora-modal-open"
+    );
+
+}
+
+
+document
+    .querySelectorAll(
+        "[data-plan-button]"
+    )
+    .forEach(
+        function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const plan =
+                        this.dataset.planButton;
+
+
+                    if (
+                        plan === "free"
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    const card =
+                        this.closest(
+                            ".velora-plan-card"
+                        );
+
+
+                    const name =
+                        card.querySelector(
+                            "h2"
+                        ).textContent.trim();
+
+
+                    const storage =
+                        card.querySelector(
+                            ".velora-plan-storage strong"
+                        ).textContent.trim();
+
+
+                    const price =
+                        card.querySelector(
+                            ".velora-plan-price strong"
+                        ).textContent.trim();
+
+
+                    openUpgradeModal(
+                        plan,
+                        name,
+                        storage,
+                        price
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+closeUpgradeModal.addEventListener(
+    "click",
+    closeUpgrade
+);
+
+
+cancelUpgrade.addEventListener(
+    "click",
+    closeUpgrade
+);
+
+
+upgradeModalBackdrop.addEventListener(
+    "click",
+    closeUpgrade
+);
+
+
+
+/* =====================================================
+   PAYMENT PLACEHOLDER
+===================================================== */
+
+document
+    .getElementById(
+        "confirmUpgrade"
+    )
+    .addEventListener(
+        "click",
+        function () {
+
+            /*
+                PAYMENT INTEGRATION WILL BE
+                CONNECTED LATER.
+
+                For V1 UI testing, we keep
+                the upgrade flow visual only.
+            */
+
+            this.innerHTML =
+                '<i class="bi bi-check2"></i> Payment coming next';
+
+            this.disabled = true;
+
+        }
+    );
+
+
+
+/* =====================================================
+   ESCAPE
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "Escape" &&
+            upgradeModal.classList.contains(
+                "is-open"
+            )
+        ) {
+
+            closeUpgrade();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

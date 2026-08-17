@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Velora gallery delivery and download management."
+    >
+
+    <title>Delivery & Downloads — Velora</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Velora -->
+    <link
+        rel="stylesheet"
+        href="css/client-gallery-delivery.css"
+    >
+</head>
+
+<body>
+
+<main class="velora-delivery-page">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="velora-delivery-header">
+
+        <a
+            href="client-gallery.html"
+            class="velora-delivery-brand"
+            aria-label="Back to Velora gallery"
+        >
+            <span class="velora-delivery-brand-mark">V</span>
+
+            <span class="velora-delivery-brand-name">
+                VELORA
+            </span>
+        </a>
+
+        <div class="velora-delivery-gallery-context">
+
+            <span>GALLERY</span>
+
+            <strong>
+                Wedding Collection
+            </strong>
+
+        </div>
+
+        <div class="velora-delivery-header-actions">
+
+            <a
+                href="client-gallery.html"
+                class="velora-delivery-back"
+            >
+                <i class="bi bi-arrow-left"></i>
+                <span>Gallery</span>
+            </a>
+
+            <button
+                type="button"
+                class="velora-delivery-avatar"
+                aria-label="Open profile"
+            >
+                P
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <div class="velora-delivery-main">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="velora-delivery-hero">
+
+            <div class="velora-delivery-hero-copy">
+
+                <span class="velora-delivery-eyebrow">
+                    FINAL DELIVERY
+                </span>
+
+                <h1>
+                    Deliver the
+                    final gallery.
+                </h1>
+
+                <p>
+                    Everything is prepared. Configure how
+                    Patrick receives, downloads, and accesses
+                    the finished photographs.
+                </p>
+
+            </div>
+
+
+            <div class="velora-delivery-ready">
+
+                <span
+                    class="velora-delivery-ready-dot"
+                    aria-hidden="true"
+                ></span>
+
+                <div>
+
+                    <strong id="deliveryStatus">
+                        Ready to deliver
+                    </strong>
+
+                    <span id="deliveryStatusDetail">
+                        428 photographs are prepared
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DELIVERY SNAPSHOT
+        ================================================== -->
+
+        <section
+            class="velora-delivery-section"
+            aria-labelledby="snapshot-title"
+        >
+
+            <div class="velora-delivery-section-heading">
+
+                <span class="velora-delivery-eyebrow">
+                    DELIVERY SNAPSHOT
+                </span>
+
+                <h2 id="snapshot-title">
+                    Everything is ready.
+                </h2>
+
+                <p>
+                    A quick overview before you send the
+                    final gallery to your client.
+                </p>
+
+            </div>
+
+
+            <div class="velora-delivery-snapshot">
+
+                <article class="velora-delivery-stat">
+
+                    <div class="velora-delivery-stat-icon">
+                        <i class="bi bi-images"></i>
+                    </div>
+
+                    <span>FINAL PHOTOS</span>
+
+                    <strong>428</strong>
+
+                    <p>
+                        Final photographs
+                    </p>
+
+                </article>
+
+
+                <article class="velora-delivery-stat">
+
+                    <div class="velora-delivery-stat-icon">
+                        <i class="bi bi-hdd"></i>
+                    </div>
+
+                    <span>DELIVERY SIZE</span>
+
+                    <strong>3.8 GB</strong>
+
+                    <p>
+                        Total download size
+                    </p>
+
+                </article>
+
+
+                <article class="velora-delivery-stat">
+
+                    <div class="velora-delivery-stat-icon">
+                        <i class="bi bi-person"></i>
+                    </div>
+
+                    <span>RECIPIENT</span>
+
+                    <strong>Patrick</strong>
+
+                    <p>
+                        Primary client
+                    </p>
+
+                </article>
+
+
+                <article class="velora-delivery-stat">
+
+                    <div class="velora-delivery-stat-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+
+                    <span>SECURITY</span>
+
+                    <strong>Protected</strong>
+
+                    <p>
+                        Download PIN enabled
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DELIVERY CONFIGURATION
+        ================================================== -->
+
+        <section
+            class="velora-delivery-section"
+            aria-labelledby="download-title"
+        >
+
+            <div class="velora-delivery-section-heading">
+
+                <span class="velora-delivery-eyebrow">
+                    DOWNLOAD EXPERIENCE
+                </span>
+
+                <h2 id="download-title">
+                    Give clients the right files.
+                </h2>
+
+                <p>
+                    Choose exactly what your client can
+                    download from the delivered gallery.
+                </p>
+
+            </div>
+
+
+            <div class="velora-delivery-panel">
+
+
+                <!-- Full Gallery -->
+
+                <div class="velora-delivery-control-row">
+
+                    <div class="velora-delivery-control-icon">
+                        <i class="bi bi-cloud-download"></i>
+                    </div>
+
+                    <div class="velora-delivery-control-copy">
+
+                        <strong>
+                            Full gallery download
+                        </strong>
+
+                        <span>
+                            Allow the client to download all
+                            428 final photographs at once.
+                        </span>
+
+                    </div>
+
+                    <label class="velora-delivery-switch">
+
+                        <input
+                            type="checkbox"
+                            id="fullGallery"
+                            checked
+                        >
+
+                        <span></span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Individual -->
+
+                <div class="velora-delivery-control-row">
+
+                    <div class="velora-delivery-control-icon">
+                        <i class="bi bi-image"></i>
+                    </div>
+
+                    <div class="velora-delivery-control-copy">
+
+                        <strong>
+                            Individual downloads
+                        </strong>
+
+                        <span>
+                            Allow clients to download selected
+                            photographs individually.
+                        </span>
+
+                    </div>
+
+                    <label class="velora-delivery-switch">
+
+                        <input
+                            type="checkbox"
+                            id="individualDownloads"
+                            checked
+                        >
+
+                        <span></span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Original -->
+
+                <div class="velora-delivery-control-row">
+
+                    <div class="velora-delivery-control-icon">
+                        <i class="bi bi-file-earmark-image"></i>
+                    </div>
+
+                    <div class="velora-delivery-control-copy">
+
+                        <strong>
+                            Original-resolution files
+                        </strong>
+
+                        <span>
+                            Give clients access to the highest
+                            available image resolution.
+                        </span>
+
+                    </div>
+
+                    <label class="velora-delivery-switch">
+
+                        <input
+                            type="checkbox"
+                            id="originalFiles"
+                        >
+
+                        <span></span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Web -->
+
+                <div class="velora-delivery-control-row">
+
+                    <div class="velora-delivery-control-icon">
+                        <i class="bi bi-phone"></i>
+                    </div>
+
+                    <div class="velora-delivery-control-copy">
+
+                        <strong>
+                            Web-size files
+                        </strong>
+
+                        <span>
+                            Provide optimized files for social
+                            media and online sharing.
+                        </span>
+
+                    </div>
+
+                    <label class="velora-delivery-switch">
+
+                        <input
+                            type="checkbox"
+                            id="webFiles"
+                            checked
+                        >
+
+                        <span></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FILE SIZE PRESET
+        ================================================== -->
+
+        <section
+            class="velora-delivery-section"
+            aria-labelledby="quality-title"
+        >
+
+            <div class="velora-delivery-section-heading">
+
+                <span class="velora-delivery-eyebrow">
+                    FILE QUALITY
+                </span>
+
+                <h2 id="quality-title">
+                    Choose the delivery quality.
+                </h2>
+
+                <p>
+                    Control the default files clients receive
+                    without changing your original gallery.
+                </p>
+
+            </div>
+
+
+            <div class="velora-delivery-quality-grid">
+
+
+                <button
+                    type="button"
+                    class="velora-delivery-quality-card"
+                    data-quality="web"
+                >
+
+                    <span class="velora-delivery-radio"></span>
+
+                    <div>
+
+                        <strong>
+                            Web
+                        </strong>
+
+                        <span>
+                            2048px · Optimized
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-delivery-quality-card is-selected"
+                    data-quality="high"
+                >
+
+                    <span class="velora-delivery-radio"></span>
+
+                    <div>
+
+                        <strong>
+                            High resolution
+                        </strong>
+
+                        <span>
+                            4096px · Recommended
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-delivery-quality-card"
+                    data-quality="original"
+                >
+
+                    <span class="velora-delivery-radio"></span>
+
+                    <div>
+
+                        <strong>
+                            Original
+                        </strong>
+
+                        <span>
+                            Full resolution
+                        </span>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SECURITY
+        ================================================== -->
+
+        <section
+            class="velora-delivery-section"
+            aria-labelledby="security-title"
+        >
+
+            <div class="velora-delivery-section-heading">
+
+                <span class="velora-delivery-eyebrow">
+                    ACCESS & SECURITY
+                </span>
+
+                <h2 id="security-title">
+                    Keep the delivery under control.
+                </h2>
+
+                <p>
+                    Protect the final files and decide how
+                    long your client can access them.
+                </p>
+
+            </div>
+
+
+            <div class="velora-delivery-security-grid">
+
+
+                <!-- PIN -->
+
+                <div class="velora-delivery-security-card">
+
+                    <div class="velora-delivery-security-top">
+
+                        <div class="velora-delivery-control-icon">
+                            <i class="bi bi-key"></i>
+                        </div>
+
+                        <label class="velora-delivery-switch">
+
+                            <input
+                                type="checkbox"
+                                id="downloadProtection"
+                                checked
+                            >
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+                    <strong>
+                        Download PIN
+                    </strong>
+
+                    <p>
+                        Require a separate PIN before
+                        downloads become available.
+                    </p>
+
+                    <div class="velora-delivery-pin-field">
+
+                        <label for="downloadPin">
+                            PIN
+                        </label>
+
+                        <div>
+
+                            <input
+                                type="password"
+                                id="downloadPin"
+                                value="482916"
+                                inputmode="numeric"
+                                maxlength="6"
+                                autocomplete="off"
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePin"
+                                aria-label="Show download PIN"
+                            >
+                                <i class="bi bi-eye"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Expiration -->
+
+                <div class="velora-delivery-security-card">
+
+                    <div class="velora-delivery-security-top">
+
+                        <div class="velora-delivery-control-icon">
+                            <i class="bi bi-calendar-event"></i>
+                        </div>
+
+                        <span class="velora-delivery-secure-label">
+                            ACCESS
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        Download expiration
+                    </strong>
+
+                    <p>
+                        Automatically disable downloads
+                        after a selected period.
+                    </p>
+
+                    <div class="velora-delivery-expiration">
+
+                        <button
+                            type="button"
+                            class="velora-delivery-expiration-option"
+                            data-days="7"
+                        >
+                            7 days
+                        </button>
+
+                        <button
+                            type="button"
+                            class="velora-delivery-expiration-option is-selected"
+                            data-days="30"
+                        >
+                            30 days
+                        </button>
+
+                        <button
+                            type="button"
+                            class="velora-delivery-expiration-option"
+                            data-days="90"
+                        >
+                            90 days
+                        </button>
+
+                        <button
+                            type="button"
+                            class="velora-delivery-expiration-option"
+                            data-days="0"
+                        >
+                            Never
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DOWNLOAD LIMIT
+        ================================================== -->
+
+        <section
+            class="velora-delivery-section"
+            aria-labelledby="limits-title"
+        >
+
+            <div class="velora-delivery-section-heading">
+
+                <span class="velora-delivery-eyebrow">
+                    DOWNLOAD LIMITS
+                </span>
+
+                <h2 id="limits-title">
+                    Set reasonable boundaries.
+                </h2>
+
+            </div>
+
+
+            <div class="velora-delivery-limit-panel">
+
+                <div>
+
+                    <strong>
+                        Full gallery downloads
+                    </strong>
+
+                    <span>
+                        Maximum number of complete gallery
+                        downloads allowed by the client.
+                    </span>
+
+                </div>
+
+
+                <select id="downloadLimit">
+
+                    <option value="unlimited">
+                        Unlimited
+                    </option>
+
+                    <option value="1">
+                        1 download
+                    </option>
+
+                    <option value="3">
+                        3 downloads
+                    </option>
+
+                    <option
+                        value="5"
+                        selected
+                    >
+                        5 downloads
+                    </option>
+
+                    <option value="10">
+                        10 downloads
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CLIENT MESSAGE
+        ================================================== -->
+
+        <section
+            class="velora-delivery-section"
+            aria-labelledby="message-title"
+        >
+
+            <div class="velora-delivery-section-heading">
+
+                <span class="velora-delivery-eyebrow">
+                    DELIVERY MESSAGE
+                </span>
+
+                <h2 id="message-title">
+                    Make the delivery personal.
+                </h2>
+
+                <p>
+                    Your message will appear alongside
+                    the client's final gallery.
+                </p>
+
+            </div>
+
+
+            <div class="velora-delivery-message-card">
+
+                <label for="deliveryMessage">
+                    Message to Patrick
+                </label>
+
+                <textarea
+                    id="deliveryMessage"
+                    maxlength="500"
+                >Thank you for trusting me to capture these moments. Your final gallery is ready. I hope you enjoy every photograph as much as I enjoyed creating them.</textarea>
+
+                <div class="velora-delivery-message-footer">
+
+                    <span id="messageCounter">
+                        0 / 500
+                    </span>
+
+                    <button
+                        type="button"
+                        id="saveMessage"
+                    >
+                        Save message
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RECIPIENT
+        ================================================== -->
+
+        <section
+            class="velora-delivery-section"
+            aria-labelledby="recipient-title"
+        >
+
+            <div class="velora-delivery-section-heading">
+
+                <span class="velora-delivery-eyebrow">
+                    RECIPIENT
+                </span>
+
+                <h2 id="recipient-title">
+                    Who receives the gallery?
+                </h2>
+
+            </div>
+
+
+            <div class="velora-delivery-recipient">
+
+                <div class="velora-delivery-recipient-avatar">
+                    P
+                </div>
+
+                <div class="velora-delivery-recipient-info">
+
+                    <strong>
+                        Patrick Obialor
+                    </strong>
+
+                    <span>
+                        patrick@example.com
+                    </span>
+
+                </div>
+
+                <span class="velora-delivery-verified">
+                    <i class="bi bi-check-circle-fill"></i>
+                    Verified
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DOWNLOAD ACTIVITY
+        ================================================== -->
+
+        <section
+            class="velora-delivery-section"
+            aria-labelledby="activity-title"
+        >
+
+            <div class="velora-delivery-section-heading">
+
+                <span class="velora-delivery-eyebrow">
+                    ACTIVITY
+                </span>
+
+                <h2 id="activity-title">
+                    Know what happens after delivery.
+                </h2>
+
+                <p>
+                    Download activity becomes available
+                    once the gallery has been delivered.
+                </p>
+
+            </div>
+
+
+            <div class="velora-delivery-activity">
+
+                <div class="velora-delivery-activity-stat">
+
+                    <span>
+                        FULL DOWNLOADS
+                    </span>
+
+                    <strong>2</strong>
+
+                </div>
+
+                <div class="velora-delivery-activity-stat">
+
+                    <span>
+                        PHOTOS DOWNLOADED
+                    </span>
+
+                    <strong>428</strong>
+
+                </div>
+
+                <div class="velora-delivery-activity-stat">
+
+                    <span>
+                        LAST ACTIVITY
+                    </span>
+
+                    <strong>
+                        Today
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="velora-delivery-history">
+
+                <div class="velora-delivery-history-row">
+
+                    <span class="velora-delivery-history-icon">
+                        <i class="bi bi-cloud-download"></i>
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Patrick downloaded the full gallery
+                        </strong>
+
+                        <span>
+                            428 photographs · 3.8 GB
+                        </span>
+
+                    </div>
+
+                    <time>
+                        Today · 4:18 PM
+                    </time>
+
+                </div>
+
+
+                <div class="velora-delivery-history-row">
+
+                    <span class="velora-delivery-history-icon">
+                        <i class="bi bi-images"></i>
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Patrick downloaded selected photos
+                        </strong>
+
+                        <span>
+                            32 photographs · 286 MB
+                        </span>
+
+                    </div>
+
+                    <time>
+                        Yesterday · 8:44 PM
+                    </time>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DELIVERY ACTION
+        ================================================== -->
+
+        <section class="velora-delivery-action">
+
+            <div class="velora-delivery-action-copy">
+
+                <span class="velora-delivery-eyebrow">
+                    FINAL STEP
+                </span>
+
+                <h2>
+                    Ready to send the gallery?
+                </h2>
+
+                <p>
+                    Patrick will receive the gallery link,
+                    your message, and the configured
+                    download instructions.
+                </p>
+
+            </div>
+
+
+            <div class="velora-delivery-action-buttons">
+
+                <button
+                    type="button"
+                    class="velora-delivery-preview"
+                    id="previewGallery"
+                >
+                    <i class="bi bi-eye"></i>
+                    Preview
+                </button>
+
+                <button
+                    type="button"
+                    class="velora-delivery-send"
+                    id="openDeliveryModal"
+                >
+                    <i class="bi bi-send"></i>
+                    Send gallery
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DELIVERED MANAGEMENT
+        ================================================== -->
+
+        <section
+            class="velora-delivery-management"
+            id="deliveryManagement"
+            hidden
+        >
+
+            <div>
+
+                <span class="velora-delivery-eyebrow">
+                    DELIVERED
+                </span>
+
+                <h2>
+                    Gallery delivered successfully.
+                </h2>
+
+                <p>
+                    The client has received access to the
+                    finished gallery.
+                </p>
+
+            </div>
+
+            <div class="velora-delivery-management-actions">
+
+                <button
+                    type="button"
+                    id="resendGallery"
+                >
+                    <i class="bi bi-arrow-repeat"></i>
+                    Resend
+                </button>
+
+                <button
+                    type="button"
+                    id="revokeGallery"
+                    class="is-danger"
+                >
+                    <i class="bi bi-slash-circle"></i>
+                    Revoke access
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         DELIVERY MODAL
+    ====================================================== -->
+
+    <div
+        class="velora-delivery-modal"
+        id="deliveryModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="velora-delivery-modal-backdrop"
+            data-close-modal
+        ></div>
+
+
+        <section
+            class="velora-delivery-modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle"
+        >
+
+            <button
+                type="button"
+                class="velora-delivery-modal-close"
+                data-close-modal
+                aria-label="Close delivery confirmation"
+            >
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+
+            <div class="velora-delivery-modal-icon">
+                <i class="bi bi-send-check"></i>
+            </div>
+
+
+            <span class="velora-delivery-eyebrow">
+                READY TO DELIVER
+            </span>
+
+
+            <h2 id="modalTitle">
+                Send the final gallery?
+            </h2>
+
+
+            <p>
+                Patrick will receive access to the
+                finished gallery and the download
+                settings you've configured.
+            </p>
+
+
+            <div class="velora-delivery-modal-details">
+
+                <div>
+                    <span>PHOTOS</span>
+                    <strong>428</strong>
+                </div>
+
+                <div>
+                    <span>QUALITY</span>
+                    <strong id="modalQuality">
+                        High
+                    </strong>
+                </div>
+
+                <div>
+                    <span>ACCESS</span>
+                    <strong>
+                        Protected
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="velora-delivery-modal-actions">
+
+                <button
+                    type="button"
+                    class="velora-delivery-modal-cancel"
+                    data-close-modal
+                >
+                    Not yet
+                </button>
+
+                <button
+                    type="button"
+                    class="velora-delivery-modal-confirm"
+                    id="confirmDelivery"
+                >
+                    <i class="bi bi-send"></i>
+                    Send gallery
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="velora-delivery-toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <i class="bi bi-check-circle"></i>
+
+        <span id="toastMessage">
+            Saved
+        </span>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        const toast = document.getElementById("toast");
+        const toastMessage = document.getElementById("toastMessage");
+
+        let toastTimer;
+
+        function showToast(message) {
+
+            toastMessage.textContent = message;
+
+            toast.classList.add("is-visible");
+
+            clearTimeout(toastTimer);
+
+            toastTimer = setTimeout(() => {
+
+                toast.classList.remove("is-visible");
+
+            }, 2600);
+        }
+
+
+        /* =================================================
+           TOGGLES
+        ================================================= */
+
+        document.querySelectorAll(
+            ".velora-delivery-switch input"
+        ).forEach(input => {
+
+            input.addEventListener("change", () => {
+
+                const label =
+                    input.closest(
+                        ".velora-delivery-control-row"
+                    )?.querySelector("strong")
+                    ?.textContent ||
+                    input.closest(
+                        ".velora-delivery-security-card"
+                    )?.querySelector("strong")
+                    ?.textContent ||
+                    "Setting";
+
+                showToast(
+                    `${label.trim()} ${
+                        input.checked
+                            ? "enabled"
+                            : "disabled"
+                    }`
+                );
+
+            });
+
+        });
+
+
+        /* =================================================
+           QUALITY
+        ================================================= */
+
+        const qualityCards =
+            document.querySelectorAll(
+                ".velora-delivery-quality-card"
+            );
+
+        let selectedQuality = "high";
+
+        qualityCards.forEach(card => {
+
+            card.addEventListener("click", () => {
+
+                qualityCards.forEach(item => {
+
+                    item.classList.remove(
+                        "is-selected"
+                    );
+
+                });
+
+                card.classList.add(
+                    "is-selected"
+                );
+
+                selectedQuality =
+                    card.dataset.quality;
+
+                const qualityName =
+                    card.querySelector("strong")
+                        .textContent
+                        .trim();
+
+                document.getElementById(
+                    "modalQuality"
+                ).textContent =
+                    qualityName;
+
+                showToast(
+                    `${qualityName} delivery selected`
+                );
+
+            });
+
+        });
+
+
+        /* =================================================
+           EXPIRATION
+        ================================================= */
+
+        const expirationOptions =
+            document.querySelectorAll(
+                ".velora-delivery-expiration-option"
+            );
+
+        expirationOptions.forEach(option => {
+
+            option.addEventListener("click", () => {
+
+                expirationOptions.forEach(item => {
+
+                    item.classList.remove(
+                        "is-selected"
+                    );
+
+                });
+
+                option.classList.add(
+                    "is-selected"
+                );
+
+                const days =
+                    Number(option.dataset.days);
+
+                if (days === 0) {
+
+                    showToast(
+                        "Downloads will not expire"
+                    );
+
+                } else {
+
+                    showToast(
+                        `Downloads expire after ${days} days`
+                    );
+
+                }
+
+            });
+
+        });
+
+
+        /* =================================================
+           PIN
+        ================================================= */
+
+        const pin =
+            document.getElementById("downloadPin");
+
+        const togglePin =
+            document.getElementById("togglePin");
+
+        togglePin.addEventListener("click", () => {
+
+            const isHidden =
+                pin.type === "password";
+
+            pin.type =
+                isHidden
+                    ? "text"
+                    : "password";
+
+            togglePin.innerHTML =
+                isHidden
+                    ? '<i class="bi bi-eye-slash"></i>'
+                    : '<i class="bi bi-eye"></i>';
+
+            togglePin.setAttribute(
+                "aria-label",
+                isHidden
+                    ? "Hide download PIN"
+                    : "Show download PIN"
+            );
+
+        });
+
+
+        /* =================================================
+           MESSAGE
+        ================================================= */
+
+        const message =
+            document.getElementById(
+                "deliveryMessage"
+            );
+
+        const counter =
+            document.getElementById(
+                "messageCounter"
+            );
+
+        function updateCounter() {
+
+            counter.textContent =
+                `${message.value.length} / 500`;
+
+        }
+
+        message.addEventListener(
+            "input",
+            updateCounter
+        );
+
+        updateCounter();
+
+
+        document.getElementById(
+            "saveMessage"
+        ).addEventListener(
+            "click",
+            () => {
+
+                showToast(
+                    "Delivery message saved"
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           PREVIEW
+        ================================================= */
+
+        document.getElementById(
+            "previewGallery"
+        ).addEventListener(
+            "click",
+            () => {
+
+                showToast(
+                    "Client preview is ready"
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           MODAL
+        ================================================= */
+
+        const modal =
+            document.getElementById(
+                "deliveryModal"
+            );
+
+        const openModal =
+            document.getElementById(
+                "openDeliveryModal"
+            );
+
+        const closeModalButtons =
+            document.querySelectorAll(
+                "[data-close-modal]"
+            );
+
+        function openDeliveryModal() {
+
+            modal.classList.add(
+                "is-visible"
+            );
+
+            modal.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.classList.add(
+                "velora-delivery-modal-open"
+            );
+
+            document.getElementById(
+                "confirmDelivery"
+            ).focus();
+
+        }
+
+
+        function closeDeliveryModal() {
+
+            modal.classList.remove(
+                "is-visible"
+            );
+
+            modal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.classList.remove(
+                "velora-delivery-modal-open"
+            );
+
+            openModal.focus();
+
+        }
+
+
+        openModal.addEventListener(
+            "click",
+            openDeliveryModal
+        );
+
+
+        closeModalButtons.forEach(button => {
+
+            button.addEventListener(
+                "click",
+                closeDeliveryModal
+            );
+
+        });
+
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Escape" &&
+                    modal.classList.contains(
+                        "is-visible"
+                    )
+                ) {
+
+                    closeDeliveryModal();
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           CONFIRM DELIVERY
+        ================================================= */
+
+        document.getElementById(
+            "confirmDelivery"
+        ).addEventListener(
+            "click",
+            () => {
+
+                closeDeliveryModal();
+
+                document.getElementById(
+                    "deliveryStatus"
+                ).textContent =
+                    "Delivered";
+
+                document.getElementById(
+                    "deliveryStatusDetail"
+                ).textContent =
+                    "Gallery sent to Patrick";
+
+                document
+                    .querySelector(
+                        ".velora-delivery-ready"
+                    )
+                    .classList.add(
+                        "is-delivered"
+                    );
+
+                document.getElementById(
+                    "deliveryManagement"
+                ).hidden = false;
+
+                openModal.disabled = true;
+
+                openModal.classList.add(
+                    "is-delivered"
+                );
+
+                openModal.innerHTML = `
+                    <i class="bi bi-check2"></i>
+                    Delivered
+                `;
+
+                showToast(
+                    "Gallery delivered successfully"
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           RESEND
+        ================================================= */
+
+        document.getElementById(
+            "resendGallery"
+        ).addEventListener(
+            "click",
+            () => {
+
+                showToast(
+                    "Delivery email resent"
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           REVOKE
+        ================================================= */
+
+        document.getElementById(
+            "revokeGallery"
+        ).addEventListener(
+            "click",
+            () => {
+
+                const confirmed =
+                    window.confirm(
+                        "Revoke client access to this gallery?"
+                    );
+
+                if (!confirmed) return;
+
+                showToast(
+                    "Client access revoked"
+                );
+
+            }
+        );
+
+    </script>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,2401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Select your favorite photos from your private Velora gallery."
+    >
+
+    <title>
+        Your Selection | Velora
+    </title>
+
+
+    <!-- =====================================================
+         FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         ICONS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/client-gallery-selection.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     CLIENT SELECTION APP
+========================================================= -->
+
+<main
+    class="velora-selection-page"
+    id="selectionApp"
+>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="velora-selection-header">
+
+
+        <a
+            href="client-gallery.html"
+            class="velora-selection-brand"
+            aria-label="Back to gallery"
+        >
+
+            <span class="velora-selection-brand-mark">
+                V
+            </span>
+
+
+            <span class="velora-selection-brand-name">
+                VELORA
+            </span>
+
+        </a>
+
+
+        <div class="velora-selection-header-center">
+
+            <span class="velora-selection-header-eyebrow">
+                PRIVATE GALLERY
+            </span>
+
+            <strong>
+                Wedding Collection
+            </strong>
+
+        </div>
+
+
+        <div class="velora-selection-header-actions">
+
+
+            <button
+                type="button"
+                class="velora-selection-header-button"
+                id="backToGallery"
+            >
+
+                <i class="bi bi-arrow-left"></i>
+
+                <span>
+                    Gallery
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="velora-selection-header-avatar"
+                aria-label="Patrick's profile"
+            >
+
+                P
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <section class="velora-selection-intro">
+
+
+        <div class="velora-selection-intro-copy">
+
+
+            <span class="velora-selection-eyebrow">
+                PHOTO SELECTION
+            </span>
+
+
+            <h1>
+                Choose your favorites.
+            </h1>
+
+
+            <p>
+                Select the photographs you'd like your
+                photographer to work with. You can change
+                your selection at any time before submitting.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             SELECTION SUMMARY
+        ================================================== -->
+
+        <div class="velora-selection-summary">
+
+
+            <div class="velora-selection-summary-icon">
+
+                <i class="bi bi-images"></i>
+
+            </div>
+
+
+            <div>
+
+                <strong id="selectionCount">
+                    0
+                </strong>
+
+                <span>
+                    photos selected
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TOOLBAR
+    ====================================================== -->
+
+    <section class="velora-selection-toolbar">
+
+
+        <div class="velora-selection-toolbar-left">
+
+
+            <button
+                type="button"
+                class="velora-selection-filter is-active"
+                data-filter="all"
+            >
+                All photos
+            </button>
+
+
+            <button
+                type="button"
+                class="velora-selection-filter"
+                data-filter="selected"
+            >
+
+                Selected
+
+                <span id="selectedFilterCount">
+                    0
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="velora-selection-filter"
+                data-filter="favorites"
+            >
+
+                <i class="bi bi-heart"></i>
+
+                Favorites
+
+            </button>
+
+        </div>
+
+
+        <div class="velora-selection-toolbar-right">
+
+
+            <span class="velora-selection-result-count">
+                <strong id="visibleCount">
+                    0
+                </strong>
+
+                photos
+            </span>
+
+
+            <button
+                type="button"
+                class="velora-selection-view-button is-active"
+                data-view="grid"
+                aria-label="Grid view"
+            >
+
+                <i class="bi bi-grid"></i>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="velora-selection-view-button"
+                data-view="large"
+                aria-label="Large view"
+            >
+
+                <i class="bi bi-grid-3x2"></i>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PHOTO GRID
+    ====================================================== -->
+
+    <section
+        class="velora-selection-gallery"
+        id="selectionGallery"
+        aria-label="Gallery photos"
+    >
+
+
+        <!-- =================================================
+             PHOTO 01
+        ================================================== -->
+
+        <article
+            class="velora-selection-photo"
+            data-photo-id="photo-001"
+            data-favorite="true"
+        >
+
+
+            <div class="velora-selection-photo-image">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=90"
+                    alt="Wedding couple embracing"
+                    loading="lazy"
+                >
+
+
+                <button
+                    type="button"
+                    class="velora-selection-favorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-check"
+                    aria-label="Select photo"
+                >
+
+                    <i class="bi bi-check"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-preview"
+                    aria-label="Preview photo"
+                >
+
+                    <i class="bi bi-arrows-fullscreen"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="velora-selection-photo-meta">
+
+                <span>
+                    001
+                </span>
+
+                <strong>
+                    Wedding Portrait
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PHOTO 02
+        ================================================== -->
+
+        <article
+            class="velora-selection-photo"
+            data-photo-id="photo-002"
+            data-favorite="false"
+        >
+
+            <div class="velora-selection-photo-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=90"
+                    alt="Wedding couple walking"
+                    loading="lazy"
+                >
+
+
+                <button
+                    type="button"
+                    class="velora-selection-favorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-check"
+                    aria-label="Select photo"
+                >
+
+                    <i class="bi bi-check"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-preview"
+                    aria-label="Preview photo"
+                >
+
+                    <i class="bi bi-arrows-fullscreen"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="velora-selection-photo-meta">
+
+                <span>
+                    002
+                </span>
+
+                <strong>
+                    The Walk
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PHOTO 03
+        ================================================== -->
+
+        <article
+            class="velora-selection-photo"
+            data-photo-id="photo-003"
+            data-favorite="true"
+        >
+
+            <div class="velora-selection-photo-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=90"
+                    alt="Wedding ceremony"
+                    loading="lazy"
+                >
+
+
+                <button
+                    type="button"
+                    class="velora-selection-favorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-check"
+                    aria-label="Select photo"
+                >
+
+                    <i class="bi bi-check"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-preview"
+                    aria-label="Preview photo"
+                >
+
+                    <i class="bi bi-arrows-fullscreen"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="velora-selection-photo-meta">
+
+                <span>
+                    003
+                </span>
+
+                <strong>
+                    Ceremony
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PHOTO 04
+        ================================================== -->
+
+        <article
+            class="velora-selection-photo"
+            data-photo-id="photo-004"
+            data-favorite="false"
+        >
+
+            <div class="velora-selection-photo-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=90"
+                    alt="Wedding reception"
+                    loading="lazy"
+                >
+
+
+                <button
+                    type="button"
+                    class="velora-selection-favorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-check"
+                    aria-label="Select photo"
+                >
+
+                    <i class="bi bi-check"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-preview"
+                    aria-label="Preview photo"
+                >
+
+                    <i class="bi bi-arrows-fullscreen"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="velora-selection-photo-meta">
+
+                <span>
+                    004
+                </span>
+
+                <strong>
+                    Reception
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PHOTO 05
+        ================================================== -->
+
+        <article
+            class="velora-selection-photo"
+            data-photo-id="photo-005"
+            data-favorite="false"
+        >
+
+            <div class="velora-selection-photo-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1200&q=90"
+                    alt="Bride portrait"
+                    loading="lazy"
+                >
+
+
+                <button
+                    type="button"
+                    class="velora-selection-favorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-check"
+                    aria-label="Select photo"
+                >
+
+                    <i class="bi bi-check"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-preview"
+                    aria-label="Preview photo"
+                >
+
+                    <i class="bi bi-arrows-fullscreen"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="velora-selection-photo-meta">
+
+                <span>
+                    005
+                </span>
+
+                <strong>
+                    Bridal Portrait
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PHOTO 06
+        ================================================== -->
+
+        <article
+            class="velora-selection-photo"
+            data-photo-id="photo-006"
+            data-favorite="true"
+        >
+
+            <div class="velora-selection-photo-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=90"
+                    alt="Couple portrait"
+                    loading="lazy"
+                >
+
+
+                <button
+                    type="button"
+                    class="velora-selection-favorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-check"
+                    aria-label="Select photo"
+                >
+
+                    <i class="bi bi-check"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-preview"
+                    aria-label="Preview photo"
+                >
+
+                    <i class="bi bi-arrows-fullscreen"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="velora-selection-photo-meta">
+
+                <span>
+                    006
+                </span>
+
+                <strong>
+                    Together
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PHOTO 07
+        ================================================== -->
+
+        <article
+            class="velora-selection-photo"
+            data-photo-id="photo-007"
+            data-favorite="false"
+        >
+
+            <div class="velora-selection-photo-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=1200&q=90"
+                    alt="Wedding details"
+                    loading="lazy"
+                >
+
+
+                <button
+                    type="button"
+                    class="velora-selection-favorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-check"
+                    aria-label="Select photo"
+                >
+
+                    <i class="bi bi-check"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-preview"
+                    aria-label="Preview photo"
+                >
+
+                    <i class="bi bi-arrows-fullscreen"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="velora-selection-photo-meta">
+
+                <span>
+                    007
+                </span>
+
+                <strong>
+                    Details
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PHOTO 08
+        ================================================== -->
+
+        <article
+            class="velora-selection-photo"
+            data-photo-id="photo-008"
+            data-favorite="false"
+        >
+
+            <div class="velora-selection-photo-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?auto=format&fit=crop&w=1200&q=90"
+                    alt="Wedding celebration"
+                    loading="lazy"
+                >
+
+
+                <button
+                    type="button"
+                    class="velora-selection-favorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-check"
+                    aria-label="Select photo"
+                >
+
+                    <i class="bi bi-check"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-preview"
+                    aria-label="Preview photo"
+                >
+
+                    <i class="bi bi-arrows-fullscreen"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="velora-selection-photo-meta">
+
+                <span>
+                    008
+                </span>
+
+                <strong>
+                    Celebration
+                </strong>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         EMPTY STATE
+    ====================================================== -->
+
+    <section
+        class="velora-selection-empty"
+        id="selectionEmpty"
+    >
+
+
+        <div class="velora-selection-empty-icon">
+
+            <i class="bi bi-images"></i>
+
+        </div>
+
+
+        <h2>
+            No photos here
+        </h2>
+
+
+        <p>
+            There aren't any photos matching this filter yet.
+        </p>
+
+
+        <button
+            type="button"
+            id="emptyBackToAll"
+        >
+            View all photos
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         STICKY SELECTION TRAY
+    ====================================================== -->
+
+    <aside
+        class="velora-selection-tray"
+        id="selectionTray"
+        aria-live="polite"
+    >
+
+
+        <div class="velora-selection-tray-info">
+
+
+            <div class="velora-selection-tray-icon">
+
+                <i class="bi bi-check2"></i>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+
+                    <span id="trayCount">
+                        0
+                    </span>
+
+                    photos selected
+
+                </strong>
+
+
+                <span>
+                    Your selection is saved automatically.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="velora-selection-tray-actions">
+
+
+            <button
+                type="button"
+                class="velora-selection-clear"
+                id="clearSelection"
+            >
+
+                Clear
+
+            </button>
+
+
+            <button
+                type="button"
+                class="velora-selection-review"
+                id="reviewSelection"
+            >
+
+                Review selection
+
+                <i class="bi bi-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         REVIEW PANEL
+    ====================================================== -->
+
+    <div
+        class="velora-selection-review-overlay"
+        id="reviewOverlay"
+        aria-hidden="true"
+    >
+
+
+        <div
+            class="velora-selection-review-backdrop"
+            id="reviewBackdrop"
+        ></div>
+
+
+        <section
+            class="velora-selection-review-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="reviewTitle"
+        >
+
+
+            <header class="velora-selection-review-header">
+
+
+                <div>
+
+                    <span class="velora-selection-eyebrow">
+                        FINAL REVIEW
+                    </span>
+
+
+                    <h2 id="reviewTitle">
+                        Your selection
+                    </h2>
+
+
+                    <p>
+
+                        <strong id="reviewCount">
+                            0
+                        </strong>
+
+                        photos selected
+
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-review-close"
+                    id="closeReview"
+                    aria-label="Close review"
+                >
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+            </header>
+
+
+            <!-- =============================================
+                 REVIEW GRID
+            ============================================== -->
+
+            <div
+                class="velora-selection-review-grid"
+                id="reviewGrid"
+            ></div>
+
+
+            <!-- =============================================
+                 REVIEW FOOTER
+            ============================================== -->
+
+            <footer class="velora-selection-review-footer">
+
+
+                <button
+                    type="button"
+                    class="velora-selection-review-back"
+                    id="reviewBack"
+                >
+
+                    <i class="bi bi-arrow-left"></i>
+
+                    Continue browsing
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-selection-submit"
+                    id="submitSelection"
+                >
+
+                    Submit selection
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </button>
+
+            </footer>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         SUBMISSION CONFIRMATION
+    ====================================================== -->
+
+    <div
+        class="velora-selection-confirmation"
+        id="confirmation"
+        aria-hidden="true"
+    >
+
+
+        <div class="velora-selection-confirmation-card">
+
+
+            <div class="velora-selection-confirmation-icon">
+
+                <i class="bi bi-check2"></i>
+
+            </div>
+
+
+            <span class="velora-selection-eyebrow">
+                SELECTION SUBMITTED
+            </span>
+
+
+            <h2>
+                You're all set.
+            </h2>
+
+
+            <p>
+
+                Your selection of
+
+                <strong id="confirmationCount">
+                    0
+                </strong>
+
+                photos has been sent to Patrick.
+
+            </p>
+
+
+            <div class="velora-selection-confirmation-meta">
+
+
+                <div>
+
+                    <span>
+                        Gallery
+                    </span>
+
+                    <strong>
+                        Wedding Collection
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Status
+                    </span>
+
+                    <strong>
+                        Submitted
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="velora-selection-confirmation-actions">
+
+
+                <a
+                    href="client-gallery.html"
+                    class="velora-selection-confirmation-primary"
+                >
+
+                    Back to gallery
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </a>
+
+
+                <button
+                    type="button"
+                    id="confirmationClose"
+                    class="velora-selection-confirmation-secondary"
+                >
+
+                    Close
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const selectionGallery =
+    document.getElementById(
+        "selectionGallery"
+    );
+
+const photoCards =
+    Array.from(
+        document.querySelectorAll(
+            ".velora-selection-photo"
+        )
+    );
+
+const selectionCount =
+    document.getElementById(
+        "selectionCount"
+    );
+
+const selectedFilterCount =
+    document.getElementById(
+        "selectedFilterCount"
+    );
+
+const visibleCount =
+    document.getElementById(
+        "visibleCount"
+    );
+
+const trayCount =
+    document.getElementById(
+        "trayCount"
+    );
+
+const selectionTray =
+    document.getElementById(
+        "selectionTray"
+    );
+
+const selectionEmpty =
+    document.getElementById(
+        "selectionEmpty"
+    );
+
+const clearSelection =
+    document.getElementById(
+        "clearSelection"
+    );
+
+const reviewSelection =
+    document.getElementById(
+        "reviewSelection"
+    );
+
+const reviewOverlay =
+    document.getElementById(
+        "reviewOverlay"
+    );
+
+const reviewGrid =
+    document.getElementById(
+        "reviewGrid"
+    );
+
+const reviewCount =
+    document.getElementById(
+        "reviewCount"
+    );
+
+const closeReview =
+    document.getElementById(
+        "closeReview"
+    );
+
+const reviewBackdrop =
+    document.getElementById(
+        "reviewBackdrop"
+    );
+
+const reviewBack =
+    document.getElementById(
+        "reviewBack"
+    );
+
+const submitSelection =
+    document.getElementById(
+        "submitSelection"
+    );
+
+const confirmation =
+    document.getElementById(
+        "confirmation"
+    );
+
+const confirmationCount =
+    document.getElementById(
+        "confirmationCount"
+    );
+
+const confirmationClose =
+    document.getElementById(
+        "confirmationClose"
+    );
+
+const backToGallery =
+    document.getElementById(
+        "backToGallery"
+    );
+
+const emptyBackToAll =
+    document.getElementById(
+        "emptyBackToAll"
+    );
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+let selectedPhotos =
+    new Set(
+        JSON.parse(
+            sessionStorage.getItem(
+                "veloraSelectedPhotos"
+            ) || "[]"
+        )
+    );
+
+
+let currentFilter =
+    "all";
+
+
+let currentView =
+    "grid";
+
+
+/* =========================================================
+   SAVE STATE
+========================================================= */
+
+function saveSelection() {
+
+    sessionStorage.setItem(
+        "veloraSelectedPhotos",
+        JSON.stringify(
+            Array.from(
+                selectedPhotos
+            )
+        )
+    );
+
+}
+
+
+/* =========================================================
+   UPDATE COUNTS
+========================================================= */
+
+function updateCounts() {
+
+    const count =
+        selectedPhotos.size;
+
+
+    selectionCount.textContent =
+        count;
+
+
+    selectedFilterCount.textContent =
+        count;
+
+
+    trayCount.textContent =
+        count;
+
+
+    reviewCount.textContent =
+        count;
+
+
+    selectionTray.classList.toggle(
+        "is-visible",
+        count > 0
+    );
+
+}
+
+
+/* =========================================================
+   UPDATE PHOTO STATES
+========================================================= */
+
+function updatePhotoStates() {
+
+    photoCards.forEach(
+        card => {
+
+            const id =
+                card.dataset.photoId;
+
+
+            const isSelected =
+                selectedPhotos.has(
+                    id
+                );
+
+
+            card.classList.toggle(
+                "is-selected",
+                isSelected
+            );
+
+
+            const check =
+                card.querySelector(
+                    ".velora-selection-check"
+                );
+
+
+            if (check) {
+
+                check.setAttribute(
+                    "aria-pressed",
+                    isSelected
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   TOGGLE SELECTION
+========================================================= */
+
+function toggleSelection(
+    card
+) {
+
+    const id =
+        card.dataset.photoId;
+
+
+    if (
+        selectedPhotos.has(
+            id
+        )
+    ) {
+
+        selectedPhotos.delete(
+            id
+        );
+
+    } else {
+
+        selectedPhotos.add(
+            id
+        );
+
+    }
+
+
+    saveSelection();
+
+    updateCounts();
+
+    updatePhotoStates();
+
+    applyFilter();
+
+}
+
+
+/* =========================================================
+   PHOTO CHECK BUTTONS
+========================================================= */
+
+photoCards.forEach(
+    card => {
+
+        const check =
+            card.querySelector(
+                ".velora-selection-check"
+            );
+
+
+        check.addEventListener(
+            "click",
+            function () {
+
+                toggleSelection(
+                    card
+                );
+
+            }
+        );
+
+
+        /* ================================================
+           FAVORITE
+        ================================================= */
+
+        const favorite =
+            card.querySelector(
+                ".velora-selection-favorite"
+            );
+
+
+        favorite.addEventListener(
+            "click",
+            function () {
+
+                const isFavorite =
+                    card.dataset.favorite ===
+                    "true";
+
+
+                card.dataset.favorite =
+                    isFavorite
+                        ? "false"
+                        : "true";
+
+
+                favorite.classList.toggle(
+                    "is-favorite",
+                    !isFavorite
+                );
+
+
+                const icon =
+                    favorite.querySelector(
+                        "i"
+                    );
+
+
+                icon.className =
+                    !isFavorite
+                        ? "bi bi-heart-fill"
+                        : "bi bi-heart";
+
+
+                if (
+                    currentFilter ===
+                    "favorites"
+                ) {
+
+                    applyFilter();
+
+                }
+
+            }
+        );
+
+
+        /* ================================================
+           PREVIEW
+        ================================================= */
+
+        const preview =
+            card.querySelector(
+                ".velora-selection-preview"
+            );
+
+
+        preview.addEventListener(
+            "click",
+            function () {
+
+                const image =
+                    card.querySelector(
+                        "img"
+                    );
+
+
+                openPhotoPreview(
+                    image.src,
+                    image.alt
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   FAVORITE INITIAL STATE
+========================================================= */
+
+photoCards.forEach(
+    card => {
+
+        const favorite =
+            card.querySelector(
+                ".velora-selection-favorite"
+            );
+
+
+        if (
+            card.dataset.favorite ===
+            "true"
+        ) {
+
+            favorite.classList.add(
+                "is-favorite"
+            );
+
+
+            favorite.querySelector(
+                "i"
+            ).className =
+                "bi bi-heart-fill";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+const filterButtons =
+    document.querySelectorAll(
+        ".velora-selection-filter"
+    );
+
+
+filterButtons.forEach(
+    button => {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                filterButtons.forEach(
+                    item =>
+                        item.classList.remove(
+                            "is-active"
+                        )
+                );
+
+
+                button.classList.add(
+                    "is-active"
+                );
+
+
+                currentFilter =
+                    button.dataset.filter;
+
+
+                applyFilter();
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   APPLY FILTER
+========================================================= */
+
+function applyFilter() {
+
+    let shown =
+        0;
+
+
+    photoCards.forEach(
+        card => {
+
+            const id =
+                card.dataset.photoId;
+
+
+            const isSelected =
+                selectedPhotos.has(
+                    id
+                );
+
+
+            const isFavorite =
+                card.dataset.favorite ===
+                "true";
+
+
+            let shouldShow =
+                true;
+
+
+            if (
+                currentFilter ===
+                "selected"
+            ) {
+
+                shouldShow =
+                    isSelected;
+
+            }
+
+
+            if (
+                currentFilter ===
+                "favorites"
+            ) {
+
+                shouldShow =
+                    isFavorite;
+
+            }
+
+
+            card.classList.toggle(
+                "is-filtered-out",
+                !shouldShow
+            );
+
+
+            if (
+                shouldShow
+            ) {
+
+                shown++;
+
+            }
+
+        }
+    );
+
+
+    visibleCount.textContent =
+        shown;
+
+
+    selectionEmpty.classList.toggle(
+        "is-visible",
+        shown === 0
+    );
+
+}
+
+
+/* =========================================================
+   VIEW SWITCHING
+========================================================= */
+
+const viewButtons =
+    document.querySelectorAll(
+        ".velora-selection-view-button"
+    );
+
+
+viewButtons.forEach(
+    button => {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                viewButtons.forEach(
+                    item =>
+                        item.classList.remove(
+                            "is-active"
+                        )
+                );
+
+
+                button.classList.add(
+                    "is-active"
+                );
+
+
+                currentView =
+                    button.dataset.view;
+
+
+                selectionGallery.dataset.view =
+                    currentView;
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   CLEAR SELECTION
+========================================================= */
+
+clearSelection.addEventListener(
+    "click",
+    function () {
+
+        if (
+            selectedPhotos.size ===
+            0
+        ) {
+
+            return;
+
+        }
+
+
+        const confirmed =
+            window.confirm(
+                "Clear all selected photos?"
+            );
+
+
+        if (
+            !confirmed
+        ) {
+
+            return;
+
+        }
+
+
+        selectedPhotos.clear();
+
+
+        saveSelection();
+
+        updateCounts();
+
+        updatePhotoStates();
+
+        applyFilter();
+
+    }
+);
+
+
+/* =========================================================
+   REVIEW SELECTION
+========================================================= */
+
+reviewSelection.addEventListener(
+    "click",
+    function () {
+
+        if (
+            selectedPhotos.size ===
+            0
+        ) {
+
+            return;
+
+        }
+
+
+        buildReview();
+
+        openReview();
+
+    }
+);
+
+
+/* =========================================================
+   BUILD REVIEW
+========================================================= */
+
+function buildReview() {
+
+    reviewGrid.innerHTML =
+        "";
+
+
+    photoCards.forEach(
+        card => {
+
+            const id =
+                card.dataset.photoId;
+
+
+            if (
+                !selectedPhotos.has(
+                    id
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            const image =
+                card.querySelector(
+                    "img"
+                );
+
+
+            const title =
+                card.querySelector(
+                    ".velora-selection-photo-meta strong"
+                );
+
+
+            const item =
+                document.createElement(
+                    "article"
+                );
+
+
+            item.className =
+                "velora-selection-review-item";
+
+
+            item.dataset.photoId =
+                id;
+
+
+            item.innerHTML = `
+
+                <div class="velora-selection-review-image">
+
+                    <img
+                        src="${image.src}"
+                        alt="${image.alt}"
+                    >
+
+                    <button
+                        type="button"
+                        class="velora-selection-review-remove"
+                        aria-label="Remove ${title.textContent.trim()}"
+                    >
+
+                        <i class="bi bi-x"></i>
+
+                    </button>
+
+                </div>
+
+                <div class="velora-selection-review-meta">
+
+                    <span>
+                        ${id.replace("photo-", "#")}
+                    </span>
+
+                    <strong>
+                        ${title.textContent.trim()}
+                    </strong>
+
+                </div>
+
+            `;
+
+
+            const remove =
+                item.querySelector(
+                    ".velora-selection-review-remove"
+                );
+
+
+            remove.addEventListener(
+                "click",
+                function () {
+
+                    selectedPhotos.delete(
+                        id
+                    );
+
+
+                    saveSelection();
+
+                    updateCounts();
+
+                    updatePhotoStates();
+
+                    buildReview();
+
+                    applyFilter();
+
+                }
+            );
+
+
+            reviewGrid.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   REVIEW OPEN/CLOSE
+========================================================= */
+
+function openReview() {
+
+    reviewOverlay.classList.add(
+        "is-visible"
+    );
+
+
+    reviewOverlay.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.classList.add(
+        "velora-selection-modal-open"
+    );
+
+}
+
+
+function closeReviewPanel() {
+
+    reviewOverlay.classList.remove(
+        "is-visible"
+    );
+
+
+    reviewOverlay.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.classList.remove(
+        "velora-selection-modal-open"
+    );
+
+}
+
+
+closeReview.addEventListener(
+    "click",
+    closeReviewPanel
+);
+
+
+reviewBackdrop.addEventListener(
+    "click",
+    closeReviewPanel
+);
+
+
+reviewBack.addEventListener(
+    "click",
+    closeReviewPanel
+);
+
+
+/* =========================================================
+   SUBMIT SELECTION
+========================================================= */
+
+submitSelection.addEventListener(
+    "click",
+    function () {
+
+        if (
+            selectedPhotos.size ===
+            0
+        ) {
+
+            return;
+
+        }
+
+
+        const confirmed =
+            window.confirm(
+                "Submit your photo selection to the photographer?"
+            );
+
+
+        if (
+            !confirmed
+        ) {
+
+            return;
+
+        }
+
+
+        const finalCount =
+            selectedPhotos.size;
+
+
+        /*
+         * -----------------------------------------------
+         * DEMO SUBMISSION
+         *
+         * Replace with API request later.
+         * -----------------------------------------------
+         */
+
+
+        sessionStorage.setItem(
+            "veloraSelectionSubmitted",
+            JSON.stringify({
+                count: finalCount,
+                submittedAt:
+                    new Date().toISOString(),
+                photos:
+                    Array.from(
+                        selectedPhotos
+                    )
+            })
+        );
+
+
+        closeReviewPanel();
+
+
+        confirmationCount.textContent =
+            finalCount;
+
+
+        confirmation.classList.add(
+            "is-visible"
+        );
+
+
+        confirmation.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+
+        document.body.classList.add(
+            "velora-selection-modal-open"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   CONFIRMATION CLOSE
+========================================================= */
+
+confirmationClose.addEventListener(
+    "click",
+    function () {
+
+        confirmation.classList.remove(
+            "is-visible"
+        );
+
+
+        confirmation.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+
+        document.body.classList.remove(
+            "velora-selection-modal-open"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   BACK TO GALLERY
+========================================================= */
+
+backToGallery.addEventListener(
+    "click",
+    function () {
+
+        window.location.href =
+            "client-gallery.html";
+
+    }
+);
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+emptyBackToAll.addEventListener(
+    "click",
+    function () {
+
+        currentFilter =
+            "all";
+
+
+        filterButtons.forEach(
+            button => {
+
+                button.classList.toggle(
+                    "is-active",
+                    button.dataset.filter ===
+                    "all"
+                );
+
+            }
+        );
+
+
+        applyFilter();
+
+    }
+);
+
+
+/* =========================================================
+   PHOTO PREVIEW
+========================================================= */
+
+function openPhotoPreview(
+    source,
+    alt
+) {
+
+    const overlay =
+        document.createElement(
+            "div"
+        );
+
+
+    overlay.className =
+        "velora-selection-image-preview";
+
+
+    overlay.innerHTML = `
+
+        <div class="velora-selection-image-preview-backdrop"></div>
+
+        <button
+            type="button"
+            class="velora-selection-image-preview-close"
+            aria-label="Close image preview"
+        >
+
+            <i class="bi bi-x-lg"></i>
+
+        </button>
+
+        <img
+            src="${source}"
+            alt="${alt}"
+        >
+
+    `;
+
+
+    document.body.appendChild(
+        overlay
+    );
+
+
+    requestAnimationFrame(
+        () => {
+
+            overlay.classList.add(
+                "is-visible"
+            );
+
+        }
+    );
+
+
+    function closePreview() {
+
+        overlay.classList.remove(
+            "is-visible"
+        );
+
+
+        setTimeout(
+            () => {
+
+                overlay.remove();
+
+            },
+            220
+        );
+
+    }
+
+
+    overlay
+        .querySelector(
+            ".velora-selection-image-preview-close"
+        )
+        .addEventListener(
+            "click",
+            closePreview
+        );
+
+
+    overlay
+        .querySelector(
+            ".velora-selection-image-preview-backdrop"
+        )
+        .addEventListener(
+            "click",
+            closePreview
+        );
+
+}
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function (
+        event
+    ) {
+
+        if (
+            event.key !==
+            "Escape"
+        ) {
+
+            return;
+
+        }
+
+
+        if (
+            reviewOverlay.classList.contains(
+                "is-visible"
+            )
+        ) {
+
+            closeReviewPanel();
+
+        }
+
+
+        if (
+            confirmation.classList.contains(
+                "is-visible"
+            )
+        ) {
+
+            confirmation.classList.remove(
+                "is-visible"
+            );
+
+
+            confirmation.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+
+            document.body.classList.remove(
+                "velora-selection-modal-open"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+updateCounts();
+
+updatePhotoStates();
+
+applyFilter();
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,1765 @@
+/*==========================================================
+        VELORA BOOKING DETAILS — V1
+        Component: VLR-BKG-002
+        Status: Approved
+        Maturity: L2 Stable
+==========================================================*/
+
+
+/*==========================================================
+        HEADER
+==========================================================*/
+
+.velora-booking-details-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 27px;
+
+}
+
+
+.velora-back-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-bottom: 17px;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+}
+
+
+.velora-back-link:hover {
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-details-title-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.velora-details-title-row h1 {
+
+    margin:
+        0 0 6px;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        clamp(29px, 3vw, 39px);
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing:
+        -.045em;
+
+}
+
+
+.velora-details-title-row p {
+
+    margin: 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 10px;
+
+}
+
+
+.velora-detail-status {
+
+    min-height: 24px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        0 10px;
+
+    border-radius:
+        var(--velora-radius-pill);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+}
+
+
+.velora-detail-status.upcoming {
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-detail-status.cancelled {
+
+    background:
+        #f4ebeb;
+
+    color:
+        #865858;
+
+}
+
+
+/*==========================================================
+        ACTIONS
+==========================================================*/
+
+.velora-detail-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.velora-detail-secondary {
+
+    min-height: 35px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    padding:
+        0 12px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-ink);
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.velora-detail-secondary:hover {
+
+    background:
+        var(--velora-surface);
+
+}
+
+
+#moreBooking {
+
+    width: 35px;
+
+    padding: 0;
+
+}
+
+
+/*==========================================================
+        MAIN GRID
+==========================================================*/
+
+.velora-booking-details-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) 285px;
+
+    gap: 14px;
+
+    align-items: start;
+
+}
+
+
+.velora-booking-details-main,
+.velora-booking-details-sidebar {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+
+/*==========================================================
+        CARDS
+==========================================================*/
+
+.velora-details-card {
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-lg);
+
+    background:
+        var(--velora-paper);
+
+}
+
+
+.velora-details-card-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        21px 22px;
+
+    border-bottom:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-details-card-header.compact {
+
+    padding:
+        18px 20px;
+
+}
+
+
+.velora-details-card-header span {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+    letter-spacing: .13em;
+
+}
+
+
+.velora-details-card-header h2 {
+
+    margin: 0;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        -.02em;
+
+}
+
+
+.velora-session-icon {
+
+    width: 35px;
+
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-session-info-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 0;
+
+}
+
+
+.velora-detail-info {
+
+    min-height: 76px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    padding:
+        10px 22px;
+
+    border-bottom:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-detail-info:nth-child(odd) {
+
+    border-right:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-detail-info:nth-child(3),
+.velora-detail-info:nth-child(4) {
+
+    border-bottom: 0;
+
+}
+
+
+.velora-detail-info span {
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+    letter-spacing: .1em;
+
+}
+
+
+.velora-detail-info strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+}
+
+
+/*==========================================================
+        NOTES
+==========================================================*/
+
+.velora-details-notes {
+
+    padding:
+        19px 20px;
+
+}
+
+
+.velora-details-notes p {
+
+    max-width: 720px;
+
+    margin: 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 9px;
+
+    line-height: 1.7;
+
+}
+
+
+/*==========================================================
+        GALLERY PLACEHOLDER
+==========================================================*/
+
+.velora-gallery-placeholder {
+
+    min-height: 115px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding:
+        18px 20px;
+
+}
+
+
+.velora-gallery-placeholder-icon {
+
+    width: 39px;
+
+    height: 39px;
+
+    flex: 0 0 39px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    background:
+        var(--velora-surface);
+
+    color:
+        var(--velora-muted);
+
+}
+
+
+.velora-gallery-placeholder > div:nth-child(2) {
+
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.velora-gallery-placeholder strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+}
+
+
+.velora-gallery-placeholder span {
+
+    color:
+        var(--velora-muted);
+
+    font-size: 7px;
+
+}
+
+
+.velora-small-action {
+
+    min-height: 30px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    flex-shrink: 0;
+
+    padding:
+        0 10px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-ink);
+
+    font-family: inherit;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.velora-small-action:hover {
+
+    background:
+        var(--velora-surface);
+
+}
+
+
+/*==========================================================
+        ACTIVITY
+==========================================================*/
+
+.velora-activity {
+
+    padding:
+        7px 20px 17px;
+
+}
+
+
+.velora-activity-item {
+
+    position: relative;
+
+    display: flex;
+
+    gap: 11px;
+
+    padding:
+        11px 0;
+
+}
+
+
+.velora-activity-item:not(:last-child)::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 28px;
+
+    bottom: -3px;
+
+    left: 4px;
+
+    width: 1px;
+
+    background:
+        var(--velora-line);
+
+}
+
+
+.velora-activity-dot {
+
+    position: relative;
+
+    z-index: 1;
+
+    width: 9px;
+
+    height: 9px;
+
+    flex: 0 0 9px;
+
+    margin-top: 2px;
+
+    border:
+        2px solid var(--velora-paper);
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-green);
+
+    box-shadow:
+        0 0 0 1px rgba(27,67,50,.18);
+
+}
+
+
+.velora-activity-item > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.velora-activity-item strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+}
+
+
+.velora-activity-item span {
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 7px;
+
+}
+
+
+/*==========================================================
+        CLIENT PROFILE
+==========================================================*/
+
+.velora-client-profile {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding:
+        22px 20px 18px;
+
+    text-align: center;
+
+}
+
+
+.velora-detail-client-avatar {
+
+    width: 51px;
+
+    height: 51px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 10px;
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+.velora-client-profile strong {
+
+    margin-bottom: 4px;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+}
+
+
+.velora-client-profile span {
+
+    color:
+        var(--velora-muted);
+
+    font-size: 7px;
+
+}
+
+
+.velora-client-contact {
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding:
+        0 20px;
+
+}
+
+
+.velora-client-contact a,
+.velora-client-contact span {
+
+    min-height: 37px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    border-top:
+        1px solid var(--velora-line);
+
+    color:
+        var(--velora-muted);
+
+    font-size: 7px;
+
+    text-decoration: none;
+
+}
+
+
+.velora-client-contact a:hover {
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-client-contact i {
+
+    width: 14px;
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 10px;
+
+    text-align: center;
+
+}
+
+
+.velora-client-link {
+
+    min-height: 39px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 3px;
+
+    padding:
+        0 20px;
+
+    border-top:
+        1px solid var(--velora-line);
+
+    color:
+        var(--velora-green);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+
+.velora-client-link:hover {
+
+    background:
+        var(--velora-green-tint);
+
+}
+
+
+/*==========================================================
+        PAYMENT
+==========================================================*/
+
+.velora-payment-total {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    padding:
+        19px 20px;
+
+}
+
+
+.velora-payment-total span {
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+}
+
+
+.velora-payment-total strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        -.04em;
+
+}
+
+
+.velora-payment-row {
+
+    min-height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 20px;
+
+    border-top:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-payment-row span {
+
+    color:
+        var(--velora-muted);
+
+    font-size: 7px;
+
+}
+
+
+.velora-payment-row strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+}
+
+
+.velora-payment-row.remaining {
+
+    margin-top: 4px;
+
+}
+
+
+.velora-payment-row.remaining strong {
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-payment-status {
+
+    min-height: 37px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 8px;
+
+    padding:
+        0 20px;
+
+    border-top:
+        1px solid var(--velora-line);
+
+    color:
+        var(--velora-green);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+}
+
+
+.velora-payment-status i {
+
+    font-size: 10px;
+
+}
+
+
+/*==========================================================
+        QUICK ACTIONS
+==========================================================*/
+
+.velora-quick-actions {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.velora-quick-actions button {
+
+    min-height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        0 20px;
+
+    border: 0;
+
+    border-top:
+        1px solid var(--velora-line);
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-ink);
+
+    font-family: inherit;
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+    text-align: left;
+
+    cursor: pointer;
+
+}
+
+
+.velora-quick-actions button i:first-child {
+
+    width: 15px;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 10px;
+
+}
+
+
+.velora-quick-actions button i:last-child {
+
+    margin-left: auto;
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 8px;
+
+}
+
+
+.velora-quick-actions button:hover {
+
+    background:
+        var(--velora-surface);
+
+}
+
+
+.velora-quick-actions button.danger {
+
+    color:
+        #865858;
+
+}
+
+
+/*==========================================================
+        MODALS
+==========================================================*/
+
+.velora-details-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: none;
+
+}
+
+
+.velora-details-modal.is-open {
+
+    display: block;
+
+}
+
+
+.velora-details-modal-backdrop {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(15,20,18,.42);
+
+    backdrop-filter:
+        blur(4px);
+
+}
+
+
+.velora-details-modal-dialog,
+.velora-confirm-dialog {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    width: min(
+        520px,
+        calc(100% - 30px)
+    );
+
+    transform:
+        translate(-50%, -50%);
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-lg);
+
+    background:
+        var(--velora-paper);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.18);
+
+}
+
+
+.velora-details-modal-dialog > header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        20px 22px;
+
+    border-bottom:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-details-modal-dialog > header span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+}
+
+
+.velora-details-modal-dialog > header h2 {
+
+    margin: 0;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+}
+
+
+.velora-modal-close {
+
+    width: 29px;
+
+    height: 29px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-surface);
+
+    color:
+        var(--velora-muted);
+
+    cursor: pointer;
+
+}
+
+
+/*==========================================================
+        EDIT FORM
+==========================================================*/
+
+#editBookingForm {
+
+    padding:
+        22px;
+
+}
+
+
+.velora-edit-form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+
+}
+
+
+.velora-edit-form-grid > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+}
+
+
+.velora-edit-form-grid label {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+}
+
+
+.velora-edit-form-grid input {
+
+    min-height: 38px;
+
+    padding:
+        0 10px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    outline: 0;
+
+    color:
+        var(--velora-ink);
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+}
+
+
+.velora-edit-form-grid input:focus {
+
+    border-color:
+        var(--velora-green);
+
+    box-shadow:
+        0 0 0 3px rgba(27,67,50,.07);
+
+}
+
+
+.velora-modal-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 7px;
+
+    margin-top: 20px;
+
+}
+
+
+.velora-modal-secondary,
+.velora-modal-primary,
+.velora-modal-danger {
+
+    min-height: 35px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        0 13px;
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.velora-modal-secondary {
+
+    border:
+        1px solid var(--velora-line);
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+.velora-modal-primary {
+
+    border:
+        1px solid var(--velora-green);
+
+    background:
+        var(--velora-green);
+
+    color:
+        var(--velora-paper);
+
+}
+
+
+.velora-modal-danger {
+
+    border:
+        1px solid #865858;
+
+    background:
+        #865858;
+
+    color:
+        var(--velora-paper);
+
+}
+
+
+/*==========================================================
+        CONFIRM DIALOG
+==========================================================*/
+
+.velora-confirm-dialog {
+
+    width:
+        min(400px, calc(100% - 30px));
+
+    padding:
+        30px;
+
+    text-align: center;
+
+}
+
+
+.velora-confirm-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin:
+        0 auto 15px;
+
+    border-radius: 50%;
+
+    background:
+        #f4ebeb;
+
+    color:
+        #865858;
+
+}
+
+
+.velora-confirm-dialog h2 {
+
+    margin:
+        0 0 7px;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+}
+
+
+.velora-confirm-dialog > p {
+
+    margin:
+        0 auto;
+
+    max-width: 290px;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+    line-height: 1.6;
+
+}
+
+
+.velora-confirm-dialog .velora-modal-actions {
+
+    justify-content: center;
+
+}
+
+
+/*==========================================================
+        MOBILE
+==========================================================*/
+
+@media (max-width: 900px) {
+
+    .velora-booking-details-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .velora-booking-details-sidebar {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        align-items: start;
+
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .velora-booking-details-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .velora-details-title-row {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+
+    .velora-detail-actions {
+
+        width: 100%;
+
+    }
+
+
+    .velora-detail-secondary {
+
+        flex: 1;
+
+    }
+
+
+    #moreBooking {
+
+        flex: 0 0 35px;
+
+    }
+
+
+    .velora-booking-details-sidebar {
+
+        display: flex;
+
+    }
+
+
+    .velora-session-info-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .velora-detail-info {
+
+        min-height: 65px;
+
+    }
+
+
+    .velora-detail-info:nth-child(odd) {
+
+        border-right: 0;
+
+    }
+
+
+    .velora-detail-info:nth-child(3) {
+
+        border-bottom:
+            1px solid var(--velora-line);
+
+    }
+
+
+    .velora-gallery-placeholder {
+
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .velora-gallery-placeholder > div:nth-child(2) {
+
+        flex:
+            1 1 calc(100% - 60px);
+
+    }
+
+
+    .velora-gallery-placeholder .velora-small-action {
+
+        width: 100%;
+
+        margin-left: 52px;
+
+    }
+
+
+    .velora-edit-form-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .velora-details-modal-dialog {
+
+        max-height:
+            calc(100vh - 25px);
+
+        overflow-y: auto;
+
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .velora-details-card-header {
+
+        padding:
+            16px;
+
+    }
+
+
+    .velora-detail-info {
+
+        padding:
+            10px 16px;
+
+    }
+
+
+    .velora-details-notes {
+
+        padding:
+            16px;
+
+    }
+
+
+    .velora-client-contact {
+
+        padding:
+            0 16px;
+
+    }
+
+
+    .velora-client-link {
+
+        padding:
+            0 16px;
+
+    }
+
+
+    .velora-payment-total {
+
+        padding:
+            17px 16px;
+
+    }
+
+
+    .velora-payment-row,
+    .velora-payment-status {
+
+        padding-left: 16px;
+
+        padding-right: 16px;
+
+    }
+
+
+    .velora-quick-actions button {
+
+        padding:
+            0 16px;
+
+    }
+
+
+    #editBookingForm {
+
+        padding:
+            18px 16px;
+
+    }
+
+
+    .velora-modal-actions {
+
+        flex-direction: column-reverse;
+
+    }
+
+
+    .velora-modal-secondary,
+    .velora-modal-primary,
+    .velora-modal-danger {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/*==========================================================
+        ACCESSIBILITY
+==========================================================*/
+
+.velora-back-link:focus-visible,
+.velora-detail-secondary:focus-visible,
+.velora-small-action:focus-visible,
+.velora-client-link:focus-visible,
+.velora-quick-actions button:focus-visible,
+.velora-modal-close:focus-visible,
+.velora-modal-secondary:focus-visible,
+.velora-modal-primary:focus-visible,
+.velora-modal-danger:focus-visible {
+
+    outline:
+        2px solid var(--velora-green);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/*==========================================================
+        REDUCED MOTION
+==========================================================*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+
+        scroll-behavior: auto !important;
+
+    }
+
+}

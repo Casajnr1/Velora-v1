@@ -1,0 +1,2337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Wedding Collection by Patrick — Velora Gallery."
+    >
+
+    <title>Wedding Collection | Velora</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT — LATO
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- =====================================================
+         CLIENT GALLERY CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/client-gallery.css"
+    >
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+        rel="shortcut icon"
+        href="media/favicon/favicon.png"
+        type="image/x-icon"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     CLIENT GALLERY
+========================================================= -->
+
+<div class="velora-client-gallery">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="velora-client-header">
+
+
+        <!-- =================================================
+             BRAND
+        ================================================== -->
+
+        <a
+            href="#"
+            class="velora-client-brand"
+            aria-label="Velora"
+        >
+
+            <img
+                src="media/logo/logo-1-main.png"
+                alt="Velora"
+            >
+
+        </a>
+
+
+        <!-- =================================================
+             HEADER ACTIONS
+        ================================================== -->
+
+        <div class="velora-client-header-actions">
+
+
+            <button
+                type="button"
+                class="velora-client-header-action"
+                id="headerFavorite"
+                aria-label="View favorites"
+            >
+
+                <i class="bi bi-heart"></i>
+
+                <span>
+                    Favorites
+                </span>
+
+                <b id="favoriteCount">
+                    0
+                </b>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="velora-client-header-action"
+                id="shareGallery"
+            >
+
+                <i class="bi bi-share"></i>
+
+                <span>
+                    Share
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="velora-client-header-action"
+                id="downloadGallery"
+            >
+
+                <i class="bi bi-download"></i>
+
+                <span>
+                    Download
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="velora-client-menu"
+                id="clientMenu"
+                aria-label="Open gallery menu"
+            >
+
+                <i class="bi bi-three-dots"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         GALLERY HERO
+    ====================================================== -->
+
+    <section class="velora-client-hero">
+
+
+        <div class="velora-client-hero-content">
+
+
+            <span class="velora-client-eyebrow">
+                PATRICK OBIALOR PHOTOGRAPHY
+            </span>
+
+
+            <h1>
+                Wedding Collection
+            </h1>
+
+
+            <p>
+                A collection of moments from your beautiful day,
+                carefully selected and presented for you.
+            </p>
+
+
+            <div class="velora-client-gallery-meta">
+
+                <span>
+
+                    <i class="bi bi-calendar3"></i>
+
+                    18 June 2026
+
+                </span>
+
+
+                <span class="velora-meta-divider"></span>
+
+
+                <span>
+
+                    <i class="bi bi-images"></i>
+
+                    <strong id="photoCount">
+                        48
+                    </strong>
+
+                    photos
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             HERO COVER
+        ================================================== -->
+
+        <div class="velora-client-hero-cover">
+
+            <img
+                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=90"
+                alt="Wedding couple"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         GALLERY TOOLBAR
+    ====================================================== -->
+
+    <section class="velora-client-toolbar">
+
+
+        <div class="velora-client-toolbar-left">
+
+            <span class="velora-client-toolbar-title">
+                Your gallery
+            </span>
+
+            <span class="velora-client-toolbar-count">
+                48 photos
+            </span>
+
+        </div>
+
+
+        <div class="velora-client-toolbar-right">
+
+
+            <button
+                type="button"
+                class="velora-client-tool-button is-active"
+                data-view="masonry"
+                aria-label="Masonry view"
+            >
+
+                <i class="bi bi-grid-3x3-gap"></i>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="velora-client-tool-button"
+                data-view="grid"
+                aria-label="Grid view"
+            >
+
+                <i class="bi bi-grid"></i>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="velora-client-tool-button"
+                id="selectMode"
+            >
+
+                <i class="bi bi-check2-square"></i>
+
+                <span>
+                    Select
+                </span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SELECTION BAR
+    ====================================================== -->
+
+    <div
+        class="velora-client-selection-bar"
+        id="selectionBar"
+    >
+
+        <div>
+
+            <span class="velora-selection-icon">
+
+                <i class="bi bi-check2"></i>
+
+            </span>
+
+
+            <strong>
+
+                <span id="selectedCount">
+                    0
+                </span>
+
+                selected
+
+            </strong>
+
+        </div>
+
+
+        <div class="velora-selection-actions">
+
+
+            <button
+                type="button"
+                id="selectionDownload"
+            >
+
+                <i class="bi bi-download"></i>
+
+                Download
+
+            </button>
+
+
+            <button
+                type="button"
+                id="selectionFavorite"
+            >
+
+                <i class="bi bi-heart"></i>
+
+                Favorite
+
+            </button>
+
+
+            <button
+                type="button"
+                id="clearSelection"
+            >
+
+                Clear
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         PHOTO COLLECTION
+    ====================================================== -->
+
+    <main
+        class="velora-client-photo-collection"
+        id="photoCollection"
+    >
+
+
+        <!-- =================================================
+             PHOTO 01
+        ================================================== -->
+
+        <article
+            class="velora-client-photo"
+            data-photo="0"
+            data-src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=90"
+        >
+
+            <div class="velora-client-photo-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85"
+                    alt="Wedding couple portrait"
+                    loading="eager"
+                >
+
+
+                <button
+                    type="button"
+                    class="velora-photo-favorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-photo-select"
+                    aria-label="Select photo"
+                >
+
+                    <i class="bi bi-check2"></i>
+
+                </button>
+
+
+                <div class="velora-photo-hover">
+
+                    <button
+                        type="button"
+                        class="velora-photo-open"
+                        aria-label="Open photo"
+                    >
+
+                        <i class="bi bi-arrows-fullscreen"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PHOTO 02
+        ================================================== -->
+
+        <article
+            class="velora-client-photo"
+            data-photo="1"
+            data-src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1800&q=90"
+        >
+
+            <div class="velora-client-photo-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=85"
+                    alt="Wedding ceremony"
+                    loading="lazy"
+                >
+
+
+                <button
+                    type="button"
+                    class="velora-photo-favorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-photo-select"
+                    aria-label="Select photo"
+                >
+
+                    <i class="bi bi-check2"></i>
+
+                </button>
+
+
+                <div class="velora-photo-hover">
+
+                    <button
+                        type="button"
+                        class="velora-photo-open"
+                        aria-label="Open photo"
+                    >
+
+                        <i class="bi bi-arrows-fullscreen"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PHOTO 03
+        ================================================== -->
+
+        <article
+            class="velora-client-photo"
+            data-photo="2"
+            data-src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=1800&q=90"
+        >
+
+            <div class="velora-client-photo-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=1000&q=85"
+                    alt="Wedding rings"
+                    loading="lazy"
+                >
+
+
+                <button
+                    type="button"
+                    class="velora-photo-favorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-photo-select"
+                    aria-label="Select photo"
+                >
+
+                    <i class="bi bi-check2"></i>
+
+                </button>
+
+
+                <div class="velora-photo-hover">
+
+                    <button
+                        type="button"
+                        class="velora-photo-open"
+                        aria-label="Open photo"
+                    >
+
+                        <i class="bi bi-arrows-fullscreen"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PHOTO 04
+        ================================================== -->
+
+        <article
+            class="velora-client-photo"
+            data-photo="3"
+            data-src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=90"
+        >
+
+            <div class="velora-client-photo-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85"
+                    alt="Wedding venue"
+                    loading="lazy"
+                >
+
+
+                <button
+                    type="button"
+                    class="velora-photo-favorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-photo-select"
+                    aria-label="Select photo"
+                >
+
+                    <i class="bi bi-check2"></i>
+
+                </button>
+
+
+                <div class="velora-photo-hover">
+
+                    <button
+                        type="button"
+                        class="velora-photo-open"
+                        aria-label="Open photo"
+                    >
+
+                        <i class="bi bi-arrows-fullscreen"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PHOTO 05
+        ================================================== -->
+
+        <article
+            class="velora-client-photo"
+            data-photo="4"
+            data-src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1800&q=90"
+        >
+
+            <div class="velora-client-photo-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1000&q=85"
+                    alt="Bride portrait"
+                    loading="lazy"
+                >
+
+
+                <button
+                    type="button"
+                    class="velora-photo-favorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-photo-select"
+                    aria-label="Select photo"
+                >
+
+                    <i class="bi bi-check2"></i>
+
+                </button>
+
+
+                <div class="velora-photo-hover">
+
+                    <button
+                        type="button"
+                        class="velora-photo-open"
+                        aria-label="Open photo"
+                    >
+
+                        <i class="bi bi-arrows-fullscreen"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PHOTO 06
+        ================================================== -->
+
+        <article
+            class="velora-client-photo"
+            data-photo="5"
+            data-src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1800&q=90"
+        >
+
+            <div class="velora-client-photo-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1000&q=85"
+                    alt="Wedding celebration"
+                    loading="lazy"
+                >
+
+
+                <button
+                    type="button"
+                    class="velora-photo-favorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-photo-select"
+                    aria-label="Select photo"
+                >
+
+                    <i class="bi bi-check2"></i>
+
+                </button>
+
+
+                <div class="velora-photo-hover">
+
+                    <button
+                        type="button"
+                        class="velora-photo-open"
+                        aria-label="Open photo"
+                    >
+
+                        <i class="bi bi-arrows-fullscreen"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PHOTO 07
+        ================================================== -->
+
+        <article
+            class="velora-client-photo"
+            data-photo="6"
+            data-src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=90"
+        >
+
+            <div class="velora-client-photo-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85"
+                    alt="Wedding reception"
+                    loading="lazy"
+                >
+
+
+                <button
+                    type="button"
+                    class="velora-photo-favorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-photo-select"
+                    aria-label="Select photo"
+                >
+
+                    <i class="bi bi-check2"></i>
+
+                </button>
+
+
+                <div class="velora-photo-hover">
+
+                    <button
+                        type="button"
+                        class="velora-photo-open"
+                        aria-label="Open photo"
+                    >
+
+                        <i class="bi bi-arrows-fullscreen"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PHOTO 08
+        ================================================== -->
+
+        <article
+            class="velora-client-photo"
+            data-photo="7"
+            data-src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=1800&q=90"
+        >
+
+            <div class="velora-client-photo-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=1000&q=85"
+                    alt="Couple portrait"
+                    loading="lazy"
+                >
+
+
+                <button
+                    type="button"
+                    class="velora-photo-favorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-photo-select"
+                    aria-label="Select photo"
+                >
+
+                    <i class="bi bi-check2"></i>
+
+                </button>
+
+
+                <div class="velora-photo-hover">
+
+                    <button
+                        type="button"
+                        class="velora-photo-open"
+                        aria-label="Open photo"
+                    >
+
+                        <i class="bi bi-arrows-fullscreen"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </main>
+
+
+    <!-- =====================================================
+         GALLERY FOOTER
+    ====================================================== -->
+
+    <footer class="velora-client-footer">
+
+
+        <div class="velora-client-footer-brand">
+
+            <span class="velora-client-footer-mark">
+                V
+            </span>
+
+            <div>
+
+                <strong>
+                    Velora
+                </strong>
+
+                <span>
+                    Photography galleries, beautifully delivered.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="velora-client-footer-meta">
+
+            <span>
+                Created by Patrick Obialor Photography
+            </span>
+
+            <span>
+                © 2026 Velora
+            </span>
+
+        </div>
+
+    </footer>
+
+</div>
+
+
+<!-- =========================================================
+     FULLSCREEN VIEWER
+========================================================= -->
+
+<div
+    class="velora-client-lightbox"
+    id="lightbox"
+    aria-hidden="true"
+>
+
+
+    <div
+        class="velora-client-lightbox-backdrop"
+        id="lightboxBackdrop"
+    ></div>
+
+
+    <div class="velora-client-lightbox-content">
+
+
+        <button
+            type="button"
+            class="velora-lightbox-close"
+            id="closeLightbox"
+            aria-label="Close viewer"
+        >
+
+            <i class="bi bi-x-lg"></i>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="velora-lightbox-navigation previous"
+            id="previousPhoto"
+            aria-label="Previous photo"
+        >
+
+            <i class="bi bi-chevron-left"></i>
+
+        </button>
+
+
+        <img
+            src=""
+            alt=""
+            id="lightboxImage"
+        >
+
+
+        <button
+            type="button"
+            class="velora-lightbox-navigation next"
+            id="nextPhoto"
+            aria-label="Next photo"
+        >
+
+            <i class="bi bi-chevron-right"></i>
+
+        </button>
+
+
+        <div class="velora-lightbox-bottom">
+
+
+            <span id="lightboxCounter">
+                1 / 8
+            </span>
+
+
+            <div>
+
+
+                <button
+                    type="button"
+                    id="lightboxFavorite"
+                    aria-label="Favorite photo"
+                >
+
+                    <i class="bi bi-heart"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="lightboxDownload"
+                    aria-label="Download photo"
+                >
+
+                    <i class="bi bi-download"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     SHARE MODAL
+========================================================= -->
+
+<div
+    class="velora-share-modal"
+    id="shareModal"
+    aria-hidden="true"
+>
+
+
+    <div
+        class="velora-share-backdrop"
+        id="shareBackdrop"
+    ></div>
+
+
+    <div class="velora-share-dialog">
+
+
+        <button
+            type="button"
+            class="velora-share-close"
+            id="closeShare"
+            aria-label="Close share dialog"
+        >
+
+            <i class="bi bi-x-lg"></i>
+
+        </button>
+
+
+        <span class="velora-client-eyebrow">
+            SHARE GALLERY
+        </span>
+
+
+        <h2>
+            Share this gallery
+        </h2>
+
+
+        <p>
+            Send this private gallery to someone you trust.
+        </p>
+
+
+        <div class="velora-share-url">
+
+            <input
+                type="text"
+                id="shareUrl"
+                readonly
+                value="velora.com/gallery/wedding-collection"
+            >
+
+
+            <button
+                type="button"
+                id="copyShareUrl"
+            >
+
+                <i class="bi bi-copy"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="velora-share-options">
+
+
+            <button
+                type="button"
+                data-share="whatsapp"
+            >
+
+                <i class="bi bi-whatsapp"></i>
+
+                WhatsApp
+
+            </button>
+
+
+            <button
+                type="button"
+                data-share="email"
+            >
+
+                <i class="bi bi-envelope"></i>
+
+                Email
+
+            </button>
+
+
+            <button
+                type="button"
+                data-share="native"
+            >
+
+                <i class="bi bi-box-arrow-up"></i>
+
+                More
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="velora-client-toast"
+    id="clientToast"
+    aria-live="polite"
+>
+
+    <span>
+
+        <i class="bi bi-check2"></i>
+
+    </span>
+
+
+    <strong>
+        Done
+    </strong>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   PHOTO DATA
+========================================================= */
+
+const photoCards = [
+    ...document.querySelectorAll(
+        ".velora-client-photo"
+    )
+];
+
+
+let currentPhoto = 0;
+
+
+const favorites = new Set();
+
+const selectedPhotos = new Set();
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const lightbox =
+    document.getElementById(
+        "lightbox"
+    );
+
+const lightboxImage =
+    document.getElementById(
+        "lightboxImage"
+    );
+
+const lightboxCounter =
+    document.getElementById(
+        "lightboxCounter"
+    );
+
+const lightboxFavorite =
+    document.getElementById(
+        "lightboxFavorite"
+    );
+
+const favoriteCount =
+    document.getElementById(
+        "favoriteCount"
+    );
+
+const selectionBar =
+    document.getElementById(
+        "selectionBar"
+    );
+
+const selectedCount =
+    document.getElementById(
+        "selectedCount"
+    );
+
+
+/* =========================================================
+   OPEN LIGHTBOX
+========================================================= */
+
+function openLightbox(
+    index
+) {
+
+    currentPhoto =
+        index;
+
+    updateLightbox();
+
+    lightbox.classList.add(
+        "is-visible"
+    );
+
+    lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    document.body.classList.add(
+        "velora-lightbox-open"
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE LIGHTBOX
+========================================================= */
+
+function closeLightbox() {
+
+    lightbox.classList.remove(
+        "is-visible"
+    );
+
+    lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.classList.remove(
+        "velora-lightbox-open"
+    );
+
+}
+
+
+/* =========================================================
+   UPDATE LIGHTBOX
+========================================================= */
+
+function updateLightbox() {
+
+    const card =
+        photoCards[
+            currentPhoto
+        ];
+
+
+    if (!card) {
+
+        return;
+
+    }
+
+
+    const image =
+        card.dataset.src;
+
+
+    const thumbnail =
+        card.querySelector(
+            "img"
+        );
+
+
+    lightboxImage.src =
+        image;
+
+
+    lightboxImage.alt =
+        thumbnail.alt;
+
+
+    lightboxCounter.textContent =
+        `${currentPhoto + 1} / ${photoCards.length}`;
+
+
+    updateLightboxFavorite();
+
+}
+
+
+/* =========================================================
+   LIGHTBOX FAVORITE
+========================================================= */
+
+function updateLightboxFavorite() {
+
+    const icon =
+        lightboxFavorite.querySelector(
+            "i"
+        );
+
+
+    if (
+        favorites.has(
+            currentPhoto
+        )
+    ) {
+
+        icon.className =
+            "bi bi-heart-fill";
+
+        lightboxFavorite.classList.add(
+            "is-favorite"
+        );
+
+    } else {
+
+        icon.className =
+            "bi bi-heart";
+
+        lightboxFavorite.classList.remove(
+            "is-favorite"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   NEXT / PREVIOUS
+========================================================= */
+
+function nextPhoto() {
+
+    currentPhoto =
+        (
+            currentPhoto + 1
+        ) %
+        photoCards.length;
+
+
+    updateLightbox();
+
+}
+
+
+function previousPhoto() {
+
+    currentPhoto =
+        (
+            currentPhoto -
+            1 +
+            photoCards.length
+        ) %
+        photoCards.length;
+
+
+    updateLightbox();
+
+}
+
+
+document.getElementById(
+    "nextPhoto"
+).addEventListener(
+    "click",
+    nextPhoto
+);
+
+
+document.getElementById(
+    "previousPhoto"
+).addEventListener(
+    "click",
+    previousPhoto
+);
+
+
+document.getElementById(
+    "closeLightbox"
+).addEventListener(
+    "click",
+    closeLightbox
+);
+
+
+document.getElementById(
+    "lightboxBackdrop"
+).addEventListener(
+    "click",
+    closeLightbox
+);
+
+
+/* =========================================================
+   PHOTO OPEN
+========================================================= */
+
+photoCards.forEach(
+    function (
+        card,
+        index
+    ) {
+
+        const openButton =
+            card.querySelector(
+                ".velora-photo-open"
+            );
+
+
+        openButton.addEventListener(
+            "click",
+            function (
+                event
+            ) {
+
+                event.stopPropagation();
+
+                openLightbox(
+                    index
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   FAVORITE
+========================================================= */
+
+photoCards.forEach(
+    function (
+        card,
+        index
+    ) {
+
+        const favoriteButton =
+            card.querySelector(
+                ".velora-photo-favorite"
+            );
+
+
+        favoriteButton.addEventListener(
+            "click",
+            function (
+                event
+            ) {
+
+                event.stopPropagation();
+
+                toggleFavorite(
+                    index
+                );
+
+            }
+        );
+
+    }
+);
+
+
+function toggleFavorite(
+    index
+) {
+
+    const card =
+        photoCards[
+            index
+        ];
+
+
+    const button =
+        card.querySelector(
+            ".velora-photo-favorite"
+        );
+
+
+    const icon =
+        button.querySelector(
+            "i"
+        );
+
+
+    if (
+        favorites.has(
+            index
+        )
+    ) {
+
+        favorites.delete(
+            index
+        );
+
+        button.classList.remove(
+            "is-favorite"
+        );
+
+        icon.className =
+            "bi bi-heart";
+
+    } else {
+
+        favorites.add(
+            index
+        );
+
+        button.classList.add(
+            "is-favorite"
+        );
+
+        icon.className =
+            "bi bi-heart-fill";
+
+    }
+
+
+    favoriteCount.textContent =
+        favorites.size;
+
+
+    if (
+        currentPhoto ===
+        index
+    ) {
+
+        updateLightboxFavorite();
+
+    }
+
+}
+
+
+/* =========================================================
+   SELECT MODE
+========================================================= */
+
+let selectModeActive =
+    false;
+
+
+document.getElementById(
+    "selectMode"
+).addEventListener(
+    "click",
+    function () {
+
+        selectModeActive =
+            !selectModeActive;
+
+
+        this.classList.toggle(
+            "is-active",
+            selectModeActive
+        );
+
+
+        document
+            .querySelector(
+                ".velora-client-photo-collection"
+            )
+            .classList.toggle(
+                "is-selection-mode",
+                selectModeActive
+            );
+
+    }
+);
+
+
+/* =========================================================
+   SELECT PHOTO
+========================================================= */
+
+photoCards.forEach(
+    function (
+        card,
+        index
+    ) {
+
+        const selectButton =
+            card.querySelector(
+                ".velora-photo-select"
+            );
+
+
+        selectButton.addEventListener(
+            "click",
+            function (
+                event
+            ) {
+
+                event.stopPropagation();
+
+                toggleSelection(
+                    index
+                );
+
+            }
+        );
+
+    }
+);
+
+
+function toggleSelection(
+    index
+) {
+
+    const card =
+        photoCards[
+            index
+        ];
+
+
+    const button =
+        card.querySelector(
+            ".velora-photo-select"
+        );
+
+
+    if (
+        selectedPhotos.has(
+            index
+        )
+    ) {
+
+        selectedPhotos.delete(
+            index
+        );
+
+        card.classList.remove(
+            "is-selected"
+        );
+
+        button.classList.remove(
+            "is-selected"
+        );
+
+    } else {
+
+        selectedPhotos.add(
+            index
+        );
+
+        card.classList.add(
+            "is-selected"
+        );
+
+        button.classList.add(
+            "is-selected"
+        );
+
+    }
+
+
+    updateSelectionBar();
+
+}
+
+
+/* =========================================================
+   SELECTION BAR
+========================================================= */
+
+function updateSelectionBar() {
+
+    const count =
+        selectedPhotos.size;
+
+
+    selectedCount.textContent =
+        count;
+
+
+    selectionBar.classList.toggle(
+        "is-visible",
+        count > 0
+    );
+
+}
+
+
+/* =========================================================
+   CLEAR SELECTION
+========================================================= */
+
+document.getElementById(
+    "clearSelection"
+).addEventListener(
+    "click",
+    function () {
+
+        selectedPhotos.clear();
+
+
+        photoCards.forEach(
+            function (
+                card
+            ) {
+
+                card.classList.remove(
+                    "is-selected"
+                );
+
+            }
+        );
+
+
+        updateSelectionBar();
+
+    }
+);
+
+
+/* =========================================================
+   SELECTION FAVORITE
+========================================================= */
+
+document.getElementById(
+    "selectionFavorite"
+).addEventListener(
+    "click",
+    function () {
+
+        selectedPhotos.forEach(
+            function (
+                index
+            ) {
+
+                if (
+                    !favorites.has(
+                        index
+                    )
+                ) {
+
+                    toggleFavorite(
+                        index
+                    );
+
+                }
+
+            }
+        );
+
+
+        showToast(
+            "Selected photos added to favorites."
+        );
+
+    }
+);
+
+
+/* =========================================================
+   DOWNLOAD
+========================================================= */
+
+document.getElementById(
+    "downloadGallery"
+).addEventListener(
+    "click",
+    function () {
+
+        showToast(
+            "Preparing your gallery download."
+        );
+
+    }
+);
+
+
+document.getElementById(
+    "selectionDownload"
+).addEventListener(
+    "click",
+    function () {
+
+        showToast(
+            `Preparing ${selectedPhotos.size} selected photos.`
+        );
+
+    }
+);
+
+
+document.getElementById(
+    "lightboxDownload"
+).addEventListener(
+    "click",
+    function () {
+
+        showToast(
+            "Preparing photo download."
+        );
+
+    }
+);
+
+
+/* =========================================================
+   LIGHTBOX FAVORITE
+========================================================= */
+
+lightboxFavorite.addEventListener(
+    "click",
+    function () {
+
+        toggleFavorite(
+            currentPhoto
+        );
+
+    }
+);
+
+
+/* =========================================================
+   VIEW MODES
+========================================================= */
+
+const viewButtons =
+    document.querySelectorAll(
+        ".velora-client-tool-button[data-view]"
+    );
+
+
+const photoCollection =
+    document.getElementById(
+        "photoCollection"
+    );
+
+
+viewButtons.forEach(
+    function (
+        button
+    ) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                const view =
+                    this.dataset.view;
+
+
+                viewButtons.forEach(
+                    function (
+                        item
+                    ) {
+
+                        item.classList.remove(
+                            "is-active"
+                        );
+
+                    }
+                );
+
+
+                this.classList.add(
+                    "is-active"
+                );
+
+
+                photoCollection.dataset.view =
+                    view;
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   SHARE
+========================================================= */
+
+const shareModal =
+    document.getElementById(
+        "shareModal"
+    );
+
+
+document.getElementById(
+    "shareGallery"
+).addEventListener(
+    "click",
+    function () {
+
+        shareModal.classList.add(
+            "is-visible"
+        );
+
+        shareModal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+    }
+);
+
+
+function closeShare() {
+
+    shareModal.classList.remove(
+        "is-visible"
+    );
+
+    shareModal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+}
+
+
+document.getElementById(
+    "closeShare"
+).addEventListener(
+    "click",
+    closeShare
+);
+
+
+document.getElementById(
+    "shareBackdrop"
+).addEventListener(
+    "click",
+    closeShare
+);
+
+
+/* =========================================================
+   COPY SHARE URL
+========================================================= */
+
+document.getElementById(
+    "copyShareUrl"
+).addEventListener(
+    "click",
+    async function () {
+
+        const input =
+            document.getElementById(
+                "shareUrl"
+            );
+
+
+        try {
+
+            await navigator.clipboard.writeText(
+                input.value
+            );
+
+
+            showToast(
+                "Gallery link copied."
+            );
+
+        } catch (
+            error
+        ) {
+
+            input.select();
+
+            document.execCommand(
+                "copy"
+            );
+
+            showToast(
+                "Gallery link copied."
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   SHARE OPTIONS
+========================================================= */
+
+document
+    .querySelectorAll(
+        "[data-share]"
+    )
+    .forEach(
+        function (
+            button
+        ) {
+
+            button.addEventListener(
+                "click",
+                async function () {
+
+                    const type =
+                        this.dataset.share;
+
+
+                    const url =
+                        document.getElementById(
+                            "shareUrl"
+                        ).value;
+
+
+                    if (
+                        type ===
+                        "whatsapp"
+                    ) {
+
+                        window.open(
+                            "https://wa.me/?text=" +
+                            encodeURIComponent(
+                                "View this gallery: " +
+                                url
+                            ),
+                            "_blank"
+                        );
+
+                    }
+
+
+                    if (
+                        type ===
+                        "email"
+                    ) {
+
+                        window.location.href =
+                            "mailto:?subject=" +
+                            encodeURIComponent(
+                                "Wedding Collection"
+                            ) +
+                            "&body=" +
+                            encodeURIComponent(
+                                "View this gallery: " +
+                                url
+                            );
+
+                    }
+
+
+                    if (
+                        type ===
+                        "native"
+                    ) {
+
+                        if (
+                            navigator.share
+                        ) {
+
+                            await navigator.share({
+                                title:
+                                    "Wedding Collection",
+                                text:
+                                    "View this photography gallery.",
+                                url:
+                                    url
+                            });
+
+                        } else {
+
+                            showToast(
+                                "Sharing is not supported on this device."
+                            );
+
+                        }
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   FAVORITES
+========================================================= */
+
+document.getElementById(
+    "headerFavorite"
+).addEventListener(
+    "click",
+    function () {
+
+        if (
+            favorites.size ===
+            0
+        ) {
+
+            showToast(
+                "You have not favorited any photos yet."
+            );
+
+            return;
+
+        }
+
+
+        showToast(
+            `${favorites.size} photo${favorites.size === 1 ? "" : "s"} in favorites.`
+        );
+
+    }
+);
+
+
+/* =========================================================
+   KEYBOARD NAVIGATION
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function (
+        event
+    ) {
+
+        if (
+            !lightbox.classList.contains(
+                "is-visible"
+            )
+        ) {
+
+            return;
+
+        }
+
+
+        if (
+            event.key ===
+            "Escape"
+        ) {
+
+            closeLightbox();
+
+        }
+
+
+        if (
+            event.key ===
+            "ArrowRight"
+        ) {
+
+            nextPhoto();
+
+        }
+
+
+        if (
+            event.key ===
+            "ArrowLeft"
+        ) {
+
+            previousPhoto();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimeout;
+
+
+function showToast(
+    message
+) {
+
+    const toast =
+        document.getElementById(
+            "clientToast"
+        );
+
+
+    toast.querySelector(
+        "strong"
+    ).textContent =
+        message;
+
+
+    toast.classList.add(
+        "is-visible"
+    );
+
+
+    clearTimeout(
+        toastTimeout
+    );
+
+
+    toastTimeout =
+        setTimeout(
+            function () {
+
+                toast.classList.remove(
+                    "is-visible"
+                );
+
+            },
+            2500
+        );
+
+}
+
+
+/* =========================================================
+   TOUCH SWIPE
+========================================================= */
+
+let touchStartX =
+    0;
+
+
+let touchEndX =
+    0;
+
+
+lightbox.addEventListener(
+    "touchstart",
+    function (
+        event
+    ) {
+
+        touchStartX =
+            event.changedTouches[0].screenX;
+
+    },
+    {
+        passive:
+            true
+    }
+);
+
+
+lightbox.addEventListener(
+    "touchend",
+    function (
+        event
+    ) {
+
+        touchEndX =
+            event.changedTouches[0].screenX;
+
+
+        const distance =
+            touchEndX -
+            touchStartX;
+
+
+        if (
+            Math.abs(
+                distance
+            ) < 50
+        ) {
+
+            return;
+
+        }
+
+
+        if (
+            distance < 0
+        ) {
+
+            nextPhoto();
+
+        } else {
+
+            previousPhoto();
+
+        }
+
+    },
+    {
+        passive:
+            true
+    }
+);
+
+</script>
+
+</body>
+
+</html>

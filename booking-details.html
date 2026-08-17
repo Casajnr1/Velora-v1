@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Velora | Booking Details</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Lato -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Shared dashboard -->
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+    <!-- Booking details -->
+    <link
+        rel="stylesheet"
+        href="css/booking-details.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="velora-dashboard">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+    ====================================================== -->
+
+    <div
+        class="velora-sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="velora-sidebar"
+        id="veloraSidebar"
+    >
+
+        <div class="velora-sidebar-header">
+
+            <a
+                href="dashboard.html"
+                class="velora-dashboard-brand"
+            >
+
+                <img
+                    src="media/logo/logo-1-main.png"
+                    alt="Velora"
+                >
+
+            </a>
+
+
+            <button
+                type="button"
+                class="velora-sidebar-close"
+                id="sidebarClose"
+                aria-label="Close navigation"
+            >
+
+                <i class="bi bi-x-lg"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================== -->
+
+        <nav
+            class="velora-sidebar-nav"
+            aria-label="Dashboard navigation"
+        >
+
+            <div class="velora-nav-section">
+
+                <span class="velora-nav-label">
+                    WORKSPACE
+                </span>
+
+
+                <a
+                    href="dashboard.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-grid-1x2"></i>
+
+                    <span>
+                        Overview
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="galleries.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-images"></i>
+
+                    <span>
+                        Galleries
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="bookings.html"
+                    class="velora-dashboard-nav-link is-active"
+                    aria-current="page"
+                >
+
+                    <i class="bi bi-calendar2-week"></i>
+
+                    <span>
+                        Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="clients.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-people"></i>
+
+                    <span>
+                        Clients
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="analytics.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-bar-chart"></i>
+
+                    <span>
+                        Analytics
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="velora-nav-section">
+
+                <span class="velora-nav-label">
+                    MANAGE
+                </span>
+
+
+                <a
+                    href="settings.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-sliders2"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="velora-sidebar-bottom">
+
+            <a
+                href="pricing.html"
+                class="velora-upgrade-card"
+            >
+
+                <div class="velora-upgrade-icon">
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </div>
+
+
+                <div class="velora-upgrade-content">
+
+                    <strong>
+                        Upgrade your plan
+                    </strong>
+
+                    <span>
+                        Get more space for your work.
+                    </span>
+
+                </div>
+
+
+                <i class="bi bi-chevron-right"></i>
+
+            </a>
+
+
+            <button
+                type="button"
+                class="velora-sidebar-user"
+            >
+
+                <span class="velora-user-avatar">
+                    P
+                </span>
+
+
+                <span class="velora-user-details">
+
+                    <strong>
+                        Patrick
+                    </strong>
+
+                    <small>
+                        Photographer
+                    </small>
+
+                </span>
+
+
+                <i class="bi bi-three-dots"></i>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <div class="velora-dashboard-main">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="velora-dashboard-topbar">
+
+            <button
+                type="button"
+                class="velora-mobile-menu"
+                id="sidebarOpen"
+                aria-label="Open navigation"
+                aria-expanded="false"
+            >
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+
+            <div class="velora-dashboard-search">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="search"
+                    placeholder="Search..."
+                    aria-label="Search dashboard"
+                >
+
+                <span class="velora-search-shortcut">
+                    /
+                </span>
+
+            </div>
+
+
+            <div class="velora-topbar-actions">
+
+                <a
+                    href="#"
+                    class="velora-view-site"
+                >
+
+                    <i class="bi bi-box-arrow-up-right"></i>
+
+                    <span>
+                        View site
+                    </span>
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="velora-topbar-icon"
+                    aria-label="Notifications"
+                >
+
+                    <i class="bi bi-bell"></i>
+
+                    <span class="velora-notification-dot"></span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-topbar-profile"
+                    aria-label="Open profile"
+                >
+
+                    <span class="velora-topbar-avatar">
+                        P
+                    </span>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <main class="velora-dashboard-content velora-booking-details-page">
+
+
+            <!-- =================================================
+                 BREADCRUMB
+            ================================================== -->
+
+            <div class="velora-dashboard-breadcrumb">
+
+                <a href="bookings.html">
+                    Bookings
+                </a>
+
+                <i class="bi bi-chevron-right"></i>
+
+                <strong>
+                    Booking details
+                </strong>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PAGE HEADER
+            ================================================== -->
+
+            <section class="velora-booking-details-header">
+
+
+                <div>
+
+                    <a
+                        href="bookings.html"
+                        class="velora-back-link"
+                    >
+
+                        <i class="bi bi-arrow-left"></i>
+
+                        Back to bookings
+
+                    </a>
+
+
+                    <div class="velora-details-title-row">
+
+                        <div>
+
+                            <span class="velora-page-eyebrow">
+                                BOOKING #VL-00284
+                            </span>
+
+
+                            <h1>
+                                Amara Johnson
+                            </h1>
+
+
+                            <p>
+                                Wedding photography session
+                            </p>
+
+                        </div>
+
+
+                        <span class="velora-detail-status upcoming">
+                            Upcoming
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Actions -->
+
+                <div class="velora-detail-actions">
+
+
+                    <button
+                        type="button"
+                        class="velora-detail-secondary"
+                        id="editBooking"
+                    >
+
+                        <i class="bi bi-pencil"></i>
+
+                        Edit
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="velora-detail-secondary"
+                        id="moreBooking"
+                        aria-label="More booking actions"
+                    >
+
+                        <i class="bi bi-three-dots"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 MAIN GRID
+            ================================================== -->
+
+            <div class="velora-booking-details-grid">
+
+
+                <!-- =================================================
+                     LEFT COLUMN
+                ================================================== -->
+
+                <div class="velora-booking-details-main">
+
+
+                    <!-- Session overview -->
+
+                    <section class="velora-details-card">
+
+
+                        <div class="velora-details-card-header">
+
+                            <div>
+
+                                <span>
+                                    SESSION
+                                </span>
+
+                                <h2>
+                                    Wedding Photography
+                                </h2>
+
+                            </div>
+
+
+                            <div class="velora-session-icon">
+
+                                <i class="bi bi-camera"></i>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="velora-session-info-grid">
+
+
+                            <div class="velora-detail-info">
+
+                                <span>
+                                    DATE
+                                </span>
+
+                                <strong>
+                                    September 18, 2026
+                                </strong>
+
+                            </div>
+
+
+                            <div class="velora-detail-info">
+
+                                <span>
+                                    TIME
+                                </span>
+
+                                <strong>
+                                    10:00 AM
+                                </strong>
+
+                            </div>
+
+
+                            <div class="velora-detail-info">
+
+                                <span>
+                                    DURATION
+                                </span>
+
+                                <strong>
+                                    Full day
+                                </strong>
+
+                            </div>
+
+
+                            <div class="velora-detail-info">
+
+                                <span>
+                                    LOCATION
+                                </span>
+
+                                <strong>
+                                    Lekki Conservation Centre
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- Notes -->
+
+                    <section class="velora-details-card">
+
+
+                        <div class="velora-details-card-header compact">
+
+                            <div>
+
+                                <span>
+                                    NOTES
+                                </span>
+
+                                <h2>
+                                    Session notes
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="velora-details-notes">
+
+                            <p>
+                                Client requested a natural,
+                                documentary-style approach with
+                                minimal posing. Family portraits
+                                should be completed before sunset.
+                            </p>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- Gallery -->
+
+                    <section class="velora-details-card">
+
+
+                        <div class="velora-details-card-header compact">
+
+                            <div>
+
+                                <span>
+                                    GALLERY
+                                </span>
+
+                                <h2>
+                                    Client gallery
+                                </h2>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="velora-small-action"
+                            >
+
+                                Open gallery
+
+                                <i class="bi bi-arrow-up-right"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="velora-gallery-placeholder">
+
+                            <div class="velora-gallery-placeholder-icon">
+
+                                <i class="bi bi-images"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    No gallery attached yet
+                                </strong>
+
+                                <span>
+                                    Create or attach a gallery after the session.
+                                </span>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="velora-small-action"
+                            >
+
+                                Create gallery
+
+                                <i class="bi bi-plus"></i>
+
+                            </button>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- Activity -->
+
+                    <section class="velora-details-card">
+
+
+                        <div class="velora-details-card-header compact">
+
+                            <div>
+
+                                <span>
+                                    ACTIVITY
+                                </span>
+
+                                <h2>
+                                    Booking activity
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="velora-activity">
+
+
+                            <div class="velora-activity-item">
+
+                                <span class="velora-activity-dot"></span>
+
+                                <div>
+
+                                    <strong>
+                                        Booking created
+                                    </strong>
+
+                                    <span>
+                                        September 3, 2026 · 4:32 PM
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="velora-activity-item">
+
+                                <span class="velora-activity-dot"></span>
+
+                                <div>
+
+                                    <strong>
+                                        Client details updated
+                                    </strong>
+
+                                    <span>
+                                        September 4, 2026 · 10:18 AM
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="velora-activity-item">
+
+                                <span class="velora-activity-dot"></span>
+
+                                <div>
+
+                                    <strong>
+                                        Booking confirmed
+                                    </strong>
+
+                                    <span>
+                                        September 5, 2026 · 8:41 AM
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     RIGHT COLUMN
+                ================================================== -->
+
+                <aside class="velora-booking-details-sidebar">
+
+
+                    <!-- Client -->
+
+                    <section class="velora-details-card">
+
+
+                        <div class="velora-details-card-header compact">
+
+                            <div>
+
+                                <span>
+                                    CLIENT
+                                </span>
+
+                                <h2>
+                                    Client information
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="velora-client-profile">
+
+
+                            <span class="velora-detail-client-avatar">
+                                AJ
+                            </span>
+
+
+                            <strong>
+                                Amara Johnson
+                            </strong>
+
+
+                            <span>
+                                Wedding client
+                            </span>
+
+                        </div>
+
+
+                        <div class="velora-client-contact">
+
+
+                            <a href="mailto:amara@example.com">
+
+                                <i class="bi bi-envelope"></i>
+
+                                amara@example.com
+
+                            </a>
+
+
+                            <a href="tel:+2348000000000">
+
+                                <i class="bi bi-telephone"></i>
+
+                                +234 800 000 0000
+
+                            </a>
+
+
+                            <span>
+
+                                <i class="bi bi-geo-alt"></i>
+
+                                Lagos, Nigeria
+
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="clients.html"
+                            class="velora-client-link"
+                        >
+
+                            View client profile
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </section>
+
+
+
+                    <!-- Payment -->
+
+                    <section class="velora-details-card">
+
+
+                        <div class="velora-details-card-header compact">
+
+                            <div>
+
+                                <span>
+                                    PAYMENT
+                                </span>
+
+                                <h2>
+                                    Booking value
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="velora-payment-total">
+
+                            <span>
+                                Total
+                            </span>
+
+                            <strong>
+                                $1,200
+                            </strong>
+
+                        </div>
+
+
+                        <div class="velora-payment-row">
+
+                            <span>
+                                Package
+                            </span>
+
+                            <strong>
+                                $1,200
+                            </strong>
+
+                        </div>
+
+
+                        <div class="velora-payment-row">
+
+                            <span>
+                                Deposit
+                            </span>
+
+                            <strong>
+                                $600
+                            </strong>
+
+                        </div>
+
+
+                        <div class="velora-payment-row remaining">
+
+                            <span>
+                                Remaining
+                            </span>
+
+                            <strong>
+                                $600
+                            </strong>
+
+                        </div>
+
+
+                        <div class="velora-payment-status">
+
+                            <i class="bi bi-check-circle"></i>
+
+                            Deposit received
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- Quick actions -->
+
+                    <section class="velora-details-card">
+
+
+                        <div class="velora-details-card-header compact">
+
+                            <div>
+
+                                <span>
+                                    ACTIONS
+                                </span>
+
+                                <h2>
+                                    Manage booking
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="velora-quick-actions">
+
+
+                            <button
+                                type="button"
+                                id="rescheduleBooking"
+                            >
+
+                                <i class="bi bi-calendar2-week"></i>
+
+                                Reschedule
+
+                                <i class="bi bi-chevron-right"></i>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                id="sendMessage"
+                            >
+
+                                <i class="bi bi-chat"></i>
+
+                                Contact client
+
+                                <i class="bi bi-chevron-right"></i>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="danger"
+                                id="cancelBooking"
+                            >
+
+                                <i class="bi bi-x-circle"></i>
+
+                                Cancel booking
+
+                                <i class="bi bi-chevron-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </section>
+
+                </aside>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     EDIT MODAL
+====================================================== -->
+
+<div
+    class="velora-details-modal"
+    id="editModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="velora-details-modal-backdrop"
+        data-close-modal
+    ></div>
+
+
+    <section class="velora-details-modal-dialog">
+
+        <header>
+
+            <div>
+
+                <span>
+                    BOOKING
+                </span>
+
+                <h2>
+                    Edit booking
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="velora-modal-close"
+                data-close-modal
+            >
+
+                <i class="bi bi-x-lg"></i>
+
+            </button>
+
+        </header>
+
+
+        <form id="editBookingForm">
+
+            <div class="velora-edit-form-grid">
+
+                <div>
+
+                    <label>
+                        Client
+                    </label>
+
+                    <input
+                        type="text"
+                        value="Amara Johnson"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Session
+                    </label>
+
+                    <input
+                        type="text"
+                        value="Wedding Photography"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        value="2026-09-18"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Time
+                    </label>
+
+                    <input
+                        type="time"
+                        value="10:00"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Location
+                    </label>
+
+                    <input
+                        type="text"
+                        value="Lekki Conservation Centre"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Price
+                    </label>
+
+                    <input
+                        type="number"
+                        value="1200"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="velora-modal-actions">
+
+                <button
+                    type="button"
+                    class="velora-modal-secondary"
+                    data-close-modal
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="velora-modal-primary"
+                >
+                    Save changes
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</div>
+
+
+
+<!-- =====================================================
+     CANCEL MODAL
+====================================================== -->
+
+<div
+    class="velora-details-modal"
+    id="cancelModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="velora-details-modal-backdrop"
+        data-close-cancel
+    ></div>
+
+
+    <section class="velora-confirm-dialog">
+
+        <div class="velora-confirm-icon">
+
+            <i class="bi bi-exclamation-lg"></i>
+
+        </div>
+
+
+        <h2>
+            Cancel this booking?
+        </h2>
+
+
+        <p>
+            This will mark the booking as cancelled.
+            You can still view it from your booking history.
+        </p>
+
+
+        <div class="velora-modal-actions">
+
+            <button
+                type="button"
+                class="velora-modal-secondary"
+                data-close-cancel
+            >
+                Keep booking
+            </button>
+
+
+            <button
+                type="button"
+                class="velora-modal-danger"
+                id="confirmCancel"
+            >
+                Cancel booking
+            </button>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+
+<script>
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+const sidebar =
+    document.getElementById("veloraSidebar");
+
+const sidebarOpen =
+    document.getElementById("sidebarOpen");
+
+const sidebarClose =
+    document.getElementById("sidebarClose");
+
+const sidebarOverlay =
+    document.getElementById("sidebarOverlay");
+
+
+function openSidebar() {
+
+    sidebar.classList.add("is-open");
+
+    sidebarOverlay.classList.add("is-visible");
+
+    sidebarOpen.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+}
+
+
+function closeSidebar() {
+
+    sidebar.classList.remove("is-open");
+
+    sidebarOverlay.classList.remove("is-visible");
+
+    sidebarOpen.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+}
+
+
+sidebarOpen.addEventListener(
+    "click",
+    openSidebar
+);
+
+
+sidebarClose.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+sidebarOverlay.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+
+/* =====================================================
+   EDIT MODAL
+===================================================== */
+
+const editModal =
+    document.getElementById("editModal");
+
+
+const editBooking =
+    document.getElementById("editBooking");
+
+
+function openEditModal() {
+
+    editModal.classList.add("is-open");
+
+    editModal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    document.body.classList.add(
+        "velora-modal-open"
+    );
+
+}
+
+
+function closeEditModal() {
+
+    editModal.classList.remove("is-open");
+
+    editModal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.classList.remove(
+        "velora-modal-open"
+    );
+
+}
+
+
+editBooking.addEventListener(
+    "click",
+    openEditModal
+);
+
+
+document
+    .querySelectorAll(
+        "[data-close-modal]"
+    )
+    .forEach(
+        function (button) {
+
+            button.addEventListener(
+                "click",
+                closeEditModal
+            );
+
+        }
+    );
+
+
+
+/* =====================================================
+   EDIT FORM
+===================================================== */
+
+document
+    .getElementById("editBookingForm")
+    .addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+            const button =
+                this.querySelector(
+                    ".velora-modal-primary"
+                );
+
+            const original =
+                button.textContent;
+
+            button.textContent =
+                "Saved";
+
+            setTimeout(
+                function () {
+
+                    button.textContent =
+                        original;
+
+                    closeEditModal();
+
+                },
+                900
+            );
+
+        }
+    );
+
+
+
+/* =====================================================
+   CANCEL MODAL
+===================================================== */
+
+const cancelModal =
+    document.getElementById(
+        "cancelModal"
+    );
+
+
+const cancelBooking =
+    document.getElementById(
+        "cancelBooking"
+    );
+
+
+const confirmCancel =
+    document.getElementById(
+        "confirmCancel"
+    );
+
+
+function openCancelModal() {
+
+    cancelModal.classList.add(
+        "is-open"
+    );
+
+    cancelModal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    document.body.classList.add(
+        "velora-modal-open"
+    );
+
+}
+
+
+function closeCancelModal() {
+
+    cancelModal.classList.remove(
+        "is-open"
+    );
+
+    cancelModal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.classList.remove(
+        "velora-modal-open"
+    );
+
+}
+
+
+cancelBooking.addEventListener(
+    "click",
+    openCancelModal
+);
+
+
+document
+    .querySelectorAll(
+        "[data-close-cancel]"
+    )
+    .forEach(
+        function (button) {
+
+            button.addEventListener(
+                "click",
+                closeCancelModal
+            );
+
+        }
+    );
+
+
+
+/* =====================================================
+   CONFIRM CANCELLATION
+===================================================== */
+
+confirmCancel.addEventListener(
+    "click",
+    function () {
+
+        const status =
+            document.querySelector(
+                ".velora-detail-status"
+            );
+
+        status.textContent =
+            "Cancelled";
+
+        status.classList.remove(
+            "upcoming"
+        );
+
+        status.classList.add(
+            "cancelled"
+        );
+
+
+        closeCancelModal();
+
+    }
+);
+
+
+
+/* =====================================================
+   RESCHEDULE
+===================================================== */
+
+document
+    .getElementById(
+        "rescheduleBooking"
+    )
+    .addEventListener(
+        "click",
+        function () {
+
+            openEditModal();
+
+        }
+    );
+
+
+
+/* =====================================================
+   CONTACT CLIENT
+===================================================== */
+
+document
+    .getElementById(
+        "sendMessage"
+    )
+    .addEventListener(
+        "click",
+        function () {
+
+            window.location.href =
+                "mailto:amara@example.com";
+
+        }
+    );
+
+
+
+/* =====================================================
+   ESCAPE
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key !== "Escape"
+        ) {
+
+            return;
+
+        }
+
+
+        closeEditModal();
+
+        closeCancelModal();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

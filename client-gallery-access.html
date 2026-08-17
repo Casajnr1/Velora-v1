@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Private photography gallery by Patrick Obialor Photography."
+    >
+
+    <title>
+        Private Gallery | Velora
+    </title>
+
+
+    <!-- =====================================================
+         FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- =====================================================
+         PAGE CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/client-gallery-access.css"
+    >
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+        rel="shortcut icon"
+        href="media/favicon/favicon.png"
+        type="image/x-icon"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ACCESS PAGE
+========================================================= -->
+
+<main class="velora-access-page">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="velora-access-header">
+
+
+        <a
+            href="#"
+            class="velora-access-brand"
+            aria-label="Velora"
+        >
+
+            <img
+                src="media/logo/logo-1-main.png"
+                alt="Velora"
+            >
+
+        </a>
+
+
+        
+    </header>
+
+
+    <!-- =====================================================
+         MAIN ACCESS AREA
+    ====================================================== -->
+
+    <section class="velora-access-content">
+
+
+        <!-- =================================================
+             GALLERY PREVIEW
+        ================================================== -->
+
+        <div class="velora-access-preview">
+
+
+            <div class="velora-access-preview-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=90"
+                    alt="Wedding couple"
+                >
+
+            </div>
+
+
+            <div class="velora-access-preview-overlay"></div>
+
+
+            <div class="velora-access-preview-info">
+
+
+                <span>
+                    PATRICK OBIALOR PHOTOGRAPHY
+                </span>
+
+
+                <strong>
+                    Wedding Collection
+                </strong>
+
+
+                <small>
+                    18 June 2026
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             ACCESS PANEL
+        ================================================== -->
+
+        <div class="velora-access-panel">
+
+
+            <div class="velora-access-panel-inner">
+
+
+                <!-- =========================================
+                     PHOTOGRAPHER BRAND
+                ========================================== -->
+
+                <div class="velora-access-photographer">
+
+
+                    <div class="velora-access-photographer-avatar">
+
+                        <span>
+                            P
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Patrick Obialor
+                        </strong>
+
+                        <span>
+                            Photographer
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     HEADING
+                ========================================== -->
+
+                <div class="velora-access-heading">
+
+                    <span class="velora-access-eyebrow">
+                        YOUR PRIVATE GALLERY
+                    </span>
+
+
+                    <h1>
+                        Wedding Collection
+                    </h1>
+
+
+                    <p>
+                        This gallery is private.
+                        Enter the password provided by your
+                        photographer to continue.
+                    </p>
+
+                </div>
+
+
+                <!-- =========================================
+                     ACCESS FORM
+                ========================================== -->
+
+                <form
+                    class="velora-access-form"
+                    id="galleryAccessForm"
+                    novalidate
+                >
+
+
+                    <div class="velora-access-field">
+
+
+                        <label
+                            for="galleryPassword"
+                        >
+
+                            Gallery password
+
+                        </label>
+
+
+                        <div class="velora-access-input-wrapper">
+
+
+                            <i
+                                class="bi bi-lock"
+                                aria-hidden="true"
+                            ></i>
+
+
+                            <input
+                                type="password"
+                                id="galleryPassword"
+                                name="galleryPassword"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                class="velora-access-password-toggle"
+                                id="togglePassword"
+                                aria-label="Show password"
+                            >
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <span
+                            class="velora-access-error"
+                            id="passwordError"
+                            role="alert"
+                        >
+                            Please enter your gallery password.
+                        </span>
+
+                    </div>
+
+
+                    <!-- =====================================
+                         REMEMBER DEVICE
+                    ====================================== -->
+
+                    <label
+                        class="velora-access-remember"
+                    >
+
+                        <input
+                            type="checkbox"
+                            id="rememberDevice"
+                        >
+
+
+                        <span
+                            class="velora-access-checkbox"
+                        >
+
+                            <i class="bi bi-check"></i>
+
+                        </span>
+
+
+                        <span>
+                            Remember this device
+                        </span>
+
+                    </label>
+
+
+                    <!-- =====================================
+                         SUBMIT
+                    ====================================== -->
+
+                    <button
+                        type="submit"
+                        class="velora-access-submit"
+                        id="accessSubmit"
+                    >
+
+                        <span>
+                            Open gallery
+                        </span>
+
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </button>
+
+
+                </form>
+
+
+                <!-- =========================================
+                     HELP
+                ========================================== -->
+
+                <div class="velora-access-help">
+
+
+                    <span>
+                        Don't have the password?
+                    </span>
+
+
+                    <button
+                        type="button"
+                        id="requestAccess"
+                    >
+
+                        Request access
+
+                    </button>
+
+                </div>
+
+
+                <!-- =========================================
+                     SECURITY NOTE
+                ========================================== -->
+
+                <div class="velora-access-security">
+
+
+                    <i class="bi bi-shield-check"></i>
+
+
+                    <div>
+
+                        <strong>
+                            Private & secure
+                        </strong>
+
+                        <span>
+                            Your gallery is only accessible
+                            through this private link and password.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="velora-access-footer">
+
+
+        <span>
+            Powered by Velora
+        </span>
+
+
+        <div>
+
+            <a href="#">
+                Privacy
+            </a>
+
+            <a href="#">
+                Terms
+            </a>
+
+        </div>
+
+    </footer>
+
+</main>
+
+
+<!-- =========================================================
+     REQUEST ACCESS MODAL
+========================================================= -->
+
+<div
+    class="velora-access-modal"
+    id="requestAccessModal"
+    aria-hidden="true"
+>
+
+
+    <div
+        class="velora-access-modal-backdrop"
+        id="requestAccessBackdrop"
+    ></div>
+
+
+    <div
+        class="velora-access-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="requestAccessTitle"
+    >
+
+
+        <button
+            type="button"
+            class="velora-access-modal-close"
+            id="closeRequestAccess"
+            aria-label="Close request access dialog"
+        >
+
+            <i class="bi bi-x-lg"></i>
+
+        </button>
+
+
+        <div class="velora-access-modal-icon">
+
+            <i class="bi bi-envelope"></i>
+
+        </div>
+
+
+        <span class="velora-access-eyebrow">
+            REQUEST ACCESS
+        </span>
+
+
+        <h2 id="requestAccessTitle">
+            Need the gallery password?
+        </h2>
+
+
+        <p>
+            Send a request to the photographer and they
+            can provide access to this private gallery.
+        </p>
+
+
+        <form
+            id="requestAccessForm"
+            class="velora-request-form"
+        >
+
+
+            <div class="velora-access-field">
+
+                <label for="requestName">
+                    Your name
+                </label>
+
+                <input
+                    type="text"
+                    id="requestName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="velora-access-field">
+
+                <label for="requestEmail">
+                    Email address
+                </label>
+
+                <input
+                    type="email"
+                    id="requestEmail"
+                    placeholder="you@example.com"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="velora-access-submit"
+            >
+
+                <span>
+                    Send request
+                </span>
+
+                <i class="bi bi-send"></i>
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="velora-access-toast"
+    id="accessToast"
+    aria-live="polite"
+>
+
+    <span>
+
+        <i class="bi bi-check2"></i>
+
+    </span>
+
+
+    <strong>
+        Request sent
+    </strong>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const accessForm =
+    document.getElementById(
+        "galleryAccessForm"
+    );
+
+
+const passwordInput =
+    document.getElementById(
+        "galleryPassword"
+    );
+
+
+const passwordError =
+    document.getElementById(
+        "passwordError"
+    );
+
+
+const accessSubmit =
+    document.getElementById(
+        "accessSubmit"
+    );
+
+
+const togglePassword =
+    document.getElementById(
+        "togglePassword"
+    );
+
+
+const requestAccess =
+    document.getElementById(
+        "requestAccess"
+    );
+
+
+const requestAccessModal =
+    document.getElementById(
+        "requestAccessModal"
+    );
+
+
+const requestAccessBackdrop =
+    document.getElementById(
+        "requestAccessBackdrop"
+    );
+
+
+const closeRequestAccess =
+    document.getElementById(
+        "closeRequestAccess"
+    );
+
+
+const requestAccessForm =
+    document.getElementById(
+        "requestAccessForm"
+    );
+
+
+const accessToast =
+    document.getElementById(
+        "accessToast"
+    );
+
+
+/* =========================================================
+   PASSWORD VISIBILITY
+========================================================= */
+
+togglePassword.addEventListener(
+    "click",
+    function () {
+
+        const isPassword =
+            passwordInput.type ===
+            "password";
+
+
+        passwordInput.type =
+            isPassword
+                ? "text"
+                : "password";
+
+
+        const icon =
+            togglePassword.querySelector(
+                "i"
+            );
+
+
+        icon.className =
+            isPassword
+                ? "bi bi-eye-slash"
+                : "bi bi-eye";
+
+
+        togglePassword.setAttribute(
+            "aria-label",
+            isPassword
+                ? "Hide password"
+                : "Show password"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   INPUT STATE
+========================================================= */
+
+passwordInput.addEventListener(
+    "input",
+    function () {
+
+        passwordInput.classList.remove(
+            "has-error"
+        );
+
+        passwordError.classList.remove(
+            "is-visible"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   ACCESS FORM
+========================================================= */
+
+accessForm.addEventListener(
+    "submit",
+    function (
+        event
+    ) {
+
+        event.preventDefault();
+
+
+        const password =
+            passwordInput.value.trim();
+
+
+        if (!password) {
+
+            passwordInput.classList.add(
+                "has-error"
+            );
+
+            passwordError.classList.add(
+                "is-visible"
+            );
+
+            passwordInput.focus();
+
+            return;
+
+        }
+
+
+        /*
+         * ---------------------------------------------------
+         * DEMO ACCESS
+         * ---------------------------------------------------
+         *
+         * Replace this section later with the real
+         * authentication/API request.
+         *
+         * Demo password:
+         *
+         * velora
+         *
+         * ---------------------------------------------------
+         */
+
+
+        accessSubmit.classList.add(
+            "is-loading"
+        );
+
+
+        accessSubmit.disabled =
+            true;
+
+
+        setTimeout(
+            function () {
+
+                if (
+                    password.toLowerCase() ===
+                    "velora"
+                ) {
+
+                    sessionStorage.setItem(
+                        "veloraGalleryAccess",
+                        "granted"
+                    );
+
+
+                    window.location.href =
+                        "client-gallery.html";
+
+                } else {
+
+                    passwordInput.classList.add(
+                        "has-error"
+                    );
+
+                    passwordError.textContent =
+                        "That password isn't correct. Please try again.";
+
+                    passwordError.classList.add(
+                        "is-visible"
+                    );
+
+
+                    accessSubmit.classList.remove(
+                        "is-loading"
+                    );
+
+                    accessSubmit.disabled =
+                        false;
+
+                }
+
+            },
+            650
+        );
+
+    }
+);
+
+
+/* =========================================================
+   REQUEST ACCESS MODAL
+========================================================= */
+
+function openRequestAccess() {
+
+    requestAccessModal.classList.add(
+        "is-visible"
+    );
+
+
+    requestAccessModal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.classList.add(
+        "velora-access-modal-open"
+    );
+
+
+    setTimeout(
+        function () {
+
+            document
+                .getElementById(
+                    "requestName"
+                )
+                .focus();
+
+        },
+        100
+    );
+
+}
+
+
+function closeRequestAccessModal() {
+
+    requestAccessModal.classList.remove(
+        "is-visible"
+    );
+
+
+    requestAccessModal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.classList.remove(
+        "velora-access-modal-open"
+    );
+
+}
+
+
+requestAccess.addEventListener(
+    "click",
+    openRequestAccess
+);
+
+
+closeRequestAccess.addEventListener(
+    "click",
+    closeRequestAccessModal
+);
+
+
+requestAccessBackdrop.addEventListener(
+    "click",
+    closeRequestAccessModal
+);
+
+
+/* =========================================================
+   REQUEST ACCESS FORM
+========================================================= */
+
+requestAccessForm.addEventListener(
+    "submit",
+    function (
+        event
+    ) {
+
+        event.preventDefault();
+
+
+        const name =
+            document
+                .getElementById(
+                    "requestName"
+                )
+                .value
+                .trim();
+
+
+        const email =
+            document
+                .getElementById(
+                    "requestEmail"
+                )
+                .value
+                .trim();
+
+
+        if (
+            !name ||
+            !email
+        ) {
+
+            return;
+
+        }
+
+
+        closeRequestAccessModal();
+
+
+        requestAccessForm.reset();
+
+
+        showToast(
+            "Access request sent."
+        );
+
+    }
+);
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimer;
+
+
+function showToast(
+    message
+) {
+
+    accessToast
+        .querySelector(
+            "strong"
+        )
+        .textContent =
+        message;
+
+
+    accessToast.classList.add(
+        "is-visible"
+    );
+
+
+    clearTimeout(
+        toastTimer
+    );
+
+
+    toastTimer =
+        setTimeout(
+            function () {
+
+                accessToast.classList.remove(
+                    "is-visible"
+                );
+
+            },
+            3000
+        );
+
+}
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function (
+        event
+    ) {
+
+        if (
+            event.key ===
+            "Escape"
+        ) {
+
+            if (
+                requestAccessModal.classList.contains(
+                    "is-visible"
+                )
+            ) {
+
+                closeRequestAccessModal();
+
+            }
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

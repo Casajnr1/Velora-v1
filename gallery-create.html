@@ -1,0 +1,2114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Create a new photography gallery with Velora."
+    >
+
+    <title>Velora | New Gallery</title>
+
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- =====================================================
+         LATO
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+
+    <!-- =====================================================
+         GALLERY CREATE CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/gallery-create.css"
+    >
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+        rel="shortcut icon"
+        href="media/favicon/favicon.png"
+        type="image/x-icon"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     DASHBOARD
+====================================================== -->
+
+<div class="velora-dashboard">
+
+
+    <!-- =================================================
+         SIDEBAR OVERLAY
+    ================================================== -->
+
+    <div
+        class="velora-sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside
+        class="velora-sidebar"
+        id="veloraSidebar"
+    >
+
+
+        <div class="velora-sidebar-header">
+
+            <a
+                href="dashboard.html"
+                class="velora-dashboard-brand"
+            >
+
+                <img
+                    src="media/logo/logo-1-main.png"
+                    alt="Velora"
+                >
+
+            </a>
+
+
+            <button
+                type="button"
+                class="velora-sidebar-close"
+                id="sidebarClose"
+                aria-label="Close navigation"
+            >
+
+                <i class="bi bi-x-lg"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================== -->
+
+        <nav
+            class="velora-sidebar-nav"
+            aria-label="Dashboard navigation"
+        >
+
+            <div class="velora-nav-section">
+
+                <span class="velora-nav-label">
+                    WORKSPACE
+                </span>
+
+
+                <a
+                    href="dashboard.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-grid-1x2"></i>
+
+                    <span>
+                        Overview
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="galleries.html"
+                    class="velora-dashboard-nav-link is-active"
+                    aria-current="page"
+                >
+
+                    <i class="bi bi-images"></i>
+
+                    <span>
+                        Galleries
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="bookings.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-calendar2-week"></i>
+
+                    <span>
+                        Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="clients.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-people"></i>
+
+                    <span>
+                        Clients
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="analytics.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-bar-chart"></i>
+
+                    <span>
+                        Analytics
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <div class="velora-nav-section">
+
+                <span class="velora-nav-label">
+                    MANAGE
+                </span>
+
+
+                <a
+                    href="settings.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-sliders2"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="velora-sidebar-bottom">
+
+
+            <a
+                href="pricing.html"
+                class="velora-upgrade-card"
+            >
+
+                <div class="velora-upgrade-icon">
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </div>
+
+
+                <div class="velora-upgrade-content">
+
+                    <strong>
+                        Upgrade your plan
+                    </strong>
+
+                    <span>
+                        Get more space for your work.
+                    </span>
+
+                </div>
+
+
+                <i class="bi bi-chevron-right"></i>
+
+            </a>
+
+
+            <a
+                href="settings.html"
+                class="velora-sidebar-user"
+            >
+
+                <span class="velora-user-avatar">
+                    P
+                </span>
+
+
+                <span class="velora-user-details">
+
+                    <strong>
+                        Patrick
+                    </strong>
+
+                    <small>
+                        Photographer
+                    </small>
+
+                </span>
+
+
+                <i class="bi bi-three-dots"></i>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN
+    ================================================== -->
+
+    <div class="velora-dashboard-main">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="velora-dashboard-topbar">
+
+
+            <button
+                type="button"
+                class="velora-mobile-menu"
+                id="sidebarOpen"
+                aria-label="Open navigation"
+                aria-controls="veloraSidebar"
+                aria-expanded="false"
+            >
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+
+            <div class="velora-dashboard-search">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="search"
+                    placeholder="Search..."
+                    aria-label="Search dashboard"
+                >
+
+                <span class="velora-search-shortcut">
+                    /
+                </span>
+
+            </div>
+
+
+            <div class="velora-topbar-actions">
+
+
+                <a
+                    href="index.html"
+                    class="velora-view-site"
+                >
+
+                    <i class="bi bi-box-arrow-up-right"></i>
+
+                    <span>
+                        View site
+                    </span>
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="velora-topbar-icon"
+                    aria-label="Notifications"
+                >
+
+                    <i class="bi bi-bell"></i>
+
+                    <span class="velora-notification-dot"></span>
+
+                </button>
+
+
+                <a
+                    href="settings.html"
+                    class="velora-topbar-profile"
+                    aria-label="Open profile settings"
+                >
+
+                    <span class="velora-topbar-avatar">
+                        P
+                    </span>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <main
+            class="velora-dashboard-content velora-gallery-create-page"
+        >
+
+
+            <!-- =================================================
+                 BREADCRUMB
+            ================================================== -->
+
+            <div class="velora-dashboard-breadcrumb">
+
+                <a
+                    href="galleries.html"
+                    class="velora-create-breadcrumb-link"
+                >
+                    Galleries
+                </a>
+
+                <i class="bi bi-chevron-right"></i>
+
+                <strong>
+                    New Gallery
+                </strong>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 HEADER
+            ================================================== -->
+
+            <section class="velora-create-header">
+
+
+                <div>
+
+                    <a
+                        href="galleries.html"
+                        class="velora-create-back"
+                    >
+
+                        <i class="bi bi-arrow-left"></i>
+
+                        Back to galleries
+
+                    </a>
+
+
+                    <span class="velora-page-eyebrow">
+                        GALLERY
+                    </span>
+
+
+                    <h1>
+                        Create a new gallery
+                    </h1>
+
+
+                    <p>
+                        Set up your gallery information first.
+                        You can add your photos after creating it.
+                    </p>
+
+                </div>
+
+
+                <div class="velora-create-header-actions">
+
+                    <a
+                        href="galleries.html"
+                        class="velora-create-button secondary"
+                    >
+                        Cancel
+                    </a>
+
+
+                    <button
+                        type="button"
+                        class="velora-create-button primary"
+                        id="createGalleryTop"
+                    >
+
+                        <i class="bi bi-plus-lg"></i>
+
+                        Create gallery
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CREATE LAYOUT
+            ================================================== -->
+
+            <div class="velora-create-layout">
+
+
+                <!-- =================================================
+                     FORM
+                ================================================== -->
+
+                <div class="velora-create-main">
+
+
+                    <!-- =================================================
+                         GENERAL
+                    ================================================== -->
+
+                    <section class="velora-create-card">
+
+
+                        <div class="velora-create-card-header">
+
+                            <span class="velora-panel-eyebrow">
+                                GENERAL
+                            </span>
+
+                            <h2>
+                                Gallery information
+                            </h2>
+
+                            <p>
+                                Give your gallery a name and
+                                describe the work inside it.
+                            </p>
+
+                        </div>
+
+
+                        <div class="velora-create-form">
+
+
+                            <!-- Gallery name -->
+
+                            <div class="velora-create-field">
+
+                                <label for="galleryName">
+                                    Gallery name
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="galleryName"
+                                    placeholder="e.g. Sarah & David Wedding"
+                                    maxlength="80"
+                                    autocomplete="off"
+                                >
+
+
+                                <span>
+                                    Choose a name your clients
+                                    will easily recognize.
+                                </span>
+
+                            </div>
+
+
+
+                            <!-- Description -->
+
+                            <div class="velora-create-field">
+
+                                <div class="velora-create-label-row">
+
+                                    <label for="galleryDescription">
+                                        Description
+                                    </label>
+
+                                    <span id="descriptionCounter">
+                                        0 / 300
+                                    </span>
+
+                                </div>
+
+
+                                <textarea
+                                    id="galleryDescription"
+                                    rows="5"
+                                    maxlength="300"
+                                    placeholder="Tell your client a little about this gallery..."
+                                ></textarea>
+
+
+                                <span>
+                                    This appears alongside your
+                                    gallery title.
+                                </span>
+
+                            </div>
+
+
+
+                            <!-- Client -->
+
+                            <div class="velora-create-field">
+
+                                <label for="galleryClient">
+                                    Client
+                                </label>
+
+
+                                <div class="velora-create-select">
+
+                                    <select
+                                        id="galleryClient"
+                                    >
+
+                                        <option value="">
+                                            Select a client
+                                        </option>
+
+                                        <option value="sarah">
+                                            Sarah Johnson
+                                        </option>
+
+                                        <option value="amara">
+                                            Amara & David
+                                        </option>
+
+                                        <option value="studio">
+                                            Studio Clients
+                                        </option>
+
+                                        <option value="fashion">
+                                            Fashion Studio
+                                        </option>
+
+                                        <option value="editorial">
+                                            Editorial
+                                        </option>
+
+                                    </select>
+
+
+                                    <i class="bi bi-chevron-down"></i>
+
+                                </div>
+
+
+                                <span>
+                                    You can also create a client later.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         COVER
+                    ================================================== -->
+
+                    <section class="velora-create-card">
+
+
+                        <div class="velora-create-card-header">
+
+                            <span class="velora-panel-eyebrow">
+                                COVER IMAGE
+                            </span>
+
+                            <h2>
+                                Choose a cover
+                            </h2>
+
+                            <p>
+                                Upload an image to represent this gallery.
+                            </p>
+
+                        </div>
+
+
+                        <div class="velora-create-cover-wrapper">
+
+
+                            <div
+                                class="velora-create-cover"
+                                id="coverDropzone"
+                            >
+
+
+                                <img
+                                    id="coverPreview"
+                                    src=""
+                                    alt=""
+                                    hidden
+                                >
+
+
+                                <div
+                                    class="velora-create-cover-empty"
+                                    id="coverEmptyState"
+                                >
+
+                                    <span class="velora-upload-icon">
+
+                                        <i class="bi bi-image"></i>
+
+                                    </span>
+
+
+                                    <strong>
+                                        Add a cover image
+                                    </strong>
+
+
+                                    <span>
+                                        Drag and drop an image here
+                                        or browse your files.
+                                    </span>
+
+
+                                    <button
+                                        type="button"
+                                        id="browseCoverButton"
+                                    >
+
+                                        <i class="bi bi-upload"></i>
+
+                                        Browse files
+
+                                    </button>
+
+                                </div>
+
+
+                                <div
+                                    class="velora-create-cover-actions"
+                                    id="coverActions"
+                                    hidden
+                                >
+
+                                    <button
+                                        type="button"
+                                        id="replaceCoverButton"
+                                    >
+
+                                        <i class="bi bi-arrow-repeat"></i>
+
+                                        Replace
+
+                                    </button>
+
+
+                                    <button
+                                        type="button"
+                                        id="removeCoverButton"
+                                    >
+
+                                        <i class="bi bi-trash3"></i>
+
+                                        Remove
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <input
+                                type="file"
+                                id="coverInput"
+                                accept="image/jpeg,image/png,image/webp"
+                                hidden
+                            >
+
+
+                            <span class="velora-create-form-note">
+                                JPG, PNG or WebP. Recommended minimum
+                                width: 1600px.
+                            </span>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         VISIBILITY
+                    ================================================== -->
+
+                    <section class="velora-create-card">
+
+
+                        <div class="velora-create-card-header">
+
+                            <span class="velora-panel-eyebrow">
+                                VISIBILITY
+                            </span>
+
+                            <h2>
+                                Who can access this gallery?
+                            </h2>
+
+                            <p>
+                                You can change this later.
+                            </p>
+
+                        </div>
+
+
+                        <div class="velora-create-visibility">
+
+
+                            <!-- Public -->
+
+                            <label
+                                class="velora-create-visibility-option is-selected"
+                            >
+
+                                <input
+                                    type="radio"
+                                    name="visibility"
+                                    value="public"
+                                    checked
+                                >
+
+
+                                <span class="velora-create-radio">
+
+                                    <i class="bi bi-check"></i>
+
+                                </span>
+
+
+                                <span class="velora-create-visibility-icon">
+
+                                    <i class="bi bi-globe2"></i>
+
+                                </span>
+
+
+                                <span class="velora-create-visibility-copy">
+
+                                    <strong>
+                                        Public
+                                    </strong>
+
+                                    <small>
+                                        Anyone with the gallery link
+                                        can view it.
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+
+
+                            <!-- Private -->
+
+                            <label
+                                class="velora-create-visibility-option"
+                            >
+
+                                <input
+                                    type="radio"
+                                    name="visibility"
+                                    value="private"
+                                >
+
+
+                                <span class="velora-create-radio">
+
+                                    <i class="bi bi-check"></i>
+
+                                </span>
+
+
+                                <span class="velora-create-visibility-icon">
+
+                                    <i class="bi bi-lock"></i>
+
+                                </span>
+
+
+                                <span class="velora-create-visibility-copy">
+
+                                    <strong>
+                                        Private
+                                    </strong>
+
+                                    <small>
+                                        Only people you invite can
+                                        access the gallery.
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+
+
+                            <!-- Password -->
+
+                            <label
+                                class="velora-create-visibility-option"
+                            >
+
+                                <input
+                                    type="radio"
+                                    name="visibility"
+                                    value="password"
+                                >
+
+
+                                <span class="velora-create-radio">
+
+                                    <i class="bi bi-check"></i>
+
+                                </span>
+
+
+                                <span class="velora-create-visibility-icon">
+
+                                    <i class="bi bi-shield-lock"></i>
+
+                                </span>
+
+
+                                <span class="velora-create-visibility-copy">
+
+                                    <strong>
+                                        Password protected
+                                    </strong>
+
+                                    <small>
+                                        Visitors need a password
+                                        before viewing the gallery.
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         GALLERY URL
+                    ================================================== -->
+
+                    <section class="velora-create-card">
+
+
+                        <div class="velora-create-card-header">
+
+                            <span class="velora-panel-eyebrow">
+                                SHARING
+                            </span>
+
+                            <h2>
+                                Gallery URL
+                            </h2>
+
+                            <p>
+                                Choose the address your clients will use.
+                            </p>
+
+                        </div>
+
+
+                        <div class="velora-create-url">
+
+                            <span>
+                                velora.com/gallery/
+                            </span>
+
+
+                            <input
+                                type="text"
+                                id="gallerySlug"
+                                placeholder="your-gallery"
+                                maxlength="60"
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+                        <span class="velora-create-form-note">
+                            Use lowercase letters, numbers and hyphens.
+                        </span>
+
+                    </section>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SIDEBAR
+                ================================================== -->
+
+                <aside class="velora-create-sidebar">
+
+
+                    <!-- Preview -->
+
+                    <section class="velora-create-preview-card">
+
+
+                        <div class="velora-create-preview-heading">
+
+                            <span class="velora-panel-eyebrow">
+                                PREVIEW
+                            </span>
+
+                            <h2>
+                                Your gallery
+                            </h2>
+
+                        </div>
+
+
+                        <div class="velora-create-preview">
+
+
+                            <div
+                                class="velora-create-preview-image"
+                                id="previewImageContainer"
+                            >
+
+                                <div>
+
+                                    <i class="bi bi-images"></i>
+
+                                    <span>
+                                        Cover image
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="velora-create-preview-content">
+
+                                <span>
+                                    NEW GALLERY
+                                </span>
+
+
+                                <h3 id="previewTitle">
+                                    Your gallery
+                                </h3>
+
+
+                                <p id="previewDescription">
+                                    Your gallery description will
+                                    appear here.
+                                </p>
+
+
+                                <div>
+
+                                    <span>
+                                        <i class="bi bi-person"></i>
+
+                                        <strong id="previewClient">
+                                            No client selected
+                                        </strong>
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- Checklist -->
+
+                    <section class="velora-create-checklist">
+
+
+                        <span class="velora-panel-eyebrow">
+                            BEFORE YOU CREATE
+                        </span>
+
+
+                        <h2>
+                            Gallery checklist
+                        </h2>
+
+
+                        <div class="velora-checklist-item">
+
+                            <span id="checkName">
+                                <i class="bi bi-circle"></i>
+                            </span>
+
+                            <span>
+                                Gallery name
+                            </span>
+
+                        </div>
+
+
+                        <div class="velora-checklist-item">
+
+                            <span id="checkClient">
+                                <i class="bi bi-circle"></i>
+                            </span>
+
+                            <span>
+                                Client selected
+                            </span>
+
+                        </div>
+
+
+                        <div class="velora-checklist-item">
+
+                            <span id="checkCover">
+                                <i class="bi bi-circle"></i>
+                            </span>
+
+                            <span>
+                                Cover image
+                            </span>
+
+                        </div>
+
+
+                        <div class="velora-checklist-item">
+
+                            <span id="checkUrl">
+                                <i class="bi bi-circle"></i>
+                            </span>
+
+                            <span>
+                                Gallery URL
+                            </span>
+
+                        </div>
+
+                    </section>
+
+                </aside>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FOOTER ACTIONS
+            ================================================== -->
+
+            <footer class="velora-create-footer">
+
+                <a
+                    href="galleries.html"
+                    class="velora-create-button secondary"
+                >
+                    Cancel
+                </a>
+
+
+                <button
+                    type="button"
+                    class="velora-create-button primary"
+                    id="createGalleryBottom"
+                >
+
+                    <i class="bi bi-plus-lg"></i>
+
+                    Create gallery
+
+                </button>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     SUCCESS MODAL
+====================================================== -->
+
+<div
+    class="velora-create-success"
+    id="createSuccess"
+    aria-hidden="true"
+>
+
+    <div class="velora-create-success-backdrop"></div>
+
+
+    <div
+        class="velora-create-success-dialog"
+        role="dialog"
+        aria-modal="true"
+    >
+
+        <span class="velora-success-icon">
+
+            <i class="bi bi-check-lg"></i>
+
+        </span>
+
+
+        <span class="velora-panel-eyebrow">
+            GALLERY CREATED
+        </span>
+
+
+        <h2>
+            Your gallery is ready.
+        </h2>
+
+
+        <p>
+            The gallery has been created successfully.
+            You can now add photos to it.
+        </p>
+
+
+        <div class="velora-success-actions">
+
+            <a
+                href="#"
+                id="openGalleryButton"
+                class="velora-create-button primary"
+            >
+
+                Open gallery
+
+            </a>
+
+
+            <button
+                type="button"
+                id="addPhotosNow"
+                class="velora-create-button secondary"
+            >
+
+                Add photos
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+const sidebar =
+    document.getElementById(
+        "veloraSidebar"
+    );
+
+
+const sidebarOpen =
+    document.getElementById(
+        "sidebarOpen"
+    );
+
+
+const sidebarClose =
+    document.getElementById(
+        "sidebarClose"
+    );
+
+
+const sidebarOverlay =
+    document.getElementById(
+        "sidebarOverlay"
+    );
+
+
+function openSidebar() {
+
+    sidebar.classList.add(
+        "is-open"
+    );
+
+    sidebarOverlay.classList.add(
+        "is-visible"
+    );
+
+    sidebarOpen.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+}
+
+
+function closeSidebar() {
+
+    sidebar.classList.remove(
+        "is-open"
+    );
+
+    sidebarOverlay.classList.remove(
+        "is-visible"
+    );
+
+    sidebarOpen.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+}
+
+
+sidebarOpen.addEventListener(
+    "click",
+    openSidebar
+);
+
+
+sidebarClose.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+sidebarOverlay.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+
+/* =====================================================
+   FORM ELEMENTS
+===================================================== */
+
+const galleryName =
+    document.getElementById(
+        "galleryName"
+    );
+
+
+const galleryDescription =
+    document.getElementById(
+        "galleryDescription"
+    );
+
+
+const galleryClient =
+    document.getElementById(
+        "galleryClient"
+    );
+
+
+const gallerySlug =
+    document.getElementById(
+        "gallerySlug"
+    );
+
+
+const coverInput =
+    document.getElementById(
+        "coverInput"
+    );
+
+
+const coverPreview =
+    document.getElementById(
+        "coverPreview"
+    );
+
+
+const coverEmptyState =
+    document.getElementById(
+        "coverEmptyState"
+    );
+
+
+const coverActions =
+    document.getElementById(
+        "coverActions"
+    );
+
+
+const coverDropzone =
+    document.getElementById(
+        "coverDropzone"
+    );
+
+
+
+/* =====================================================
+   PREVIEW ELEMENTS
+===================================================== */
+
+const previewTitle =
+    document.getElementById(
+        "previewTitle"
+    );
+
+
+const previewDescription =
+    document.getElementById(
+        "previewDescription"
+    );
+
+
+const previewClient =
+    document.getElementById(
+        "previewClient"
+    );
+
+
+const previewImageContainer =
+    document.getElementById(
+        "previewImageContainer"
+    );
+
+
+
+/* =====================================================
+   LIVE PREVIEW
+===================================================== */
+
+function updatePreview() {
+
+    previewTitle.textContent =
+        galleryName.value.trim() ||
+        "Your gallery";
+
+
+    previewDescription.textContent =
+        galleryDescription.value.trim() ||
+        "Your gallery description will appear here.";
+
+
+    if (
+        galleryClient.value
+    ) {
+
+        const selectedOption =
+            galleryClient.options[
+                galleryClient.selectedIndex
+            ];
+
+        previewClient.textContent =
+            selectedOption.textContent;
+
+    } else {
+
+        previewClient.textContent =
+            "No client selected";
+
+    }
+
+
+    updateChecklist();
+
+}
+
+
+galleryName.addEventListener(
+    "input",
+    updatePreview
+);
+
+
+galleryDescription.addEventListener(
+    "input",
+    function () {
+
+        document.getElementById(
+            "descriptionCounter"
+        ).textContent =
+            galleryDescription.value.length +
+            " / 300";
+
+        updatePreview();
+
+    }
+);
+
+
+galleryClient.addEventListener(
+    "change",
+    updatePreview
+);
+
+
+gallerySlug.addEventListener(
+    "input",
+    function () {
+
+        this.value =
+            this.value
+                .toLowerCase()
+                .replace(
+                    /[^a-z0-9-]/g,
+                    "-"
+                )
+                .replace(
+                    /-{2,}/g,
+                    "-"
+                );
+
+        updateChecklist();
+
+    }
+);
+
+
+
+/* =====================================================
+   COVER UPLOAD
+===================================================== */
+
+document
+    .getElementById(
+        "browseCoverButton"
+    )
+    .addEventListener(
+        "click",
+        function () {
+
+            coverInput.click();
+
+        }
+    );
+
+
+coverDropzone.addEventListener(
+    "click",
+    function (event) {
+
+        if (
+            event.target.closest(
+                "button"
+            )
+        ) {
+
+            return;
+
+        }
+
+        if (
+            !coverPreview.src
+        ) {
+
+            coverInput.click();
+
+        }
+
+    }
+);
+
+
+coverInput.addEventListener(
+    "change",
+    function () {
+
+        const file =
+            this.files[0];
+
+        if (!file) {
+
+            return;
+
+        }
+
+        displayCover(file);
+
+    }
+);
+
+
+function displayCover(file) {
+
+    if (
+        !file.type.startsWith(
+            "image/"
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const imageUrl =
+        URL.createObjectURL(
+            file
+        );
+
+
+    coverPreview.src =
+        imageUrl;
+
+
+    coverPreview.hidden =
+        false;
+
+
+    coverEmptyState.hidden =
+        true;
+
+
+    coverActions.hidden =
+        false;
+
+
+    previewImageContainer.innerHTML =
+        `
+        <img
+            src="${imageUrl}"
+            alt="Gallery cover preview"
+        >
+        `;
+
+
+    updateChecklist();
+
+}
+
+
+
+/* =====================================================
+   DRAG AND DROP
+===================================================== */
+
+[
+    "dragenter",
+    "dragover"
+].forEach(
+    function (eventName) {
+
+        coverDropzone.addEventListener(
+            eventName,
+            function (event) {
+
+                event.preventDefault();
+
+                coverDropzone.classList.add(
+                    "is-dragging"
+                );
+
+            }
+        );
+
+    }
+);
+
+
+[
+    "dragleave",
+    "drop"
+].forEach(
+    function (eventName) {
+
+        coverDropzone.addEventListener(
+            eventName,
+            function (event) {
+
+                event.preventDefault();
+
+                coverDropzone.classList.remove(
+                    "is-dragging"
+                );
+
+            }
+        );
+
+    }
+);
+
+
+coverDropzone.addEventListener(
+    "drop",
+    function (event) {
+
+        const files =
+            event.dataTransfer.files;
+
+
+        if (
+            files.length
+        ) {
+
+            displayCover(
+                files[0]
+            );
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   REMOVE COVER
+===================================================== */
+
+document
+    .getElementById(
+        "removeCoverButton"
+    )
+    .addEventListener(
+        "click",
+        function () {
+
+            coverInput.value =
+                "";
+
+
+            coverPreview.src =
+                "";
+
+
+            coverPreview.hidden =
+                true;
+
+
+            coverEmptyState.hidden =
+                false;
+
+
+            coverActions.hidden =
+                true;
+
+
+            previewImageContainer.innerHTML =
+                `
+                <div>
+                    <i class="bi bi-images"></i>
+                    <span>Cover image</span>
+                </div>
+                `;
+
+
+            updateChecklist();
+
+        }
+    );
+
+
+
+/* =====================================================
+   REPLACE COVER
+===================================================== */
+
+document
+    .getElementById(
+        "replaceCoverButton"
+    )
+    .addEventListener(
+        "click",
+        function () {
+
+            coverInput.click();
+
+        }
+    );
+
+
+
+/* =====================================================
+   VISIBILITY
+===================================================== */
+
+const visibilityOptions =
+    document.querySelectorAll(
+        ".velora-create-visibility-option"
+    );
+
+
+visibilityOptions.forEach(
+    function (option) {
+
+        const input =
+            option.querySelector(
+                "input"
+            );
+
+
+        input.addEventListener(
+            "change",
+            function () {
+
+                visibilityOptions.forEach(
+                    function (item) {
+
+                        item.classList.remove(
+                            "is-selected"
+                        );
+
+                    }
+                );
+
+
+                option.classList.add(
+                    "is-selected"
+                );
+
+            }
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   CHECKLIST
+===================================================== */
+
+function updateChecklist() {
+
+    setChecklistState(
+        "checkName",
+        galleryName.value.trim().length > 0
+    );
+
+
+    setChecklistState(
+        "checkClient",
+        galleryClient.value.length > 0
+    );
+
+
+    setChecklistState(
+        "checkCover",
+        !coverPreview.hidden
+    );
+
+
+    setChecklistState(
+        "checkUrl",
+        gallerySlug.value.trim().length > 0
+    );
+
+}
+
+
+function setChecklistState(
+    id,
+    complete
+) {
+
+    const element =
+        document.getElementById(
+            id
+        );
+
+
+    if (
+        complete
+    ) {
+
+        element.innerHTML =
+            '<i class="bi bi-check-circle-fill"></i>';
+
+        element.classList.add(
+            "is-complete"
+        );
+
+    } else {
+
+        element.innerHTML =
+            '<i class="bi bi-circle"></i>';
+
+        element.classList.remove(
+            "is-complete"
+        );
+
+    }
+
+}
+
+
+updateChecklist();
+
+
+
+/* =====================================================
+   CREATE GALLERY
+===================================================== */
+
+const createSuccess =
+    document.getElementById(
+        "createSuccess"
+    );
+
+
+function createGallery() {
+
+    const name =
+        galleryName.value.trim();
+
+
+    const client =
+        galleryClient.value;
+
+
+    const slug =
+        gallerySlug.value.trim();
+
+
+    if (!name) {
+
+        galleryName.focus();
+
+        galleryName.classList.add(
+            "has-error"
+        );
+
+        return;
+
+    }
+
+
+    galleryName.classList.remove(
+        "has-error"
+    );
+
+
+    if (!client) {
+
+        galleryClient.focus();
+
+        return;
+
+    }
+
+
+    if (!slug) {
+
+        gallerySlug.focus();
+
+        gallerySlug.classList.add(
+            "has-error"
+        );
+
+        return;
+
+    }
+
+
+    gallerySlug.classList.remove(
+        "has-error"
+    );
+
+
+    const generatedKey =
+        slug;
+
+
+    document.getElementById(
+        "openGalleryButton"
+    ).href =
+        "gallery-details.html?gallery=" +
+        encodeURIComponent(
+            generatedKey
+        );
+
+
+    createSuccess.classList.add(
+        "is-visible"
+    );
+
+
+    createSuccess.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.classList.add(
+        "velora-create-modal-open"
+    );
+
+}
+
+
+document
+    .getElementById(
+        "createGalleryTop"
+    )
+    .addEventListener(
+        "click",
+        createGallery
+    );
+
+
+document
+    .getElementById(
+        "createGalleryBottom"
+    )
+    .addEventListener(
+        "click",
+        createGallery
+    );
+
+
+
+/* =====================================================
+   ADD PHOTOS
+===================================================== */
+
+document
+    .getElementById(
+        "addPhotosNow"
+    )
+    .addEventListener(
+        "click",
+        function () {
+
+            const slug =
+                gallerySlug.value.trim();
+
+
+            window.location.href =
+                "gallery-upload.html?gallery=" +
+                encodeURIComponent(
+                    slug
+                );
+
+        }
+    );
+
+
+
+/* =====================================================
+   ESCAPE
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeSidebar();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

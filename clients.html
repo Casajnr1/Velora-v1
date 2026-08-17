@@ -1,0 +1,2168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Velora | Clients</title>
+
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- =====================================================
+         LATO
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         SHARED DASHBOARD
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+
+    <!-- =====================================================
+         CLIENTS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/clients.css"
+    >
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+        rel="shortcut icon"
+        href="media/favicon/favicon.png"
+        type="image/x-icon"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="velora-dashboard">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+    ====================================================== -->
+
+    <div
+        class="velora-sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="velora-sidebar"
+        id="veloraSidebar"
+    >
+
+        <div class="velora-sidebar-header">
+
+            <a
+                href="dashboard.html"
+                class="velora-dashboard-brand"
+            >
+
+                <img
+                    src="media/logo/logo-1-main.png"
+                    alt="Velora"
+                >
+
+            </a>
+
+
+            <button
+                type="button"
+                class="velora-sidebar-close"
+                id="sidebarClose"
+                aria-label="Close navigation"
+            >
+
+                <i class="bi bi-x-lg"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================== -->
+
+        <nav
+            class="velora-sidebar-nav"
+            aria-label="Dashboard navigation"
+        >
+
+            <div class="velora-nav-section">
+
+                <span class="velora-nav-label">
+                    WORKSPACE
+                </span>
+
+
+                <a
+                    href="dashboard.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-grid-1x2"></i>
+
+                    <span>
+                        Overview
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="galleries.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-images"></i>
+
+                    <span>
+                        Galleries
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="bookings.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-calendar2-week"></i>
+
+                    <span>
+                        Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="clients.html"
+                    class="velora-dashboard-nav-link is-active"
+                    aria-current="page"
+                >
+
+                    <i class="bi bi-people"></i>
+
+                    <span>
+                        Clients
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="analytics.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-bar-chart"></i>
+
+                    <span>
+                        Analytics
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="velora-nav-section">
+
+                <span class="velora-nav-label">
+                    MANAGE
+                </span>
+
+
+                <a
+                    href="settings.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-sliders2"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="velora-sidebar-bottom">
+
+
+            <a
+                href="pricing.html"
+                class="velora-upgrade-card"
+            >
+
+                <div class="velora-upgrade-icon">
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </div>
+
+
+                <div class="velora-upgrade-content">
+
+                    <strong>
+                        Upgrade your plan
+                    </strong>
+
+                    <span>
+                        Get more space for your work.
+                    </span>
+
+                </div>
+
+
+                <i class="bi bi-chevron-right"></i>
+
+            </a>
+
+
+
+            <button
+                type="button"
+                class="velora-sidebar-user"
+            >
+
+                <span class="velora-user-avatar">
+                    P
+                </span>
+
+
+                <span class="velora-user-details">
+
+                    <strong>
+                        Patrick
+                    </strong>
+
+                    <small>
+                        Photographer
+                    </small>
+
+                </span>
+
+
+                <i class="bi bi-three-dots"></i>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <div class="velora-dashboard-main">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="velora-dashboard-topbar">
+
+
+            <button
+                type="button"
+                class="velora-mobile-menu"
+                id="sidebarOpen"
+                aria-label="Open navigation"
+                aria-controls="veloraSidebar"
+                aria-expanded="false"
+            >
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+
+
+            <div class="velora-dashboard-search">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="search"
+                    placeholder="Search..."
+                    aria-label="Search dashboard"
+                >
+
+                <span class="velora-search-shortcut">
+                    /
+                </span>
+
+            </div>
+
+
+
+            <div class="velora-topbar-actions">
+
+
+                <a
+                    href="#"
+                    class="velora-view-site"
+                >
+
+                    <i class="bi bi-box-arrow-up-right"></i>
+
+                    <span>
+                        View site
+                    </span>
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="velora-topbar-icon"
+                    aria-label="Notifications"
+                >
+
+                    <i class="bi bi-bell"></i>
+
+                    <span class="velora-notification-dot"></span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-topbar-profile"
+                    aria-label="Open profile"
+                >
+
+                    <span class="velora-topbar-avatar">
+                        P
+                    </span>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             CLIENT CONTENT
+        ================================================== -->
+
+        <main class="velora-dashboard-content velora-clients-page">
+
+
+            <!-- =================================================
+                 BREADCRUMB
+            ================================================== -->
+
+            <div class="velora-dashboard-breadcrumb">
+
+                <span>
+                    Workspace
+                </span>
+
+                <i class="bi bi-chevron-right"></i>
+
+                <strong>
+                    Clients
+                </strong>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PAGE HEADER
+            ================================================== -->
+
+            <section class="velora-clients-header">
+
+
+                <div>
+
+                    <span class="velora-page-eyebrow">
+                        RELATIONSHIPS
+                    </span>
+
+
+                    <h1>
+                        Clients
+                    </h1>
+
+
+                    <p>
+                        Keep track of the people behind your work.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="velora-client-new-button"
+                    id="newClientButton"
+                >
+
+                    <i class="bi bi-plus-lg"></i>
+
+                    New client
+
+                </button>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CLIENT STATS
+            ================================================== -->
+
+            <section
+                class="velora-client-stats"
+                aria-label="Client statistics"
+            >
+
+
+                <article class="velora-client-stat">
+
+                    <div class="velora-client-stat-label">
+
+                        <span>
+                            Total clients
+                        </span>
+
+                        <i class="bi bi-people"></i>
+
+                    </div>
+
+
+                    <strong>
+                        48
+                    </strong>
+
+
+                    <small>
+                        Your complete client list
+                    </small>
+
+                </article>
+
+
+
+                <article class="velora-client-stat">
+
+                    <div class="velora-client-stat-label">
+
+                        <span>
+                            Active
+                        </span>
+
+                        <i class="bi bi-person-check"></i>
+
+                    </div>
+
+
+                    <strong>
+                        42
+                    </strong>
+
+
+                    <small>
+                        Clients with recent activity
+                    </small>
+
+                </article>
+
+
+
+                <article class="velora-client-stat">
+
+                    <div class="velora-client-stat-label">
+
+                        <span>
+                            New this month
+                        </span>
+
+                        <i class="bi bi-person-plus"></i>
+
+                    </div>
+
+
+                    <strong>
+                        06
+                    </strong>
+
+
+                    <small>
+                        Added in September
+                    </small>
+
+                </article>
+
+
+
+                <article class="velora-client-stat">
+
+                    <div class="velora-client-stat-label">
+
+                        <span>
+                            Returning
+                        </span>
+
+                        <i class="bi bi-arrow-repeat"></i>
+
+                    </div>
+
+
+                    <strong>
+                        18
+                    </strong>
+
+
+                    <small>
+                        Booked more than once
+                    </small>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CLIENT TOOLBAR
+            ================================================== -->
+
+            <section class="velora-clients-toolbar">
+
+
+                <div
+                    class="velora-client-filters"
+                    role="tablist"
+                    aria-label="Client filters"
+                >
+
+                    <button
+                        type="button"
+                        class="velora-client-filter is-active"
+                        data-filter="all"
+                        aria-selected="true"
+                    >
+
+                        All
+
+                        <span>
+                            48
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="velora-client-filter"
+                        data-filter="active"
+                        aria-selected="false"
+                    >
+
+                        Active
+
+                        <span>
+                            42
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="velora-client-filter"
+                        data-filter="new"
+                        aria-selected="false"
+                    >
+
+                        New
+
+                        <span>
+                            06
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="velora-client-toolbar-right">
+
+
+                    <div class="velora-client-search">
+
+                        <i class="bi bi-search"></i>
+
+                        <input
+                            type="search"
+                            id="clientSearch"
+                            placeholder="Search clients..."
+                            aria-label="Search clients"
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="velora-client-filter-button"
+                        id="clientSortButton"
+                    >
+
+                        <i class="bi bi-arrow-down-up"></i>
+
+                        <span>
+                            Recent
+                        </span>
+
+                        <i class="bi bi-chevron-down"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CLIENT LIST HEADER
+            ================================================== -->
+
+            <section class="velora-client-list-section">
+
+
+                <div class="velora-client-list-header">
+
+                    <div>
+
+                        <span class="velora-client-section-label">
+                            CLIENT DIRECTORY
+                        </span>
+
+                        <h2>
+                            Your clients
+                        </h2>
+
+                    </div>
+
+
+                    <span
+                        class="velora-client-result-count"
+                        id="clientResultCount"
+                    >
+                        48 clients
+                    </span>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     DESKTOP CLIENT TABLE
+                ================================================== -->
+
+                <div class="velora-client-table-wrap">
+
+                    <table class="velora-client-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    CLIENT
+                                </th>
+
+                                <th>
+                                    BOOKINGS
+                                </th>
+
+                                <th>
+                                    GALLERIES
+                                </th>
+
+                                <th>
+                                    LAST CONTACT
+                                </th>
+
+                                <th>
+                                    STATUS
+                                </th>
+
+                                <th>
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+                            <!-- CLIENT 1 -->
+
+                            <tr
+                                class="velora-client-row"
+                                data-status="active"
+                                data-name="Sarah Michael"
+                            >
+
+                                <td>
+
+                                    <div class="velora-client-person">
+
+                                        <span
+                                            class="velora-client-avatar client-avatar-1"
+                                        >
+                                            SM
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Sarah Michael
+                                            </strong>
+
+                                            <span>
+                                                sarah@example.com
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-number">
+                                        3
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-number">
+                                        4
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="velora-client-last-contact">
+
+                                        <strong>
+                                            Sep 12, 2026
+                                        </strong>
+
+                                        <span>
+                                            4 days ago
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-status active">
+                                        Active
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="velora-client-more"
+                                        aria-label="Sarah Michael options"
+                                    >
+
+                                        <i class="bi bi-three-dots"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- CLIENT 2 -->
+
+                            <tr
+                                class="velora-client-row"
+                                data-status="active"
+                                data-name="Daniel Okoro"
+                            >
+
+                                <td>
+
+                                    <div class="velora-client-person">
+
+                                        <span
+                                            class="velora-client-avatar client-avatar-2"
+                                        >
+                                            DO
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Daniel Okoro
+                                            </strong>
+
+                                            <span>
+                                                daniel@example.com
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-number">
+                                        1
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-number">
+                                        1
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="velora-client-last-contact">
+
+                                        <strong>
+                                            Sep 10, 2026
+                                        </strong>
+
+                                        <span>
+                                            6 days ago
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-status active">
+                                        Active
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="velora-client-more"
+                                        aria-label="Daniel Okoro options"
+                                    >
+
+                                        <i class="bi bi-three-dots"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- CLIENT 3 -->
+
+                            <tr
+                                class="velora-client-row"
+                                data-status="new"
+                                data-name="Grace David"
+                            >
+
+                                <td>
+
+                                    <div class="velora-client-person">
+
+                                        <span
+                                            class="velora-client-avatar client-avatar-3"
+                                        >
+                                            GD
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Grace David
+                                            </strong>
+
+                                            <span>
+                                                grace@example.com
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-number">
+                                        2
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-number">
+                                        3
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="velora-client-last-contact">
+
+                                        <strong>
+                                            Sep 08, 2026
+                                        </strong>
+
+                                        <span>
+                                            8 days ago
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-status new">
+                                        New
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="velora-client-more"
+                                        aria-label="Grace David options"
+                                    >
+
+                                        <i class="bi bi-three-dots"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- CLIENT 4 -->
+
+                            <tr
+                                class="velora-client-row"
+                                data-status="active"
+                                data-name="Amara Johnson"
+                            >
+
+                                <td>
+
+                                    <div class="velora-client-person">
+
+                                        <span
+                                            class="velora-client-avatar client-avatar-4"
+                                        >
+                                            AJ
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Amara Johnson
+                                            </strong>
+
+                                            <span>
+                                                amara@example.com
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-number">
+                                        4
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-number">
+                                        5
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="velora-client-last-contact">
+
+                                        <strong>
+                                            Sep 04, 2026
+                                        </strong>
+
+                                        <span>
+                                            12 days ago
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-status active">
+                                        Active
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="velora-client-more"
+                                        aria-label="Amara Johnson options"
+                                    >
+
+                                        <i class="bi bi-three-dots"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- CLIENT 5 -->
+
+                            <tr
+                                class="velora-client-row"
+                                data-status="active"
+                                data-name="Emeka Williams"
+                            >
+
+                                <td>
+
+                                    <div class="velora-client-person">
+
+                                        <span
+                                            class="velora-client-avatar client-avatar-5"
+                                        >
+                                            EW
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Emeka Williams
+                                            </strong>
+
+                                            <span>
+                                                emeka@example.com
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-number">
+                                        2
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-number">
+                                        2
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="velora-client-last-contact">
+
+                                        <strong>
+                                            Aug 30, 2026
+                                        </strong>
+
+                                        <span>
+                                            17 days ago
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-status active">
+                                        Active
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="velora-client-more"
+                                        aria-label="Emeka Williams options"
+                                    >
+
+                                        <i class="bi bi-three-dots"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- CLIENT 6 -->
+
+                            <tr
+                                class="velora-client-row"
+                                data-status="new"
+                                data-name="Chiamaka James"
+                            >
+
+                                <td>
+
+                                    <div class="velora-client-person">
+
+                                        <span
+                                            class="velora-client-avatar client-avatar-6"
+                                        >
+                                            CJ
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Chiamaka James
+                                            </strong>
+
+                                            <span>
+                                                chiamaka@example.com
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-number">
+                                        1
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-number">
+                                        1
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="velora-client-last-contact">
+
+                                        <strong>
+                                            Aug 27, 2026
+                                        </strong>
+
+                                        <span>
+                                            20 days ago
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-client-status new">
+                                        New
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="velora-client-more"
+                                        aria-label="Chiamaka James options"
+                                    >
+
+                                        <i class="bi bi-three-dots"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     MOBILE CLIENT CARDS
+                ================================================== -->
+
+                <div class="velora-mobile-client-list">
+
+
+                    <!-- Mobile Client -->
+
+                    <article
+                        class="velora-mobile-client"
+                        data-status="active"
+                        data-name="Sarah Michael"
+                    >
+
+                        <div class="velora-mobile-client-top">
+
+                            <div class="velora-client-person">
+
+                                <span class="velora-client-avatar client-avatar-1">
+                                    SM
+                                </span>
+
+
+                                <div>
+
+                                    <strong>
+                                        Sarah Michael
+                                    </strong>
+
+                                    <span>
+                                        sarah@example.com
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="velora-client-more"
+                                aria-label="Sarah Michael options"
+                            >
+
+                                <i class="bi bi-three-dots"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="velora-mobile-client-stats">
+
+                            <div>
+
+                                <span>
+                                    Bookings
+                                </span>
+
+                                <strong>
+                                    3
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Galleries
+                                </span>
+
+                                <strong>
+                                    4
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Last contact
+                                </span>
+
+                                <strong>
+                                    Sep 12
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Mobile Client -->
+
+                    <article
+                        class="velora-mobile-client"
+                        data-status="active"
+                        data-name="Daniel Okoro"
+                    >
+
+                        <div class="velora-mobile-client-top">
+
+                            <div class="velora-client-person">
+
+                                <span class="velora-client-avatar client-avatar-2">
+                                    DO
+                                </span>
+
+
+                                <div>
+
+                                    <strong>
+                                        Daniel Okoro
+                                    </strong>
+
+                                    <span>
+                                        daniel@example.com
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="velora-client-more"
+                                aria-label="Daniel Okoro options"
+                            >
+
+                                <i class="bi bi-three-dots"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="velora-mobile-client-stats">
+
+                            <div>
+
+                                <span>
+                                    Bookings
+                                </span>
+
+                                <strong>
+                                    1
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Galleries
+                                </span>
+
+                                <strong>
+                                    1
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Last contact
+                                </span>
+
+                                <strong>
+                                    Sep 10
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Mobile Client -->
+
+                    <article
+                        class="velora-mobile-client"
+                        data-status="new"
+                        data-name="Grace David"
+                    >
+
+                        <div class="velora-mobile-client-top">
+
+                            <div class="velora-client-person">
+
+                                <span class="velora-client-avatar client-avatar-3">
+                                    GD
+                                </span>
+
+
+                                <div>
+
+                                    <strong>
+                                        Grace David
+                                    </strong>
+
+                                    <span>
+                                        grace@example.com
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="velora-client-more"
+                                aria-label="Grace David options"
+                            >
+
+                                <i class="bi bi-three-dots"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="velora-mobile-client-stats">
+
+                            <div>
+
+                                <span>
+                                    Bookings
+                                </span>
+
+                                <strong>
+                                    2
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Galleries
+                                </span>
+
+                                <strong>
+                                    3
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Last contact
+                                </span>
+
+                                <strong>
+                                    Sep 08
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     EMPTY STATE
+                ================================================== -->
+
+                <div
+                    class="velora-client-empty"
+                    id="clientEmpty"
+                    hidden
+                >
+
+                    <div class="velora-client-empty-icon">
+
+                        <i class="bi bi-person-search"></i>
+
+                    </div>
+
+
+                    <h3>
+                        No clients found
+                    </h3>
+
+
+                    <p>
+                        Try a different search or filter.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+const sidebar =
+    document.getElementById(
+        "veloraSidebar"
+    );
+
+
+const sidebarOpen =
+    document.getElementById(
+        "sidebarOpen"
+    );
+
+
+const sidebarClose =
+    document.getElementById(
+        "sidebarClose"
+    );
+
+
+const sidebarOverlay =
+    document.getElementById(
+        "sidebarOverlay"
+    );
+
+
+function openSidebar() {
+
+    sidebar.classList.add(
+        "is-open"
+    );
+
+    sidebarOverlay.classList.add(
+        "is-visible"
+    );
+
+    sidebarOpen.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+    document.body.classList.add(
+        "velora-sidebar-open"
+    );
+
+}
+
+
+function closeSidebar() {
+
+    sidebar.classList.remove(
+        "is-open"
+    );
+
+    sidebarOverlay.classList.remove(
+        "is-visible"
+    );
+
+    sidebarOpen.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+    document.body.classList.remove(
+        "velora-sidebar-open"
+    );
+
+}
+
+
+sidebarOpen.addEventListener(
+    "click",
+    openSidebar
+);
+
+
+sidebarClose.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+sidebarOverlay.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+
+/* =====================================================
+   CLIENT DATA
+===================================================== */
+
+const clientRows =
+    document.querySelectorAll(
+        ".velora-client-row"
+    );
+
+
+const mobileClients =
+    document.querySelectorAll(
+        ".velora-mobile-client"
+    );
+
+
+const clientFilters =
+    document.querySelectorAll(
+        ".velora-client-filter"
+    );
+
+
+const clientSearch =
+    document.getElementById(
+        "clientSearch"
+    );
+
+
+const clientEmpty =
+    document.getElementById(
+        "clientEmpty"
+    );
+
+
+const clientResultCount =
+    document.getElementById(
+        "clientResultCount"
+    );
+
+
+
+let currentFilter = "all";
+
+let currentSearch = "";
+
+
+
+/* =====================================================
+   CLIENT FILTERS
+===================================================== */
+
+clientFilters.forEach(
+    function (button) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                currentFilter =
+                    this.dataset.filter;
+
+
+                clientFilters.forEach(
+                    function (item) {
+
+                        item.classList.remove(
+                            "is-active"
+                        );
+
+                        item.setAttribute(
+                            "aria-selected",
+                            "false"
+                        );
+
+                    }
+                );
+
+
+                this.classList.add(
+                    "is-active"
+                );
+
+                this.setAttribute(
+                    "aria-selected",
+                    "true"
+                );
+
+
+                updateClients();
+
+            }
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   CLIENT SEARCH
+===================================================== */
+
+clientSearch.addEventListener(
+    "input",
+    function () {
+
+        currentSearch =
+            this.value
+                .toLowerCase()
+                .trim();
+
+
+        updateClients();
+
+    }
+);
+
+
+
+/* =====================================================
+   UPDATE CLIENTS
+===================================================== */
+
+function updateClients() {
+
+    let visibleCount = 0;
+
+
+    clientRows.forEach(
+        function (client) {
+
+            const matchesFilter =
+                currentFilter === "all" ||
+                client.dataset.status === currentFilter;
+
+
+            const matchesSearch =
+                client.dataset.name
+                    .toLowerCase()
+                    .includes(
+                        currentSearch
+                    );
+
+
+            const visible =
+                matchesFilter &&
+                matchesSearch;
+
+
+            client.hidden =
+                !visible;
+
+
+            if (visible) {
+
+                visibleCount++;
+
+            }
+
+        }
+    );
+
+
+
+    mobileClients.forEach(
+        function (client) {
+
+            const matchesFilter =
+                currentFilter === "all" ||
+                client.dataset.status === currentFilter;
+
+
+            const matchesSearch =
+                client.dataset.name
+                    .toLowerCase()
+                    .includes(
+                        currentSearch
+                    );
+
+
+            client.hidden =
+                !(
+                    matchesFilter &&
+                    matchesSearch
+                );
+
+        }
+    );
+
+
+
+    clientResultCount.textContent =
+        `${visibleCount} ${
+            visibleCount === 1
+                ? "client"
+                : "clients"
+        }`;
+
+
+    clientEmpty.hidden =
+        visibleCount !== 0;
+
+}
+
+
+
+/* =====================================================
+   NEW CLIENT
+===================================================== */
+
+const newClientButton =
+    document.getElementById(
+        "newClientButton"
+    );
+
+
+newClientButton.addEventListener(
+    "click",
+    function () {
+
+        alert(
+            "New client flow will be connected here."
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   SORT
+===================================================== */
+
+const clientSortButton =
+    document.getElementById(
+        "clientSortButton"
+    );
+
+
+let sortNewestFirst = true;
+
+
+clientSortButton.addEventListener(
+    "click",
+    function () {
+
+        sortNewestFirst =
+            !sortNewestFirst;
+
+
+        this.querySelector(
+            "span"
+        ).textContent =
+            sortNewestFirst
+                ? "Recent"
+                : "Name";
+
+
+        const tableBody =
+            document.querySelector(
+                ".velora-client-table tbody"
+            );
+
+
+        const rows =
+            Array.from(
+                clientRows
+            );
+
+
+        if (!sortNewestFirst) {
+
+            rows.sort(
+                function (a, b) {
+
+                    return a.dataset.name
+                        .localeCompare(
+                            b.dataset.name
+                        );
+
+                }
+            );
+
+        } else {
+
+            rows.reverse();
+
+        }
+
+
+        rows.forEach(
+            function (row) {
+
+                tableBody.appendChild(
+                    row
+                );
+
+            }
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   ESCAPE KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "Escape" &&
+            sidebar.classList.contains(
+                "is-open"
+            )
+        ) {
+
+            closeSidebar();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   GLOBAL SEARCH SHORTCUT
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "/" &&
+            ![
+                "INPUT",
+                "TEXTAREA"
+            ].includes(
+                document.activeElement.tagName
+            )
+        ) {
+
+            event.preventDefault();
+
+
+            const search =
+                document.querySelector(
+                    ".velora-dashboard-search input"
+                );
+
+
+            if (search) {
+
+                search.focus();
+
+            }
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

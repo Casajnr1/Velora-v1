@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Velora | Settings</title>
+
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- =====================================================
+         LATO
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         SHARED DASHBOARD
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+
+    <!-- =====================================================
+         SETTINGS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/settings.css"
+    >
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+        rel="shortcut icon"
+        href="media/favicon/favicon.png"
+        type="image/x-icon"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="velora-dashboard">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+    ====================================================== -->
+
+    <div
+        class="velora-sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="velora-sidebar"
+        id="veloraSidebar"
+    >
+
+        <div class="velora-sidebar-header">
+
+            <a
+                href="dashboard.html"
+                class="velora-dashboard-brand"
+            >
+
+                <img
+                    src="media/logo/logo-1-main.png"
+                    alt="Velora"
+                >
+
+            </a>
+
+
+            <button
+                type="button"
+                class="velora-sidebar-close"
+                id="sidebarClose"
+                aria-label="Close navigation"
+            >
+
+                <i class="bi bi-x-lg"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================== -->
+
+        <nav
+            class="velora-sidebar-nav"
+            aria-label="Dashboard navigation"
+        >
+
+            <div class="velora-nav-section">
+
+                <span class="velora-nav-label">
+                    WORKSPACE
+                </span>
+
+
+                <a
+                    href="dashboard.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-grid-1x2"></i>
+
+                    <span>
+                        Overview
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="galleries.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-images"></i>
+
+                    <span>
+                        Galleries
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="bookings.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-calendar2-week"></i>
+
+                    <span>
+                        Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="clients.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-people"></i>
+
+                    <span>
+                        Clients
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="analytics.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-bar-chart"></i>
+
+                    <span>
+                        Analytics
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="velora-nav-section">
+
+                <span class="velora-nav-label">
+                    MANAGE
+                </span>
+
+
+                <a
+                    href="settings.html"
+                    class="velora-dashboard-nav-link is-active"
+                    aria-current="page"
+                >
+
+                    <i class="bi bi-sliders2"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="velora-sidebar-bottom">
+
+
+            <a
+                href="pricing.html"
+                class="velora-upgrade-card"
+            >
+
+                <div class="velora-upgrade-icon">
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </div>
+
+
+                <div class="velora-upgrade-content">
+
+                    <strong>
+                        Upgrade your plan
+                    </strong>
+
+                    <span>
+                        Get more space for your work.
+                    </span>
+
+                </div>
+
+
+                <i class="bi bi-chevron-right"></i>
+
+            </a>
+
+
+
+            <button
+                type="button"
+                class="velora-sidebar-user"
+            >
+
+                <span class="velora-user-avatar">
+                    P
+                </span>
+
+
+                <span class="velora-user-details">
+
+                    <strong>
+                        Patrick
+                    </strong>
+
+                    <small>
+                        Photographer
+                    </small>
+
+                </span>
+
+
+                <i class="bi bi-three-dots"></i>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <div class="velora-dashboard-main">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="velora-dashboard-topbar">
+
+
+            <button
+                type="button"
+                class="velora-mobile-menu"
+                id="sidebarOpen"
+                aria-label="Open navigation"
+                aria-controls="veloraSidebar"
+                aria-expanded="false"
+            >
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+
+
+            <div class="velora-dashboard-search">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="search"
+                    placeholder="Search..."
+                    aria-label="Search dashboard"
+                >
+
+                <span class="velora-search-shortcut">
+                    /
+                </span>
+
+            </div>
+
+
+
+            <div class="velora-topbar-actions">
+
+
+                <a
+                    href="#"
+                    class="velora-view-site"
+                >
+
+                    <i class="bi bi-box-arrow-up-right"></i>
+
+                    <span>
+                        View site
+                    </span>
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="velora-topbar-icon"
+                    aria-label="Notifications"
+                >
+
+                    <i class="bi bi-bell"></i>
+
+                    <span class="velora-notification-dot"></span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-topbar-profile"
+                    aria-label="Open profile"
+                >
+
+                    <span class="velora-topbar-avatar">
+                        P
+                    </span>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             SETTINGS CONTENT
+        ================================================== -->
+
+        <main class="velora-dashboard-content velora-settings-page">
+
+
+            <!-- =================================================
+                 BREADCRUMB
+            ================================================== -->
+
+            <div class="velora-dashboard-breadcrumb">
+
+                <span>
+                    Manage
+                </span>
+
+                <i class="bi bi-chevron-right"></i>
+
+                <strong>
+                    Settings
+                </strong>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 HEADER
+            ================================================== -->
+
+            <section class="velora-settings-header">
+
+                <div>
+
+                    <span class="velora-page-eyebrow">
+                        WORKSPACE
+                    </span>
+
+
+                    <h1>
+                        Settings
+                    </h1>
+
+
+                    <p>
+                        Manage your Velora workspace and account.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SETTINGS LAYOUT
+            ================================================== -->
+
+            <div class="velora-settings-layout">
+
+
+                <!-- =================================================
+                     SETTINGS NAVIGATION
+                ================================================== -->
+
+                <aside class="velora-settings-nav">
+
+
+                    <div class="velora-settings-nav-group">
+
+                        <span>
+                            ACCOUNT
+                        </span>
+
+
+                        <button
+                            type="button"
+                            class="velora-settings-nav-item is-active"
+                            data-settings-tab="profile"
+                        >
+
+                            <i class="bi bi-person"></i>
+
+                            <span>
+                                Profile
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="velora-settings-nav-item"
+                            data-settings-tab="security"
+                        >
+
+                            <i class="bi bi-shield-check"></i>
+
+                            <span>
+                                Security
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="velora-settings-nav-group">
+
+                        <span>
+                            WORKSPACE
+                        </span>
+
+
+                        <button
+                            type="button"
+                            class="velora-settings-nav-item"
+                            data-settings-tab="workspace"
+                        >
+
+                            <i class="bi bi-building"></i>
+
+                            <span>
+                                Workspace
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="velora-settings-nav-item"
+                            data-settings-tab="gallery"
+                        >
+
+                            <i class="bi bi-images"></i>
+
+                            <span>
+                                Gallery
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="velora-settings-nav-item"
+                            data-settings-tab="booking"
+                        >
+
+                            <i class="bi bi-calendar2-week"></i>
+
+                            <span>
+                                Booking
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="velora-settings-nav-item"
+                            data-settings-tab="notifications"
+                        >
+
+                            <i class="bi bi-bell"></i>
+
+                            <span>
+                                Notifications
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="velora-settings-nav-item"
+                            data-settings-tab="billing"
+                        >
+
+                            <i class="bi bi-credit-card"></i>
+
+                            <span>
+                                Billing
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </aside>
+
+
+
+                <!-- =================================================
+                     SETTINGS CONTENT
+                ================================================== -->
+
+                <section class="velora-settings-panel">
+
+
+                    <!-- =================================================
+                         PROFILE
+                    ================================================== -->
+
+                    <div
+                        class="velora-settings-section is-visible"
+                        data-settings-content="profile"
+                    >
+
+
+                        <div class="velora-settings-section-header">
+
+                            <div>
+
+                                <span>
+                                    PROFILE
+                                </span>
+
+                                <h2>
+                                    Your profile
+                                </h2>
+
+                                <p>
+                                    Manage the information clients see when they work with you.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Profile photo -->
+
+                        <div class="velora-profile-photo-row">
+
+                            <div class="velora-profile-photo">
+                                P
+                            </div>
+
+
+                            <div class="velora-profile-photo-content">
+
+                                <strong>
+                                    Profile photo
+                                </strong>
+
+                                <span>
+                                    Use a clear image that represents your photography brand.
+                                </span>
+
+
+                                <div class="velora-profile-photo-actions">
+
+                                    <button
+                                        type="button"
+                                        class="velora-secondary-button"
+                                    >
+                                        Change photo
+                                    </button>
+
+
+                                    <button
+                                        type="button"
+                                        class="velora-text-button"
+                                    >
+                                        Remove
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Form -->
+
+                        <form
+                            class="velora-settings-form"
+                            id="profileForm"
+                        >
+
+
+                            <div class="velora-form-grid">
+
+
+                                <div class="velora-form-field">
+
+                                    <label for="firstName">
+                                        First name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="firstName"
+                                        value="Patrick"
+                                    >
+
+                                </div>
+
+
+                                <div class="velora-form-field">
+
+                                    <label for="lastName">
+                                        Last name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="lastName"
+                                        value="Obialor"
+                                    >
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <div class="velora-form-field">
+
+                                <label for="email">
+                                    Email address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    value="patrick@example.com"
+                                >
+
+                            </div>
+
+
+
+                            <div class="velora-form-field">
+
+                                <label for="bio">
+                                    Bio
+                                </label>
+
+                                <textarea
+                                    id="bio"
+                                    rows="5"
+                                    placeholder="Tell clients a little about your photography..."
+                                >Photographer creating timeless visual stories through honest moments and thoughtful composition.</textarea>
+
+                                <span class="velora-field-help">
+                                    This information may appear on your public Velora profile.
+                                </span>
+
+                            </div>
+
+
+
+                            <div class="velora-settings-actions">
+
+                                <button
+                                    type="button"
+                                    class="velora-secondary-button"
+                                    id="cancelProfile"
+                                >
+                                    Cancel
+                                </button>
+
+
+                                <button
+                                    type="submit"
+                                    class="velora-primary-button"
+                                >
+
+                                    Save changes
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         SECURITY
+                    ================================================== -->
+
+                    <div
+                        class="velora-settings-section"
+                        data-settings-content="security"
+                    >
+
+                        <div class="velora-settings-section-header">
+
+                            <div>
+
+                                <span>
+                                    ACCOUNT SECURITY
+                                </span>
+
+                                <h2>
+                                    Security
+                                </h2>
+
+                                <p>
+                                    Keep your Velora account secure.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="velora-settings-option-list">
+
+
+                            <div class="velora-settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        Password
+                                    </strong>
+
+                                    <span>
+                                        Last changed more than 30 days ago.
+                                    </span>
+
+                                </div>
+
+
+                                <button
+                                    type="button"
+                                    class="velora-secondary-button"
+                                >
+                                    Change password
+                                </button>
+
+                            </div>
+
+
+                            <div class="velora-settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        Two-factor authentication
+                                    </strong>
+
+                                    <span>
+                                        Add another layer of protection to your account.
+                                    </span>
+
+                                </div>
+
+
+                                <label class="velora-toggle">
+
+                                    <input
+                                        type="checkbox"
+                                        id="twoFactor"
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         WORKSPACE
+                    ================================================== -->
+
+                    <div
+                        class="velora-settings-section"
+                        data-settings-content="workspace"
+                    >
+
+                        <div class="velora-settings-section-header">
+
+                            <div>
+
+                                <span>
+                                    WORKSPACE
+                                </span>
+
+                                <h2>
+                                    Workspace
+                                </h2>
+
+                                <p>
+                                    Configure how your photography business appears across Velora.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <form class="velora-settings-form">
+
+
+                            <div class="velora-form-field">
+
+                                <label for="studioName">
+                                    Studio name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="studioName"
+                                    value="Patrick Obialor Photography"
+                                >
+
+                            </div>
+
+
+                            <div class="velora-form-field">
+
+                                <label for="website">
+                                    Website
+                                </label>
+
+                                <div class="velora-input-with-prefix">
+
+                                    <span>
+                                        velora.com/
+                                    </span>
+
+                                    <input
+                                        type="text"
+                                        id="website"
+                                        value="patrick"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="velora-form-grid">
+
+
+                                <div class="velora-form-field">
+
+                                    <label for="instagram">
+                                        Instagram
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="instagram"
+                                        placeholder="@username"
+                                    >
+
+                                </div>
+
+
+                                <div class="velora-form-field">
+
+                                    <label for="whatsapp">
+                                        WhatsApp
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="whatsapp"
+                                        placeholder="+234..."
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="velora-settings-actions">
+
+                                <button
+                                    type="submit"
+                                    class="velora-primary-button"
+                                >
+                                    Save changes
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         GALLERY
+                    ================================================== -->
+
+                    <div
+                        class="velora-settings-section"
+                        data-settings-content="gallery"
+                    >
+
+                        <div class="velora-settings-section-header">
+
+                            <div>
+
+                                <span>
+                                    GALLERIES
+                                </span>
+
+                                <h2>
+                                    Gallery settings
+                                </h2>
+
+                                <p>
+                                    Set the defaults for your client galleries.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="velora-settings-option-list">
+
+
+                            <div class="velora-settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        Allow downloads
+                                    </strong>
+
+                                    <span>
+                                        Let clients download images from their galleries.
+                                    </span>
+
+                                </div>
+
+
+                                <label class="velora-toggle">
+
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="velora-settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        Watermark new galleries
+                                    </strong>
+
+                                    <span>
+                                        Automatically apply your watermark to uploaded images.
+                                    </span>
+
+                                </div>
+
+
+                                <label class="velora-toggle">
+
+                                    <input
+                                        type="checkbox"
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="velora-settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        Client favorites
+                                    </strong>
+
+                                    <span>
+                                        Allow clients to mark images as favorites.
+                                    </span>
+
+                                </div>
+
+
+                                <label class="velora-toggle">
+
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         BOOKING
+                    ================================================== -->
+
+                    <div
+                        class="velora-settings-section"
+                        data-settings-content="booking"
+                    >
+
+                        <div class="velora-settings-section-header">
+
+                            <div>
+
+                                <span>
+                                    BOOKINGS
+                                </span>
+
+                                <h2>
+                                    Booking preferences
+                                </h2>
+
+                                <p>
+                                    Control how clients request photography sessions.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="velora-settings-option-list">
+
+
+                            <div class="velora-settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        Accept booking requests
+                                    </strong>
+
+                                    <span>
+                                        Allow clients to request available sessions.
+                                    </span>
+
+                                </div>
+
+
+                                <label class="velora-toggle">
+
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="velora-settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        Automatic confirmation
+                                    </strong>
+
+                                    <span>
+                                        Automatically confirm requests that match your availability.
+                                    </span>
+
+                                </div>
+
+
+                                <label class="velora-toggle">
+
+                                    <input
+                                        type="checkbox"
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="velora-settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        Booking notifications
+                                    </strong>
+
+                                    <span>
+                                        Receive an email whenever a client submits a request.
+                                    </span>
+
+                                </div>
+
+
+                                <label class="velora-toggle">
+
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         NOTIFICATIONS
+                    ================================================== -->
+
+                    <div
+                        class="velora-settings-section"
+                        data-settings-content="notifications"
+                    >
+
+                        <div class="velora-settings-section-header">
+
+                            <div>
+
+                                <span>
+                                    NOTIFICATIONS
+                                </span>
+
+                                <h2>
+                                    Notifications
+                                </h2>
+
+                                <p>
+                                    Choose what Velora should keep you updated about.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="velora-settings-option-list">
+
+
+                            <div class="velora-settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        New bookings
+                                    </strong>
+
+                                    <span>
+                                        Get notified when a client requests a booking.
+                                    </span>
+
+                                </div>
+
+
+                                <label class="velora-toggle">
+
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="velora-settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        Gallery activity
+                                    </strong>
+
+                                    <span>
+                                        Get updates when clients view or interact with galleries.
+                                    </span>
+
+                                </div>
+
+
+                                <label class="velora-toggle">
+
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="velora-settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        Product updates
+                                    </strong>
+
+                                    <span>
+                                        Receive important news and improvements from Velora.
+                                    </span>
+
+                                </div>
+
+
+                                <label class="velora-toggle">
+
+                                    <input
+                                        type="checkbox"
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         BILLING
+                    ================================================== -->
+
+                    <div
+                        class="velora-settings-section"
+                        data-settings-content="billing"
+                    >
+
+                        <div class="velora-settings-section-header">
+
+                            <div>
+
+                                <span>
+                                    SUBSCRIPTION
+                                </span>
+
+                                <h2>
+                                    Billing
+                                </h2>
+
+                                <p>
+                                    Manage your Velora plan and storage.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Current plan -->
+
+                        <div class="velora-current-plan">
+
+
+                            <div class="velora-current-plan-top">
+
+                                <div>
+
+                                    <span>
+                                        CURRENT PLAN
+                                    </span>
+
+                                    <strong>
+                                        Velora 50
+                                    </strong>
+
+                                </div>
+
+
+                                <span class="velora-plan-status">
+                                    Active
+                                </span>
+
+                            </div>
+
+
+                            <div class="velora-current-plan-price">
+
+                                <strong>
+                                    $10
+                                </strong>
+
+                                <span>
+                                    / month
+                                </span>
+
+                            </div>
+
+
+                            <div class="velora-storage">
+
+                                <div class="velora-storage-label">
+
+                                    <span>
+                                        Storage
+                                    </span>
+
+                                    <strong>
+                                        31.4 GB / 50 GB
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="velora-storage-track">
+
+                                    <span
+                                        style="width: 62.8%;"
+                                    ></span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="velora-current-plan-actions">
+
+                                <a
+                                    href="pricing.html"
+                                    class="velora-secondary-button"
+                                >
+                                    Change plan
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Billing history -->
+
+                        <div class="velora-billing-history">
+
+                            <div class="velora-billing-history-header">
+
+                                <h3>
+                                    Billing history
+                                </h3>
+
+                                <span>
+                                    Recent transactions
+                                </span>
+
+                            </div>
+
+
+                            <div class="velora-billing-row">
+
+                                <div>
+
+                                    <strong>
+                                        Velora 50
+                                    </strong>
+
+                                    <span>
+                                        September 12, 2026
+                                    </span>
+
+                                </div>
+
+
+                                <strong>
+                                    $10.00
+                                </strong>
+
+                            </div>
+
+
+                            <div class="velora-billing-row">
+
+                                <div>
+
+                                    <strong>
+                                        Velora 50
+                                    </strong>
+
+                                    <span>
+                                        August 12, 2026
+                                    </span>
+
+                                </div>
+
+
+                                <strong>
+                                    $10.00
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+const sidebar =
+    document.getElementById(
+        "veloraSidebar"
+    );
+
+
+const sidebarOpen =
+    document.getElementById(
+        "sidebarOpen"
+    );
+
+
+const sidebarClose =
+    document.getElementById(
+        "sidebarClose"
+    );
+
+
+const sidebarOverlay =
+    document.getElementById(
+        "sidebarOverlay"
+    );
+
+
+function openSidebar() {
+
+    sidebar.classList.add(
+        "is-open"
+    );
+
+    sidebarOverlay.classList.add(
+        "is-visible"
+    );
+
+    sidebarOpen.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+    document.body.classList.add(
+        "velora-sidebar-open"
+    );
+
+}
+
+
+function closeSidebar() {
+
+    sidebar.classList.remove(
+        "is-open"
+    );
+
+    sidebarOverlay.classList.remove(
+        "is-visible"
+    );
+
+    sidebarOpen.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+    document.body.classList.remove(
+        "velora-sidebar-open"
+    );
+
+}
+
+
+sidebarOpen.addEventListener(
+    "click",
+    openSidebar
+);
+
+
+sidebarClose.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+sidebarOverlay.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+
+/* =====================================================
+   SETTINGS NAVIGATION
+===================================================== */
+
+const settingsNavItems =
+    document.querySelectorAll(
+        ".velora-settings-nav-item"
+    );
+
+
+const settingsSections =
+    document.querySelectorAll(
+        ".velora-settings-section"
+    );
+
+
+settingsNavItems.forEach(
+    function (item) {
+
+        item.addEventListener(
+            "click",
+            function () {
+
+                const target =
+                    this.dataset.settingsTab;
+
+
+                settingsNavItems.forEach(
+                    function (navItem) {
+
+                        navItem.classList.remove(
+                            "is-active"
+                        );
+
+                    }
+                );
+
+
+                settingsSections.forEach(
+                    function (section) {
+
+                        section.classList.remove(
+                            "is-visible"
+                        );
+
+                    }
+                );
+
+
+                this.classList.add(
+                    "is-active"
+                );
+
+
+                const targetSection =
+                    document.querySelector(
+                        `[data-settings-content="${target}"]`
+                    );
+
+
+                if (targetSection) {
+
+                    targetSection.classList.add(
+                        "is-visible"
+                    );
+
+                }
+
+
+                /*
+                    On mobile, move the user back
+                    to the content after changing tabs.
+                */
+
+                if (
+                    window.innerWidth <= 767
+                ) {
+
+                    document
+                        .querySelector(
+                            ".velora-settings-panel"
+                        )
+                        .scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   PROFILE FORM
+===================================================== */
+
+const profileForm =
+    document.getElementById(
+        "profileForm"
+    );
+
+
+profileForm.addEventListener(
+    "submit",
+    function (event) {
+
+        event.preventDefault();
+
+
+        const button =
+            this.querySelector(
+                ".velora-primary-button"
+            );
+
+
+        const originalText =
+            button.textContent;
+
+
+        button.textContent =
+            "Saved";
+
+
+        button.classList.add(
+            "is-saved"
+        );
+
+
+        setTimeout(
+            function () {
+
+                button.textContent =
+                    originalText;
+
+                button.classList.remove(
+                    "is-saved"
+                );
+
+            },
+            1800
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   ESCAPE KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "Escape" &&
+            sidebar.classList.contains(
+                "is-open"
+            )
+        ) {
+
+            closeSidebar();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   GLOBAL SEARCH SHORTCUT
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "/" &&
+            ![
+                "INPUT",
+                "TEXTAREA"
+            ].includes(
+                document.activeElement.tagName
+            )
+        ) {
+
+            event.preventDefault();
+
+
+            const search =
+                document.querySelector(
+                    ".velora-dashboard-search input"
+                );
+
+
+            if (search) {
+
+                search.focus();
+
+            }
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

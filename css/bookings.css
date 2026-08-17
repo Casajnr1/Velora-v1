@@ -1,0 +1,2539 @@
+/*==========================================================
+        VELORA BOOKINGS — V1
+        Component: VLR-BKG-001
+        Status: Approved
+        Maturity: L2 Stable
+==========================================================*/
+
+
+/*==========================================================
+        PAGE HEADER
+==========================================================*/
+
+.velora-bookings-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 27px;
+
+}
+
+
+.velora-bookings-header h1 {
+
+    margin:
+        0 0 8px;
+
+    color:
+        var(--velora-ink);
+
+    font-size:
+        clamp(32px, 3vw, 42px);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    letter-spacing:
+        -.045em;
+
+}
+
+
+.velora-bookings-header p {
+
+    margin: 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 12px;
+
+}
+
+
+/*==========================================================
+        NEW BOOKING BUTTON
+==========================================================*/
+
+.velora-new-booking-button {
+
+    min-height: 38px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding:
+        0 15px;
+
+    border:
+        1px solid var(--velora-green);
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    background:
+        var(--velora-green);
+
+    color:
+        var(--velora-paper);
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color .2s ease,
+        transform .2s ease;
+
+}
+
+
+.velora-new-booking-button:hover {
+
+    background:
+        var(--velora-green-dark);
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.velora-new-booking-button i {
+
+    font-size: 10px;
+
+}
+
+
+/*==========================================================
+        SUMMARY
+==========================================================*/
+
+.velora-booking-summary {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 11px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.velora-booking-stat {
+
+    min-height: 105px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding:
+        15px 17px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-md);
+
+    background:
+        var(--velora-paper);
+
+}
+
+
+.velora-booking-stat span {
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+}
+
+
+.velora-booking-stat strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        -.04em;
+
+}
+
+
+.velora-booking-stat small {
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 7px;
+
+}
+
+
+/*==========================================================
+        TOOLBAR
+==========================================================*/
+
+.velora-booking-toolbar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 11px;
+
+}
+
+
+.velora-booking-tabs {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+
+}
+
+
+.velora-booking-tabs::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+
+.velora-booking-tab {
+
+    min-height: 31px;
+
+    flex-shrink: 0;
+
+    padding:
+        0 10px;
+
+    border: 0;
+
+    border-radius:
+        var(--velora-radius-pill);
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-muted);
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.velora-booking-tab:hover {
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+.velora-booking-tab.is-active {
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-filter-button {
+
+    min-height: 31px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    flex-shrink: 0;
+
+    padding:
+        0 10px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-muted);
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+/*==========================================================
+        BOOKINGS CARD
+==========================================================*/
+
+.velora-bookings-card {
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-lg);
+
+    background:
+        var(--velora-paper);
+
+}
+
+
+.velora-bookings-card-header {
+
+    min-height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        12px 20px;
+
+    border-bottom:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-bookings-card-header h2 {
+
+    margin:
+        0 0 4px;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.velora-bookings-card-header span {
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 7px;
+
+}
+
+
+.velora-booking-sort {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    border: 0;
+
+    background: transparent;
+
+    color:
+        var(--velora-muted);
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+    cursor: pointer;
+
+}
+
+
+/*==========================================================
+        TABLE
+==========================================================*/
+
+.velora-booking-table-wrapper {
+
+    overflow-x: auto;
+
+}
+
+
+.velora-booking-table {
+
+    width: 100%;
+
+    min-width: 760px;
+
+    border-collapse: collapse;
+
+}
+
+
+.velora-booking-table th {
+
+    height: 39px;
+
+    padding:
+        0 20px;
+
+    border-bottom:
+        1px solid var(--velora-line);
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+    text-align: left;
+
+}
+
+
+.velora-booking-table td {
+
+    height: 76px;
+
+    padding:
+        9px 20px;
+
+    border-bottom:
+        1px solid var(--velora-line);
+
+    vertical-align: middle;
+
+}
+
+
+.velora-booking-table tbody tr:last-child td {
+
+    border-bottom: 0;
+
+}
+
+
+.velora-booking-table tbody tr {
+
+    transition:
+        background-color .15s ease;
+
+}
+
+
+.velora-booking-table tbody tr:hover {
+
+    background:
+        rgba(27,67,50,.018);
+
+}
+
+
+/*==========================================================
+        CLIENT
+==========================================================*/
+
+.velora-booking-client {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.velora-client-avatar {
+
+    width: 34px;
+
+    height: 34px;
+
+    flex: 0 0 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+}
+
+
+.velora-client-avatar.large {
+
+    width: 43px;
+
+    height: 43px;
+
+    flex-basis: 43px;
+
+    font-size: 9px;
+
+}
+
+
+.velora-booking-client > div,
+.velora-booking-session,
+.velora-booking-date {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.velora-booking-client strong,
+.velora-booking-session strong,
+.velora-booking-date strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+}
+
+
+.velora-booking-client span,
+.velora-booking-session span,
+.velora-booking-date span {
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 7px;
+
+}
+
+
+/*==========================================================
+        STATUS
+==========================================================*/
+
+.velora-booking-status {
+
+    min-height: 22px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        0 8px;
+
+    border-radius:
+        var(--velora-radius-pill);
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+}
+
+
+.velora-booking-status.upcoming {
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-booking-status.pending {
+
+    background:
+        #f5f0df;
+
+    color:
+        #78652c;
+
+}
+
+
+.velora-booking-status.completed {
+
+    background:
+        #edf0f0;
+
+    color:
+        #586366;
+
+}
+
+
+.velora-booking-status.cancelled {
+
+    background:
+        #f4ebeb;
+
+    color:
+        #865858;
+
+}
+
+
+/*==========================================================
+        AMOUNT
+==========================================================*/
+
+.velora-booking-amount {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+}
+
+
+/*==========================================================
+        MORE BUTTON
+==========================================================*/
+
+.velora-booking-more {
+
+    width: 29px;
+
+    height: 29px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color:
+        var(--velora-muted-light);
+
+    cursor: pointer;
+
+}
+
+
+.velora-booking-more:hover {
+
+    background:
+        var(--velora-surface);
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+/*==========================================================
+        EMPTY STATE
+==========================================================*/
+
+.velora-booking-empty {
+
+    display: none;
+
+    min-height: 270px;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+}
+
+
+.velora-booking-empty.is-visible {
+
+    display: flex;
+
+}
+
+
+.velora-booking-empty-icon {
+
+    width: 43px;
+
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 5px;
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-surface);
+
+    color:
+        var(--velora-muted);
+
+}
+
+
+.velora-booking-empty strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 10px;
+
+}
+
+
+.velora-booking-empty span {
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+}
+
+
+/*==========================================================
+        MODAL
+==========================================================*/
+
+.velora-booking-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: none;
+
+}
+
+
+.velora-booking-modal.is-open {
+
+    display: block;
+
+}
+
+
+.velora-booking-modal-backdrop {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(15,20,18,.42);
+
+    backdrop-filter:
+        blur(4px);
+
+}
+
+
+.velora-booking-dialog {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    width: min(
+        650px,
+        calc(100% - 32px)
+    );
+
+    max-height:
+        calc(100vh - 40px);
+
+    overflow-y: auto;
+
+    transform:
+        translate(-50%, -50%);
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-lg);
+
+    background:
+        var(--velora-paper);
+
+    box-shadow:
+        0 24px 70px rgba(0,0,0,.18);
+
+}
+
+
+.velora-booking-modal.is-open
+.velora-booking-dialog {
+
+    animation:
+        veloraBookingDialogIn .22s ease;
+
+}
+
+
+@keyframes veloraBookingDialogIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, calc(-50% + 8px))
+            scale(.99);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+}
+
+
+body.velora-modal-open {
+
+    overflow: hidden;
+
+}
+
+
+/*==========================================================
+        MODAL HEADER
+==========================================================*/
+
+.velora-booking-dialog-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding:
+        23px 25px 19px;
+
+    border-bottom:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-booking-dialog-header h2 {
+
+    margin:
+        0 0 6px;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        -.03em;
+
+}
+
+
+.velora-booking-dialog-header p {
+
+    margin: 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+}
+
+
+.velora-booking-dialog-close {
+
+    width: 30px;
+
+    height: 30px;
+
+    flex: 0 0 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-surface);
+
+    color:
+        var(--velora-muted);
+
+    cursor: pointer;
+
+}
+
+
+.velora-booking-dialog-close:hover {
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+/*==========================================================
+        PROGRESS
+==========================================================*/
+
+.velora-booking-progress {
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        17px 25px;
+
+    border-bottom:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-booking-progress-step {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    flex-shrink: 0;
+
+}
+
+
+.velora-booking-progress-step span {
+
+    width: 22px;
+
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius: 50%;
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+}
+
+
+.velora-booking-progress-step strong {
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+}
+
+
+.velora-booking-progress-step.is-active span,
+.velora-booking-progress-step.is-complete span {
+
+    border-color:
+        var(--velora-green);
+
+    background:
+        var(--velora-green);
+
+    color:
+        var(--velora-paper);
+
+}
+
+
+.velora-booking-progress-step.is-active strong,
+.velora-booking-progress-step.is-complete strong {
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-booking-progress-line {
+
+    width: 45px;
+
+    height: 1px;
+
+    margin:
+        0 9px;
+
+    background:
+        var(--velora-line);
+
+}
+
+
+/*==========================================================
+        FORM
+==========================================================*/
+
+.velora-new-booking-form {
+
+    display: block;
+
+}
+
+
+.velora-booking-step {
+
+    display: none;
+
+    padding:
+        25px;
+
+}
+
+
+.velora-booking-step.is-active {
+
+    display: block;
+
+}
+
+
+.velora-booking-step-heading {
+
+    margin-bottom: 22px;
+
+}
+
+
+.velora-booking-step-heading h3 {
+
+    margin:
+        0 0 6px;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        -.025em;
+
+}
+
+
+.velora-booking-step-heading p {
+
+    margin: 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+}
+
+
+/*==========================================================
+        FORM FIELDS
+==========================================================*/
+
+.velora-form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+
+}
+
+
+.velora-form-field {
+
+    margin-bottom: 17px;
+
+}
+
+
+.velora-form-field label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+}
+
+
+.velora-form-field input,
+.velora-form-field select,
+.velora-form-field textarea {
+
+    width: 100%;
+
+    min-height: 39px;
+
+    padding:
+        0 11px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    outline: 0;
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-ink);
+
+    font-family: inherit;
+
+    font-size: 9px;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.velora-form-field textarea {
+
+    min-height: 90px;
+
+    padding:
+        10px 11px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+
+}
+
+
+.velora-form-field input:focus,
+.velora-form-field select:focus,
+.velora-form-field textarea:focus {
+
+    border-color:
+        var(--velora-green);
+
+    box-shadow:
+        0 0 0 3px rgba(27,67,50,.07);
+
+}
+
+
+.velora-form-field input.velora-field-error,
+.velora-form-field select.velora-field-error {
+
+    border-color:
+        #9a5e5e;
+
+}
+
+
+/*==========================================================
+        SELECT
+==========================================================*/
+
+.velora-select-wrapper {
+
+    position: relative;
+
+}
+
+
+.velora-select-wrapper select {
+
+    appearance: none;
+
+    padding-right: 34px;
+
+}
+
+
+.velora-select-wrapper i {
+
+    position: absolute;
+
+    top: 50%;
+
+    right: 12px;
+
+    transform:
+        translateY(-50%);
+
+    pointer-events: none;
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 8px;
+
+}
+
+
+/*==========================================================
+        ADD CLIENT
+==========================================================*/
+
+.velora-booking-or {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin:
+        2px 0 15px;
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+}
+
+
+.velora-booking-or::before,
+.velora-booking-or::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        var(--velora-line);
+
+}
+
+
+.velora-add-client-button {
+
+    min-height: 34px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding:
+        0 11px;
+
+    border:
+        1px dashed var(--velora-line-strong);
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-green);
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.velora-add-client-button:hover {
+
+    background:
+        var(--velora-green-tint);
+
+}
+
+
+.velora-new-client-fields {
+
+    display: none;
+
+    margin-top: 17px;
+
+    padding-top: 17px;
+
+    border-top:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-new-client-fields.is-visible {
+
+    display: block;
+
+}
+
+
+/*==========================================================
+        ICON INPUT
+==========================================================*/
+
+.velora-input-icon {
+
+    position: relative;
+
+}
+
+
+.velora-input-icon i {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 11px;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 10px;
+
+}
+
+
+.velora-input-icon input {
+
+    padding-left:
+        31px;
+
+}
+
+
+/*==========================================================
+        PRICE
+==========================================================*/
+
+.velora-price-input {
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-sm);
+
+}
+
+
+.velora-price-input > span {
+
+    min-height: 39px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        0 10px;
+
+    border-right:
+        1px solid var(--velora-line);
+
+    background:
+        var(--velora-surface);
+
+    color:
+        var(--velora-muted);
+
+    font-size: 9px;
+
+}
+
+
+.velora-price-input input {
+
+    min-height: 39px;
+
+    border: 0;
+
+    border-radius: 0;
+
+}
+
+
+/*==========================================================
+        SESSION OPTIONS
+==========================================================*/
+
+.velora-session-options {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 7px;
+
+}
+
+
+.velora-session-option {
+
+    position: relative;
+
+    cursor: pointer;
+
+}
+
+
+.velora-session-option input {
+
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+.velora-session-option span {
+
+    min-height: 78px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    padding:
+        10px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    background:
+        var(--velora-paper);
+
+    transition:
+        border-color .2s ease,
+        background-color .2s ease;
+
+}
+
+
+.velora-session-option i {
+
+    margin-bottom: 2px;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 12px;
+
+}
+
+
+.velora-session-option strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+}
+
+
+.velora-session-option small {
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 6px;
+
+}
+
+
+.velora-session-option input:checked + span {
+
+    border-color:
+        var(--velora-green);
+
+    background:
+        var(--velora-green-tint);
+
+}
+
+
+.velora-session-option input:checked + span i {
+
+    color:
+        var(--velora-green);
+
+}
+
+
+/*==========================================================
+        REVIEW
+==========================================================*/
+
+.velora-booking-review {
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-md);
+
+}
+
+
+.velora-review-client {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding:
+        17px;
+
+}
+
+
+.velora-review-client > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.velora-review-client > div span,
+.velora-review-grid > div span,
+.velora-review-notes > span {
+
+    color:
+        var(--velora-muted-light);
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+    letter-spacing: .1em;
+
+}
+
+
+.velora-review-client > div strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+}
+
+
+.velora-review-divider {
+
+    height: 1px;
+
+    background:
+        var(--velora-line);
+
+}
+
+
+.velora-review-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    padding:
+        18px;
+
+}
+
+
+.velora-review-grid > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.velora-review-grid > div strong {
+
+    overflow: hidden;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.velora-review-notes {
+
+    margin:
+        0 18px 18px;
+
+    padding:
+        12px;
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    background:
+        var(--velora-surface);
+
+}
+
+
+.velora-review-notes > span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+}
+
+
+.velora-review-notes p {
+
+    margin: 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+    line-height: 1.5;
+
+}
+
+
+/*==========================================================
+        CONFIRM
+==========================================================*/
+
+.velora-confirm-checkbox {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin-top: 17px;
+
+    cursor: pointer;
+
+}
+
+
+.velora-confirm-checkbox input {
+
+    position: absolute;
+
+    opacity: 0;
+
+}
+
+
+.velora-confirm-checkbox > span {
+
+    width: 15px;
+
+    height: 15px;
+
+    flex: 0 0 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 1px;
+
+    border:
+        1px solid var(--velora-line-strong);
+
+    border-radius: 3px;
+
+}
+
+
+.velora-confirm-checkbox input:checked + span {
+
+    border-color:
+        var(--velora-green);
+
+    background:
+        var(--velora-green);
+
+}
+
+
+.velora-confirm-checkbox input:checked + span::after {
+
+    content: "✓";
+
+    color:
+        var(--velora-paper);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+}
+
+
+.velora-confirm-checkbox p {
+
+    margin: 0;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 7px;
+
+    line-height: 1.5;
+
+}
+
+
+/*==========================================================
+        MODAL FOOTER
+==========================================================*/
+
+.velora-booking-dialog-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        15px 25px;
+
+    border-top:
+        1px solid var(--velora-line);
+
+}
+
+
+.velora-booking-footer-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.velora-booking-cancel,
+.velora-booking-back,
+.velora-booking-next,
+.velora-booking-create {
+
+    min-height: 34px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    padding:
+        0 12px;
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.velora-booking-cancel {
+
+    border: 0;
+
+    background: transparent;
+
+    color:
+        var(--velora-muted);
+
+}
+
+
+.velora-booking-back {
+
+    display: none;
+
+    border:
+        1px solid var(--velora-line);
+
+    background:
+        var(--velora-paper);
+
+    color:
+        var(--velora-ink);
+
+}
+
+
+.velora-booking-next,
+.velora-booking-create {
+
+    border:
+        1px solid var(--velora-green);
+
+    background:
+        var(--velora-green);
+
+    color:
+        var(--velora-paper);
+
+}
+
+
+.velora-booking-next:hover,
+.velora-booking-create:hover {
+
+    background:
+        var(--velora-green-dark);
+
+}
+
+
+/*==========================================================
+        SUCCESS
+==========================================================*/
+
+.velora-booking-success {
+
+    display: none;
+
+    min-height: 430px;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        40px 25px;
+
+    text-align: center;
+
+}
+
+
+.velora-booking-success.is-visible {
+
+    display: flex;
+
+}
+
+
+.velora-success-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-green-tint);
+
+    color:
+        var(--velora-green);
+
+}
+
+
+.velora-success-icon i {
+
+    font-size: 23px;
+
+}
+
+
+.velora-booking-success > span {
+
+    margin-bottom: 7px;
+
+    color:
+        var(--velora-green);
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+    letter-spacing: .15em;
+
+}
+
+
+.velora-booking-success h3 {
+
+    margin:
+        0 0 7px;
+
+    color:
+        var(--velora-ink);
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        -.03em;
+
+}
+
+
+.velora-booking-success > p {
+
+    max-width: 330px;
+
+    margin:
+        0 0 20px;
+
+    color:
+        var(--velora-muted);
+
+    font-size: 8px;
+
+    line-height: 1.6;
+
+}
+
+
+.velora-success-summary {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 220px;
+
+    margin-bottom: 23px;
+
+    padding:
+        12px 17px;
+
+    border:
+        1px solid var(--velora-line);
+
+    border-radius:
+        var(--velora-radius-sm);
+
+    background:
+        var(--velora-surface);
+
+}
+
+
+.velora-success-summary strong {
+
+    color:
+        var(--velora-ink);
+
+    font-size: 9px;
+
+}
+
+
+.velora-success-summary span {
+
+    color:
+        var(--velora-muted);
+
+    font-size: 7px;
+
+}
+
+
+/*==========================================================
+        TABLET
+==========================================================*/
+
+@media (max-width: 1000px) {
+
+    .velora-booking-summary {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .velora-session-options {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+/*==========================================================
+        MOBILE
+==========================================================*/
+
+@media (max-width: 767px) {
+
+    .velora-bookings-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .velora-new-booking-button {
+
+        width: 100%;
+
+    }
+
+
+    .velora-booking-summary {
+
+        gap: 7px;
+
+    }
+
+
+    .velora-booking-stat {
+
+        min-height: 95px;
+
+        padding:
+            13px;
+
+    }
+
+
+    .velora-booking-toolbar {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 9px;
+
+    }
+
+
+    .velora-booking-tabs {
+
+        width: 100%;
+
+    }
+
+
+    .velora-filter-button {
+
+        width: 100%;
+
+    }
+
+
+    .velora-bookings-card-header {
+
+        padding:
+            12px 14px;
+
+    }
+
+
+    .velora-booking-dialog {
+
+        width:
+            calc(100% - 20px);
+
+        max-height:
+            calc(100vh - 20px);
+
+        border-radius:
+            var(--velora-radius-md);
+
+    }
+
+
+    .velora-booking-dialog-header {
+
+        padding:
+            18px 16px;
+
+    }
+
+
+    .velora-booking-progress {
+
+        padding:
+            14px 16px;
+
+    }
+
+
+    .velora-booking-progress-step strong {
+
+        display: none;
+
+    }
+
+
+    .velora-booking-progress-line {
+
+        flex: 1;
+
+        width: auto;
+
+    }
+
+
+    .velora-booking-step {
+
+        padding:
+            20px 16px;
+
+    }
+
+
+    .velora-form-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 0;
+
+    }
+
+
+    .velora-session-options {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .velora-review-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .velora-booking-dialog-footer {
+
+        padding:
+            12px 16px;
+
+    }
+
+
+    .velora-booking-cancel {
+
+        padding: 0;
+
+    }
+
+}
+
+
+/*==========================================================
+        SMALL MOBILE
+==========================================================*/
+
+@media (max-width: 420px) {
+
+    .velora-booking-summary {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .velora-booking-stat strong {
+
+        font-size: 20px;
+
+    }
+
+
+    .velora-booking-progress-step span {
+
+        width: 20px;
+
+        height: 20px;
+
+    }
+
+
+    .velora-session-options {
+
+        gap: 6px;
+
+    }
+
+
+    .velora-session-option span {
+
+        min-height: 72px;
+
+        padding:
+            8px;
+
+    }
+
+
+    .velora-review-grid {
+
+        gap: 15px;
+
+        padding:
+            14px;
+
+    }
+
+
+    .velora-review-notes {
+
+        margin:
+            0 14px 14px;
+
+    }
+
+
+    .velora-booking-dialog-footer {
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+        gap: 8px;
+
+    }
+
+
+    .velora-booking-footer-actions {
+
+        width: 100%;
+
+    }
+
+
+    .velora-booking-back,
+    .velora-booking-next,
+    .velora-booking-create {
+
+        flex: 1;
+
+    }
+
+
+    .velora-booking-cancel {
+
+        order: 2;
+
+    }
+
+}
+
+
+/*==========================================================
+        ACCESSIBILITY
+==========================================================*/
+
+.velora-new-booking-button:focus-visible,
+.velora-booking-tab:focus-visible,
+.velora-filter-button:focus-visible,
+.velora-booking-more:focus-visible,
+.velora-booking-dialog-close:focus-visible,
+.velora-add-client-button:focus-visible,
+.velora-booking-cancel:focus-visible,
+.velora-booking-back:focus-visible,
+.velora-booking-next:focus-visible,
+.velora-booking-create:focus-visible {
+
+    outline:
+        2px solid var(--velora-green);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/*==========================================================
+        REDUCED MOTION
+==========================================================*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .velora-new-booking-button,
+    .velora-session-option span,
+    .velora-booking-table tbody tr {
+
+        transition: none;
+
+    }
+
+
+    .velora-booking-modal.is-open
+    .velora-booking-dialog {
+
+        animation: none;
+
+    }
+
+}
+.velora-booking-more {
+    text-decoration: none;
+}
+
+.velora-booking-more i {
+    font-size: 9px;
+}

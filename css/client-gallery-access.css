@@ -1,0 +1,2273 @@
+/* =========================================================
+   VELORA — CLIENT GALLERY ACCESS
+   Component ID: VLR-CGAL-002
+   Status: Approved
+   Maturity: L2 Stable
+   Version: V1.0
+
+   Photography-first
+   Premium
+   Spacious
+   Light mode
+   Token-first typography
+========================================================= */
+
+
+/* =========================================================
+   01. TOKENS
+========================================================= */
+
+:root {
+
+    /* -----------------------------------------------------
+       COLORS
+    ----------------------------------------------------- */
+
+    --velora-access-ink: #17181a;
+    --velora-access-paper: #ffffff;
+    --velora-access-surface: #f7f8f6;
+    --velora-access-line: #e7ebe8;
+
+    --velora-access-muted: #63676c;
+
+    --velora-access-green: #1b4332;
+    --velora-access-green-dark: #123325;
+    --velora-access-green-tint: #e9f0ec;
+
+    --velora-access-danger: #a34d4d;
+
+
+    /* -----------------------------------------------------
+       TYPOGRAPHY
+    ----------------------------------------------------- */
+
+    --v-access-xs: 12px;
+    --v-access-sm: 14px;
+    --v-access-md: 16px;
+    --v-access-lg: 18px;
+
+    --v-access-heading-sm: 24px;
+    --v-access-heading-md: 32px;
+
+    --v-access-display: clamp(
+        42px,
+        5vw,
+        64px
+    );
+
+
+    /* -----------------------------------------------------
+       LINE HEIGHT
+    ----------------------------------------------------- */
+
+    --v-access-lh-tight: 1.05;
+    --v-access-lh-heading: 1.12;
+    --v-access-lh-body: 1.65;
+    --v-access-lh-ui: 1.4;
+
+
+    /* -----------------------------------------------------
+       WEIGHTS
+    ----------------------------------------------------- */
+
+    --v-access-weight-regular: 400;
+    --v-access-weight-medium: 500;
+    --v-access-weight-semibold: 600;
+    --v-access-weight-bold: 700;
+    --v-access-weight-heavy: 800;
+
+
+    /* -----------------------------------------------------
+       SPACING
+    ----------------------------------------------------- */
+
+    --v-access-space-1: 4px;
+    --v-access-space-2: 8px;
+    --v-access-space-3: 12px;
+    --v-access-space-4: 16px;
+    --v-access-space-5: 20px;
+    --v-access-space-6: 24px;
+    --v-access-space-7: 32px;
+    --v-access-space-8: 40px;
+    --v-access-space-9: 48px;
+    --v-access-space-10: 64px;
+
+
+    /* -----------------------------------------------------
+       RADIUS
+    ----------------------------------------------------- */
+
+    --v-access-radius-sm: 8px;
+    --v-access-radius-md: 12px;
+    --v-access-radius-lg: 16px;
+    --v-access-radius-pill: 999px;
+
+
+    /* -----------------------------------------------------
+       MOTION
+    ----------------------------------------------------- */
+
+    --v-access-motion-fast: 160ms;
+    --v-access-motion-normal: 240ms;
+    --v-access-motion-slow: 500ms;
+
+}
+
+
+/* =========================================================
+   02. RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    min-height: 100%;
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    background:
+        var(--velora-access-paper);
+
+    color:
+        var(--velora-access-ink);
+
+    font-family:
+        "Lato",
+        sans-serif;
+
+    font-size:
+        var(--v-access-md);
+
+    font-weight:
+        var(--v-access-weight-regular);
+
+    line-height:
+        var(--v-access-lh-body);
+
+    -webkit-font-smoothing: antialiased;
+
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+body.velora-access-modal-open {
+
+    overflow: hidden;
+
+}
+
+
+button,
+input {
+
+    font: inherit;
+
+}
+
+
+button {
+
+    cursor: pointer;
+
+}
+
+
+img {
+
+    display: block;
+
+    max-width: 100%;
+
+}
+
+
+a {
+
+    color: inherit;
+
+}
+
+
+/* =========================================================
+   03. PAGE
+========================================================= */
+
+.velora-access-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        var(--velora-access-paper);
+
+}
+
+
+/* =========================================================
+   04. HEADER
+========================================================= */
+
+.velora-access-header {
+
+    min-height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: var(--v-access-space-6);
+
+    padding:
+        0 clamp(20px, 4vw, 64px);
+
+    border-bottom:
+        1px solid var(--velora-access-line);
+
+    background:
+        var(--velora-access-paper);
+
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.velora-access-brand {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    text-decoration: none;
+
+}
+
+
+.velora-access-brand img {
+
+    width: auto;
+
+    height: 25px;
+
+    display: block;
+
+    object-fit: contain;
+
+}
+
+
+/* =========================================================
+   SECURE LABEL
+========================================================= */
+
+.velora-access-secure {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color:
+        var(--velora-access-muted);
+
+    font-size:
+        var(--v-access-xs);
+
+    font-weight:
+        var(--v-access-weight-semibold);
+
+    line-height:
+        var(--v-access-lh-ui);
+
+}
+
+
+.velora-access-secure i {
+
+    color:
+        var(--velora-access-green);
+
+    font-size:
+        15px;
+
+}
+
+
+/* =========================================================
+   05. MAIN CONTENT
+========================================================= */
+
+.velora-access-content {
+
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(440px, .95fr);
+
+    min-height:
+        calc(100vh - 136px);
+
+}
+
+
+/* =========================================================
+   06. GALLERY PREVIEW
+========================================================= */
+
+.velora-access-preview {
+
+    position: relative;
+
+    min-height: 700px;
+
+    overflow: hidden;
+
+    background:
+        #1c231f;
+
+}
+
+
+.velora-access-preview-image {
+
+    position: absolute;
+
+    inset: 0;
+
+}
+
+
+.velora-access-preview-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform var(--v-access-motion-slow)
+        cubic-bezier(.2,.7,.2,1);
+
+}
+
+
+.velora-access-preview:hover
+.velora-access-preview-image img {
+
+    transform:
+        scale(1.015);
+
+}
+
+
+/* =========================================================
+   PREVIEW OVERLAY
+========================================================= */
+
+.velora-access-preview-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(8,13,10,.08) 20%,
+            rgba(8,13,10,.18) 52%,
+            rgba(8,13,10,.72) 100%
+        );
+
+}
+
+
+/* =========================================================
+   PREVIEW INFORMATION
+========================================================= */
+
+.velora-access-preview-info {
+
+    position: absolute;
+
+    left: clamp(24px, 5vw, 72px);
+
+    right: clamp(24px, 5vw, 72px);
+
+    bottom: clamp(30px, 5vw, 72px);
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+.velora-access-preview-info span {
+
+    margin-bottom:
+        var(--v-access-space-3);
+
+    color:
+        rgba(255,255,255,.78);
+
+    font-size:
+        var(--v-access-xs);
+
+    font-weight:
+        var(--v-access-weight-heavy);
+
+    line-height:
+        var(--v-access-lh-ui);
+
+    letter-spacing:
+        .13em;
+
+}
+
+
+.velora-access-preview-info strong {
+
+    color:
+        #ffffff;
+
+    font-size:
+        clamp(32px, 4vw, 56px);
+
+    font-weight:
+        var(--v-access-weight-regular);
+
+    line-height:
+        var(--v-access-lh-tight);
+
+    letter-spacing:
+        -.045em;
+
+}
+
+
+.velora-access-preview-info small {
+
+    margin-top:
+        var(--v-access-space-4);
+
+    color:
+        rgba(255,255,255,.8);
+
+    font-size:
+        var(--v-access-sm);
+
+    font-weight:
+        var(--v-access-weight-medium);
+
+}
+
+
+/* =========================================================
+   07. ACCESS PANEL
+========================================================= */
+
+.velora-access-panel {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 0;
+
+    padding:
+        clamp(32px, 5vw, 72px);
+
+    background:
+        var(--velora-access-paper);
+
+}
+
+
+.velora-access-panel-inner {
+
+    width:
+        min(100%, 500px);
+
+}
+
+
+/* =========================================================
+   PHOTOGRAPHER
+========================================================= */
+
+.velora-access-photographer {
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        var(--v-access-space-3);
+
+    margin-bottom:
+        var(--v-access-space-10);
+
+}
+
+
+.velora-access-photographer-avatar {
+
+    width: 46px;
+
+    height: 46px;
+
+    flex: 0 0 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        var(--velora-access-green-tint);
+
+    color:
+        var(--velora-access-green);
+
+    font-size:
+        var(--v-access-md);
+
+    font-weight:
+        var(--v-access-weight-bold);
+
+}
+
+
+.velora-access-photographer > div:last-child {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap:
+        var(--v-access-space-1);
+
+}
+
+
+.velora-access-photographer strong {
+
+    color:
+        var(--velora-access-ink);
+
+    font-size:
+        var(--v-access-sm);
+
+    font-weight:
+        var(--v-access-weight-bold);
+
+    line-height:
+        var(--v-access-lh-ui);
+
+}
+
+
+.velora-access-photographer span {
+
+    color:
+        var(--velora-access-muted);
+
+    font-size:
+        var(--v-access-xs);
+
+    line-height:
+        var(--v-access-lh-ui);
+
+}
+
+
+/* =========================================================
+   08. HEADING
+========================================================= */
+
+.velora-access-heading {
+
+    margin-bottom:
+        var(--v-access-space-7);
+
+}
+
+
+.velora-access-eyebrow {
+
+    display: block;
+
+    color:
+        var(--velora-access-muted);
+
+    font-size:
+        var(--v-access-xs);
+
+    font-weight:
+        var(--v-access-weight-heavy);
+
+    line-height:
+        var(--v-access-lh-ui);
+
+    letter-spacing:
+        .14em;
+
+}
+
+
+.velora-access-heading h1 {
+
+    margin:
+        var(--v-access-space-3)
+        0
+        var(--v-access-space-4);
+
+    color:
+        var(--velora-access-ink);
+
+    font-size:
+        var(--v-access-display);
+
+    font-weight:
+        var(--v-access-weight-regular);
+
+    line-height:
+        var(--v-access-lh-tight);
+
+    letter-spacing:
+        -.055em;
+
+}
+
+
+.velora-access-heading p {
+
+    max-width:
+        470px;
+
+    margin: 0;
+
+    color:
+        var(--velora-access-muted);
+
+    font-size:
+        var(--v-access-md);
+
+    font-weight:
+        var(--v-access-weight-regular);
+
+    line-height:
+        var(--v-access-lh-body);
+
+}
+
+
+/* =========================================================
+   09. FORM
+========================================================= */
+
+.velora-access-form {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.velora-access-field {
+
+    width: 100%;
+
+    margin-bottom:
+        var(--v-access-space-5);
+
+}
+
+
+.velora-access-field label {
+
+    display: block;
+
+    margin-bottom:
+        var(--v-access-space-2);
+
+    color:
+        var(--velora-access-ink);
+
+    font-size:
+        var(--v-access-sm);
+
+    font-weight:
+        var(--v-access-weight-semibold);
+
+    line-height:
+        var(--v-access-lh-ui);
+
+}
+
+
+/* =========================================================
+   INPUT WRAPPER
+========================================================= */
+
+.velora-access-input-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+}
+
+
+.velora-access-input-wrapper > i {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 16px;
+
+    z-index: 2;
+
+    color:
+        var(--velora-access-muted);
+
+    font-size:
+        17px;
+
+    pointer-events: none;
+
+    transform:
+        translateY(-50%);
+
+}
+
+
+.velora-access-input-wrapper input {
+
+    width: 100%;
+
+    height: 52px;
+
+    padding:
+        0 52px
+        0 46px;
+
+    border:
+        1px solid #d9dfdb;
+
+    border-radius:
+        var(--v-access-radius-sm);
+
+    outline: none;
+
+    background:
+        var(--velora-access-paper);
+
+    color:
+        var(--velora-access-ink);
+
+    font-size:
+        var(--v-access-md);
+
+    line-height:
+        1;
+
+    transition:
+        border-color var(--v-access-motion-fast) ease,
+        box-shadow var(--v-access-motion-fast) ease,
+        background var(--v-access-motion-fast) ease;
+
+}
+
+
+.velora-access-input-wrapper input::placeholder {
+
+    color:
+        #92979b;
+
+}
+
+
+.velora-access-input-wrapper input:hover {
+
+    border-color:
+        #c7cfca;
+
+}
+
+
+.velora-access-input-wrapper input:focus {
+
+    border-color:
+        var(--velora-access-green);
+
+    box-shadow:
+        0 0 0 3px rgba(27,67,50,.09);
+
+}
+
+
+.velora-access-input-wrapper input.has-error {
+
+    border-color:
+        var(--velora-access-danger);
+
+    box-shadow:
+        0 0 0 3px rgba(163,77,77,.08);
+
+}
+
+
+/* =========================================================
+   PASSWORD TOGGLE
+========================================================= */
+
+.velora-access-password-toggle {
+
+    position: absolute;
+
+    top: 50%;
+
+    right: 7px;
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    border-radius:
+        var(--v-access-radius-sm);
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-access-muted);
+
+    font-size:
+        17px;
+
+    transform:
+        translateY(-50%);
+
+    transition:
+        background var(--v-access-motion-fast) ease,
+        color var(--v-access-motion-fast) ease;
+
+}
+
+
+.velora-access-password-toggle:hover {
+
+    background:
+        var(--velora-access-surface);
+
+    color:
+        var(--velora-access-ink);
+
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.velora-access-error {
+
+    display: block;
+
+    height: 0;
+
+    margin-top: 0;
+
+    overflow: hidden;
+
+    color:
+        var(--velora-access-danger);
+
+    font-size:
+        var(--v-access-xs);
+
+    line-height:
+        var(--v-access-lh-body);
+
+    opacity: 0;
+
+    transition:
+        height var(--v-access-motion-fast) ease,
+        margin var(--v-access-motion-fast) ease,
+        opacity var(--v-access-motion-fast) ease;
+
+}
+
+
+.velora-access-error.is-visible {
+
+    height: auto;
+
+    margin-top:
+        var(--v-access-space-2);
+
+    opacity: 1;
+
+}
+
+
+/* =========================================================
+   10. REMEMBER DEVICE
+========================================================= */
+
+.velora-access-remember {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap:
+        var(--v-access-space-3);
+
+    margin-bottom:
+        var(--v-access-space-6);
+
+    color:
+        var(--velora-access-muted);
+
+    font-size:
+        var(--v-access-sm);
+
+    font-weight:
+        var(--v-access-weight-medium);
+
+    cursor: pointer;
+
+}
+
+
+.velora-access-remember input {
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 1px;
+
+    opacity: 0;
+
+}
+
+
+.velora-access-checkbox {
+
+    width: 20px;
+
+    height: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex: 0 0 20px;
+
+    border:
+        1px solid #cbd2cd;
+
+    border-radius:
+        5px;
+
+    background:
+        #ffffff;
+
+    color:
+        transparent;
+
+    font-size:
+        12px;
+
+    transition:
+        background var(--v-access-motion-fast) ease,
+        border-color var(--v-access-motion-fast) ease,
+        color var(--v-access-motion-fast) ease;
+
+}
+
+
+.velora-access-remember:hover
+.velora-access-checkbox {
+
+    border-color:
+        var(--velora-access-green);
+
+}
+
+
+.velora-access-remember input:checked
++ .velora-access-checkbox {
+
+    border-color:
+        var(--velora-access-green);
+
+    background:
+        var(--velora-access-green);
+
+    color:
+        #ffffff;
+
+}
+
+
+/* =========================================================
+   11. SUBMIT BUTTON
+========================================================= */
+
+.velora-access-submit {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap:
+        var(--v-access-space-3);
+
+    padding:
+        0 var(--v-access-space-6);
+
+    border:
+        1px solid var(--velora-access-green);
+
+    border-radius:
+        var(--v-access-radius-sm);
+
+    background:
+        var(--velora-access-green);
+
+    color:
+        #ffffff;
+
+    font-size:
+        var(--v-access-md);
+
+    font-weight:
+        var(--v-access-weight-semibold);
+
+    line-height:
+        1;
+
+    transition:
+        background var(--v-access-motion-fast) ease,
+        border-color var(--v-access-motion-fast) ease,
+        transform var(--v-access-motion-fast) ease,
+        box-shadow var(--v-access-motion-fast) ease;
+
+}
+
+
+.velora-access-submit:hover {
+
+    border-color:
+        var(--velora-access-green-dark);
+
+    background:
+        var(--velora-access-green-dark);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(18,51,37,.14);
+
+}
+
+
+.velora-access-submit:active {
+
+    transform:
+        translateY(0);
+
+}
+
+
+.velora-access-submit i {
+
+    font-size:
+        17px;
+
+    transition:
+        transform var(--v-access-motion-fast) ease;
+
+}
+
+
+.velora-access-submit:hover i {
+
+    transform:
+        translateX(3px);
+
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.velora-access-submit.is-loading {
+
+    cursor:
+        wait;
+
+    opacity:
+        .82;
+
+}
+
+
+.velora-access-submit.is-loading i {
+
+    animation:
+        velora-access-spin .7s linear infinite;
+
+}
+
+
+.velora-access-submit.is-loading i::before {
+
+    content:
+        "\f116";
+
+}
+
+
+@keyframes velora-access-spin {
+
+    from {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   12. ACCESS HELP
+========================================================= */
+
+.velora-access-help {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap:
+        var(--v-access-space-1)
+        var(--v-access-space-2);
+
+    margin-top:
+        var(--v-access-space-6);
+
+    color:
+        var(--velora-access-muted);
+
+    font-size:
+        var(--v-access-sm);
+
+    line-height:
+        var(--v-access-lh-body);
+
+}
+
+
+.velora-access-help button {
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color:
+        var(--velora-access-green);
+
+    font-size:
+        inherit;
+
+    font-weight:
+        var(--v-access-weight-semibold);
+
+    text-decoration:
+        underline;
+
+    text-decoration-thickness:
+        1px;
+
+    text-underline-offset:
+        3px;
+
+}
+
+
+.velora-access-help button:hover {
+
+    color:
+        var(--velora-access-green-dark);
+
+}
+
+
+/* =========================================================
+   13. SECURITY NOTE
+========================================================= */
+
+.velora-access-security {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap:
+        var(--v-access-space-3);
+
+    margin-top:
+        var(--v-access-space-9);
+
+    padding:
+        var(--v-access-space-4);
+
+    border:
+        1px solid var(--velora-access-line);
+
+    border-radius:
+        var(--v-access-radius-md);
+
+    background:
+        var(--velora-access-surface);
+
+}
+
+
+.velora-access-security > i {
+
+    flex: 0 0 auto;
+
+    color:
+        var(--velora-access-green);
+
+    font-size:
+        20px;
+
+}
+
+
+.velora-access-security > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap:
+        var(--v-access-space-1);
+
+}
+
+
+.velora-access-security strong {
+
+    color:
+        var(--velora-access-ink);
+
+    font-size:
+        var(--v-access-sm);
+
+    font-weight:
+        var(--v-access-weight-semibold);
+
+}
+
+
+.velora-access-security span {
+
+    color:
+        var(--velora-access-muted);
+
+    font-size:
+        var(--v-access-xs);
+
+    line-height:
+        var(--v-access-lh-body);
+
+}
+
+
+/* =========================================================
+   14. FOOTER
+========================================================= */
+
+.velora-access-footer {
+
+    min-height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap:
+        var(--v-access-space-5);
+
+    padding:
+        0 clamp(20px, 4vw, 64px);
+
+    border-top:
+        1px solid var(--velora-access-line);
+
+    background:
+        var(--velora-access-paper);
+
+    color:
+        var(--velora-access-muted);
+
+    font-size:
+        var(--v-access-xs);
+
+}
+
+
+.velora-access-footer > div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        var(--v-access-space-5);
+
+}
+
+
+.velora-access-footer a {
+
+    color:
+        var(--velora-access-muted);
+
+    text-decoration: none;
+
+}
+
+
+.velora-access-footer a:hover {
+
+    color:
+        var(--velora-access-ink);
+
+}
+
+
+/* =========================================================
+   15. REQUEST ACCESS MODAL
+========================================================= */
+
+.velora-access-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        var(--v-access-space-5);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity var(--v-access-motion-normal) ease,
+        visibility var(--v-access-motion-normal) ease;
+
+}
+
+
+.velora-access-modal.is-visible {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+.velora-access-modal-backdrop {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(17,24,20,.52);
+
+    backdrop-filter:
+        blur(7px);
+
+}
+
+
+.velora-access-modal-dialog {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(470px, 100%);
+
+    padding:
+        var(--v-access-space-8);
+
+    border:
+        1px solid var(--velora-access-line);
+
+    border-radius:
+        var(--v-access-radius-lg);
+
+    background:
+        var(--velora-access-paper);
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.18);
+
+    transform:
+        translateY(8px);
+
+    transition:
+        transform var(--v-access-motion-normal) ease;
+
+}
+
+
+.velora-access-modal.is-visible
+.velora-access-modal-dialog {
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   MODAL CLOSE
+========================================================= */
+
+.velora-access-modal-close {
+
+    position: absolute;
+
+    top: 16px;
+
+    right: 16px;
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color:
+        var(--velora-access-muted);
+
+    font-size:
+        15px;
+
+}
+
+
+.velora-access-modal-close:hover {
+
+    background:
+        var(--velora-access-surface);
+
+    color:
+        var(--velora-access-ink);
+
+}
+
+
+/* =========================================================
+   MODAL ICON
+========================================================= */
+
+.velora-access-modal-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom:
+        var(--v-access-space-5);
+
+    border-radius:
+        var(--v-access-radius-sm);
+
+    background:
+        var(--velora-access-green-tint);
+
+    color:
+        var(--velora-access-green);
+
+    font-size:
+        19px;
+
+}
+
+
+/* =========================================================
+   MODAL HEADING
+========================================================= */
+
+.velora-access-modal-dialog h2 {
+
+    margin:
+        var(--v-access-space-3)
+        0
+        var(--v-access-space-3);
+
+    color:
+        var(--velora-access-ink);
+
+    font-size:
+        var(--v-access-heading-sm);
+
+    font-weight:
+        var(--v-access-weight-medium);
+
+    line-height:
+        var(--v-access-lh-heading);
+
+    letter-spacing:
+        -.035em;
+
+}
+
+
+.velora-access-modal-dialog > p {
+
+    margin:
+        0 0 var(--v-access-space-7);
+
+    color:
+        var(--velora-access-muted);
+
+    font-size:
+        var(--v-access-sm);
+
+    line-height:
+        var(--v-access-lh-body);
+
+}
+
+
+/* =========================================================
+   REQUEST FORM
+========================================================= */
+
+.velora-request-form .velora-access-field {
+
+    margin-bottom:
+        var(--v-access-space-5);
+
+}
+
+
+.velora-request-form
+.velora-access-field > input {
+
+    width: 100%;
+
+    height: 52px;
+
+    padding:
+        0 var(--v-access-space-4);
+
+    border:
+        1px solid #d9dfdb;
+
+    border-radius:
+        var(--v-access-radius-sm);
+
+    outline: none;
+
+    background:
+        #ffffff;
+
+    color:
+        var(--velora-access-ink);
+
+    font-size:
+        var(--v-access-md);
+
+    transition:
+        border-color var(--v-access-motion-fast) ease,
+        box-shadow var(--v-access-motion-fast) ease;
+
+}
+
+
+.velora-request-form
+.velora-access-field > input::placeholder {
+
+    color:
+        #92979b;
+
+}
+
+
+.velora-request-form
+.velora-access-field > input:hover {
+
+    border-color:
+        #c7cfca;
+
+}
+
+
+.velora-request-form
+.velora-access-field > input:focus {
+
+    border-color:
+        var(--velora-access-green);
+
+    box-shadow:
+        0 0 0 3px rgba(27,67,50,.09);
+
+}
+
+
+.velora-request-form
+.velora-access-submit {
+
+    margin-top:
+        var(--v-access-space-2);
+
+}
+
+
+/* =========================================================
+   16. TOAST
+========================================================= */
+
+.velora-access-toast {
+
+    position: fixed;
+
+    right:
+        var(--v-access-space-6);
+
+    bottom:
+        var(--v-access-space-6);
+
+    z-index: 8000;
+
+    min-height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        var(--v-access-space-3);
+
+    padding:
+        var(--v-access-space-2)
+        var(--v-access-space-4)
+        var(--v-access-space-2)
+        var(--v-access-space-2);
+
+    border:
+        1px solid #d8e4dc;
+
+    border-radius:
+        var(--v-access-radius-md);
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 16px 45px rgba(0,0,0,.13);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        opacity var(--v-access-motion-normal) ease,
+        visibility var(--v-access-motion-normal) ease,
+        transform var(--v-access-motion-normal) ease;
+
+}
+
+
+.velora-access-toast.is-visible {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.velora-access-toast > span {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius:
+        var(--v-access-radius-sm);
+
+    background:
+        var(--velora-access-green-tint);
+
+    color:
+        var(--velora-access-green);
+
+    font-size:
+        16px;
+
+}
+
+
+.velora-access-toast strong {
+
+    color:
+        var(--velora-access-ink);
+
+    font-size:
+        var(--v-access-sm);
+
+    font-weight:
+        var(--v-access-weight-semibold);
+
+}
+
+
+/* =========================================================
+   17. ACCESSIBILITY
+========================================================= */
+
+.velora-access-brand:focus-visible,
+.velora-access-password-toggle:focus-visible,
+.velora-access-submit:focus-visible,
+.velora-access-help button:focus-visible,
+.velora-access-modal-close:focus-visible,
+.velora-access-footer a:focus-visible {
+
+    outline:
+        2px solid var(--velora-access-green);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/* =========================================================
+   18. RESPONSIVE — 1100PX
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .velora-access-content {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(400px, .9fr);
+
+    }
+
+
+    .velora-access-panel {
+
+        padding:
+            48px;
+
+    }
+
+
+    .velora-access-preview-info strong {
+
+        font-size:
+            clamp(32px, 4vw, 48px);
+
+    }
+
+}
+
+
+/* =========================================================
+   19. RESPONSIVE — 850PX
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .velora-access-content {
+
+        grid-template-columns:
+            1fr;
+
+        min-height:
+            auto;
+
+    }
+
+
+    .velora-access-preview {
+
+        min-height:
+            480px;
+
+    }
+
+
+    .velora-access-panel {
+
+        min-height:
+            620px;
+
+        padding:
+            64px 32px;
+
+    }
+
+
+    .velora-access-panel-inner {
+
+        max-width:
+            560px;
+
+    }
+
+
+    .velora-access-photographer {
+
+        margin-bottom:
+            48px;
+
+    }
+
+}
+
+
+/* =========================================================
+   20. RESPONSIVE — 600PX
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .velora-access-header {
+
+        min-height:
+            66px;
+
+        padding:
+            0 20px;
+
+    }
+
+
+    .velora-access-brand img {
+
+        height:
+            22px;
+
+    }
+
+
+    .velora-access-secure {
+
+        font-size:
+            var(--v-access-xs);
+
+    }
+
+
+    .velora-access-preview {
+
+        min-height:
+            390px;
+
+    }
+
+
+    .velora-access-preview-info {
+
+        left:
+            20px;
+
+        right:
+            20px;
+
+        bottom:
+            28px;
+
+    }
+
+
+    .velora-access-preview-info strong {
+
+        font-size:
+            clamp(32px, 9vw, 48px);
+
+    }
+
+
+    .velora-access-panel {
+
+        min-height:
+            auto;
+
+        padding:
+            48px 20px 60px;
+
+    }
+
+
+    .velora-access-photographer {
+
+        margin-bottom:
+            40px;
+
+    }
+
+
+    .velora-access-heading h1 {
+
+        font-size:
+            clamp(40px, 11vw, 54px);
+
+    }
+
+
+    .velora-access-heading p {
+
+        font-size:
+            var(--v-access-md);
+
+    }
+
+
+    .velora-access-security {
+
+        margin-top:
+            40px;
+
+    }
+
+
+    .velora-access-footer {
+
+        min-height:
+            auto;
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        padding:
+            20px;
+
+    }
+
+
+    .velora-access-footer > div {
+
+        gap:
+            20px;
+
+    }
+
+
+    .velora-access-modal-dialog {
+
+        padding:
+            32px 22px;
+
+    }
+
+}
+
+
+/* =========================================================
+   21. RESPONSIVE — 420PX
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .velora-access-secure {
+
+        font-size:
+            0;
+
+    }
+
+
+    .velora-access-secure i {
+
+        font-size:
+            17px;
+
+    }
+
+
+    .velora-access-preview {
+
+        min-height:
+            330px;
+
+    }
+
+
+    .velora-access-preview-info span {
+
+        font-size:
+            var(--v-access-xs);
+
+    }
+
+
+    .velora-access-preview-info strong {
+
+        font-size:
+            38px;
+
+    }
+
+
+    .velora-access-preview-info small {
+
+        font-size:
+            var(--v-access-xs);
+
+    }
+
+
+    .velora-access-panel {
+
+        padding:
+            40px 16px 52px;
+
+    }
+
+
+    .velora-access-heading h1 {
+
+        font-size:
+            40px;
+
+    }
+
+
+    .velora-access-input-wrapper input {
+
+        height:
+            50px;
+
+    }
+
+
+    .velora-access-submit {
+
+        min-height:
+            52px;
+
+        font-size:
+            var(--v-access-sm);
+
+    }
+
+
+    .velora-access-help {
+
+        text-align:
+            center;
+
+    }
+
+
+    .velora-access-security {
+
+        padding:
+            14px;
+
+    }
+
+
+    .velora-access-toast {
+
+        right:
+            15px;
+
+        bottom:
+            15px;
+
+        left:
+            15px;
+
+        max-width:
+            calc(100% - 30px);
+
+    }
+
+}
+
+
+/* =========================================================
+   22. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior:
+            auto;
+
+    }
+
+
+    .velora-access-preview-image img,
+    .velora-access-input-wrapper input,
+    .velora-access-password-toggle,
+    .velora-access-submit,
+    .velora-access-submit i,
+    .velora-access-checkbox,
+    .velora-access-modal,
+    .velora-access-modal-dialog,
+    .velora-access-toast {
+
+        transition:
+            none;
+
+    }
+
+
+    .velora-access-submit.is-loading i {
+
+        animation:
+            none;
+
+    }
+
+}

@@ -1,0 +1,3048 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Velora | Bookings</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Lato -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Shared dashboard -->
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+    <!-- Bookings -->
+    <link
+        rel="stylesheet"
+        href="css/bookings.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="velora-dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY
+    ====================================================== -->
+
+    <div
+        class="velora-sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="velora-sidebar"
+        id="veloraSidebar"
+    >
+
+        <div class="velora-sidebar-header">
+
+            <a
+                href="dashboard.html"
+                class="velora-dashboard-brand"
+            >
+
+                <img
+                    src="media/logo/logo-1-main.png"
+                    alt="Velora"
+                >
+
+            </a>
+
+
+            <button
+                type="button"
+                class="velora-sidebar-close"
+                id="sidebarClose"
+                aria-label="Close navigation"
+            >
+
+                <i class="bi bi-x-lg"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================== -->
+
+        <nav
+            class="velora-sidebar-nav"
+            aria-label="Dashboard navigation"
+        >
+
+            <div class="velora-nav-section">
+
+                <span class="velora-nav-label">
+                    WORKSPACE
+                </span>
+
+
+                <a
+                    href="dashboard.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-grid-1x2"></i>
+
+                    <span>
+                        Overview
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="galleries.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-images"></i>
+
+                    <span>
+                        Galleries
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="bookings.html"
+                    class="velora-dashboard-nav-link is-active"
+                    aria-current="page"
+                >
+
+                    <i class="bi bi-calendar2-week"></i>
+
+                    <span>
+                        Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="clients.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-people"></i>
+
+                    <span>
+                        Clients
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="analytics.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-bar-chart"></i>
+
+                    <span>
+                        Analytics
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="velora-nav-section">
+
+                <span class="velora-nav-label">
+                    MANAGE
+                </span>
+
+
+                <a
+                    href="settings.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-sliders2"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="velora-sidebar-bottom">
+
+            <a
+                href="pricing.html"
+                class="velora-upgrade-card"
+            >
+
+                <div class="velora-upgrade-icon">
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </div>
+
+
+                <div class="velora-upgrade-content">
+
+                    <strong>
+                        Upgrade your plan
+                    </strong>
+
+                    <span>
+                        Get more space for your work.
+                    </span>
+
+                </div>
+
+
+                <i class="bi bi-chevron-right"></i>
+
+            </a>
+
+
+            <button
+                type="button"
+                class="velora-sidebar-user"
+            >
+
+                <span class="velora-user-avatar">
+                    P
+                </span>
+
+
+                <span class="velora-user-details">
+
+                    <strong>
+                        Patrick
+                    </strong>
+
+                    <small>
+                        Photographer
+                    </small>
+
+                </span>
+
+
+                <i class="bi bi-three-dots"></i>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <div class="velora-dashboard-main">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="velora-dashboard-topbar">
+
+            <button
+                type="button"
+                class="velora-mobile-menu"
+                id="sidebarOpen"
+                aria-label="Open navigation"
+                aria-expanded="false"
+            >
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+
+            <div class="velora-dashboard-search">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="search"
+                    id="bookingSearch"
+                    placeholder="Search bookings..."
+                    aria-label="Search bookings"
+                >
+
+                <span class="velora-search-shortcut">
+                    /
+                </span>
+
+            </div>
+
+
+            <div class="velora-topbar-actions">
+
+                <a
+                    href="#"
+                    class="velora-view-site"
+                >
+
+                    <i class="bi bi-box-arrow-up-right"></i>
+
+                    <span>
+                        View site
+                    </span>
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="velora-topbar-icon"
+                    aria-label="Notifications"
+                >
+
+                    <i class="bi bi-bell"></i>
+
+                    <span class="velora-notification-dot"></span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-topbar-profile"
+                    aria-label="Open profile"
+                >
+
+                    <span class="velora-topbar-avatar">
+                        P
+                    </span>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <main class="velora-dashboard-content velora-bookings-page">
+
+
+            <!-- Breadcrumb -->
+
+            <div class="velora-dashboard-breadcrumb">
+
+                <span>
+                    Workspace
+                </span>
+
+                <i class="bi bi-chevron-right"></i>
+
+                <strong>
+                    Bookings
+                </strong>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PAGE HEADER
+            ================================================== -->
+
+            <section class="velora-bookings-header">
+
+                <div>
+
+                    <span class="velora-page-eyebrow">
+                        CLIENT SESSIONS
+                    </span>
+
+
+                    <h1>
+                        Bookings
+                    </h1>
+
+
+                    <p>
+                        Manage your photography sessions and client requests.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="velora-new-booking-button"
+                    id="openBookingModal"
+                >
+
+                    <i class="bi bi-plus-lg"></i>
+
+                    New booking
+
+                </button>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SUMMARY
+            ================================================== -->
+
+            <section class="velora-booking-summary">
+
+
+                <article class="velora-booking-stat">
+
+                    <span>
+                        Upcoming
+                    </span>
+
+                    <strong>
+                        8
+                    </strong>
+
+                    <small>
+                        Next 30 days
+                    </small>
+
+                </article>
+
+
+                <article class="velora-booking-stat">
+
+                    <span>
+                        Pending
+                    </span>
+
+                    <strong>
+                        3
+                    </strong>
+
+                    <small>
+                        Awaiting response
+                    </small>
+
+                </article>
+
+
+                <article class="velora-booking-stat">
+
+                    <span>
+                        Completed
+                    </span>
+
+                    <strong>
+                        27
+                    </strong>
+
+                    <small>
+                        This year
+                    </small>
+
+                </article>
+
+
+                <article class="velora-booking-stat">
+
+                    <span>
+                        Revenue
+                    </span>
+
+                    <strong>
+                        $4.8k
+                    </strong>
+
+                    <small>
+                        This year
+                    </small>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 TOOLBAR
+            ================================================== -->
+
+            <section class="velora-booking-toolbar">
+
+
+                <div class="velora-booking-tabs">
+
+                    <button
+                        type="button"
+                        class="velora-booking-tab is-active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="velora-booking-tab"
+                        data-filter="upcoming"
+                    >
+                        Upcoming
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="velora-booking-tab"
+                        data-filter="pending"
+                    >
+                        Pending
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="velora-booking-tab"
+                        data-filter="completed"
+                    >
+                        Completed
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="velora-booking-tab"
+                        data-filter="cancelled"
+                    >
+                        Cancelled
+                    </button>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="velora-filter-button"
+                >
+
+                    <i class="bi bi-sliders"></i>
+
+                    Filter
+
+                </button>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 BOOKINGS CARD
+            ================================================== -->
+
+            <section class="velora-bookings-card">
+
+
+                <div class="velora-bookings-card-header">
+
+                    <div>
+
+                        <h2>
+                            Recent bookings
+                        </h2>
+
+                        <span>
+                            Your latest client sessions
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="velora-booking-sort"
+                    >
+
+                        Newest first
+
+                        <i class="bi bi-chevron-down"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     TABLE
+                ================================================== -->
+
+                <div class="velora-booking-table-wrapper">
+
+                    <table class="velora-booking-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    CLIENT
+                                </th>
+
+                                <th>
+                                    SESSION
+                                </th>
+
+                                <th>
+                                    DATE
+                                </th>
+
+                                <th>
+                                    STATUS
+                                </th>
+
+                                <th>
+                                    AMOUNT
+                                </th>
+
+                                <th>
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="bookingList">
+
+
+                            <!-- =================================================
+                                 BOOKING 1
+                            ================================================== -->
+
+                            <tr
+                                data-status="upcoming"
+                                data-booking="Amara Johnson"
+                            >
+
+                                <td>
+
+                                    <div class="velora-booking-client">
+
+                                        <span class="velora-client-avatar">
+                                            AJ
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Amara Johnson
+                                            </strong>
+
+                                            <span>
+                                                amara@example.com
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="velora-booking-session">
+
+                                        <strong>
+                                            Wedding
+                                        </strong>
+
+                                        <span>
+                                            Full Day
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="velora-booking-date">
+
+                                        <strong>
+                                            Sep 18, 2026
+                                        </strong>
+
+                                        <span>
+                                            10:00 AM
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-booking-status upcoming">
+                                        Upcoming
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <strong class="velora-booking-amount">
+                                        $1,200
+                                    </strong>
+
+                                </td>
+
+
+                                <td>
+
+                                    <a
+                                        href="booking-details.html"
+                                        class="velora-booking-more"
+                                        aria-label="View Amara Johnson booking"
+                                    >
+
+                                        <i class="bi bi-chevron-right"></i>
+
+                                    </a>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- =================================================
+                                 BOOKING 2
+                            ================================================== -->
+
+                            <tr
+                                data-status="pending"
+                                data-booking="Daniel Williams"
+                            >
+
+                                <td>
+
+                                    <div class="velora-booking-client">
+
+                                        <span class="velora-client-avatar">
+                                            DW
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Daniel Williams
+                                            </strong>
+
+                                            <span>
+                                                daniel@example.com
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="velora-booking-session">
+
+                                        <strong>
+                                            Portrait
+                                        </strong>
+
+                                        <span>
+                                            2 Hours
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="velora-booking-date">
+
+                                        <strong>
+                                            Sep 22, 2026
+                                        </strong>
+
+                                        <span>
+                                            2:00 PM
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-booking-status pending">
+                                        Pending
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <strong class="velora-booking-amount">
+                                        $250
+                                    </strong>
+
+                                </td>
+
+
+                                <td>
+
+                                    <a
+                                        href="booking-details.html"
+                                        class="velora-booking-more"
+                                        aria-label="View Daniel Williams booking"
+                                    >
+
+                                        <i class="bi bi-chevron-right"></i>
+
+                                    </a>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- =================================================
+                                 BOOKING 3
+                            ================================================== -->
+
+                            <tr
+                                data-status="upcoming"
+                                data-booking="Sophie Martins"
+                            >
+
+                                <td>
+
+                                    <div class="velora-booking-client">
+
+                                        <span class="velora-client-avatar">
+                                            SM
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Sophie Martins
+                                            </strong>
+
+                                            <span>
+                                                sophie@example.com
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="velora-booking-session">
+
+                                        <strong>
+                                            Couple
+                                        </strong>
+
+                                        <span>
+                                            90 Minutes
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="velora-booking-date">
+
+                                        <strong>
+                                            Sep 25, 2026
+                                        </strong>
+
+                                        <span>
+                                            4:30 PM
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-booking-status upcoming">
+                                        Upcoming
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <strong class="velora-booking-amount">
+                                        $350
+                                    </strong>
+
+                                </td>
+
+
+                                <td>
+
+                                    <a
+                                        href="booking-details.html"
+                                        class="velora-booking-more"
+                                        aria-label="View Sophie Martins booking"
+                                    >
+
+                                        <i class="bi bi-chevron-right"></i>
+
+                                    </a>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- =================================================
+                                 BOOKING 4
+                            ================================================== -->
+
+                            <tr
+                                data-status="completed"
+                                data-booking="Michael Adams"
+                            >
+
+                                <td>
+
+                                    <div class="velora-booking-client">
+
+                                        <span class="velora-client-avatar">
+                                            MA
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Michael Adams
+                                            </strong>
+
+                                            <span>
+                                                michael@example.com
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="velora-booking-session">
+
+                                        <strong>
+                                            Portrait
+                                        </strong>
+
+                                        <span>
+                                            2 Hours
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="velora-booking-date">
+
+                                        <strong>
+                                            Aug 28, 2026
+                                        </strong>
+
+                                        <span>
+                                            11:00 AM
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-booking-status completed">
+                                        Completed
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <strong class="velora-booking-amount">
+                                        $280
+                                    </strong>
+
+                                </td>
+
+
+                                <td>
+
+                                    <a
+                                        href="booking-details.html"
+                                        class="velora-booking-more"
+                                        aria-label="View Michael Adams booking"
+                                    >
+
+                                        <i class="bi bi-chevron-right"></i>
+
+                                    </a>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- =================================================
+                                 BOOKING 5
+                            ================================================== -->
+
+                            <tr
+                                data-status="cancelled"
+                                data-booking="Grace Thompson"
+                            >
+
+                                <td>
+
+                                    <div class="velora-booking-client">
+
+                                        <span class="velora-client-avatar">
+                                            GT
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Grace Thompson
+                                            </strong>
+
+                                            <span>
+                                                grace@example.com
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="velora-booking-session">
+
+                                        <strong>
+                                            Family
+                                        </strong>
+
+                                        <span>
+                                            2 Hours
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="velora-booking-date">
+
+                                        <strong>
+                                            Aug 20, 2026
+                                        </strong>
+
+                                        <span>
+                                            3:00 PM
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="velora-booking-status cancelled">
+                                        Cancelled
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <strong class="velora-booking-amount">
+                                        $300
+                                    </strong>
+
+                                </td>
+
+
+                                <td>
+
+                                    <a
+                                        href="booking-details.html"
+                                        class="velora-booking-more"
+                                        aria-label="View Grace Thompson booking"
+                                    >
+
+                                        <i class="bi bi-chevron-right"></i>
+
+                                    </a>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- Empty -->
+
+                <div
+                    class="velora-booking-empty"
+                    id="bookingEmpty"
+                >
+
+                    <div class="velora-booking-empty-icon">
+
+                        <i class="bi bi-calendar2-x"></i>
+
+                    </div>
+
+
+                    <strong>
+                        No bookings found
+                    </strong>
+
+
+                    <span>
+                        Try another filter or create a new booking.
+                    </span>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     NEW BOOKING MODAL
+====================================================== -->
+
+<div
+    class="velora-booking-modal"
+    id="bookingModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="velora-booking-modal-backdrop"
+        id="bookingModalBackdrop"
+    ></div>
+
+
+    <section
+        class="velora-booking-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="bookingModalTitle"
+    >
+
+
+        <!-- Header -->
+
+        <header class="velora-booking-dialog-header">
+
+            <div>
+
+                <span class="velora-page-eyebrow">
+                    NEW SESSION
+                </span>
+
+
+                <h2 id="bookingModalTitle">
+                    Create booking
+                </h2>
+
+
+                <p>
+                    Add a new photography session to your schedule.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="velora-booking-dialog-close"
+                id="closeBookingModal"
+                aria-label="Close booking"
+            >
+
+                <i class="bi bi-x-lg"></i>
+
+            </button>
+
+        </header>
+
+
+
+        <!-- Progress -->
+
+        <div class="velora-booking-progress">
+
+
+            <div
+                class="velora-booking-progress-step is-active"
+                data-step-indicator="1"
+            >
+
+                <span>
+                    1
+                </span>
+
+                <strong>
+                    Details
+                </strong>
+
+            </div>
+
+
+            <div class="velora-booking-progress-line"></div>
+
+
+            <div
+                class="velora-booking-progress-step"
+                data-step-indicator="2"
+            >
+
+                <span>
+                    2
+                </span>
+
+                <strong>
+                    Session
+                </strong>
+
+            </div>
+
+
+            <div class="velora-booking-progress-line"></div>
+
+
+            <div
+                class="velora-booking-progress-step"
+                data-step-indicator="3"
+            >
+
+                <span>
+                    3
+                </span>
+
+                <strong>
+                    Review
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FORM
+        ================================================== -->
+
+        <form
+            id="newBookingForm"
+            class="velora-new-booking-form"
+        >
+
+
+            <!-- STEP 1 -->
+
+            <div
+                class="velora-booking-step is-active"
+                data-step="1"
+            >
+
+                <div class="velora-booking-step-heading">
+
+                    <h3>
+                        Who is this booking for?
+                    </h3>
+
+                    <p>
+                        Select an existing client or add someone new.
+                    </p>
+
+                </div>
+
+
+                <div class="velora-form-field">
+
+                    <label for="bookingClient">
+                        Client
+                    </label>
+
+
+                    <div class="velora-select-wrapper">
+
+                        <select
+                            id="bookingClient"
+                            name="client"
+                            required
+                        >
+
+                            <option value="">
+                                Select a client
+                            </option>
+
+                            <option value="amara">
+                                Amara Johnson
+                            </option>
+
+                            <option value="daniel">
+                                Daniel Williams
+                            </option>
+
+                            <option value="sophie">
+                                Sophie Martins
+                            </option>
+
+                            <option value="michael">
+                                Michael Adams
+                            </option>
+
+                            <option value="grace">
+                                Grace Thompson
+                            </option>
+
+                        </select>
+
+
+                        <i class="bi bi-chevron-down"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="velora-booking-or">
+                    <span>OR</span>
+                </div>
+
+
+                <button
+                    type="button"
+                    class="velora-add-client-button"
+                    id="toggleNewClient"
+                >
+
+                    <i class="bi bi-person-plus"></i>
+
+                    Add a new client
+
+                </button>
+
+
+                <div
+                    class="velora-new-client-fields"
+                    id="newClientFields"
+                >
+
+                    <div class="velora-form-grid">
+
+                        <div class="velora-form-field">
+
+                            <label for="newClientName">
+                                Client name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="newClientName"
+                                placeholder="e.g. Sarah Williams"
+                            >
+
+                        </div>
+
+
+                        <div class="velora-form-field">
+
+                            <label for="newClientEmail">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="newClientEmail"
+                                placeholder="sarah@example.com"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="velora-form-field">
+
+                        <label for="newClientPhone">
+                            Phone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="newClientPhone"
+                            placeholder="+234..."
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 2 -->
+
+            <div
+                class="velora-booking-step"
+                data-step="2"
+            >
+
+                <div class="velora-booking-step-heading">
+
+                    <h3>
+                        Session details
+                    </h3>
+
+                    <p>
+                        Set the date, time and details for the shoot.
+                    </p>
+
+                </div>
+
+
+                <div class="velora-form-field">
+
+                    <label>
+                        Session type
+                    </label>
+
+
+                    <div class="velora-session-options">
+
+
+                        <label class="velora-session-option">
+
+                            <input
+                                type="radio"
+                                name="session"
+                                value="wedding"
+                                checked
+                            >
+
+                            <span>
+
+                                <i class="bi bi-heart"></i>
+
+                                <strong>
+                                    Wedding
+                                </strong>
+
+                                <small>
+                                    Full day
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="velora-session-option">
+
+                            <input
+                                type="radio"
+                                name="session"
+                                value="portrait"
+                            >
+
+                            <span>
+
+                                <i class="bi bi-person"></i>
+
+                                <strong>
+                                    Portrait
+                                </strong>
+
+                                <small>
+                                    1–2 hours
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="velora-session-option">
+
+                            <input
+                                type="radio"
+                                name="session"
+                                value="family"
+                            >
+
+                            <span>
+
+                                <i class="bi bi-people"></i>
+
+                                <strong>
+                                    Family
+                                </strong>
+
+                                <small>
+                                    2 hours
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="velora-session-option">
+
+                            <input
+                                type="radio"
+                                name="session"
+                                value="other"
+                            >
+
+                            <span>
+
+                                <i class="bi bi-camera"></i>
+
+                                <strong>
+                                    Other
+                                </strong>
+
+                                <small>
+                                    Custom
+                                </small>
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="velora-form-grid">
+
+                    <div class="velora-form-field">
+
+                        <label for="bookingDate">
+                            Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="bookingDate"
+                            name="date"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="velora-form-field">
+
+                        <label for="bookingTime">
+                            Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="bookingTime"
+                            name="time"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="velora-form-field">
+
+                    <label for="bookingLocation">
+                        Location
+                    </label>
+
+                    <div class="velora-input-icon">
+
+                        <i class="bi bi-geo-alt"></i>
+
+                        <input
+                            type="text"
+                            id="bookingLocation"
+                            name="location"
+                            placeholder="e.g. Lekki Conservation Centre"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="velora-form-grid">
+
+                    <div class="velora-form-field">
+
+                        <label for="bookingPrice">
+                            Price
+                        </label>
+
+                        <div class="velora-price-input">
+
+                            <span>
+                                $
+                            </span>
+
+                            <input
+                                type="number"
+                                id="bookingPrice"
+                                name="price"
+                                placeholder="0"
+                                min="0"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="velora-form-field">
+
+                        <label for="bookingDuration">
+                            Duration
+                        </label>
+
+
+                        <div class="velora-select-wrapper">
+
+                            <select
+                                id="bookingDuration"
+                                name="duration"
+                            >
+
+                                <option value="1">
+                                    1 hour
+                                </option>
+
+                                <option value="2">
+                                    2 hours
+                                </option>
+
+                                <option value="4">
+                                    4 hours
+                                </option>
+
+                                <option value="8">
+                                    Full day
+                                </option>
+
+                            </select>
+
+
+                            <i class="bi bi-chevron-down"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="velora-form-field">
+
+                    <label for="bookingNotes">
+                        Notes
+                    </label>
+
+                    <textarea
+                        id="bookingNotes"
+                        name="notes"
+                        rows="4"
+                        placeholder="Anything you need to remember about this session..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 3 -->
+
+            <div
+                class="velora-booking-step"
+                data-step="3"
+            >
+
+                <div class="velora-booking-step-heading">
+
+                    <h3>
+                        Review booking
+                    </h3>
+
+                    <p>
+                        Make sure everything looks correct before creating the booking.
+                    </p>
+
+                </div>
+
+
+                <div class="velora-booking-review">
+
+                    <div class="velora-review-client">
+
+                        <span
+                            class="velora-client-avatar large"
+                            id="reviewAvatar"
+                        >
+                            AJ
+                        </span>
+
+
+                        <div>
+
+                            <span>
+                                CLIENT
+                            </span>
+
+                            <strong id="reviewClient">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="velora-review-divider"></div>
+
+
+                    <div class="velora-review-grid">
+
+                        <div>
+
+                            <span>
+                                SESSION
+                            </span>
+
+                            <strong id="reviewSession">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                DATE
+                            </span>
+
+                            <strong id="reviewDate">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                TIME
+                            </span>
+
+                            <strong id="reviewTime">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                LOCATION
+                            </span>
+
+                            <strong id="reviewLocation">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                DURATION
+                            </span>
+
+                            <strong id="reviewDuration">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                PRICE
+                            </span>
+
+                            <strong id="reviewPrice">
+                                $0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="velora-review-notes">
+
+                        <span>
+                            NOTES
+                        </span>
+
+                        <p id="reviewNotes">
+                            No additional notes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label class="velora-confirm-checkbox">
+
+                    <input
+                        type="checkbox"
+                        id="confirmBooking"
+                        required
+                    >
+
+                    <span></span>
+
+                    <p>
+                        I confirm that these booking details are correct.
+                    </p>
+
+                </label>
+
+            </div>
+
+
+
+            <!-- FOOTER -->
+
+            <footer class="velora-booking-dialog-footer">
+
+                <button
+                    type="button"
+                    class="velora-booking-cancel"
+                    id="bookingCancel"
+                >
+                    Cancel
+                </button>
+
+
+                <div class="velora-booking-footer-actions">
+
+                    <button
+                        type="button"
+                        class="velora-booking-back"
+                        id="bookingBack"
+                    >
+
+                        <i class="bi bi-arrow-left"></i>
+
+                        Back
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="velora-booking-next"
+                        id="bookingNext"
+                    >
+
+                        Continue
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="velora-booking-create"
+                        id="bookingCreate"
+                    >
+
+                        Create booking
+
+                        <i class="bi bi-check2"></i>
+
+                    </button>
+
+                </div>
+
+            </footer>
+
+        </form>
+
+
+
+        <!-- SUCCESS -->
+
+        <div
+            class="velora-booking-success"
+            id="bookingSuccess"
+        >
+
+            <div class="velora-success-icon">
+
+                <i class="bi bi-check2"></i>
+
+            </div>
+
+
+            <span>
+                BOOKING CREATED
+            </span>
+
+
+            <h3>
+                Your booking is ready.
+            </h3>
+
+
+            <p>
+                The new session has been added to your bookings.
+            </p>
+
+
+            <div class="velora-success-summary">
+
+                <strong id="successClient">
+                    Amara Johnson
+                </strong>
+
+                <span id="successSession">
+                    Wedding · Sep 18, 2026
+                </span>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="velora-primary-button"
+                id="successDone"
+            >
+                Done
+            </button>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+
+<script>
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+const sidebar =
+    document.getElementById("veloraSidebar");
+
+const sidebarOpen =
+    document.getElementById("sidebarOpen");
+
+const sidebarClose =
+    document.getElementById("sidebarClose");
+
+const sidebarOverlay =
+    document.getElementById("sidebarOverlay");
+
+
+function openSidebar() {
+
+    sidebar.classList.add("is-open");
+
+    sidebarOverlay.classList.add("is-visible");
+
+    sidebarOpen.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+}
+
+
+function closeSidebar() {
+
+    sidebar.classList.remove("is-open");
+
+    sidebarOverlay.classList.remove("is-visible");
+
+    sidebarOpen.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+}
+
+
+sidebarOpen.addEventListener(
+    "click",
+    openSidebar
+);
+
+
+sidebarClose.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+sidebarOverlay.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+
+/* =====================================================
+   BOOKING MODAL
+===================================================== */
+
+const bookingModal =
+    document.getElementById("bookingModal");
+
+const openBookingModal =
+    document.getElementById("openBookingModal");
+
+const closeBookingModal =
+    document.getElementById("closeBookingModal");
+
+const bookingModalBackdrop =
+    document.getElementById("bookingModalBackdrop");
+
+const bookingCancel =
+    document.getElementById("bookingCancel");
+
+
+function openBooking() {
+
+    bookingModal.classList.add("is-open");
+
+    bookingModal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    document.body.classList.add(
+        "velora-modal-open"
+    );
+
+}
+
+
+function closeBooking() {
+
+    bookingModal.classList.remove("is-open");
+
+    bookingModal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.classList.remove(
+        "velora-modal-open"
+    );
+
+}
+
+
+openBookingModal.addEventListener(
+    "click",
+    openBooking
+);
+
+
+closeBookingModal.addEventListener(
+    "click",
+    closeBooking
+);
+
+
+bookingModalBackdrop.addEventListener(
+    "click",
+    closeBooking
+);
+
+
+bookingCancel.addEventListener(
+    "click",
+    closeBooking
+);
+
+
+
+/* =====================================================
+   BOOKING STEPS
+===================================================== */
+
+let currentStep = 1;
+
+
+const bookingSteps =
+    document.querySelectorAll(
+        ".velora-booking-step"
+    );
+
+
+const progressSteps =
+    document.querySelectorAll(
+        ".velora-booking-progress-step"
+    );
+
+
+const bookingBack =
+    document.getElementById("bookingBack");
+
+
+const bookingNext =
+    document.getElementById("bookingNext");
+
+
+const bookingCreate =
+    document.getElementById("bookingCreate");
+
+
+function showStep(step) {
+
+    currentStep = step;
+
+
+    bookingSteps.forEach(
+        function (item) {
+
+            item.classList.toggle(
+                "is-active",
+                Number(item.dataset.step) === step
+            );
+
+        }
+    );
+
+
+    progressSteps.forEach(
+        function (item) {
+
+            const number =
+                Number(item.dataset.stepIndicator);
+
+
+            item.classList.toggle(
+                "is-active",
+                number === step
+            );
+
+
+            item.classList.toggle(
+                "is-complete",
+                number < step
+            );
+
+        }
+    );
+
+
+    bookingBack.style.display =
+        step === 1
+            ? "none"
+            : "inline-flex";
+
+
+    bookingNext.style.display =
+        step === 3
+            ? "none"
+            : "inline-flex";
+
+
+    bookingCreate.style.display =
+        step === 3
+            ? "inline-flex"
+            : "none";
+
+}
+
+
+showStep(1);
+
+
+
+/* =====================================================
+   NEW CLIENT
+===================================================== */
+
+const toggleNewClient =
+    document.getElementById("toggleNewClient");
+
+const newClientFields =
+    document.getElementById("newClientFields");
+
+const bookingClient =
+    document.getElementById("bookingClient");
+
+
+toggleNewClient.addEventListener(
+    "click",
+    function () {
+
+        newClientFields.classList.toggle(
+            "is-visible"
+        );
+
+
+        const visible =
+            newClientFields.classList.contains(
+                "is-visible"
+            );
+
+
+        if (visible) {
+
+            this.innerHTML =
+                '<i class="bi bi-x-lg"></i> Cancel new client';
+
+            bookingClient.value = "";
+
+        } else {
+
+            this.innerHTML =
+                '<i class="bi bi-person-plus"></i> Add a new client';
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   VALIDATION
+===================================================== */
+
+function validateCurrentStep() {
+
+    const activeStep =
+        document.querySelector(
+            `.velora-booking-step[data-step="${currentStep}"]`
+        );
+
+
+    const fields =
+        activeStep.querySelectorAll(
+            "input[required], select[required], textarea[required]"
+        );
+
+
+    let valid = true;
+
+
+    fields.forEach(
+        function (field) {
+
+            if (!field.value.trim()) {
+
+                field.classList.add(
+                    "velora-field-error"
+                );
+
+                valid = false;
+
+            } else {
+
+                field.classList.remove(
+                    "velora-field-error"
+                );
+
+            }
+
+        }
+    );
+
+
+    return valid;
+
+}
+
+
+
+/* =====================================================
+   REVIEW
+===================================================== */
+
+function updateReview() {
+
+    const clientSelect =
+        document.getElementById(
+            "bookingClient"
+        );
+
+
+    const selectedOption =
+        clientSelect.options[
+            clientSelect.selectedIndex
+        ];
+
+
+    const newClientName =
+        document.getElementById(
+            "newClientName"
+        );
+
+
+    const clientName =
+        newClientName.value.trim()
+            ? newClientName.value.trim()
+            : selectedOption?.text || "Client";
+
+
+    document.getElementById(
+        "reviewClient"
+    ).textContent =
+        clientName;
+
+
+    document.getElementById(
+        "successClient"
+    ).textContent =
+        clientName;
+
+
+
+    /* Session */
+
+    const selectedSession =
+        document.querySelector(
+            'input[name="session"]:checked'
+        );
+
+
+    const sessionNames = {
+
+        wedding: "Wedding",
+
+        portrait: "Portrait",
+
+        family: "Family",
+
+        other: "Other"
+
+    };
+
+
+    const session =
+        sessionNames[
+            selectedSession?.value
+        ] || "Photography session";
+
+
+    document.getElementById(
+        "reviewSession"
+    ).textContent =
+        session;
+
+
+
+    /* Date */
+
+    const date =
+        document.getElementById(
+            "bookingDate"
+        ).value;
+
+
+    let formattedDate = "—";
+
+
+    if (date) {
+
+        const dateObject =
+            new Date(
+                date + "T00:00:00"
+            );
+
+
+        formattedDate =
+            dateObject.toLocaleDateString(
+                "en-US",
+                {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric"
+                }
+            );
+
+    }
+
+
+    document.getElementById(
+        "reviewDate"
+    ).textContent =
+        formattedDate;
+
+
+
+    /* Time */
+
+    const time =
+        document.getElementById(
+            "bookingTime"
+        ).value;
+
+
+    let formattedTime = "—";
+
+
+    if (time) {
+
+        const [
+            hour,
+            minute
+        ] =
+            time.split(":");
+
+
+        const timeObject =
+            new Date();
+
+
+        timeObject.setHours(
+            Number(hour),
+            Number(minute)
+        );
+
+
+        formattedTime =
+            timeObject.toLocaleTimeString(
+                "en-US",
+                {
+                    hour: "numeric",
+                    minute: "2-digit"
+                }
+            );
+
+    }
+
+
+    document.getElementById(
+        "reviewTime"
+    ).textContent =
+        formattedTime;
+
+
+
+    /* Location */
+
+    document.getElementById(
+        "reviewLocation"
+    ).textContent =
+        document.getElementById(
+            "bookingLocation"
+        ).value ||
+        "—";
+
+
+
+    /* Duration */
+
+    const duration =
+        document.getElementById(
+            "bookingDuration"
+        );
+
+
+    document.getElementById(
+        "reviewDuration"
+    ).textContent =
+        duration.options[
+            duration.selectedIndex
+        ]?.text || "—";
+
+
+
+    /* Price */
+
+    const price =
+        document.getElementById(
+            "bookingPrice"
+        ).value;
+
+
+    document.getElementById(
+        "reviewPrice"
+    ).textContent =
+        price
+            ? "$" + Number(price).toLocaleString()
+            : "$0";
+
+
+
+    /* Notes */
+
+    document.getElementById(
+        "reviewNotes"
+    ).textContent =
+        document.getElementById(
+            "bookingNotes"
+        ).value ||
+        "No additional notes.";
+
+
+
+    /* Success */
+
+    document.getElementById(
+        "successSession"
+    ).textContent =
+        session +
+        " · " +
+        formattedDate;
+
+}
+
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+bookingNext.addEventListener(
+    "click",
+    function () {
+
+        if (!validateCurrentStep()) {
+
+            return;
+
+        }
+
+
+        if (currentStep === 2) {
+
+            updateReview();
+
+        }
+
+
+        showStep(
+            Math.min(
+                currentStep + 1,
+                3
+            )
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   BACK
+===================================================== */
+
+bookingBack.addEventListener(
+    "click",
+    function () {
+
+        showStep(
+            Math.max(
+                currentStep - 1,
+                1
+            )
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   CREATE BOOKING
+===================================================== */
+
+const newBookingForm =
+    document.getElementById(
+        "newBookingForm"
+    );
+
+
+const bookingSuccess =
+    document.getElementById(
+        "bookingSuccess"
+    );
+
+
+newBookingForm.addEventListener(
+    "submit",
+    function (event) {
+
+        event.preventDefault();
+
+
+        if (
+            !document.getElementById(
+                "confirmBooking"
+            ).checked
+        ) {
+
+            return;
+
+        }
+
+
+        updateReview();
+
+
+        newBookingForm.style.display =
+            "none";
+
+
+        document.querySelector(
+            ".velora-booking-dialog-header"
+        ).style.display =
+            "none";
+
+
+        document.querySelector(
+            ".velora-booking-progress"
+        ).style.display =
+            "none";
+
+
+        bookingSuccess.classList.add(
+            "is-visible"
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   SUCCESS
+===================================================== */
+
+document
+    .getElementById("successDone")
+    .addEventListener(
+        "click",
+        function () {
+
+            bookingSuccess.classList.remove(
+                "is-visible"
+            );
+
+
+            newBookingForm.reset();
+
+
+            newBookingForm.style.display =
+                "";
+
+
+            document.querySelector(
+                ".velora-booking-dialog-header"
+            ).style.display =
+                "";
+
+
+            document.querySelector(
+                ".velora-booking-progress"
+            ).style.display =
+                "";
+
+
+            newClientFields.classList.remove(
+                "is-visible"
+            );
+
+
+            toggleNewClient.innerHTML =
+                '<i class="bi bi-person-plus"></i> Add a new client';
+
+
+            showStep(1);
+
+
+            closeBooking();
+
+        }
+    );
+
+
+
+/* =====================================================
+   FILTERS
+===================================================== */
+
+const bookingTabs =
+    document.querySelectorAll(
+        ".velora-booking-tab"
+    );
+
+
+const bookingRows =
+    document.querySelectorAll(
+        "#bookingList tr"
+    );
+
+
+const bookingEmpty =
+    document.getElementById(
+        "bookingEmpty"
+    );
+
+
+bookingTabs.forEach(
+    function (tab) {
+
+        tab.addEventListener(
+            "click",
+            function () {
+
+                bookingTabs.forEach(
+                    function (item) {
+
+                        item.classList.remove(
+                            "is-active"
+                        );
+
+                    }
+                );
+
+
+                this.classList.add(
+                    "is-active"
+                );
+
+
+                const filter =
+                    this.dataset.filter;
+
+
+                let visibleRows = 0;
+
+
+                bookingRows.forEach(
+                    function (row) {
+
+                        const status =
+                            row.dataset.status;
+
+
+                        const visible =
+                            filter === "all" ||
+                            filter === status;
+
+
+                        row.style.display =
+                            visible
+                                ? ""
+                                : "none";
+
+
+                        if (visible) {
+
+                            visibleRows++;
+
+                        }
+
+                    }
+                );
+
+
+                bookingEmpty.classList.toggle(
+                    "is-visible",
+                    visibleRows === 0
+                );
+
+            }
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+const bookingSearch =
+    document.getElementById(
+        "bookingSearch"
+    );
+
+
+bookingSearch.addEventListener(
+    "input",
+    function () {
+
+        const search =
+            this.value
+                .toLowerCase()
+                .trim();
+
+
+        let visibleRows = 0;
+
+
+        bookingRows.forEach(
+            function (row) {
+
+                const text =
+                    row.textContent
+                        .toLowerCase();
+
+
+                const visible =
+                    text.includes(search);
+
+
+                row.style.display =
+                    visible
+                        ? ""
+                        : "none";
+
+
+                if (visible) {
+
+                    visibleRows++;
+
+                }
+
+            }
+        );
+
+
+        bookingEmpty.classList.toggle(
+            "is-visible",
+            visibleRows === 0
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   SEARCH SHORTCUT
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "/" &&
+            ![
+                "INPUT",
+                "TEXTAREA",
+                "SELECT"
+            ].includes(
+                document.activeElement.tagName
+            )
+        ) {
+
+            event.preventDefault();
+
+            bookingSearch.focus();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   ESCAPE
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "Escape" &&
+            bookingModal.classList.contains(
+                "is-open"
+            )
+        ) {
+
+            closeBooking();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

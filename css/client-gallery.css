@@ -1,0 +1,3109 @@
+/* =========================================================
+   VELORA — CLIENT-FACING GALLERY
+   Component ID: VLR-CGAL-001
+   Status: Approved
+   Maturity: L2 Stable
+   Version: V1.1
+
+   Design:
+   Photography-first
+   Editorial
+   Spacious
+   Accessible
+   Light mode
+
+   Typography:
+   Token-first
+   No production text below 12px
+========================================================= */
+
+
+/* =========================================================
+   01. TOKENS
+========================================================= */
+
+:root {
+
+    /* -----------------------------------------------------
+       COLOR
+    ----------------------------------------------------- */
+
+    --velora-gallery-ink: #17181a;
+    --velora-gallery-paper: #ffffff;
+    --velora-gallery-surface: #f7f8f6;
+    --velora-gallery-line: #e8ebe8;
+
+    --velora-gallery-muted: #63676c;
+
+    --velora-gallery-green: #1b4332;
+    --velora-gallery-green-dark: #123325;
+    --velora-gallery-green-tint: #e9f0ec;
+
+    --velora-gallery-danger: #a34d4d;
+
+
+    /* -----------------------------------------------------
+       TYPOGRAPHY
+    ----------------------------------------------------- */
+
+    --v-gallery-text-xs: 12px;
+    --v-gallery-text-sm: 14px;
+    --v-gallery-text-md: 16px;
+    --v-gallery-text-lg: 18px;
+
+    --v-gallery-heading-sm: 24px;
+    --v-gallery-heading-md: 32px;
+    --v-gallery-heading-lg: 48px;
+
+    --v-gallery-display: clamp(
+        48px,
+        6.2vw,
+        78px
+    );
+
+
+    /* -----------------------------------------------------
+       LINE HEIGHT
+    ----------------------------------------------------- */
+
+    --v-gallery-lh-tight: 1.05;
+    --v-gallery-lh-heading: 1.12;
+    --v-gallery-lh-body: 1.65;
+    --v-gallery-lh-ui: 1.4;
+
+
+    /* -----------------------------------------------------
+       WEIGHTS
+    ----------------------------------------------------- */
+
+    --v-gallery-weight-regular: 400;
+    --v-gallery-weight-medium: 500;
+    --v-gallery-weight-semibold: 600;
+    --v-gallery-weight-bold: 700;
+    --v-gallery-weight-heavy: 800;
+
+
+    /* -----------------------------------------------------
+       SPACING
+    ----------------------------------------------------- */
+
+    --v-gallery-space-1: 4px;
+    --v-gallery-space-2: 8px;
+    --v-gallery-space-3: 12px;
+    --v-gallery-space-4: 16px;
+    --v-gallery-space-5: 20px;
+    --v-gallery-space-6: 24px;
+    --v-gallery-space-7: 32px;
+    --v-gallery-space-8: 40px;
+    --v-gallery-space-9: 48px;
+    --v-gallery-space-10: 64px;
+
+
+    /* -----------------------------------------------------
+       RADIUS
+    ----------------------------------------------------- */
+
+    --v-gallery-radius-sm: 8px;
+    --v-gallery-radius-md: 12px;
+    --v-gallery-radius-lg: 16px;
+    --v-gallery-radius-pill: 999px;
+
+
+    /* -----------------------------------------------------
+       MOTION
+    ----------------------------------------------------- */
+
+    --v-gallery-motion-fast: 160ms;
+    --v-gallery-motion-normal: 240ms;
+    --v-gallery-motion-slow: 500ms;
+
+}
+
+
+/* =========================================================
+   02. RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    background:
+        var(--velora-gallery-paper);
+
+    color:
+        var(--velora-gallery-ink);
+
+    font-family:
+        "Lato",
+        sans-serif;
+
+    font-size:
+        var(--v-gallery-text-md);
+
+    font-weight:
+        var(--v-gallery-weight-regular);
+
+    line-height:
+        var(--v-gallery-lh-body);
+
+    -webkit-font-smoothing:
+        antialiased;
+
+    -moz-osx-font-smoothing:
+        grayscale;
+
+}
+
+
+body.velora-lightbox-open {
+
+    overflow: hidden;
+
+}
+
+
+button,
+input {
+
+    font: inherit;
+
+}
+
+
+button {
+
+    cursor: pointer;
+
+}
+
+
+img {
+
+    display: block;
+
+    max-width: 100%;
+
+}
+
+
+a {
+
+    color: inherit;
+
+}
+
+
+/* =========================================================
+   03. MAIN SHELL
+========================================================= */
+
+.velora-client-gallery {
+
+    min-height: 100vh;
+
+    background:
+        var(--velora-gallery-paper);
+
+}
+
+
+/* =========================================================
+   04. HEADER
+========================================================= */
+
+.velora-client-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: var(--v-gallery-space-6);
+
+    padding:
+        0 clamp(20px, 4vw, 64px);
+
+    border-bottom:
+        1px solid rgba(232, 235, 232, .95);
+
+    background:
+        rgba(255, 255, 255, .95);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.velora-client-brand {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+
+}
+
+
+.velora-client-brand img {
+
+    width: auto;
+
+    height: 25px;
+
+    object-fit: contain;
+
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.velora-client-header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--v-gallery-space-1);
+
+}
+
+
+.velora-client-header-action {
+
+    min-height: 40px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding:
+        0 var(--v-gallery-space-3);
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        var(--v-gallery-radius-sm);
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-gallery-muted);
+
+    font-size:
+        var(--v-gallery-text-sm);
+
+    font-weight:
+        var(--v-gallery-weight-semibold);
+
+    line-height:
+        1;
+
+    transition:
+        background var(--v-gallery-motion-fast) ease,
+        border-color var(--v-gallery-motion-fast) ease,
+        color var(--v-gallery-motion-fast) ease,
+        transform var(--v-gallery-motion-fast) ease;
+
+}
+
+
+.velora-client-header-action:hover {
+
+    border-color:
+        var(--velora-gallery-line);
+
+    background:
+        var(--velora-gallery-surface);
+
+    color:
+        var(--velora-gallery-ink);
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.velora-client-header-action i {
+
+    font-size:
+        17px;
+
+}
+
+
+.velora-client-header-action b {
+
+    min-width: 22px;
+
+    height: 22px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0 6px;
+
+    border-radius:
+        var(--v-gallery-radius-pill);
+
+    background:
+        var(--velora-gallery-green-tint);
+
+    color:
+        var(--velora-gallery-green);
+
+    font-size:
+        var(--v-gallery-text-xs);
+
+    font-weight:
+        var(--v-gallery-weight-bold);
+
+}
+
+
+.velora-client-menu {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-left: var(--v-gallery-space-1);
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        var(--v-gallery-radius-sm);
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-gallery-muted);
+
+    font-size:
+        18px;
+
+    transition:
+        background var(--v-gallery-motion-fast) ease,
+        border-color var(--v-gallery-motion-fast) ease,
+        color var(--v-gallery-motion-fast) ease;
+
+}
+
+
+.velora-client-menu:hover {
+
+    border-color:
+        var(--velora-gallery-line);
+
+    background:
+        var(--velora-gallery-surface);
+
+    color:
+        var(--velora-gallery-ink);
+
+}
+
+
+/* =========================================================
+   05. HERO
+========================================================= */
+
+.velora-client-hero {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, .88fr)
+        minmax(0, 1.12fr);
+
+    min-height: 590px;
+
+    border-bottom:
+        1px solid var(--velora-gallery-line);
+
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.velora-client-hero-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding:
+        clamp(48px, 7vw, 110px);
+
+    padding-right:
+        clamp(40px, 7vw, 100px);
+
+}
+
+
+.velora-client-eyebrow {
+
+    color:
+        var(--velora-gallery-muted);
+
+    font-size:
+        var(--v-gallery-text-xs);
+
+    font-weight:
+        var(--v-gallery-weight-heavy);
+
+    line-height:
+        var(--v-gallery-lh-ui);
+
+    letter-spacing:
+        .14em;
+
+}
+
+
+.velora-client-hero h1 {
+
+    max-width: 720px;
+
+    margin:
+        var(--v-gallery-space-4)
+        0
+        var(--v-gallery-space-5);
+
+    color:
+        var(--velora-gallery-ink);
+
+    font-size:
+        var(--v-gallery-display);
+
+    font-weight:
+        var(--v-gallery-weight-regular);
+
+    line-height:
+        var(--v-gallery-lh-tight);
+
+    letter-spacing:
+        -.055em;
+
+}
+
+
+.velora-client-hero p {
+
+    max-width: 520px;
+
+    margin: 0;
+
+    color:
+        var(--velora-gallery-muted);
+
+    font-size:
+        var(--v-gallery-text-md);
+
+    font-weight:
+        var(--v-gallery-weight-regular);
+
+    line-height:
+        var(--v-gallery-lh-body);
+
+}
+
+
+.velora-client-gallery-meta {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: var(--v-gallery-space-4);
+
+    margin-top:
+        var(--v-gallery-space-7);
+
+    color:
+        var(--velora-gallery-muted);
+
+    font-size:
+        var(--v-gallery-text-sm);
+
+    line-height:
+        var(--v-gallery-lh-ui);
+
+}
+
+
+.velora-client-gallery-meta span:not(
+    .velora-meta-divider
+) {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.velora-client-gallery-meta i {
+
+    color:
+        var(--velora-gallery-green);
+
+    font-size:
+        16px;
+
+}
+
+
+.velora-client-gallery-meta strong {
+
+    color:
+        var(--velora-gallery-ink);
+
+    font-weight:
+        var(--v-gallery-weight-bold);
+
+}
+
+
+.velora-meta-divider {
+
+    width: 1px;
+
+    height: 18px;
+
+    background:
+        var(--velora-gallery-line);
+
+}
+
+
+/* =========================================================
+   HERO COVER
+========================================================= */
+
+.velora-client-hero-cover {
+
+    position: relative;
+
+    min-height: 590px;
+
+    overflow: hidden;
+
+    background:
+        #ecefec;
+
+}
+
+
+.velora-client-hero-cover::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.08),
+            transparent 38%
+        );
+
+    pointer-events: none;
+
+}
+
+
+.velora-client-hero-cover img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform var(--v-gallery-motion-slow)
+        cubic-bezier(.2, .7, .2, 1);
+
+}
+
+
+.velora-client-hero-cover:hover img {
+
+    transform:
+        scale(1.015);
+
+}
+
+
+/* =========================================================
+   06. TOOLBAR
+========================================================= */
+
+.velora-client-toolbar {
+
+    min-height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: var(--v-gallery-space-6);
+
+    padding:
+        0 clamp(20px, 4vw, 64px);
+
+    border-bottom:
+        1px solid var(--velora-gallery-line);
+
+    background:
+        var(--velora-gallery-paper);
+
+}
+
+
+.velora-client-toolbar-left {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: var(--v-gallery-space-3);
+
+}
+
+
+.velora-client-toolbar-title {
+
+    color:
+        var(--velora-gallery-ink);
+
+    font-size:
+        var(--v-gallery-text-md);
+
+    font-weight:
+        var(--v-gallery-weight-semibold);
+
+}
+
+
+.velora-client-toolbar-count {
+
+    padding:
+        5px 9px;
+
+    border-radius:
+        var(--v-gallery-radius-pill);
+
+    background:
+        var(--velora-gallery-surface);
+
+    color:
+        var(--velora-gallery-muted);
+
+    font-size:
+        var(--v-gallery-text-xs);
+
+    font-weight:
+        var(--v-gallery-weight-semibold);
+
+    line-height:
+        1.2;
+
+}
+
+
+.velora-client-toolbar-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--v-gallery-space-1);
+
+}
+
+
+/* =========================================================
+   TOOL BUTTON
+========================================================= */
+
+.velora-client-tool-button {
+
+    min-width: 40px;
+
+    min-height: 40px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding:
+        0 var(--v-gallery-space-3);
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        var(--v-gallery-radius-sm);
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-gallery-muted);
+
+    font-size:
+        var(--v-gallery-text-sm);
+
+    font-weight:
+        var(--v-gallery-weight-semibold);
+
+    line-height:
+        1;
+
+    transition:
+        background var(--v-gallery-motion-fast) ease,
+        border-color var(--v-gallery-motion-fast) ease,
+        color var(--v-gallery-motion-fast) ease;
+
+}
+
+
+.velora-client-tool-button:hover {
+
+    border-color:
+        var(--velora-gallery-line);
+
+    background:
+        var(--velora-gallery-surface);
+
+    color:
+        var(--velora-gallery-ink);
+
+}
+
+
+.velora-client-tool-button.is-active {
+
+    border-color:
+        #d8e3dc;
+
+    background:
+        var(--velora-gallery-green-tint);
+
+    color:
+        var(--velora-gallery-green);
+
+}
+
+
+.velora-client-tool-button i {
+
+    font-size:
+        17px;
+
+}
+
+
+/* =========================================================
+   07. SELECTION BAR
+========================================================= */
+
+.velora-client-selection-bar {
+
+    position: sticky;
+
+    top: 72px;
+
+    z-index: 80;
+
+    min-height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: var(--v-gallery-space-5);
+
+    margin:
+        0 clamp(16px, 4vw, 64px);
+
+    padding:
+        var(--v-gallery-space-2)
+        var(--v-gallery-space-3)
+        var(--v-gallery-space-2)
+        var(--v-gallery-space-4);
+
+    border:
+        1px solid #d8e4dc;
+
+    border-radius:
+        var(--v-gallery-radius-md);
+
+    background:
+        rgba(247,250,248,.97);
+
+    box-shadow:
+        0 10px 28px rgba(23,24,26,.07);
+
+    backdrop-filter:
+        blur(12px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform:
+        translateY(-5px);
+
+    transition:
+        opacity var(--v-gallery-motion-fast) ease,
+        visibility var(--v-gallery-motion-fast) ease,
+        transform var(--v-gallery-motion-fast) ease;
+
+}
+
+
+.velora-client-selection-bar.is-visible {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateY(8px);
+
+}
+
+
+.velora-client-selection-bar > div:first-child {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--v-gallery-space-3);
+
+}
+
+
+.velora-selection-icon {
+
+    width: 36px;
+
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius:
+        var(--v-gallery-radius-sm);
+
+    background:
+        var(--velora-gallery-green-tint);
+
+    color:
+        var(--velora-gallery-green);
+
+    font-size:
+        17px;
+
+}
+
+
+.velora-client-selection-bar strong {
+
+    color:
+        var(--velora-gallery-ink);
+
+    font-size:
+        var(--v-gallery-text-sm);
+
+    font-weight:
+        var(--v-gallery-weight-semibold);
+
+}
+
+
+.velora-selection-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--v-gallery-space-1);
+
+}
+
+
+.velora-selection-actions button {
+
+    min-height: 38px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding:
+        0 var(--v-gallery-space-3);
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        var(--v-gallery-radius-sm);
+
+    background:
+        transparent;
+
+    color:
+        var(--velora-gallery-muted);
+
+    font-size:
+        var(--v-gallery-text-xs);
+
+    font-weight:
+        var(--v-gallery-weight-bold);
+
+    line-height:
+        1;
+
+    transition:
+        background var(--v-gallery-motion-fast) ease,
+        border-color var(--v-gallery-motion-fast) ease,
+        color var(--v-gallery-motion-fast) ease;
+
+}
+
+
+.velora-selection-actions button:hover {
+
+    border-color:
+        var(--velora-gallery-line);
+
+    background:
+        #ffffff;
+
+    color:
+        var(--velora-gallery-ink);
+
+}
+
+
+.velora-selection-actions button:first-child {
+
+    border-color:
+        var(--velora-gallery-green);
+
+    background:
+        var(--velora-gallery-green);
+
+    color:
+        #ffffff;
+
+}
+
+
+.velora-selection-actions button:first-child:hover {
+
+    border-color:
+        var(--velora-gallery-green-dark);
+
+    background:
+        var(--velora-gallery-green-dark);
+
+}
+
+
+/* =========================================================
+   08. PHOTO COLLECTION
+========================================================= */
+
+.velora-client-photo-collection {
+
+    width:
+        min(1480px, 100%);
+
+    margin:
+        0 auto;
+
+    padding:
+        clamp(24px, 4vw, 64px);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:
+        clamp(10px, 1.2vw, 18px);
+
+    align-items: start;
+
+}
+
+
+.velora-client-photo-collection[data-view="grid"] {
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap:
+        clamp(8px, 1vw, 14px);
+
+}
+
+
+/* =========================================================
+   PHOTO CARD
+========================================================= */
+
+.velora-client-photo {
+
+    position: relative;
+
+    min-width: 0;
+
+}
+
+
+.velora-client-photo-image {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        #eef0ee;
+
+    cursor: pointer;
+
+}
+
+
+.velora-client-photo-collection:not(
+    [data-view="grid"]
+)
+.velora-client-photo:nth-child(3n + 1)
+.velora-client-photo-image {
+
+    aspect-ratio:
+        4 / 5;
+
+}
+
+
+.velora-client-photo-collection:not(
+    [data-view="grid"]
+)
+.velora-client-photo:nth-child(3n + 2)
+.velora-client-photo-image {
+
+    aspect-ratio:
+        4 / 3;
+
+}
+
+
+.velora-client-photo-collection:not(
+    [data-view="grid"]
+)
+.velora-client-photo:nth-child(3n + 3)
+.velora-client-photo-image {
+
+    aspect-ratio:
+        4 / 5.3;
+
+}
+
+
+.velora-client-photo-collection[data-view="grid"]
+.velora-client-photo-image {
+
+    aspect-ratio:
+        1 / 1;
+
+}
+
+
+.velora-client-photo-image > img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform var(--v-gallery-motion-slow)
+        cubic-bezier(.2,.7,.2,1);
+
+}
+
+
+.velora-client-photo:hover
+.velora-client-photo-image > img {
+
+    transform:
+        scale(1.025);
+
+}
+
+
+/* =========================================================
+   PHOTO HOVER
+========================================================= */
+
+.velora-photo-hover {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(13,18,15,.16);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity var(--v-gallery-motion-normal) ease;
+
+}
+
+
+.velora-client-photo:hover
+.velora-photo-hover {
+
+    opacity: 1;
+
+}
+
+
+.velora-photo-open {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid rgba(255,255,255,.8);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,255,255,.94);
+
+    color:
+        var(--velora-gallery-ink);
+
+    font-size:
+        17px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.15);
+
+    pointer-events: auto;
+
+    transition:
+        transform var(--v-gallery-motion-fast) ease,
+        background var(--v-gallery-motion-fast) ease;
+
+}
+
+
+.velora-photo-open:hover {
+
+    background:
+        #ffffff;
+
+    transform:
+        scale(1.06);
+
+}
+
+
+/* =========================================================
+   FAVORITE
+========================================================= */
+
+.velora-photo-favorite {
+
+    position: absolute;
+
+    top: 14px;
+
+    right: 14px;
+
+    z-index: 5;
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid rgba(255,255,255,.75);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.92);
+
+    color:
+        var(--velora-gallery-muted);
+
+    font-size:
+        16px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.1);
+
+    transition:
+        transform var(--v-gallery-motion-fast) ease,
+        background var(--v-gallery-motion-fast) ease,
+        color var(--v-gallery-motion-fast) ease;
+
+}
+
+
+.velora-photo-favorite:hover {
+
+    background:
+        #ffffff;
+
+    color:
+        var(--velora-gallery-danger);
+
+    transform:
+        scale(1.06);
+
+}
+
+
+.velora-photo-favorite.is-favorite {
+
+    background:
+        #ffffff;
+
+    color:
+        var(--velora-gallery-danger);
+
+}
+
+
+/* =========================================================
+   PHOTO SELECT
+========================================================= */
+
+.velora-photo-select {
+
+    position: absolute;
+
+    top: 14px;
+
+    left: 14px;
+
+    z-index: 5;
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid rgba(255,255,255,.75);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.92);
+
+    color:
+        transparent;
+
+    font-size:
+        16px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.1);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity var(--v-gallery-motion-fast) ease,
+        background var(--v-gallery-motion-fast) ease,
+        color var(--v-gallery-motion-fast) ease,
+        border-color var(--v-gallery-motion-fast) ease;
+
+}
+
+
+.velora-client-photo:hover
+.velora-photo-select,
+.velora-client-photo-collection.is-selection-mode
+.velora-photo-select {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+}
+
+
+.velora-photo-select.is-selected {
+
+    border-color:
+        var(--velora-gallery-green);
+
+    background:
+        var(--velora-gallery-green);
+
+    color:
+        #ffffff;
+
+}
+
+
+/* =========================================================
+   SELECTED PHOTO
+========================================================= */
+
+.velora-client-photo.is-selected
+.velora-client-photo-image {
+
+    box-shadow:
+        0 0 0 3px var(--velora-gallery-green);
+
+}
+
+
+.velora-client-photo.is-selected
+.velora-client-photo-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border:
+        2px solid rgba(255,255,255,.85);
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   SELECTION MODE
+========================================================= */
+
+.velora-client-photo-collection.is-selection-mode
+.velora-photo-hover {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   09. FOOTER
+========================================================= */
+
+.velora-client-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: var(--v-gallery-space-7);
+
+    margin-top:
+        var(--v-gallery-space-3);
+
+    padding:
+        var(--v-gallery-space-8)
+        clamp(20px, 4vw, 64px)
+        var(--v-gallery-space-10);
+
+    border-top:
+        1px solid var(--velora-gallery-line);
+
+}
+
+
+.velora-client-footer-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--v-gallery-space-3);
+
+}
+
+
+.velora-client-footer-mark {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius:
+        var(--v-gallery-radius-sm);
+
+    background:
+        var(--velora-gallery-green);
+
+    color:
+        #ffffff;
+
+    font-size:
+        var(--v-gallery-text-md);
+
+    font-weight:
+        var(--v-gallery-weight-bold);
+
+}
+
+
+.velora-client-footer-brand > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--v-gallery-space-1);
+
+}
+
+
+.velora-client-footer-brand strong {
+
+    color:
+        var(--velora-gallery-ink);
+
+    font-size:
+        var(--v-gallery-text-sm);
+
+    font-weight:
+        var(--v-gallery-weight-bold);
+
+}
+
+
+.velora-client-footer-brand span {
+
+    color:
+        var(--velora-gallery-muted);
+
+    font-size:
+        var(--v-gallery-text-xs);
+
+}
+
+
+.velora-client-footer-meta {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: var(--v-gallery-space-5);
+
+    color:
+        var(--velora-gallery-muted);
+
+    font-size:
+        var(--v-gallery-text-xs);
+
+}
+
+
+/* =========================================================
+   10. LIGHTBOX
+========================================================= */
+
+.velora-client-lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: var(--v-gallery-space-6);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity var(--v-gallery-motion-normal) ease,
+        visibility var(--v-gallery-motion-normal) ease;
+
+}
+
+
+.velora-client-lightbox.is-visible {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+.velora-client-lightbox-backdrop {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(7,10,8,.94);
+
+}
+
+
+.velora-client-lightbox-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(1250px, 96vw);
+
+    height:
+        min(92vh, 900px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.velora-client-lightbox-content > img {
+
+    max-width:
+        calc(100% - 160px);
+
+    max-height:
+        calc(100% - 90px);
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.45);
+
+}
+
+
+/* =========================================================
+   LIGHTBOX CLOSE
+========================================================= */
+
+.velora-lightbox-close {
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+    z-index: 5;
+
+    width: 44px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid rgba(255,255,255,.2);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.08);
+
+    color:
+        #ffffff;
+
+    font-size:
+        16px;
+
+    transition:
+        background var(--v-gallery-motion-fast) ease,
+        transform var(--v-gallery-motion-fast) ease;
+
+}
+
+
+.velora-lightbox-close:hover {
+
+    background:
+        rgba(255,255,255,.18);
+
+    transform:
+        rotate(4deg);
+
+}
+
+
+/* =========================================================
+   LIGHTBOX NAVIGATION
+========================================================= */
+
+.velora-lightbox-navigation {
+
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 5;
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid rgba(255,255,255,.18);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.08);
+
+    color:
+        #ffffff;
+
+    font-size:
+        18px;
+
+    transform:
+        translateY(-50%);
+
+    transition:
+        background var(--v-gallery-motion-fast) ease;
+
+}
+
+
+.velora-lightbox-navigation:hover {
+
+    background:
+        rgba(255,255,255,.17);
+
+}
+
+
+.velora-lightbox-navigation.previous {
+
+    left: 0;
+
+}
+
+
+.velora-lightbox-navigation.next {
+
+    right: 0;
+
+}
+
+
+/* =========================================================
+   LIGHTBOX FOOTER
+========================================================= */
+
+.velora-lightbox-bottom {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 0;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--v-gallery-space-4);
+
+    padding:
+        7px
+        8px
+        7px
+        15px;
+
+    border:
+        1px solid rgba(255,255,255,.14);
+
+    border-radius:
+        var(--v-gallery-radius-pill);
+
+    background:
+        rgba(0,0,0,.35);
+
+    color:
+        rgba(255,255,255,.78);
+
+    font-size:
+        var(--v-gallery-text-xs);
+
+    backdrop-filter:
+        blur(12px);
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+.velora-lightbox-bottom > div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--v-gallery-space-1);
+
+}
+
+
+.velora-lightbox-bottom button {
+
+    width: 36px;
+
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color:
+        rgba(255,255,255,.82);
+
+    font-size:
+        16px;
+
+    transition:
+        background var(--v-gallery-motion-fast) ease,
+        color var(--v-gallery-motion-fast) ease;
+
+}
+
+
+.velora-lightbox-bottom button:hover {
+
+    background:
+        rgba(255,255,255,.12);
+
+    color:
+        #ffffff;
+
+}
+
+
+.velora-lightbox-bottom
+button.is-favorite {
+
+    color:
+        #e48b8b;
+
+}
+
+
+/* =========================================================
+   11. SHARE MODAL
+========================================================= */
+
+.velora-share-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 6000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: var(--v-gallery-space-5);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity var(--v-gallery-motion-normal) ease,
+        visibility var(--v-gallery-motion-normal) ease;
+
+}
+
+
+.velora-share-modal.is-visible {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+.velora-share-backdrop {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(16,20,18,.5);
+
+    backdrop-filter:
+        blur(6px);
+
+}
+
+
+.velora-share-dialog {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(480px, 100%);
+
+    padding:
+        var(--v-gallery-space-8);
+
+    border:
+        1px solid var(--velora-gallery-line);
+
+    border-radius:
+        var(--v-gallery-radius-lg);
+
+    background:
+        var(--velora-gallery-paper);
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.18);
+
+}
+
+
+.velora-share-dialog h2 {
+
+    margin:
+        var(--v-gallery-space-2)
+        0
+        var(--v-gallery-space-2);
+
+    color:
+        var(--velora-gallery-ink);
+
+    font-size:
+        var(--v-gallery-heading-sm);
+
+    font-weight:
+        var(--v-gallery-weight-medium);
+
+    line-height:
+        var(--v-gallery-lh-heading);
+
+    letter-spacing:
+        -.035em;
+
+}
+
+
+.velora-share-dialog > p {
+
+    margin:
+        0 0 var(--v-gallery-space-6);
+
+    color:
+        var(--velora-gallery-muted);
+
+    font-size:
+        var(--v-gallery-text-sm);
+
+    line-height:
+        var(--v-gallery-lh-body);
+
+}
+
+
+.velora-share-close {
+
+    position: absolute;
+
+    top: 16px;
+
+    right: 16px;
+
+    width: 36px;
+
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color:
+        var(--velora-gallery-muted);
+
+    font-size:
+        15px;
+
+}
+
+
+.velora-share-close:hover {
+
+    background:
+        var(--velora-gallery-surface);
+
+    color:
+        var(--velora-gallery-ink);
+
+}
+
+
+/* =========================================================
+   SHARE URL
+========================================================= */
+
+.velora-share-url {
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 46px;
+
+    overflow: hidden;
+
+    border:
+        1px solid #dfe4e1;
+
+    border-radius:
+        var(--v-gallery-radius-sm);
+
+    background:
+        #ffffff;
+
+}
+
+
+.velora-share-url input {
+
+    min-width: 0;
+
+    flex: 1;
+
+    height: 44px;
+
+    padding:
+        0 var(--v-gallery-space-3);
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    color:
+        var(--velora-gallery-muted);
+
+    font-size:
+        var(--v-gallery-text-xs);
+
+}
+
+
+.velora-share-url button {
+
+    width: 46px;
+
+    height: 44px;
+
+    flex: 0 0 46px;
+
+    border: 0;
+
+    border-left:
+        1px solid var(--velora-gallery-line);
+
+    background:
+        var(--velora-gallery-surface);
+
+    color:
+        var(--velora-gallery-green);
+
+    font-size:
+        16px;
+
+}
+
+
+.velora-share-url button:hover {
+
+    background:
+        var(--velora-gallery-green-tint);
+
+}
+
+
+/* =========================================================
+   SHARE OPTIONS
+========================================================= */
+
+.velora-share-options {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        var(--v-gallery-space-2);
+
+    margin-top:
+        var(--v-gallery-space-3);
+
+}
+
+
+.velora-share-options button {
+
+    min-height: 72px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: var(--v-gallery-space-1);
+
+    border:
+        1px solid var(--velora-gallery-line);
+
+    border-radius:
+        var(--v-gallery-radius-sm);
+
+    background:
+        var(--velora-gallery-paper);
+
+    color:
+        var(--velora-gallery-muted);
+
+    font-size:
+        var(--v-gallery-text-xs);
+
+    font-weight:
+        var(--v-gallery-weight-bold);
+
+    transition:
+        border-color var(--v-gallery-motion-fast) ease,
+        background var(--v-gallery-motion-fast) ease,
+        color var(--v-gallery-motion-fast) ease,
+        transform var(--v-gallery-motion-fast) ease;
+
+}
+
+
+.velora-share-options button:hover {
+
+    border-color:
+        #ccd8d0;
+
+    background:
+        var(--velora-gallery-surface);
+
+    color:
+        var(--velora-gallery-ink);
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.velora-share-options i {
+
+    font-size:
+        19px;
+
+}
+
+
+/* =========================================================
+   12. TOAST
+========================================================= */
+
+.velora-client-toast {
+
+    position: fixed;
+
+    right: var(--v-gallery-space-6);
+
+    bottom: var(--v-gallery-space-6);
+
+    z-index: 8000;
+
+    min-height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--v-gallery-space-3);
+
+    padding:
+        var(--v-gallery-space-2)
+        var(--v-gallery-space-4)
+        var(--v-gallery-space-2)
+        var(--v-gallery-space-2);
+
+    border:
+        1px solid #d8e4dc;
+
+    border-radius:
+        var(--v-gallery-radius-md);
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 16px 45px rgba(0,0,0,.13);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        opacity var(--v-gallery-motion-normal) ease,
+        visibility var(--v-gallery-motion-normal) ease,
+        transform var(--v-gallery-motion-normal) ease;
+
+}
+
+
+.velora-client-toast.is-visible {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.velora-client-toast > span {
+
+    width: 36px;
+
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius:
+        var(--v-gallery-radius-sm);
+
+    background:
+        var(--velora-gallery-green-tint);
+
+    color:
+        var(--velora-gallery-green);
+
+    font-size:
+        15px;
+
+}
+
+
+.velora-client-toast strong {
+
+    color:
+        var(--velora-gallery-ink);
+
+    font-size:
+        var(--v-gallery-text-sm);
+
+    font-weight:
+        var(--v-gallery-weight-semibold);
+
+}
+
+
+/* =========================================================
+   13. FOCUS STATES
+========================================================= */
+
+.velora-client-header-action:focus-visible,
+.velora-client-menu:focus-visible,
+.velora-client-tool-button:focus-visible,
+.velora-photo-favorite:focus-visible,
+.velora-photo-select:focus-visible,
+.velora-photo-open:focus-visible,
+.velora-lightbox-close:focus-visible,
+.velora-lightbox-navigation:focus-visible,
+.velora-lightbox-bottom button:focus-visible,
+.velora-share-close:focus-visible,
+.velora-share-url button:focus-visible,
+.velora-share-options button:focus-visible {
+
+    outline:
+        2px solid var(--velora-gallery-green);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/* =========================================================
+   14. RESPONSIVE — 1100PX
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .velora-client-hero {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        min-height:
+            520px;
+
+    }
+
+
+    .velora-client-hero-cover {
+
+        min-height:
+            520px;
+
+    }
+
+
+    .velora-client-hero-content {
+
+        padding:
+            56px;
+
+    }
+
+
+    .velora-client-hero h1 {
+
+        font-size:
+            clamp(44px, 5.4vw, 62px);
+
+    }
+
+}
+
+
+/* =========================================================
+   15. RESPONSIVE — 850PX
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .velora-client-header {
+
+        min-height:
+            66px;
+
+    }
+
+
+    .velora-client-header-action span {
+
+        display:
+            none;
+
+    }
+
+
+    .velora-client-header-action {
+
+        width:
+            40px;
+
+        padding:
+            0;
+
+    }
+
+
+    .velora-client-hero {
+
+        grid-template-columns:
+            1fr;
+
+        min-height:
+            auto;
+
+    }
+
+
+    .velora-client-hero-cover {
+
+        min-height:
+            480px;
+
+        order:
+            -1;
+
+    }
+
+
+    .velora-client-hero-content {
+
+        min-height:
+            430px;
+
+        padding:
+            64px 32px;
+
+    }
+
+
+    .velora-client-hero h1 {
+
+        max-width:
+            680px;
+
+        font-size:
+            clamp(44px, 8vw, 68px);
+
+    }
+
+
+    .velora-client-photo-collection {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .velora-client-photo-collection[data-view="grid"] {
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+    }
+
+
+    .velora-client-photo-collection:not(
+        [data-view="grid"]
+    )
+    .velora-client-photo:nth-child(3n + 1)
+    .velora-client-photo-image,
+    .velora-client-photo-collection:not(
+        [data-view="grid"]
+    )
+    .velora-client-photo:nth-child(3n + 2)
+    .velora-client-photo-image,
+    .velora-client-photo-collection:not(
+        [data-view="grid"]
+    )
+    .velora-client-photo:nth-child(3n + 3)
+    .velora-client-photo-image {
+
+        aspect-ratio:
+            4 / 5;
+
+    }
+
+}
+
+
+/* =========================================================
+   16. RESPONSIVE — 650PX
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .velora-client-header {
+
+        min-height:
+            62px;
+
+        padding:
+            0 16px;
+
+    }
+
+
+    .velora-client-brand img {
+
+        height:
+            22px;
+
+    }
+
+
+    .velora-client-header-actions {
+
+        gap:
+            0;
+
+    }
+
+
+    .velora-client-menu {
+
+        margin-left:
+            0;
+
+    }
+
+
+    .velora-client-hero-cover {
+
+        min-height:
+            390px;
+
+    }
+
+
+    .velora-client-hero-content {
+
+        min-height:
+            390px;
+
+        padding:
+            48px 20px;
+
+    }
+
+
+    .velora-client-hero h1 {
+
+        margin:
+            14px 0 16px;
+
+        font-size:
+            clamp(40px, 11vw, 58px);
+
+    }
+
+
+    .velora-client-hero p {
+
+        max-width:
+            480px;
+
+        font-size:
+            var(--v-gallery-text-md);
+
+    }
+
+
+    .velora-client-gallery-meta {
+
+        margin-top:
+            24px;
+
+        font-size:
+            var(--v-gallery-text-sm);
+
+    }
+
+
+    .velora-client-toolbar {
+
+        min-height:
+            66px;
+
+        padding:
+            0 20px;
+
+    }
+
+
+    .velora-client-toolbar-title {
+
+        font-size:
+            var(--v-gallery-text-sm);
+
+    }
+
+
+    .velora-client-tool-button {
+
+        width:
+            38px;
+
+        padding:
+            0;
+
+    }
+
+
+    .velora-client-tool-button span {
+
+        display:
+            none;
+
+    }
+
+
+    .velora-client-selection-bar {
+
+        top:
+            62px;
+
+        margin:
+            0 10px;
+
+    }
+
+
+    .velora-selection-actions button {
+
+        width:
+            40px;
+
+        padding:
+            0;
+
+    }
+
+
+    .velora-selection-actions button:not(
+        :first-child
+    ) {
+
+        font-size:
+            0;
+
+    }
+
+
+    .velora-selection-actions button i {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .velora-client-photo-collection,
+    .velora-client-photo-collection[data-view="grid"] {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap:
+            8px;
+
+        padding:
+            20px 12px;
+
+    }
+
+
+    .velora-client-footer {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        padding:
+            32px 20px 40px;
+
+    }
+
+
+    .velora-client-footer-meta {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap:
+            6px;
+
+        font-size:
+            var(--v-gallery-text-xs);
+
+    }
+
+
+    .velora-client-lightbox {
+
+        padding:
+            12px;
+
+    }
+
+
+    .velora-client-lightbox-content {
+
+        width:
+            100%;
+
+        height:
+            90vh;
+
+    }
+
+
+    .velora-client-lightbox-content > img {
+
+        max-width:
+            calc(100% - 70px);
+
+        max-height:
+            calc(100% - 100px);
+
+    }
+
+
+    .velora-lightbox-navigation {
+
+        width:
+            38px;
+
+        height:
+            38px;
+
+        font-size:
+            15px;
+
+    }
+
+
+    .velora-lightbox-navigation.previous {
+
+        left:
+            0;
+
+    }
+
+
+    .velora-lightbox-navigation.next {
+
+        right:
+            0;
+
+    }
+
+
+    .velora-lightbox-bottom {
+
+        bottom:
+            3px;
+
+    }
+
+
+    .velora-share-dialog {
+
+        padding:
+            28px 22px;
+
+    }
+
+}
+
+
+/* =========================================================
+   17. RESPONSIVE — 450PX
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .velora-client-header-action {
+
+        width:
+            34px;
+
+        height:
+            34px;
+
+    }
+
+
+    .velora-client-menu {
+
+        width:
+            34px;
+
+        height:
+            34px;
+
+    }
+
+
+    .velora-client-header-action b {
+
+        position:
+            absolute;
+
+        margin:
+            -22px -22px 0 0;
+
+        transform:
+            scale(.85);
+
+    }
+
+
+    .velora-client-hero-cover {
+
+        min-height:
+            320px;
+
+    }
+
+
+    .velora-client-hero-content {
+
+        min-height:
+            350px;
+
+    }
+
+
+    .velora-client-gallery-meta {
+
+        gap:
+            10px;
+
+    }
+
+
+    .velora-photo-favorite,
+    .velora-photo-select {
+
+        width:
+            36px;
+
+        height:
+            36px;
+
+        top:
+            8px;
+
+        font-size:
+            14px;
+
+    }
+
+
+    .velora-photo-favorite {
+
+        right:
+            8px;
+
+    }
+
+
+    .velora-photo-select {
+
+        left:
+            8px;
+
+    }
+
+
+    .velora-photo-open {
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+        font-size:
+            15px;
+
+    }
+
+
+    .velora-share-options {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .velora-share-options button {
+
+        min-height:
+            48px;
+
+        flex-direction:
+            row;
+
+        font-size:
+            var(--v-gallery-text-xs);
+
+    }
+
+
+    .velora-share-options i {
+
+        font-size:
+            17px;
+
+    }
+
+
+    .velora-client-toast {
+
+        right:
+            15px;
+
+        bottom:
+            15px;
+
+        max-width:
+            calc(100% - 30px);
+
+    }
+
+}
+
+
+/* =========================================================
+   18. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior:
+            auto;
+
+    }
+
+
+    .velora-client-hero-cover img,
+    .velora-client-header-action,
+    .velora-client-menu,
+    .velora-client-tool-button,
+    .velora-client-selection-bar,
+    .velora-client-photo-image > img,
+    .velora-photo-hover,
+    .velora-photo-open,
+    .velora-photo-favorite,
+    .velora-photo-select,
+    .velora-client-lightbox,
+    .velora-lightbox-close,
+    .velora-lightbox-navigation,
+    .velora-share-modal,
+    .velora-share-options button,
+    .velora-client-toast {
+
+        transition: none;
+
+    }
+
+}

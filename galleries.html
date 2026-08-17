@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Velora | Galleries</title>
+
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- Lato -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Dashboard Shell -->
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+    <!-- Galleries -->
+    <link
+        rel="stylesheet"
+        href="css/galleries.css"
+    >
+
+
+    <!-- Favicon -->
+    <link
+        rel="shortcut icon"
+        href="media/favicon/favicon.png"
+        type="image/x-icon"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="velora-dashboard">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+    ====================================================== -->
+
+    <div
+        class="velora-sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="velora-sidebar"
+        id="veloraSidebar"
+    >
+
+        <div class="velora-sidebar-header">
+
+            <a
+                href="dashboard.html"
+                class="velora-dashboard-brand"
+            >
+
+                <img
+                    src="media/logo/logo-1-main.png"
+                    alt="Velora"
+                >
+
+            </a>
+
+
+            <button
+                type="button"
+                class="velora-sidebar-close"
+                id="sidebarClose"
+                aria-label="Close navigation"
+            >
+
+                <i class="bi bi-x-lg"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- Navigation -->
+
+        <nav
+            class="velora-sidebar-nav"
+            aria-label="Dashboard navigation"
+        >
+
+            <div class="velora-nav-section">
+
+                <span class="velora-nav-label">
+                    WORKSPACE
+                </span>
+
+
+                <a
+                    href="dashboard.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-grid-1x2"></i>
+
+                    <span>
+                        Overview
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="galleries.html"
+                    class="velora-dashboard-nav-link is-active"
+                    aria-current="page"
+                >
+
+                    <i class="bi bi-images"></i>
+
+                    <span>
+                        Galleries
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="bookings.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-calendar2-week"></i>
+
+                    <span>
+                        Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="clients.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-people"></i>
+
+                    <span>
+                        Clients
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="analytics.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-bar-chart"></i>
+
+                    <span>
+                        Analytics
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="velora-nav-section">
+
+                <span class="velora-nav-label">
+                    MANAGE
+                </span>
+
+
+                <a
+                    href="settings.html"
+                    class="velora-dashboard-nav-link"
+                >
+
+                    <i class="bi bi-sliders2"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- Sidebar Bottom -->
+
+        <div class="velora-sidebar-bottom">
+
+
+            <a
+                href="pricing.html"
+                class="velora-upgrade-card"
+            >
+
+                <div class="velora-upgrade-icon">
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </div>
+
+
+                <div class="velora-upgrade-content">
+
+                    <strong>
+                        Upgrade your plan
+                    </strong>
+
+                    <span>
+                        Get more space for your work.
+                    </span>
+
+                </div>
+
+
+                <i class="bi bi-chevron-right"></i>
+
+            </a>
+
+
+
+            <button
+                type="button"
+                class="velora-sidebar-user"
+            >
+
+                <span class="velora-user-avatar">
+                    P
+                </span>
+
+
+                <span class="velora-user-details">
+
+                    <strong>
+                        Patrick
+                    </strong>
+
+                    <small>
+                        Photographer
+                    </small>
+
+                </span>
+
+
+                <i class="bi bi-three-dots"></i>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <div class="velora-dashboard-main">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="velora-dashboard-topbar">
+
+
+            <button
+                type="button"
+                class="velora-mobile-menu"
+                id="sidebarOpen"
+                aria-label="Open navigation"
+                aria-controls="veloraSidebar"
+                aria-expanded="false"
+            >
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+
+
+            <div class="velora-dashboard-search">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="search"
+                    placeholder="Search..."
+                    aria-label="Search dashboard"
+                >
+
+                <span class="velora-search-shortcut">
+                    /
+                </span>
+
+            </div>
+
+
+
+            <div class="velora-topbar-actions">
+
+
+                <a
+                    href="#"
+                    class="velora-view-site"
+                >
+
+                    <i class="bi bi-box-arrow-up-right"></i>
+
+                    <span>
+                        View site
+                    </span>
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="velora-topbar-icon"
+                    aria-label="Notifications"
+                >
+
+                    <i class="bi bi-bell"></i>
+
+                    <span class="velora-notification-dot"></span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="velora-topbar-profile"
+                    aria-label="Open profile"
+                >
+
+                    <span class="velora-topbar-avatar">
+                        P
+                    </span>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             GALLERIES CONTENT
+        ================================================== -->
+
+        <main class="velora-dashboard-content velora-galleries-page">
+
+
+            <!-- Breadcrumb -->
+
+            <div class="velora-dashboard-breadcrumb">
+
+                <span>
+                    Workspace
+                </span>
+
+                <i class="bi bi-chevron-right"></i>
+
+                <strong>
+                    Galleries
+                </strong>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PAGE HEADER
+            ================================================== -->
+
+            <section class="velora-galleries-header">
+
+
+                <div>
+
+                    <span class="velora-page-eyebrow">
+                        YOUR WORK
+                    </span>
+
+
+                    <h1>
+                        Galleries
+                    </h1>
+
+
+                    <p>
+                        Manage and organize your photography.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="velora-gallery-new-button"
+                    id="newGalleryButton"
+                >
+
+                    <i class="bi bi-plus-lg"></i>
+
+                    New gallery
+
+                </button>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 TOOLBAR
+            ================================================== -->
+
+            <section class="velora-galleries-toolbar">
+
+
+                <!-- Filters -->
+
+                <div
+                    class="velora-gallery-filters"
+                    role="tablist"
+                    aria-label="Gallery filters"
+                >
+
+                    <button
+                        type="button"
+                        class="velora-gallery-filter is-active"
+                        data-filter="all"
+                        role="tab"
+                        aria-selected="true"
+                    >
+
+                        All
+
+                        <span>
+                            12
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="velora-gallery-filter"
+                        data-filter="published"
+                        role="tab"
+                        aria-selected="false"
+                    >
+
+                        Published
+
+                        <span>
+                            8
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="velora-gallery-filter"
+                        data-filter="draft"
+                        role="tab"
+                        aria-selected="false"
+                    >
+
+                        Drafts
+
+                        <span>
+                            3
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="velora-gallery-filter"
+                        data-filter="archived"
+                        role="tab"
+                        aria-selected="false"
+                    >
+
+                        Archived
+
+                        <span>
+                            1
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- Search -->
+
+                <div class="velora-gallery-search">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="search"
+                        id="gallerySearch"
+                        placeholder="Search galleries..."
+                        aria-label="Search galleries"
+                    >
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 GALLERY SECTION HEADER
+            ================================================== -->
+
+            <div class="velora-gallery-section-heading">
+
+                <div>
+
+                    <span class="velora-gallery-section-label">
+                        COLLECTION
+                    </span>
+
+                    <h2>
+                        Your galleries
+                    </h2>
+
+                </div>
+
+
+                <div class="velora-gallery-view-controls">
+
+                    <button
+                        type="button"
+                        class="velora-gallery-view-button is-active"
+                        aria-label="Grid view"
+                    >
+
+                        <i class="bi bi-grid"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="velora-gallery-view-button"
+                        aria-label="List view"
+                    >
+
+                        <i class="bi bi-list"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 GALLERY GRID
+            ================================================== -->
+
+            <section
+                class="velora-gallery-grid-page"
+                id="galleryGrid"
+            >
+
+
+                <!-- Gallery 1 -->
+
+                <article
+                    class="velora-gallery-item"
+                    data-status="published"
+                    data-name="Wedding Collection"
+                >
+
+                    <a
+                        href="gallery-details.html?gallery=wedding"
+                        class="velora-gallery-cover"
+                    >
+
+                        <img
+                            src="media/dashboard/gallery-wedding.jpg"
+                            alt="Wedding photography"
+                            loading="lazy"
+                        >
+
+
+                        <span class="velora-gallery-badge published">
+                            Published
+                        </span>
+
+
+                        <span class="velora-gallery-open">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+
+                    </a>
+
+
+                    <div class="velora-gallery-item-info">
+
+                        <div>
+
+                            <h3>
+                                Wedding Collection
+                            </h3>
+
+                            <p>
+                                48 images · 126 views
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="velora-gallery-more"
+                            aria-label="Wedding Collection options"
+                        >
+
+                            <i class="bi bi-three-dots"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Gallery 2 -->
+
+                <article
+                    class="velora-gallery-item"
+                    data-status="published"
+                    data-name="Portrait Sessions"
+                >
+
+                    <a
+                        href="gallery-details.html?gallery=portrait"
+                        class="velora-gallery-cover"
+                    >
+
+                        <img
+                            src="media/dashboard/gallery-portrait.jpg"
+                            alt="Portrait photography"
+                            loading="lazy"
+                        >
+
+
+                        <span class="velora-gallery-badge published">
+                            Published
+                        </span>
+
+
+                        <span class="velora-gallery-open">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+
+                    </a>
+
+
+                    <div class="velora-gallery-item-info">
+
+                        <div>
+
+                            <h3>
+                                Portrait Sessions
+                            </h3>
+
+                            <p>
+                                36 images · 84 views
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="velora-gallery-more"
+                            aria-label="Portrait Sessions options"
+                        >
+
+                            <i class="bi bi-three-dots"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Gallery 3 -->
+
+                <article
+                    class="velora-gallery-item"
+                    data-status="draft"
+                    data-name="Editorial Stories"
+                >
+
+                    <a
+                        href="gallery-details.html?gallery=editorial"
+                        class="velora-gallery-cover"
+                    >
+
+                        <img
+                            src="media/dashboard/gallery-editorial.jpg"
+                            alt="Editorial photography"
+                            loading="lazy"
+                        >
+
+
+                        <span class="velora-gallery-badge draft">
+                            Draft
+                        </span>
+
+
+                        <span class="velora-gallery-open">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+
+                    </a>
+
+
+                    <div class="velora-gallery-item-info">
+
+                        <div>
+
+                            <h3>
+                                Editorial Stories
+                            </h3>
+
+                            <p>
+                                24 images · Draft
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="velora-gallery-more"
+                            aria-label="Editorial Stories options"
+                        >
+
+                            <i class="bi bi-three-dots"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Gallery 4 -->
+
+                <article
+                    class="velora-gallery-item"
+                    data-status="published"
+                    data-name="Lagos Wedding"
+                >
+
+                    <a
+                        href="gallery-details.html?gallery=lagos-wedding"
+                        class="velora-gallery-cover"
+                    >
+
+                        <img
+                            src="media/dashboard/gallery-lagos.jpg"
+                            alt="Wedding photography"
+                            loading="lazy"
+                        >
+
+
+                        <span class="velora-gallery-badge published">
+                            Published
+                        </span>
+
+
+                        <span class="velora-gallery-open">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+
+                    </a>
+
+
+                    <div class="velora-gallery-item-info">
+
+                        <div>
+
+                            <h3>
+                                Lagos Wedding
+                            </h3>
+
+                            <p>
+                                62 images · 218 views
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="velora-gallery-more"
+                            aria-label="Lagos Wedding options"
+                        >
+
+                            <i class="bi bi-three-dots"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Gallery 5 -->
+
+                <article
+                    class="velora-gallery-item"
+                    data-status="published"
+                    data-name="Studio Portraits"
+                >
+
+                    <a
+                        href="gallery-details.html?gallery=studio-portraits"
+                        class="velora-gallery-cover"
+                    >
+
+                        <img
+                            src="media/dashboard/gallery-studio.jpg"
+                            alt="Studio portrait photography"
+                            loading="lazy"
+                        >
+
+
+                        <span class="velora-gallery-badge published">
+                            Published
+                        </span>
+
+
+                        <span class="velora-gallery-open">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+
+                    </a>
+
+
+                    <div class="velora-gallery-item-info">
+
+                        <div>
+
+                            <h3>
+                                Studio Portraits
+                            </h3>
+
+                            <p>
+                                31 images · 97 views
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="velora-gallery-more"
+                            aria-label="Studio Portraits options"
+                        >
+
+                            <i class="bi bi-three-dots"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Gallery 6 -->
+
+                <article
+                    class="velora-gallery-item"
+                    data-status="draft"
+                    data-name="Fashion Editorial"
+                >
+
+                    <a
+                        href="gallery-details.html?gallery=fashion-editorial"
+                        class="velora-gallery-cover"
+                    >
+
+                        <img
+                            src="media/dashboard/gallery-fashion.jpg"
+                            alt="Fashion editorial photography"
+                            loading="lazy"
+                        >
+
+
+                        <span class="velora-gallery-badge draft">
+                            Draft
+                        </span>
+
+
+                        <span class="velora-gallery-open">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+
+                    </a>
+
+
+                    <div class="velora-gallery-item-info">
+
+                        <div>
+
+                            <h3>
+                                Fashion Editorial
+                            </h3>
+
+                            <p>
+                                18 images · Draft
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="velora-gallery-more"
+                            aria-label="Fashion Editorial options"
+                        >
+
+                            <i class="bi bi-three-dots"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Create Gallery -->
+
+                <button
+                    type="button"
+                    class="velora-create-gallery-card"
+                    id="createGalleryCard"
+                >
+
+                    <span class="velora-create-gallery-icon">
+                        <i class="bi bi-plus-lg"></i>
+                    </span>
+
+
+                    <strong>
+                        Create new gallery
+                    </strong>
+
+
+                    <span>
+                        Start showcasing new work
+                    </span>
+
+                </button>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 EMPTY SEARCH STATE
+            ================================================== -->
+
+            <div
+                class="velora-gallery-empty"
+                id="galleryEmpty"
+                hidden
+            >
+
+                <div class="velora-gallery-empty-icon">
+
+                    <i class="bi bi-search"></i>
+
+                </div>
+
+
+                <h3>
+                    No galleries found
+                </h3>
+
+
+                <p>
+                    Try searching for a different gallery.
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+const sidebar =
+    document.getElementById(
+        "veloraSidebar"
+    );
+
+
+const sidebarOpen =
+    document.getElementById(
+        "sidebarOpen"
+    );
+
+
+const sidebarClose =
+    document.getElementById(
+        "sidebarClose"
+    );
+
+
+const sidebarOverlay =
+    document.getElementById(
+        "sidebarOverlay"
+    );
+
+
+function openSidebar() {
+
+    sidebar.classList.add(
+        "is-open"
+    );
+
+    sidebarOverlay.classList.add(
+        "is-visible"
+    );
+
+    sidebarOpen.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+    document.body.classList.add(
+        "velora-sidebar-open"
+    );
+
+}
+
+
+function closeSidebar() {
+
+    sidebar.classList.remove(
+        "is-open"
+    );
+
+    sidebarOverlay.classList.remove(
+        "is-visible"
+    );
+
+    sidebarOpen.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+    document.body.classList.remove(
+        "velora-sidebar-open"
+    );
+
+}
+
+
+sidebarOpen.addEventListener(
+    "click",
+    openSidebar
+);
+
+
+sidebarClose.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+sidebarOverlay.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+
+/* =====================================================
+   GALLERY FILTERS
+===================================================== */
+
+const galleryFilters =
+    document.querySelectorAll(
+        ".velora-gallery-filter"
+    );
+
+
+const galleryItems =
+    document.querySelectorAll(
+        ".velora-gallery-item"
+    );
+
+
+galleryFilters.forEach(
+    function (filterButton) {
+
+        filterButton.addEventListener(
+            "click",
+            function () {
+
+                const filter =
+                    this.dataset.filter;
+
+
+                galleryFilters.forEach(
+                    function (button) {
+
+                        button.classList.remove(
+                            "is-active"
+                        );
+
+                        button.setAttribute(
+                            "aria-selected",
+                            "false"
+                        );
+
+                    }
+                );
+
+
+                this.classList.add(
+                    "is-active"
+                );
+
+                this.setAttribute(
+                    "aria-selected",
+                    "true"
+                );
+
+
+                galleryItems.forEach(
+                    function (gallery) {
+
+                        if (
+                            filter === "all" ||
+                            gallery.dataset.status === filter
+                        ) {
+
+                            gallery.hidden = false;
+
+                        } else {
+
+                            gallery.hidden = true;
+
+                        }
+
+                    }
+                );
+
+
+                checkEmptyState();
+
+            }
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   GALLERY SEARCH
+===================================================== */
+
+const gallerySearch =
+    document.getElementById(
+        "gallerySearch"
+    );
+
+
+gallerySearch.addEventListener(
+    "input",
+    function () {
+
+        const searchTerm =
+            this.value
+                .toLowerCase()
+                .trim();
+
+
+        galleryItems.forEach(
+            function (gallery) {
+
+                const galleryName =
+                    gallery.dataset.name
+                        .toLowerCase();
+
+
+                const matches =
+                    galleryName.includes(
+                        searchTerm
+                    );
+
+
+                gallery.hidden =
+                    !matches;
+
+            }
+        );
+
+
+        checkEmptyState();
+
+    }
+);
+
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+const galleryEmpty =
+    document.getElementById(
+        "galleryEmpty"
+    );
+
+
+function checkEmptyState() {
+
+    const visibleItems =
+        Array.from(
+            galleryItems
+        ).filter(
+            function (item) {
+
+                return !item.hidden;
+
+            }
+        );
+
+
+    galleryEmpty.hidden =
+        visibleItems.length !== 0;
+
+}
+
+
+
+/* =====================================================
+   NEW GALLERY
+===================================================== */
+
+const newGalleryButton =
+    document.getElementById(
+        "newGalleryButton"
+    );
+
+
+const createGalleryCard =
+    document.getElementById(
+        "createGalleryCard"
+    );
+
+
+function createGallery() {
+
+    alert(
+        "Gallery creation flow will be connected here."
+    );
+
+}
+
+
+newGalleryButton.addEventListener(
+    "click",
+    createGallery
+);
+
+
+createGalleryCard.addEventListener(
+    "click",
+    createGallery
+);
+
+
+
+/* =====================================================
+   ESCAPE KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "Escape" &&
+            sidebar.classList.contains("is-open")
+        ) {
+
+            closeSidebar();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   SEARCH SHORTCUT
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "/" &&
+            !["INPUT", "TEXTAREA"].includes(
+                document.activeElement.tagName
+            )
+        ) {
+
+            event.preventDefault();
+
+            const search =
+                document.querySelector(
+                    ".velora-dashboard-search input"
+                );
+
+
+            if (search) {
+
+                search.focus();
+
+            }
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
