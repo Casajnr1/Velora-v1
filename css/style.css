@@ -702,161 +702,649 @@ button:focus-visible {
 }
 
 
-/* =========================================================
-   06 — HERO
-========================================================= */
+//* =========================================
+   VLR-HERO-001
+   VELORA CINEMATIC MARQUEE HERO
+========================================= */
+
+
+/* =========================================
+   HERO FOUNDATION
+========================================= */
 
 .velora-hero {
+    position: relative;
 
-    min-height:
-        calc(100vh - var(--v-nav-height));
+    min-height: 760px;
 
-    padding:
-        112px 24px
-        0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     overflow: hidden;
 
-    text-align:
-        center;
+    background: var(--velora-paper);
 
-    background:
-        linear-gradient(
-            180deg,
-            var(--velora-paper) 0%,
-            var(--velora-green-50) 100%
-        );
+    font-family: "Lato", sans-serif;
 
+    isolation: isolate;
 }
 
 
-.velora-hero-inner {
+/* =========================================
+   CINEMATIC PHOTOGRAPHY BACKGROUND
+========================================= */
+
+.velora-hero-marquee {
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   MARQUEE ROW
+========================================= */
+
+.velora-marquee-row {
+    position: absolute;
+
+    left: 0;
 
     width: 100%;
 
-    max-width: 900px;
+    overflow: visible;
+}
 
-    margin:
-        0 auto;
+
+/* TOP LAYER */
+
+.velora-marquee-row--top {
+    top: -75px;
+
+    transform: rotate(-3deg);
+}
+
+
+/* CENTRAL LAYER */
+
+.velora-marquee-row--middle {
+    top: 260px;
+
+    transform: rotate(2deg);
+}
+
+
+/* BOTTOM LAYER */
+
+.velora-marquee-row--bottom {
+    bottom: -115px;
+
+    transform: rotate(-2deg);
+}
+
+
+/* =========================================
+   MARQUEE TRACK
+========================================= */
+
+.velora-marquee-track {
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+
+    width: max-content;
+
+    will-change: transform;
+}
+
+
+/* =========================================
+   IMAGE FOUNDATION
+========================================= */
+
+.velora-marquee-item {
+    position: relative;
+
+    flex: 0 0 auto;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    /*
+     * The images are intentionally subdued.
+     * They are a moving visual atmosphere,
+     * not the primary hero content.
+     */
+    opacity: 0.32;
+
+    filter:
+        saturate(0.88)
+        contrast(0.94);
+
+    box-shadow:
+        0 20px 60px
+        rgba(23, 24, 26, 0.08);
+}
+
+
+.velora-marquee-item img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transform: scale(1.03);
+}
+
+
+/* =========================================
+   IMAGE PROPORTIONS
+
+   Portrait photography is intentionally
+   preserved instead of forcing all supplied
+   images into identical horizontal cards.
+========================================= */
+
+
+/* LARGE PORTRAIT */
+
+.velora-marquee-item--large {
+    width: 250px;
+    height: 360px;
+}
+
+
+/* TALL PORTRAIT */
+
+.velora-marquee-item--portrait {
+    width: 220px;
+    height: 320px;
+}
+
+
+/* MEDIUM PORTRAIT */
+
+.velora-marquee-item--medium {
+    width: 200px;
+    height: 280px;
+}
+
+
+/* WIDE WEDDING / EVENT IMAGE */
+
+.velora-marquee-item--wide {
+    width: 310px;
+    height: 220px;
+}
+
+
+/* =========================================
+   INDIVIDUAL IMAGE DEPTH
+
+   Small vertical differences prevent the
+   marquee from looking like a mechanical grid.
+========================================= */
+
+.velora-marquee-item:nth-child(1) {
+    transform: translateY(28px);
+}
+
+
+.velora-marquee-item:nth-child(2) {
+    transform: translateY(-18px);
+}
+
+
+.velora-marquee-item:nth-child(3) {
+    transform: translateY(12px);
+}
+
+
+.velora-marquee-item:nth-child(4) {
+    transform: translateY(-32px);
+}
+
+
+.velora-marquee-item:nth-child(5) {
+    transform: translateY(28px);
+}
+
+
+.velora-marquee-item:nth-child(6) {
+    transform: translateY(-18px);
+}
+
+
+.velora-marquee-item:nth-child(7) {
+    transform: translateY(12px);
+}
+
+
+.velora-marquee-item:nth-child(8) {
+    transform: translateY(-32px);
+}
+
+
+/* =========================================
+   CINEMATIC MARQUEE ANIMATIONS
+
+   The movement is deliberately slow.
+========================================= */
+
+
+/* TOP ROW */
+
+.velora-marquee-track--left {
+    animation:
+        velora-marquee-left
+        70s
+        linear
+        infinite;
+}
+
+
+/* MIDDLE ROW */
+
+.velora-marquee-track--right {
+    animation:
+        velora-marquee-right
+        90s
+        linear
+        infinite;
+}
+
+
+/* BOTTOM ROW */
+
+.velora-marquee-track--left-slow {
+    animation:
+        velora-marquee-left
+        155s
+        linear
+        infinite;
+}
+
+
+/* =========================================
+   LEFT MOVEMENT
+========================================= */
+
+@keyframes velora-marquee-left {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 
 }
 
+
+/* =========================================
+   RIGHT MOVEMENT
+========================================= */
+
+@keyframes velora-marquee-right {
+
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================================
+   PROTECTED CONTENT AREA
+
+   This is the most important visual layer.
+
+   The centre remains bright enough for the
+   Velora message to remain dominant, while
+   the images gradually become more visible
+   toward the edges.
+========================================= */
+
+.velora-hero-protection {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            ellipse 55% 60% at center,
+            rgba(255, 255, 255, 0.98) 0%,
+            rgba(255, 255, 255, 0.94) 38%,
+            rgba(255, 255, 255, 0.78) 62%,
+            rgba(255, 255, 255, 0.38) 100%
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.18) 0%,
+            rgba(255, 255, 255, 0) 20%,
+            rgba(255, 255, 255, 0) 80%,
+            rgba(255, 255, 255, 0.18) 100%
+        );
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.velora-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+
+.velora-hero-copy {
+    width: min(950px, 100%);
+
+    text-align: center;
+}
+
+
+/* =========================================
+   HERO TITLE
+
+   AGREED VELORA FONT:
+   LATO
+========================================= */
 
 .velora-hero-title {
-
     max-width: 900px;
 
-    margin:
-        0 auto
-        var(--v-space-6);
+    margin: 0 auto;
+
+    color: var(--velora-ink);
+
+    font-family: "Lato", sans-serif;
 
     font-size:
-        clamp(
-            48px,
-            7vw,
-            var(--v-font-size-h1)
-        );
+        clamp(3.25rem, 6.2vw, 6.8rem);
 
-    font-weight:
-        var(--v-font-weight-heavy);
+    font-weight: 400;
 
-    line-height:
-        var(--v-line-height-tight);
+    line-height: 1.02;
 
-    letter-spacing:
-        var(--v-letter-spacing-tight);
+    letter-spacing: -0.045em;
 
+    text-wrap: balance;
 }
 
 
-.velora-hero-title span {
+/* =========================================
+   EMPHASIZED WORDS
+========================================= */
 
-    color:
-        var(--velora-brand-dark)
-        !important;
+.velora-hero-emphasis {
+         color: #123325;   var(--velora-green-900),
 
+
+    font-family: "Lato", sans-serif;
+
+    font-weight: 900;
+
+    letter-spacing: -0.055em;
 }
 
 
-.velora-hero-sub {
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
 
+.velora-hero-description {
     max-width: 620px;
 
     margin:
-        0 auto
-        var(--v-space-8);
-
-    color:
-        var(--velora-muted);
-
-    font-size:
-        var(--v-font-size-md);
-
-    line-height:
-        1.7;
-
-}
-
-
-.velora-hero-actions {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        var(--v-space-3);
-
-}
-
-
-.velora-hero-media {
-
-    width: 100%;
-
-    max-width: 1320px;
-
-    margin:
-        var(--v-space-12)
+        30px
         auto
         0;
 
-    border-radius:
-        var(--v-radius-xl)
-        var(--v-radius-xl)
-        0
-        0;
+    color: var(--velora-muted);
 
-    overflow: hidden;
+    font-family: "Lato", sans-serif;
 
-    box-shadow:
-        var(--v-shadow-lg);
+    font-size:
+        clamp(1rem, 1.4vw, 1.2rem);
+
+    font-weight: 400;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   HERO ACTIONS
+========================================= */
+
+.velora-hero-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 38px;
+}
+
+
+/* =========================================
+   IMAGE HOVER SAFETY
+
+   Background images should never interfere
+   with interaction.
+========================================= */
+
+.velora-hero-marquee {
+    user-select: none;
+}
+
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .velora-marquee-track {
+        animation: none;
+    }
 
 }
 
 
-.velora-hero-img {
+/* =========================================
+   TABLET
+========================================= */
 
-    width: 100%;
+@media (max-width: 991.98px) {
 
-    min-height: 420px;
+    .velora-hero {
+        min-height: 700px;
+    }
 
-    object-fit:
-        cover;
 
-    object-position:
-        top center;
+    .velora-marquee-row--top {
+        top: -90px;
+    }
+
+
+    .velora-marquee-row--middle {
+        top: 250px;
+    }
+
+
+    .velora-marquee-item--large {
+        width: 210px;
+        height: 305px;
+    }
+
+
+    .velora-marquee-item--portrait {
+        width: 190px;
+        height: 275px;
+    }
+
+
+    .velora-marquee-item--medium {
+        width: 175px;
+        height: 245px;
+    }
+
+
+    .velora-marquee-item--wide {
+        width: 260px;
+        height: 190px;
+    }
 
 }
 
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767.98px) {
+
+    .velora-hero {
+        min-height: 680px;
+    }
+
+
+    .velora-hero-content {
+        padding:
+            110px
+            20px
+            80px;
+    }
+
+
+    .velora-hero-title {
+        font-size:
+            clamp(3rem, 13vw, 4.6rem);
+
+        line-height: 1.04;
+
+        letter-spacing: -0.04em;
+    }
+
+
+    .velora-hero-description {
+        max-width: 480px;
+
+        margin-top: 24px;
+
+        font-size: 1rem;
+
+        line-height: 1.65;
+    }
+
+
+    /* MARQUEE POSITIONING */
+
+    .velora-marquee-row--top {
+        top: -50px;
+    }
+
+
+    .velora-marquee-row--middle {
+        top: 265px;
+    }
+
+
+    .velora-marquee-row--bottom {
+        bottom: -80px;
+    }
+
+
+    .velora-marquee-track {
+        gap: 18px;
+    }
+
+
+    /* SMALLER MOBILE IMAGES */
+
+    .velora-marquee-item--large {
+        width: 155px;
+        height: 230px;
+    }
+
+
+    .velora-marquee-item--portrait {
+        width: 145px;
+        height: 210px;
+    }
+
+
+    .velora-marquee-item--medium {
+        width: 130px;
+        height: 190px;
+    }
+
+
+    .velora-marquee-item--wide {
+        width: 210px;
+        height: 150px;
+    }
+
+
+    /* EVEN SLOWER, SUBTLE MOTION */
+
+    .velora-marquee-track--left {
+        animation-duration: 100s;
+    }
+
+
+    .velora-marquee-track--right {
+        animation-duration: 120s;
+    }
+
+
+    .velora-marquee-track--left-slow {
+        animation-duration: 140s;
+    }
+
+
+    .velora-hero-actions {
+        margin-top: 30px;
+    }
+
+}
 
 /* =========================================================
    07 — TEMPLATES
