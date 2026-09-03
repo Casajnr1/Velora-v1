@@ -2723,3 +2723,163 @@ img {
     }
 
 }
+
+/*==========================================================
+        VELORA TYPOGRAPHY + FOOTER CORRECTION PASS
+        Approved dashboard baseline
+==========================================================*/
+:root {
+    --v-font-xs: 12px;
+    --v-font-sm: 14px;
+    --v-font-md: 16px;
+    --v-font-lg: 18px;
+    --v-font-xl: 22px;
+    --v-font-h2: 28px;
+    --v-font-h1: 42px;
+}
+
+/* Typography floor: interface text must not collapse below the approved readable baseline. */
+.velora-nav-label,
+.velora-panel-eyebrow,
+.velora-page-eyebrow { font-size: var(--v-font-xs); }
+
+.velora-dashboard-nav-link,
+.velora-dashboard-search input,
+.velora-view-site,
+.velora-upgrade-content strong,
+.velora-user-details strong,
+.velora-user-details small,
+.velora-upgrade-content span,
+.velora-search-shortcut,
+.velora-dashboard-breadcrumb,
+.velora-stat-label,
+.velora-stat-meta,
+.velora-panel-link,
+.velora-activity-content span,
+.velora-activity-content strong,
+.velora-activity-item time,
+.velora-gallery-info h3,
+.velora-gallery-info span,
+.velora-create-gallery strong,
+.velora-create-gallery span:last-child {
+    font-size: var(--v-font-sm);
+}
+
+.velora-overview-heading p { font-size: var(--v-font-md); }
+.velora-overview-heading h1 { font-size: var(--v-font-h1); line-height: 1.12; }
+.velora-dashboard-panel h2 { font-size: var(--v-font-xl); line-height: 1.2; }
+.velora-stat-value { font-size: 32px; line-height: 1; }
+
+.velora-dashboard-primary-button,
+.velora-dashboard-secondary-button {
+    font-size: var(--v-font-sm);
+    min-height: 46px;
+}
+
+/* Dashboard footer */
+.velora-dashboard-footer {
+    margin-top: 24px;
+    padding: 28px 40px 22px;
+    border-top: 1px solid var(--velora-line);
+    background: var(--velora-paper);
+}
+
+.velora-dashboard-footer-inner {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.velora-dashboard-footer-brand {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.velora-dashboard-footer-brand img {
+    width: 110px;
+    height: auto;
+    display: block;
+}
+
+.velora-dashboard-footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px 24px;
+}
+
+.velora-dashboard-footer-nav a,
+.velora-dashboard-footer-site {
+    color: var(--velora-muted);
+    font-size: var(--v-font-sm);
+    font-weight: 600;
+    transition: color .2s ease;
+}
+
+.velora-dashboard-footer-nav a:hover,
+.velora-dashboard-footer-site:hover {
+    color: var(--velora-green);
+}
+
+.velora-dashboard-footer-site {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    flex: 0 0 auto;
+}
+
+.velora-dashboard-footer-meta {
+    width: 100%;
+    max-width: 1440px;
+    margin: 22px auto 0;
+    padding-top: 18px;
+    border-top: 1px solid var(--velora-line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    color: var(--velora-muted-light);
+    font-size: var(--v-font-xs);
+}
+
+.velora-dashboard-footer-brand:focus-visible,
+.velora-dashboard-footer-nav a:focus-visible,
+.velora-dashboard-footer-site:focus-visible {
+    outline: 2px solid var(--velora-green);
+    outline-offset: 4px;
+}
+
+@media (max-width: 767px) {
+    .velora-overview-heading h1 { font-size: 34px; }
+    .velora-stat-value { font-size: 28px; }
+    .velora-dashboard-footer { padding: 26px 17px 20px; }
+    .velora-dashboard-footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .velora-dashboard-footer-nav {
+        justify-content: flex-start;
+        gap: 14px 18px;
+    }
+}
+
+@media (max-width: 420px) {
+    .velora-overview-heading h1 { font-size: 32px; }
+    .velora-stat-value { font-size: 26px; }
+    .velora-dashboard-footer { padding: 24px 14px 18px; }
+    .velora-dashboard-footer-meta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    /* Preserve the approved readable scale on small screens. */
+    .velora-stat-label,
+    .velora-stat-meta,
+    .velora-gallery-info h3,
+    .velora-gallery-info span { font-size: var(--v-font-xs); }
+}

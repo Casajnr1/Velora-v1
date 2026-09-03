@@ -1,1173 +1,1304 @@
-:root {
-  --velora-ink: #17181a;
-  --velora-paper: #ffffff;
-  --velora-line: #ececec;
-  --velora-muted: #63676c;
+/* =========================================================
+   VELORA
+   INDEX PAGE — VERSION 1
 
-  --velora-green: #1b4332;
-  --velora-green-dark: #123325;
-  --velora-green-tint: #e9f0ec;
+   Design System:
+   Brand Palette → Primitive Tokens → Semantic Tokens
+   → Component Tokens
+
+   Font: Lato
+========================================================= */
+
+
+/* =========================================================
+   01 — DESIGN TOKENS
+========================================================= */
+
+:root {
+
+    /* -----------------------------------------------------
+       BRAND — PRIMITIVE COLORS
+    ----------------------------------------------------- */
+
+    --velora-green-900: #123325;
+    --velora-green-800: #1b4332;
+    --velora-green-700: #24533f;
+    --velora-green-100: #e9f0ec;
+    --velora-green-50: #f4f8f5;
+
+
+    /* -----------------------------------------------------
+       NEUTRAL — PRIMITIVE COLORS
+    ----------------------------------------------------- */
+
+    --velora-neutral-950: #17181a;
+    --velora-neutral-900: #222426;
+    --velora-neutral-800: #383b3f;
+    --velora-neutral-700: #63676c;
+    --velora-neutral-600: #85898e;
+    --velora-neutral-500: #a7aaae;
+    --velora-neutral-300: #d9dbdd;
+    --velora-neutral-200: #ececec;
+    --velora-neutral-100: #f5f5f5;
+    --velora-neutral-50: #fafafa;
+    --velora-white: #ffffff;
+
+
+    /* -----------------------------------------------------
+       SEMANTIC COLORS
+    ----------------------------------------------------- */
+
+    --velora-ink: var(--velora-neutral-950);
+    --velora-paper: var(--velora-white);
+    --velora-muted: var(--velora-neutral-700);
+    --velora-subtle: var(--velora-neutral-600);
+    --velora-line: var(--velora-neutral-200);
+
+    --velora-brand: var(--velora-green-800);
+    --velora-brand-dark: var(--velora-green-900);
+    --velora-brand-soft: var(--velora-green-100);
+    --velora-brand-wash: var(--velora-green-50);
+
+
+    /* -----------------------------------------------------
+       TYPOGRAPHY
+    ----------------------------------------------------- */
+
+    --v-font-family:
+        "Lato",
+        sans-serif;
+
+    --v-font-size-xs: 12px;
+    --v-font-size-sm: 14px;
+    --v-font-size-base: 16px;
+    --v-font-size-md: 18px;
+    --v-font-size-lg: 20px;
+    --v-font-size-xl: 24px;
+
+    --v-font-size-h6: 28px;
+    --v-font-size-h5: 32px;
+    --v-font-size-h4: 40px;
+    --v-font-size-h3: 48px;
+    --v-font-size-h2: 56px;
+    --v-font-size-h1: 72px;
+
+    --v-font-weight-regular: 400;
+    --v-font-weight-medium: 500;
+    --v-font-weight-semibold: 600;
+    --v-font-weight-bold: 700;
+    --v-font-weight-heavy: 900;
+
+    --v-line-height-tight: 1.05;
+    --v-line-height-heading: 1.15;
+    --v-line-height-body: 1.65;
+
+    --v-letter-spacing-tight: -0.04em;
+    --v-letter-spacing-heading: -0.025em;
+    --v-letter-spacing-normal: 0;
+    --v-letter-spacing-wide: 0.08em;
+
+
+    /* -----------------------------------------------------
+       SPACING
+    ----------------------------------------------------- */
+
+    --v-space-1: 4px;
+    --v-space-2: 8px;
+    --v-space-3: 12px;
+    --v-space-4: 16px;
+    --v-space-5: 20px;
+    --v-space-6: 24px;
+    --v-space-7: 32px;
+    --v-space-8: 40px;
+    --v-space-9: 48px;
+    --v-space-10: 64px;
+    --v-space-11: 80px;
+    --v-space-12: 96px;
+    --v-space-13: 120px;
+    --v-space-14: 160px;
+
+
+    /* -----------------------------------------------------
+       RADIUS
+    ----------------------------------------------------- */
+
+    --v-radius-sm: 6px;
+    --v-radius-md: 10px;
+    --v-radius-lg: 16px;
+    --v-radius-xl: 24px;
+    --v-radius-pill: 999px;
+
+
+    /* -----------------------------------------------------
+       SHADOWS
+    ----------------------------------------------------- */
+
+    --v-shadow-sm:
+        0 4px 12px rgba(23, 24, 26, 0.06);
+
+    --v-shadow-md:
+        0 12px 30px rgba(23, 24, 26, 0.08);
+
+    --v-shadow-lg:
+        0 24px 60px rgba(23, 24, 26, 0.12);
+
+    --v-shadow-brand:
+        0 12px 32px rgba(27, 67, 50, 0.16);
+
+
+    /* -----------------------------------------------------
+       MOTION
+    ----------------------------------------------------- */
+
+    --v-duration-fast: 180ms;
+    --v-duration-base: 280ms;
+    --v-duration-slow: 500ms;
+
+    --v-ease:
+        cubic-bezier(0.22, 1, 0.36, 1);
+
+
+    /* -----------------------------------------------------
+       LAYOUT
+    ----------------------------------------------------- */
+
+    --v-container-max: 1240px;
+
+    --v-section-space: 120px;
+
+    --v-nav-height: 80px;
+
 }
 
 
-/* =========================
-        GLOBAL
-========================= */
+/* =========================================================
+   02 — GLOBAL RESET
+========================================================= */
 
-* {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+
+    box-sizing: border-box;
+
 }
 
 
 html {
-  scroll-behavior: smooth;
+
+    scroll-behavior: smooth;
+
+    scroll-padding-top:
+        calc(
+            var(--v-nav-height) +
+            var(--v-space-4)
+        );
+
 }
 
 
 body {
 
-  margin: 0;
+    margin: 0;
 
-   font-family: "Lato", sans-serif;
+    color: var(--velora-ink);
 
+    background:
+        var(--velora-paper);
 
-  background: var(--velora-paper);
+    font-family:
+        var(--v-font-family);
 
-  color: var(--velora-ink);
+    font-size:
+        var(--v-font-size-base);
 
-  letter-spacing: -0.01em;
+    font-weight:
+        var(--v-font-weight-regular);
 
-  -webkit-font-smoothing: antialiased;
+    line-height:
+        var(--v-line-height-body);
 
-}
+    -webkit-font-smoothing:
+        antialiased;
 
-
-/* =========================
-        NAVBAR
-========================= */
-
-
-.velora-nav {
- font-family: "Lato", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-  background: var(--velora-paper);
-
-  border-bottom: 1px solid var(--velora-line);
-
-  padding:0;
- box-shadow: 0 1px 25px rgba(49, 103, 69, 0.548);
-}
-
-
-
-.velora-nav-inner {
-
-  max-width:1240px;
-
-  padding:18px 32px;
-
-  display:flex;
-
-  align-items:center;
-
-  position:relative;
+    text-rendering:
+        optimizeLegibility;
 
 }
 
 
+body,
+button,
+input,
+textarea {
 
-/* LOGO */
-
-
-.velora-brand {
-
-  display:flex;
-
-  align-items:center;
-
-  padding:0;
+    font-family:
+        var(--v-font-family);
 
 }
 
 
+img {
 
-.velora-logo {
+    display: block;
 
-  width:180px;
-
-  height:auto;
-
-  display:block;
+    max-width: 100%;
 
 }
 
 
+a {
 
-/* NAV LINKS */
+    color: inherit;
 
-
-.velora-links {
-
-  display:flex;
-
-  align-items:center;
-
-  gap:8px;
+    text-decoration: none;
 
 }
 
 
+button {
 
-.velora-links .nav-link {
+    border: 0;
 
-
-  color:var(--velora-ink);
-
-
-  font-size:15px;
-
-
-  font-weight:500;
-
-
-  line-height:1;
-
-
-  padding:10px 14px;
-
-
-  border-radius:8px;
-
-
-  transition:.2s ease;
-
+    cursor: pointer;
 
 }
 
 
+ul {
 
-.velora-links .nav-link:hover {
+    margin: 0;
 
-  background:#f5f5f5;
+    padding: 0;
 
-}
-
-
-
-.velora-links .nav-link.active {
-
-  font-weight:600;
+    list-style: none;
 
 }
 
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
 
-/* DASHBOARD BUTTON */
+    margin-top: 0;
+
+}
 
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    color: var(--velora-ink);
+
+    font-weight:
+        var(--v-font-weight-bold);
+
+}
+
+
+section {
+
+    position: relative;
+
+}
+
+
+.container {
+
+    width: 100%;
+
+    max-width:
+        var(--v-container-max);
+
+}
+
+
+/* =========================================================
+   03 — ACCESSIBILITY
+========================================================= */
+
+a:focus-visible,
+button:focus-visible {
+
+    outline:
+        3px solid
+        rgba(27, 67, 50, 0.35);
+
+    outline-offset:
+        4px;
+
+}
+
+
+@media
+(prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   04 — REUSABLE BUTTONS
+========================================================= */
+
+.velora-btn-primary,
+.velora-btn-secondary,
 .velora-btn-dashboard {
 
+    min-height: 50px;
 
-  display:inline-flex;
+    display:
+        inline-flex;
 
+    align-items:
+        center;
 
-  align-items:center;
+    justify-content:
+        center;
 
+    gap:
+        var(--v-space-2);
 
-  justify-content:center;
+    padding:
+        0 24px;
 
+    border-radius:
+        var(--v-radius-md);
 
+    font-size:
+        var(--v-font-size-base);
 
-  background:var(--velora-ink);
+    font-weight:
+        var(--v-font-weight-bold);
 
-
-  color:white!important;
-
-
-
-  font-size:15px;
-
-
-  font-weight:600;
-
-
-
-  padding:12px 26px;
-
-
-
-  border-radius:999px;
-
-
-  border:none;
-
-
-
-  transition:.2s ease;
-
+    transition:
+        transform var(--v-duration-base)
+            var(--v-ease),
+        background var(--v-duration-base)
+            var(--v-ease),
+        border-color var(--v-duration-base)
+            var(--v-ease),
+        color var(--v-duration-base)
+            var(--v-ease);
 
 }
-
-
-
-.velora-btn-dashboard:hover {
-
-  background:#333;
-
-  transform:translateY(-1px);
-
-}
-
-
-
-/* CENTER NAV DESKTOP */
-
-
-@media(min-width:992px){
-
-
-  .velora-nav .navbar-collapse {
-
-
-    display:flex!important;
-
-    align-items:center;
-
-    justify-content:center;
-
-    flex-grow:1;
-
-
-  }
-
-
-
-  .velora-links {
-
-
-    position:absolute;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-
-  }
-
-
-
-  .velora-btn-dashboard {
-
-    margin-left:auto;
-
-  }
-
-}
-
-
-
-/* MOBILE NAV */
-
-
-.navbar-toggler {
-
-  border:none;
-
-}
-
-
-
-.navbar-toggler:focus {
-
-  box-shadow:none;
-
-}
-
-
-
-@media(max-width:991px){
-
-
-  .velora-nav-inner {
-
-    padding:16px 20px;
-
-  }
-
-
-
-  .velora-logo {
-
-    width:150px;
-
-  }
-
-
-
-  .velora-links {
-
-
-    position:static;
-
-    transform:none;
-
-
-    flex-direction:column;
-
-
-    align-items:flex-start;
-
-
-    margin:20px 0;
-
-
-  }
-
-
-
-  .velora-links .nav-link {
-
-    width:100%;
-
-  }
-
-
-
-}
-
-
-/* =========================
-        HERO SECTION
-========================= */
-
-
-.velora-hero {
-
-
-  max-width:900px;
-
-
-  margin:0 auto;
-
-
-  padding:96px 24px 64px;
-
-
-  text-align:center;
-
-
-}
-
-
-
-
-.velora-hero-title {
-
-
-  margin:0 auto 22px;
-
-
-  max-width:760px;
-
-
-
-  font-size:clamp(42px,5vw,64px);
-
-
-
-  font-weight:500;
-
- font-family: "Lato", sans-serif;
-  
-
-  line-height:1.08;
-
-
-
-  letter-spacing:-0.045em;
-
-
-
-  color:var(--velora-ink);
-
-
-}
-
-
-
-.velora-hero-sub {
-
-
-  margin:0 auto 34px;
-
-
-  max-width:560px;
-
-
-
-  font-size:19px;
-
-
-
-  font-weight:400;
-
-
-
-  line-height:1.65;
-
-
-
-  color:var(--velora-muted);
-
-
-}
-
-
-
-
-/* HERO ACTIONS */
-
-
-.velora-hero-actions {
-
-
-  display:flex;
-
-
-  justify-content:center;
-
-
-  gap:14px;
-
-
-  flex-wrap:wrap;
-
-
-  margin-bottom:60px;
-
-
-}
-
 
 
 .velora-btn-primary {
 
+    color:
+        var(--velora-white);
 
-  background:var(--velora-green);
-
-
-  color:white!important;
-
-
-  font-size:16px;
-
-
-  font-weight:600;
-
-
-
-  padding:14px 32px;
-
-
-
-  border-radius:999px;
-
-
-
-  border:none;
-
-
-  transition:.2s ease;
-
+    background:
+        var(--velora-brand);
 
 }
-
 
 
 .velora-btn-primary:hover {
 
+    color:
+        var(--velora-white);
 
-  background:var(--velora-green-dark);
+    background:
+        var(--velora-brand-dark);
 
-
-  transform:translateY(-1px);
-
+    transform:
+        translateY(-2px);
 
 }
-
 
 
 .velora-btn-secondary {
 
+    color:
+        var(--velora-ink);
 
-  background:white;
+    background:
+        transparent;
 
-
-  color:var(--velora-ink)!important;
-
-
-  font-size:16px;
-
-
-  font-weight:600;
-
-
-
-  padding:14px 32px;
-
-
-
-  border-radius:999px;
-
-
-
-  border:1px solid var(--velora-line);
-
-
-  transition:.2s ease;
-
+    border:
+        1px solid
+        var(--velora-line);
 
 }
-
 
 
 .velora-btn-secondary:hover {
 
+    color:
+        var(--velora-ink);
 
-  background:var(--velora-green-tint);
+    background:
+        var(--velora-neutral-50);
 
-
-  border-color:var(--velora-green);
-
-
-  color:var(--velora-green)!important;
-
+    border-color:
+        var(--velora-neutral-300);
 
 }
 
 
+.velora-btn-dashboard {
+
+    min-height: 44px;
+
+    color:
+        var(--velora-white);
+
+    background:
+        var(--velora-brand);
+
+    border-radius:
+        var(--v-radius-md);
+
+}
 
 
-/* =========================
-        HERO IMAGE
-========================= */
+.velora-btn-dashboard:hover {
+
+    color:
+        var(--velora-white);
+
+    background:
+        var(--velora-brand-dark);
+
+}
+
+
+/* =========================================================
+   05 — NAVIGATION
+========================================================= */
+
+.velora-nav {
+
+    position:
+        sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    min-height:
+        var(--v-nav-height);
+
+    padding:
+        0;
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid
+        rgba(236, 236, 236, 0.9);
+
+    box-shadow:
+        0 8px 24px
+        rgba(27, 67, 50, 0.06);
+
+}
+
+
+.velora-nav-inner {
+
+    min-height:
+        var(--v-nav-height);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+}
+
+
+.velora-brand {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+}
+
+
+.velora-logo {
+
+    width: auto;
+
+    height: 34px;
+
+    object-fit:
+        contain;
+
+}
+
+
+.velora-links {
+
+    gap:
+        var(--v-space-7);
+
+}
+
+
+.velora-links
+.nav-link {
+
+    padding:
+        8px 0 !important;
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        var(--v-font-size-sm);
+
+    font-weight:
+        var(--v-font-weight-bold);
+
+    transition:
+        color var(--v-duration-fast)
+        var(--v-ease);
+
+}
+
+
+.velora-links
+.nav-link:hover,
+
+.velora-links
+.nav-link.active {
+
+    color:
+        var(--velora-brand);
+
+}
+
+
+.navbar-toggler {
+
+    border:
+        1px solid
+        var(--velora-line);
+
+    padding:
+        8px 10px;
+
+}
+
+
+.navbar-toggler:focus {
+
+    box-shadow: none;
+
+}
+
+
+.navbar-toggler-icon {
+
+    background-image:
+        none;
+
+    width: 22px;
+
+    height: 16px;
+
+    position: relative;
+
+}
+
+
+.navbar-toggler-icon,
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+
+    display: block;
+
+    background:
+        var(--velora-ink);
+
+    border-radius:
+        var(--v-radius-pill);
+
+}
+
+
+.navbar-toggler-icon {
+
+    height: 2px;
+
+    margin-top: 6px;
+
+}
+
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    width: 22px;
+
+    height: 2px;
+
+}
+
+
+.navbar-toggler-icon::before {
+
+    top: -7px;
+
+}
+
+
+.navbar-toggler-icon::after {
+
+    bottom: -7px;
+
+}
+
+
+/* =========================================================
+   06 — HERO
+========================================================= */
+
+.velora-hero {
+
+    min-height:
+        calc(100vh - var(--v-nav-height));
+
+    padding:
+        112px 24px
+        0;
+
+    overflow: hidden;
+
+    text-align:
+        center;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--velora-paper) 0%,
+            var(--velora-green-50) 100%
+        );
+
+}
+
+
+.velora-hero-inner {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin:
+        0 auto;
+
+}
+
+
+.velora-hero-title {
+
+    max-width: 900px;
+
+    margin:
+        0 auto
+        var(--v-space-6);
+
+    font-size:
+        clamp(
+            48px,
+            7vw,
+            var(--v-font-size-h1)
+        );
+
+    font-weight:
+        var(--v-font-weight-heavy);
+
+    line-height:
+        var(--v-line-height-tight);
+
+    letter-spacing:
+        var(--v-letter-spacing-tight);
+
+}
+
+
+.velora-hero-title span {
+
+    color:
+        var(--velora-brand-dark)
+        !important;
+
+}
+
+
+.velora-hero-sub {
+
+    max-width: 620px;
+
+    margin:
+        0 auto
+        var(--v-space-8);
+
+    color:
+        var(--velora-muted);
+
+    font-size:
+        var(--v-font-size-md);
+
+    line-height:
+        1.7;
+
+}
+
+
+.velora-hero-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        var(--v-space-3);
+
+}
 
 
 .velora-hero-media {
 
+    width: 100%;
 
-  max-width:1080px;
+    max-width: 1320px;
 
+    margin:
+        var(--v-space-12)
+        auto
+        0;
 
-  margin:0 auto;
+    border-radius:
+        var(--v-radius-xl)
+        var(--v-radius-xl)
+        0
+        0;
 
+    overflow: hidden;
 
-
-  border-radius:24px;
-
-
-
-  overflow:hidden;
-
-
-
-  border:1px solid var(--velora-line);
-
-
-
-  box-shadow:
-  0 25px 70px -35px rgba(0,0,0,.25);
-
+    box-shadow:
+        var(--v-shadow-lg);
 
 }
-
 
 
 .velora-hero-img {
 
+    width: 100%;
 
-  width:100%;
+    min-height: 420px;
 
+    object-fit:
+        cover;
 
-  height:auto;
-
-
-  display:block;
-
-
-}
-
-
-
-/* MOBILE HERO */
-
-
-@media(max-width:767px){
-
-
-  .velora-hero {
-
-
-    padding:60px 20px 40px;
-
-
-  }
-
-
-
-  .velora-hero-title {
-
-
-    font-size:40px;
-
-
-  }
-
-
-
-  .velora-hero-sub {
-
-
-    font-size:17px;
-
-
-  }
-
-
-}
-/*==========================
-      TEMPLATE SECTION
-===========================*/
-
-.velora-templates{
-
-    padding:120px 0;
-
-    background:#fafafa;
-
-    overflow:hidden;
+    object-position:
+        top center;
 
 }
 
 
-.templates-header{
+/* =========================================================
+   07 — TEMPLATES
+========================================================= */
 
-    max-width:720px;
+.velora-templates {
 
-    margin:0 auto;
+    padding:
+        var(--v-section-space)
+        0;
 
-    text-align:center;
+    overflow: hidden;
 
-    padding:0 20px;
-
-}
-
-
-.templates-header h2{
-
-    font-size:clamp(38px,5vw,58px);
-
-    font-weight:500;
-
-    line-height:1.1;
-
-    letter-spacing:-.05em;
-
-    margin-bottom:24px;
+    background:
+        var(--velora-paper);
 
 }
 
 
-.templates-header p{
+.templates-header {
 
-    max-width:620px;
+    max-width: 700px;
 
-    margin:auto;
+    margin:
+        0 auto
+        var(--v-space-11);
 
-    font-size:19px;
-
-    line-height:1.75;
-
-    color:#63676c;
-
-}
-
-
-.templates-header .btn{
-
-    margin-top:38px;
+    text-align:
+        center;
 
 }
 
 
-/*==========================
-        CAROUSEL
-===========================*/
+.templates-header h2 {
 
-.template-slider{
+    margin-bottom:
+        var(--v-space-5);
 
-    position:relative;
-    margin-top:90px;
+    font-size:
+        clamp(
+            36px,
+            5vw,
+            var(--v-font-size-h2)
+        );
 
-}
+    line-height:
+        var(--v-line-height-heading);
 
-.swiper{
-
-    width:100%;
-    padding:20px 70px 90px;
-    overflow:visible;
-
-}
-
-.swiper-wrapper{
-
-    align-items:center;
+    letter-spacing:
+        var(--v-letter-spacing-heading);
 
 }
 
-.swiper-slide{
 
-    transition:.45s ease;
+.templates-header p {
 
-}
+    max-width: 620px;
 
-.swiper-slide img{
+    margin:
+        0 auto
+        var(--v-space-7);
 
-    width:100%;
-    height:540px;
-    object-fit:cover;
+    color:
+        var(--velora-muted);
 
-    border-radius:28px;
-
-    box-shadow:
-        0 22px 70px rgba(0,0,0,.12);
-
-    transition:.45s;
+    font-size:
+        var(--v-font-size-md);
 
 }
 
-/* Center Card */
 
-.swiper-slide-active{
+.template-slider {
 
-    transform:scale(1.04);
-
-}
-
-.swiper-slide-active img{
-
-    box-shadow:
-        0 35px 90px rgba(0,0,0,.18);
-
-}
-
-/* Side Cards */
-
-.swiper-slide-prev{
-
-    transform:rotate(-2deg);
-
-    opacity:.9;
-
-}
-
-.swiper-slide-next{
-
-    transform:rotate(2deg);
-
-    opacity:.9;
-
-}
-
-/* Hover */
-
-.swiper-slide img:hover{
-
-    transform:translateY(-10px);
-
-}
-
-/*==========================
-      ARROWS
-===========================*/
-
-.swiper-button-next,
-.swiper-button-prev{
-
-    width:58px;
-    height:58px;
-
-    border-radius:50%;
-
-    background:#fff;
-
-    box-shadow:
-        0 12px 30px rgba(0,0,0,.12);
-
-    transition:.25s;
-
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after{
-
-    font-size:20px;
-    font-weight:bold;
-    color:#17181a;
-
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover{
-
-    background:var(--velora-green);
-
-}
-
-.swiper-button-next:hover::after,
-.swiper-button-prev:hover::after{
-
-    color:#fff;
-
-}
-
-/*==========================
-      PAGINATION
-===========================*/
-
-.swiper-pagination{
-
-    bottom:0 !important;
-
-}
-
-.swiper-pagination-bullet{
-
-    width:10px;
-    height:10px;
-
-    background:#cfcfcf;
-    opacity:1;
-
-}
-
-.swiper-pagination-bullet-active{
-
-    background:var(--velora-green);
-
-}
-
-/*==========================
-      RESPONSIVE
-===========================*/
-
-@media(max-width:992px){
-
-.swiper{
-
-padding:20px 45px 80px;
-
-}
-
-.swiper-slide img{
-
-height:430px;
-
-}
-
-}
-
-@media(max-width:768px){
-
-.velora-templates{
-
-padding:80px 0;
-
-}
-
-.swiper{
-
-padding:20px 18px 70px;
-
-}
-
-.swiper-slide img{
-
-height:320px;
-
-border-radius:18px;
-
-}
-
-.swiper-button-next,
-.swiper-button-prev{
-
-width:42px;
-height:42px;
-
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after{
-
-font-size:15px;
-
-}
-
-}
-
-/*=========================================
-    EVERYTHING YOUR PHOTOGRAPHY BUSINESS NEEDS
-=========================================*/
-
-.velora-business {
-
-    padding: 140px 0 150px;
-
-    background: var(--velora-paper);
+    width: 100%;
 
     overflow: hidden;
 
 }
 
 
-/*=========================================
-            SECTION HEADER
-=========================================*/
+.veloraSwiper {
 
-.business-header {
+    width: 100%;
 
-    max-width: 760px;
-
-    margin: 0 auto 80px;
-
-    padding: 0 20px;
-
-    text-align: center;
+    padding:
+        0 24px
+        64px;
 
 }
 
 
-.business-eyebrow {
+.veloraSwiper
+.swiper-slide {
 
-    display: inline-block;
+    overflow: hidden;
 
-    margin-bottom: 20px;
+    border-radius:
+        var(--v-radius-lg);
 
-    color: var(--velora-green);
+    background:
+        var(--velora-neutral-100);
 
-    font-size: 12px;
+    box-shadow:
+        var(--v-shadow-sm);
 
-    font-weight: 700;
+}
 
-    letter-spacing: .12em;
 
-    text-transform: uppercase;
+.veloraSwiper
+.swiper-slide img {
+
+    width: 100%;
+
+    aspect-ratio:
+        4 / 5;
+
+    object-fit:
+        cover;
+
+    transition:
+        transform
+        var(--v-duration-slow)
+        var(--v-ease);
+
+}
+
+
+.veloraSwiper
+.swiper-slide:hover img {
+
+    transform:
+        scale(1.03);
+
+}
+
+
+.veloraSwiper
+.swiper-button-next,
+
+.veloraSwiper
+.swiper-button-prev {
+
+    width: 48px;
+
+    height: 48px;
+
+    color:
+        var(--velora-ink);
+
+    background:
+        var(--velora-white);
+
+    border:
+        1px solid
+        var(--velora-line);
+
+    border-radius:
+        50%;
+
+    box-shadow:
+        var(--v-shadow-sm);
+
+}
+
+
+.veloraSwiper
+.swiper-button-next::after,
+
+.veloraSwiper
+.swiper-button-prev::after {
+
+    font-size:
+        16px;
+
+    font-weight:
+        var(--v-font-weight-bold);
+
+}
+
+
+.veloraSwiper
+.swiper-pagination-bullet {
+
+    width: 8px;
+
+    height: 8px;
+
+    background:
+        var(--velora-neutral-300);
+
+    opacity: 1;
+
+}
+
+
+.veloraSwiper
+.swiper-pagination-bullet-active {
+
+    width: 24px;
+
+    border-radius:
+        var(--v-radius-pill);
+
+    background:
+        var(--velora-brand);
+
+}
+
+
+/* =========================================================
+   08 — BUSINESS FEATURES
+========================================================= */
+
+.velora-business {
+
+    padding:
+        var(--v-section-space)
+        0;
+
+    background:
+        var(--velora-green-50);
+
+}
+
+
+.business-header {
+
+    max-width: 720px;
+
+    margin:
+        0 auto
+        var(--v-space-12);
+
+    text-align:
+        center;
+
+}
+
+
+.business-eyebrow,
+.workflow-eyebrow,
+.photographers-eyebrow,
+.testimonial-eyebrow,
+.pricing-eyebrow,
+.faq-eyebrow,
+.final-cta-eyebrow {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        var(--v-space-4);
+
+    color:
+        var(--velora-brand);
+
+    font-size:
+        var(--v-font-size-xs);
+
+    font-weight:
+        var(--v-font-weight-heavy);
+
+    letter-spacing:
+        var(--v-letter-spacing-wide);
 
 }
 
 
 .business-header h2 {
 
-    max-width: 720px;
+    margin-bottom:
+        var(--v-space-5);
 
-    margin: 0 auto 24px;
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            var(--v-font-size-h2)
+        );
 
-    color: var(--velora-ink);
+    line-height:
+        var(--v-line-height-heading);
 
-    font-family: "Lato", sans-serif;
-
-    font-size: clamp(40px, 5vw, 62px);
-
-    font-weight: 500;
-
-    line-height: 1.08;
-
-    letter-spacing: -.05em;
+    letter-spacing:
+        var(--v-letter-spacing-heading);
 
 }
 
 
-.business-header h2 span {
+.business-header h2 span,
+.photographers-content h2 span,
+.testimonial-header h2 span,
+.pricing-header h2 span,
+.faq-intro h2 span,
+.final-cta-copy h2 span {
 
-    color: var(--velora-green);
+    color:
+        var(--velora-brand);
 
 }
 
 
 .business-header p {
 
-    max-width: 620px;
+    color:
+        var(--velora-muted);
 
-    margin: 0 auto;
-
-    color: var(--velora-muted);
-
-    font-size: 18px;
-
-    font-weight: 400;
-
-    line-height: 1.7;
+    font-size:
+        var(--v-font-size-md);
 
 }
 
-
-/*=========================================
-          DASHBOARD SHOWCASE
-=========================================*/
 
 .business-showcase {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
-        minmax(0, 1.7fr)
-        minmax(320px, .8fr);
+        minmax(0, 1.35fr)
+        minmax(300px, 0.65fr);
 
-    gap: 70px;
+    gap:
+        var(--v-space-11);
 
-    align-items: center;
-
-}
-
-
-/*=========================================
-          DASHBOARD PREVIEW
-=========================================*/
-
-.business-preview {
-
-    width: 100%;
-
-    min-width: 0;
+    align-items:
+        center;
 
 }
 
+
+/* ---------------------------------------------------------
+   DASHBOARD PREVIEW
+--------------------------------------------------------- */
 
 .preview-window {
 
-    position: relative;
-
-    width: 100%;
-
     overflow: hidden;
 
-    background: #f7f7f7;
+    background:
+        var(--velora-white);
 
-    border: 1px solid var(--velora-line);
+    border:
+        1px solid
+        var(--velora-line);
 
-    border-radius: 24px;
+    border-radius:
+        var(--v-radius-xl);
 
     box-shadow:
-        0 35px 100px rgba(0, 0, 0, .10);
+        var(--v-shadow-lg);
 
 }
 
 
-/*=========================================
-            BROWSER TOP BAR
-=========================================*/
-
 .preview-topbar {
-
-    position: relative;
-
-    z-index: 5;
 
     height: 48px;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    padding: 0 18px;
+    justify-content:
+        space-between;
 
-    background: #f8f8f8;
+    padding:
+        0 var(--v-space-5);
 
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom:
+        1px solid
+        var(--velora-line);
+
+    background:
+        var(--velora-neutral-50);
 
 }
 
 
 .preview-dots {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
-
-    gap: 6px;
+    gap:
+        6px;
 
 }
 
 
 .preview-dots span {
 
-    display: block;
+    width: 8px;
 
-    width: 9px;
+    height: 8px;
 
-    height: 9px;
+    border-radius:
+        50%;
 
-    border-radius: 50%;
-
-    background: #d4d4d4;
+    background:
+        var(--velora-neutral-300);
 
 }
 
 
 .preview-address {
 
-    position: absolute;
+    padding:
+        5px 14px;
 
-    left: 50%;
+    color:
+        var(--velora-neutral-600);
 
-    transform: translateX(-50%);
+    background:
+        var(--velora-white);
 
-    padding: 6px 18px;
+    border:
+        1px solid
+        var(--velora-line);
 
-    background: #eeeeee;
+    border-radius:
+        var(--v-radius-pill);
 
-    border-radius: 8px;
-
-    color: #888;
-
-    font-size: 11px;
-
-    line-height: 1;
-
-    white-space: nowrap;
+    font-size:
+        var(--v-font-size-xs);
 
 }
 
-
-/*=========================================
-          DASHBOARD SCREEN AREA
-=========================================*/
 
 .preview-screen {
 
     position: relative;
 
-    width: 100%;
+    min-height: 520px;
 
-    /*
-       Every dashboard screenshot uses
-       exactly the same viewport ratio.
-    */
-
-    aspect-ratio: 16 / 10;
-
-    overflow: hidden;
-
-    background: #ffffff;
+    background:
+        var(--velora-neutral-100);
 
 }
 
-
-/*=========================================
-          DASHBOARD PANELS
-=========================================*/
 
 .dashboard-panel {
 
@@ -1175,25 +1306,16 @@ font-size:15px;
 
     inset: 0;
 
-    width: 100%;
-
-    height: 100%;
-
     opacity: 0;
 
     visibility: hidden;
 
-    transform: scale(.985);
-
     transition:
-        opacity .35s ease,
-        transform .45s ease,
-        visibility .35s ease;
+        opacity var(--v-duration-slow)
+        var(--v-ease);
 
 }
 
-
-/* Active dashboard */
 
 .dashboard-panel.active {
 
@@ -1201,585 +1323,265 @@ font-size:15px;
 
     visibility: visible;
 
-    transform: scale(1);
-
 }
 
 
-/*=========================================
-          DASHBOARD SCREENSHOTS
-=========================================*/
-
 .dashboard-panel img {
-
-    display: block;
 
     width: 100%;
 
     height: 100%;
 
-    /*
-       Keeps every screenshot inside
-       the exact same frame.
-    */
+    object-fit:
+        cover;
 
-    object-fit: cover;
-
-    object-position: top left;
+    object-position:
+        top;
 
 }
 
 
-/*=========================================
-            FEATURE TABS
-=========================================*/
+/* ---------------------------------------------------------
+   FEATURE TABS
+--------------------------------------------------------- */
 
 .business-features {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    width: 100%;
+    border-top:
+        1px solid
+        var(--velora-line);
 
 }
 
 
 .business-feature {
 
-    position: relative;
-
     width: 100%;
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
-        36px
+        40px
         minmax(0, 1fr)
-        20px;
+        auto;
 
-    gap: 18px;
+    gap:
+        var(--v-space-4);
 
-    align-items: start;
+    align-items:
+        start;
 
-    padding: 28px 0;
+    padding:
+        var(--v-space-6)
+        0;
 
-    background: transparent;
+    color:
+        var(--velora-muted);
 
-    border: 0;
+    text-align:
+        left;
 
-    border-bottom: 1px solid var(--velora-line);
+    background:
+        transparent;
 
-    color: var(--velora-ink);
-
-    text-align: left;
-
-    cursor: pointer;
-
-    font-family: "Lato", sans-serif;
+    border-bottom:
+        1px solid
+        var(--velora-line);
 
     transition:
-        color .25s ease,
-        padding-left .25s ease;
+        color var(--v-duration-base)
+        var(--v-ease);
 
 }
 
-
-.business-feature:first-child {
-
-    border-top: 1px solid var(--velora-line);
-
-}
-
-
-/*=========================================
-          FEATURE NUMBER
-=========================================*/
 
 .feature-number {
 
-    padding-top: 3px;
+    color:
+        var(--velora-neutral-500);
 
-    color: #a0a0a0;
+    font-size:
+        var(--v-font-size-sm);
 
-    font-size: 12px;
-
-    font-weight: 600;
-
-    line-height: 1;
-
-    letter-spacing: .04em;
-
-    transition: color .25s ease;
+    font-weight:
+        var(--v-font-weight-bold);
 
 }
 
 
-/*=========================================
-          FEATURE CONTENT
-=========================================*/
-
 .feature-content {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    gap: 8px;
+    gap:
+        var(--v-space-2);
 
 }
 
 
 .feature-content strong {
 
-    display: block;
+    color:
+        var(--velora-ink);
 
-    color: var(--velora-ink);
+    font-size:
+        var(--v-font-size-md);
 
-    font-size: 19px;
-
-    font-weight: 600;
-
-    line-height: 1.25;
-
-    transition: color .25s ease;
+    font-weight:
+        var(--v-font-weight-bold);
 
 }
 
 
-.feature-content span {
+.feature-content > span {
 
-    display: block;
+    color:
+        var(--velora-muted);
 
-    max-width: 330px;
+    font-size:
+        var(--v-font-size-sm);
 
-    color: var(--velora-muted);
-
-    font-size: 14px;
-
-    font-weight: 400;
-
-    line-height: 1.6;
+    line-height:
+        1.6;
 
 }
 
-
-/*=========================================
-          FEATURE ARROW
-=========================================*/
 
 .business-feature > i {
 
-    padding-top: 2px;
-
-    color: #a0a0a0;
-
-    font-size: 15px;
+    color:
+        var(--velora-neutral-500);
 
     transition:
-        color .25s ease,
-        transform .25s ease;
+        transform var(--v-duration-base)
+        var(--v-ease);
 
 }
 
 
-/*=========================================
-          FEATURE HOVER
-=========================================*/
+.business-feature:hover > i,
+.business-feature.active > i {
 
-.business-feature:hover {
-
-    padding-left: 6px;
-
-}
-
-
-.business-feature:hover > i {
-
-    color: var(--velora-green);
+    color:
+        var(--velora-brand);
 
     transform:
         translate(3px, -3px);
 
 }
 
-
-/*=========================================
-          ACTIVE FEATURE
-=========================================*/
 
 .business-feature.active {
 
-    color: var(--velora-green);
+    color:
+        var(--velora-brand);
 
 }
 
 
-.business-feature.active .feature-number {
+.business-feature.active
+.feature-number {
 
-    color: var(--velora-green);
-
-}
-
-
-.business-feature.active .feature-content strong {
-
-    color: var(--velora-green);
+    color:
+        var(--velora-brand);
 
 }
 
 
-.business-feature.active > i {
-
-    color: var(--velora-green);
-
-    transform:
-        translate(3px, -3px);
-
-}
-
-
-/*=========================================
-        RESPONSIVE — TABLET
-=========================================*/
-
-@media (max-width: 1100px) {
-
-    .business-showcase {
-
-        grid-template-columns:
-            minmax(0, 1.5fr)
-            minmax(290px, .8fr);
-
-        gap: 45px;
-
-    }
-
-}
-
-
-/*=========================================
-        RESPONSIVE — SMALL DESKTOP
-=========================================*/
-
-@media (max-width: 991px) {
-
-    .velora-business {
-
-        padding: 110px 0 120px;
-
-    }
-
-
-    .business-header {
-
-        margin-bottom: 60px;
-
-    }
-
-
-    .business-showcase {
-
-        grid-template-columns: 1fr;
-
-        gap: 55px;
-
-    }
-
-
-    .business-features {
-
-        max-width: 700px;
-
-        margin: 0 auto;
-
-    }
-
-}
-
-
-/*=========================================
-        RESPONSIVE — MOBILE
-=========================================*/
-
-@media (max-width: 767px) {
-
-    .velora-business {
-
-        padding: 80px 0 90px;
-
-    }
-
-
-    .business-header {
-
-        margin-bottom: 45px;
-
-        padding: 0 18px;
-
-    }
-
-
-    .business-header h2 {
-
-        font-size: 39px;
-
-        line-height: 1.08;
-
-    }
-
-
-    .business-header p {
-
-        font-size: 16px;
-
-        line-height: 1.7;
-
-    }
-
-
-    /* Browser frame */
-
-    .preview-window {
-
-        border-radius: 18px;
-
-    }
-
-
-    /* Browser bar */
-
-    .preview-topbar {
-
-        height: 38px;
-
-        padding: 0 13px;
-
-    }
-
-
-    .preview-dots {
-
-        gap: 5px;
-
-    }
-
-
-    .preview-dots span {
-
-        width: 7px;
-
-        height: 7px;
-
-    }
-
-
-    .preview-address {
-
-        display: none;
-
-    }
-
-
-    /* Dashboard */
-
-    .preview-screen {
-
-        aspect-ratio: 16 / 10;
-
-    }
-
-
-    /* Feature list */
-
-    .business-showcase {
-
-        gap: 40px;
-
-    }
-
-
-    .business-feature {
-
-        grid-template-columns:
-            30px
-            minmax(0, 1fr)
-            18px;
-
-        gap: 12px;
-
-        padding: 23px 0;
-
-    }
-
-
-    .feature-content strong {
-
-        font-size: 17px;
-
-    }
-
-
-    .feature-content span {
-
-        font-size: 13px;
-
-        line-height: 1.55;
-
-    }
-
-
-    .feature-number {
-
-        font-size: 11px;
-
-    }
-
-
-    .business-feature > i {
-
-        font-size: 14px;
-
-    }
-
-}
-
-
-```css
-/*=========================================
-        VELORA WORKFLOW SECTION
-=========================================*/
+/* =========================================================
+   09 — WORKFLOW
+========================================================= */
 
 .velora-workflow {
 
-    padding: 150px 0;
+    padding:
+        var(--v-section-space)
+        0;
 
-    background: var(--velora-paper);
-
-    overflow: hidden;
+    background:
+        var(--velora-paper);
 
 }
 
-
-/*=========================================
-              HEADER
-=========================================*/
 
 .workflow-header {
 
     max-width: 760px;
 
-    margin: 0 auto 90px;
+    margin:
+        0 auto
+        var(--v-space-12);
 
-    text-align: center;
-
-}
-
-
-.workflow-eyebrow {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-bottom: 22px;
-
-    padding: 8px 15px;
-
-    border-radius: 999px;
-
-    background: #f3f5f3;
-
-    color: var(--velora-ink);
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: .08em;
-
-    text-transform: uppercase;
-
-}
-
-
-.workflow-eyebrow::before {
-
-    content: "";
-
-    width: 8px;
-
-    height: 8px;
-
-    border-radius: 50%;
-
-    background: var(--velora-green);
+    text-align:
+        center;
 
 }
 
 
 .workflow-header h2 {
 
-    margin: 0 auto 25px;
+    margin-bottom:
+        var(--v-space-5);
 
-    color: var(--velora-ink);
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            var(--v-font-size-h2)
+        );
 
-    font-family: "Lato", sans-serif;
+    line-height:
+        var(--v-line-height-heading);
 
-    font-size: clamp(42px, 5vw, 64px);
-
-    font-weight: 500;
-
-    line-height: 1.08;
-
-    letter-spacing: -.05em;
+    letter-spacing:
+        var(--v-letter-spacing-heading);
 
 }
 
 
 .workflow-header h2 span {
 
-    color: var(--velora-green);
+    color:
+        var(--velora-brand);
 
 }
 
 
 .workflow-header p {
 
-    max-width: 620px;
+    color:
+        var(--velora-muted);
 
-    margin: 0 auto;
-
-    color: var(--velora-muted);
-
-    font-size: 18px;
-
-    line-height: 1.7;
+    font-size:
+        var(--v-font-size-md);
 
 }
 
-
-/*=========================================
-              WORKFLOW GRID
-=========================================*/
 
 .workflow-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
-        repeat(4, minmax(0, 1fr));
+        repeat(4, 1fr);
 
-    gap: 20px;
+    gap:
+        var(--v-space-6);
 
 }
 
-
-/*=========================================
-              WORKFLOW STEP
-=========================================*/
 
 .workflow-step {
 
@@ -1792,205 +1594,146 @@ font-size:15px;
 
 .workflow-step-content {
 
-    min-height: 145px;
+    min-height: 245px;
 
-    padding: 0 5px;
+    padding:
+        var(--v-space-7);
+
+    border:
+        1px solid
+        var(--velora-line);
+
+    border-bottom: 0;
+
+    border-radius:
+        var(--v-radius-lg)
+        var(--v-radius-lg)
+        0
+        0;
 
 }
 
 
 .workflow-number {
 
-    width: 40px;
+    width: 38px;
 
-    height: 40px;
+    height: 38px;
 
-    display: flex;
+    display:
+        grid;
 
-    align-items: center;
+    place-items:
+        center;
 
-    justify-content: center;
+    margin-bottom:
+        var(--v-space-6);
 
-    margin-bottom: 25px;
+    color:
+        var(--velora-brand);
 
-    border-radius: 50%;
+    background:
+        var(--velora-brand-soft);
 
-    background: var(--velora-green);
+    border-radius:
+        50%;
 
-    color: #fff;
+    font-size:
+        var(--v-font-size-sm);
 
-    font-size: 13px;
-
-    font-weight: 700;
+    font-weight:
+        var(--v-font-weight-heavy);
 
 }
 
 
 .workflow-step h3 {
 
-    margin: 0 0 12px;
+    margin-bottom:
+        var(--v-space-3);
 
-    color: var(--velora-ink);
+    font-size:
+        var(--v-font-size-xl);
 
-    font-size: 20px;
-
-    font-weight: 600;
-
-    line-height: 1.25;
+    line-height:
+        1.2;
 
 }
 
 
 .workflow-step-content p {
 
-    max-width: 260px;
+    margin-bottom: 0;
 
-    margin: 0;
+    color:
+        var(--velora-muted);
 
-    color: var(--velora-muted);
+    font-size:
+        var(--v-font-size-sm);
 
-    font-size: 14px;
-
-    line-height: 1.7;
+    line-height:
+        1.65;
 
 }
 
-
-/*=========================================
-            CONNECTOR LINE
-=========================================*/
 
 .workflow-connector {
 
-    position: absolute;
-
-    top: 130px;
-
-    right: -22px;
-
-    width: 45px;
-
-    height: 70px;
-
-    z-index: 3;
+    display: none;
 
 }
 
-
-.workflow-connector::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: 0;
-
-    width: 45px;
-
-    height: 35px;
-
-    border-top: 2px solid var(--velora-green);
-
-    border-right: 2px solid var(--velora-green);
-
-    border-radius: 0 25px 0 0;
-
-}
-
-
-.workflow-connector::after {
-
-    content: "";
-
-    position: absolute;
-
-    right: -3px;
-
-    top: -4px;
-
-    width: 8px;
-
-    height: 8px;
-
-    border-radius: 50%;
-
-    background: var(--velora-green);
-
-}
-
-
-.workflow-connector-right span {
-
-    position: absolute;
-
-    left: -4px;
-
-    top: -4px;
-
-    width: 8px;
-
-    height: 8px;
-
-    border-radius: 50%;
-
-    background: var(--velora-green);
-
-}
-
-
-/*=========================================
-            MOCKUP
-=========================================*/
 
 .workflow-mockup {
 
-    position: relative;
-
-    margin-top: 15px;
-
-}
-
-
-.workflow-browser {
-
     overflow: hidden;
 
-    background: #fff;
+    border:
+        1px solid
+        var(--velora-line);
 
-    border: 1px solid #e7e9e7;
+    border-radius:
+        0
+        0
+        var(--v-radius-lg)
+        var(--v-radius-lg);
 
-    border-radius: 16px;
-
-    box-shadow:
-        0 20px 55px rgba(23, 24, 26, .10);
+    background:
+        var(--velora-neutral-50);
 
 }
 
 
 .workflow-browser-bar {
 
-    position: relative;
+    height: 30px;
 
-    height: 34px;
+    display:
+        flex;
 
-    display: flex;
+    align-items:
+        center;
 
-    align-items: center;
+    justify-content:
+        space-between;
 
-    padding: 0 12px;
+    padding:
+        0 10px;
 
-    background: #f8f9f8;
+    background:
+        var(--velora-neutral-100);
 
-    border-bottom: 1px solid #eceeec;
+    border-bottom:
+        1px solid
+        var(--velora-line);
 
 }
 
 
 .workflow-dots {
 
-    display: flex;
+    display:
+        flex;
 
     gap: 4px;
 
@@ -1999,231 +1742,227 @@ font-size:15px;
 
 .workflow-dots span {
 
-    width: 6px;
+    width: 5px;
 
-    height: 6px;
+    height: 5px;
 
-    display: block;
+    border-radius:
+        50%;
 
-    border-radius: 50%;
-
-    background: #cfd2cf;
+    background:
+        var(--velora-neutral-400);
 
 }
 
 
 .workflow-url {
 
-    position: absolute;
+    color:
+        var(--velora-neutral-500);
 
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    color: #a0a4a0;
-
-    font-size: 7px;
+    font-size:
+        7px;
 
 }
 
-
-/*=========================================
-              MOCKUP UI
-=========================================*/
 
 .workflow-ui {
 
-    display: grid;
+    display:
+        grid;
 
-    grid-template-columns: 72px minmax(0, 1fr);
+    grid-template-columns:
+        70px
+        minmax(0, 1fr);
 
-    min-height: 260px;
-
-    background: #fff;
+    min-height: 250px;
 
 }
 
 
-/* Sidebar */
-
 .workflow-sidebar {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
     gap: 8px;
 
-    padding: 15px 9px;
+    padding:
+        10px 7px;
 
-    background: #fafbfa;
+    background:
+        var(--velora-green-900);
 
-    border-right: 1px solid #eeeeee;
+    color:
+        rgba(255, 255, 255, 0.6);
+
+    font-size:
+        7px;
 
 }
 
 
 .workflow-logo {
 
-    margin-bottom: 14px;
+    margin-bottom:
+        var(--v-space-2);
 
-    color: var(--velora-green);
-
-    font-size: 8px;
-
-    font-weight: 800;
-
-    letter-spacing: .12em;
-
-}
-
-
-.workflow-sidebar > span {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 5px;
-
-    padding: 6px 5px;
-
-    border-radius: 5px;
-
-    color: #7a7e7a;
-
-    font-size: 7px;
-
-    white-space: nowrap;
-
-}
-
-
-.workflow-sidebar > span i {
+    color:
+        var(--velora-white);
 
     font-size: 8px;
 
-}
+    font-weight:
+        var(--v-font-weight-heavy);
 
-
-.workflow-sidebar > span.workflow-active {
-
-    background: var(--velora-green-tint);
-
-    color: var(--velora-green);
-
-    font-weight: 600;
+    letter-spacing:
+        0.08em;
 
 }
 
 
-/* Main */
+.workflow-sidebar span {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap: 4px;
+
+    padding: 5px;
+
+    border-radius:
+        var(--v-radius-sm);
+
+}
+
+
+.workflow-sidebar i {
+
+    font-size: 8px;
+
+}
+
+
+.workflow-sidebar
+.workflow-active {
+
+    color:
+        var(--velora-white);
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+}
+
 
 .workflow-main {
 
     min-width: 0;
 
-    padding: 18px;
+    padding: 12px;
+
+    background:
+        var(--velora-white);
 
 }
 
 
 .workflow-ui-heading {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
     gap: 8px;
 
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 
 }
 
 
 .workflow-ui-heading strong {
 
-    color: var(--velora-ink);
-
-    font-size: 13px;
-
-    font-weight: 600;
+    font-size: 10px;
 
 }
 
 
 .workflow-ui-heading button {
 
-    padding: 5px 8px;
+    padding: 5px 7px;
 
-    border: 0;
+    color:
+        var(--velora-white);
 
-    border-radius: 5px;
+    background:
+        var(--velora-brand);
 
-    background: var(--velora-green);
-
-    color: #fff;
+    border-radius:
+        var(--v-radius-sm);
 
     font-size: 7px;
 
 }
 
-
-/* Tabs */
 
 .workflow-tabs,
 .workflow-project-tabs {
 
-    display: flex;
+    display:
+        flex;
 
-    gap: 12px;
+    gap: 10px;
 
-    margin-bottom: 13px;
+    margin-bottom: 12px;
 
-    border-bottom: 1px solid #eeeeee;
-
-}
-
-
-.workflow-tabs span,
-.workflow-project-tabs span {
-
-    padding-bottom: 7px;
-
-    color: #999;
+    color:
+        var(--velora-neutral-500);
 
     font-size: 7px;
 
 }
 
 
-.workflow-tabs span.active,
-.workflow-project-tabs span.active {
+.workflow-tabs .active,
+.workflow-project-tabs .active {
 
-    color: var(--velora-green);
+    color:
+        var(--velora-brand);
 
-    border-bottom: 1px solid var(--velora-green);
+    font-weight:
+        var(--v-font-weight-bold);
 
 }
 
 
-/*=========================================
-              INQUIRY UI
-=========================================*/
-
 .workflow-inquiry {
 
-    display: grid;
+    display:
+        grid;
 
-    grid-template-columns: 25px minmax(0, 1fr) auto;
+    grid-template-columns:
+        25px
+        minmax(0, 1fr)
+        auto;
 
-    gap: 8px;
+    gap: 7px;
 
-    padding: 11px 0;
+    padding: 8px 0;
 
-    border-bottom: 1px solid #f0f0f0;
+    border-top:
+        1px solid
+        var(--velora-line);
 
 }
 
@@ -2234,54 +1973,57 @@ font-size:15px;
 
     height: 25px;
 
-    display: flex;
+    display:
+        grid;
 
-    align-items: center;
+    place-items:
+        center;
 
-    justify-content: center;
+    color:
+        var(--velora-brand);
 
-    border-radius: 50%;
+    background:
+        var(--velora-brand-soft);
 
-    background: var(--velora-green-tint);
-
-    color: var(--velora-green);
+    border-radius:
+        50%;
 
     font-size: 7px;
 
-    font-weight: 700;
+    font-weight:
+        var(--v-font-weight-bold);
 
 }
 
 
 .workflow-avatar.large {
 
-    width: 32px;
+    width: 36px;
 
-    height: 32px;
+    height: 36px;
 
 }
 
 
-.workflow-inquiry strong {
+.workflow-inquiry strong,
+.workflow-client-card strong {
 
     display: block;
-
-    color: var(--velora-ink);
 
     font-size: 8px;
 
 }
 
 
-.workflow-inquiry span {
+.workflow-inquiry span,
+.workflow-client-card span {
 
     display: block;
 
-    margin-top: 2px;
+    color:
+        var(--velora-neutral-500);
 
-    color: #707570;
-
-    font-size: 7px;
+    font-size: 6px;
 
 }
 
@@ -2290,9 +2032,8 @@ font-size:15px;
 
     display: block;
 
-    margin-top: 4px;
-
-    color: #a0a4a0;
+    color:
+        var(--velora-neutral-500);
 
     font-size: 6px;
 
@@ -2301,78 +2042,51 @@ font-size:15px;
 
 .workflow-inquiry time {
 
-    color: #999;
+    color:
+        var(--velora-neutral-500);
 
     font-size: 6px;
 
 }
 
-
-/*=========================================
-              BOOKING UI
-=========================================*/
 
 .workflow-client-card {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
     gap: 8px;
 
-    padding: 10px;
-
-    margin-bottom: 12px;
-
-    border: 1px solid #eeeeee;
-
-    border-radius: 7px;
-
-}
-
-
-.workflow-client-card strong {
-
-    display: block;
-
-    color: var(--velora-ink);
-
-    font-size: 8px;
-
-}
-
-
-.workflow-client-card span {
-
-    display: block;
-
-    margin-top: 2px;
-
-    color: #999;
-
-    font-size: 6px;
+    padding-bottom: 12px;
 
 }
 
 
 .workflow-info-grid {
 
-    display: grid;
+    display:
+        grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        repeat(2, 1fr);
 
-    gap: 7px;
+    gap: 8px;
 
 }
 
 
-.workflow-info-grid > div {
+.workflow-info-grid div {
 
-    padding: 9px;
+    padding: 8px;
 
-    border: 1px solid #eeeeee;
+    background:
+        var(--velora-neutral-50);
 
-    border-radius: 6px;
+    border-radius:
+        var(--v-radius-sm);
 
 }
 
@@ -2381,20 +2095,17 @@ font-size:15px;
 
     display: block;
 
-    margin-bottom: 4px;
+    margin-bottom: 3px;
 
-    color: #aaa;
+    color:
+        var(--velora-neutral-500);
 
-    font-size: 6px;
-
-    letter-spacing: .05em;
+    font-size: 5px;
 
 }
 
 
 .workflow-info-grid strong {
-
-    color: var(--velora-ink);
 
     font-size: 7px;
 
@@ -2403,58 +2114,57 @@ font-size:15px;
 
 .workflow-status {
 
-    padding: 4px 7px;
+    padding: 4px 6px;
 
-    border-radius: 999px;
+    color:
+        var(--velora-brand);
 
-    background: var(--velora-green-tint);
+    background:
+        var(--velora-brand-soft);
 
-    color: var(--velora-green);
+    border-radius:
+        var(--v-radius-pill);
 
     font-size: 6px;
 
 }
 
 
-.workflow-progress {
+.workflow-progress,
+.workflow-project-progress {
 
     margin-top: 12px;
 
 }
 
 
-.workflow-progress > div:first-child {
+.workflow-progress > div:first-child,
+.workflow-project-progress > div:first-child {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
     margin-bottom: 5px;
 
-}
-
-
-.workflow-progress span,
-.workflow-progress strong {
-
-    color: #777;
-
-    font-size: 6px;
+    font-size: 7px;
 
 }
 
 
 .workflow-progress-bar {
 
-    width: 100%;
-
-    height: 4px;
+    height: 5px;
 
     overflow: hidden;
 
-    border-radius: 999px;
+    background:
+        var(--velora-neutral-100);
 
-    background: #e9ece9;
+    border-radius:
+        var(--v-radius-pill);
 
 }
 
@@ -2467,28 +2177,22 @@ font-size:15px;
 
     height: 100%;
 
-    background: var(--velora-green);
+    background:
+        var(--velora-brand);
 
-}
-
-
-/*=========================================
-              PROJECT UI
-=========================================*/
-
-.workflow-project-tabs {
-
-    margin-bottom: 15px;
+    border-radius:
+        inherit;
 
 }
 
 
 .workflow-photo-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(2, 1fr);
 
     gap: 5px;
 
@@ -2497,18 +2201,13 @@ font-size:15px;
 
 .photo-placeholder {
 
-    width: 100%;
-
     aspect-ratio: 1;
 
-    border-radius: 5px;
+    border-radius:
+        4px;
 
     background:
-        linear-gradient(
-            135deg,
-            #d9ded9,
-            #89988b
-        );
+        var(--velora-brand-soft);
 
 }
 
@@ -2516,11 +2215,7 @@ font-size:15px;
 .photo-two {
 
     background:
-        linear-gradient(
-            135deg,
-            #aeb9ad,
-            #526456
-        );
+        #d9e5dd;
 
 }
 
@@ -2528,11 +2223,7 @@ font-size:15px;
 .photo-three {
 
     background:
-        linear-gradient(
-            135deg,
-            #d8d0c7,
-            #857a70
-        );
+        #c8d8ce;
 
 }
 
@@ -2540,60 +2231,20 @@ font-size:15px;
 .photo-four {
 
     background:
-        linear-gradient(
-            135deg,
-            #c6cec6,
-            #667568
-        );
+        #edf2ef;
 
 }
 
-
-.workflow-project-progress {
-
-    margin-top: 14px;
-
-}
-
-
-.workflow-project-progress > div:first-child {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    margin-bottom: 5px;
-
-}
-
-
-.workflow-project-progress span,
-.workflow-project-progress strong {
-
-    color: #777;
-
-    font-size: 7px;
-
-}
-
-
-/*=========================================
-              GALLERY UI
-=========================================*/
 
 .workflow-gallery-card {
 
-    display: grid;
+    padding: 7px;
 
-    grid-template-columns: 85px 1fr;
+    background:
+        var(--velora-neutral-50);
 
-    gap: 10px;
-
-    padding: 8px;
-
-    border: 1px solid #eeeeee;
-
-    border-radius: 7px;
+    border-radius:
+        var(--v-radius-sm);
 
 }
 
@@ -2607,17 +2258,16 @@ font-size:15px;
 
 .gallery-cover-image {
 
-    width: 100%;
+    height: 60px;
 
-    height: 105px;
-
-    border-radius: 5px;
+    border-radius:
+        var(--v-radius-sm);
 
     background:
         linear-gradient(
             135deg,
-            #c6c8c4,
-            #505951
+            var(--velora-green-900),
+            var(--velora-green-700)
         );
 
 }
@@ -2629,15 +2279,18 @@ font-size:15px;
 
     top: 5px;
 
-    left: 5px;
+    right: 5px;
 
     padding: 3px 5px;
 
-    border-radius: 999px;
+    color:
+        var(--velora-brand);
 
-    background: var(--velora-green);
+    background:
+        var(--velora-white);
 
-    color: #fff;
+    border-radius:
+        var(--v-radius-pill);
 
     font-size: 5px;
 
@@ -2646,40 +2299,32 @@ font-size:15px;
 
 .gallery-details {
 
-    display: flex;
+    padding-top: 7px;
 
-    flex-direction: column;
+}
 
-    justify-content: center;
+
+.gallery-details strong,
+.gallery-details span,
+.gallery-details small {
+
+    display: block;
 
 }
 
 
 .gallery-details strong {
 
-    color: var(--velora-ink);
-
-    font-size: 10px;
+    font-size: 8px;
 
 }
 
 
-.gallery-details span {
-
-    margin-top: 3px;
-
-    color: #777;
-
-    font-size: 7px;
-
-}
-
-
+.gallery-details span,
 .gallery-details small {
 
-    margin-top: 6px;
-
-    color: #999;
+    color:
+        var(--velora-neutral-500);
 
     font-size: 6px;
 
@@ -2688,26 +2333,28 @@ font-size:15px;
 
 .gallery-actions {
 
-    display: flex;
+    display:
+        flex;
 
     gap: 5px;
 
-    margin-top: 10px;
+    margin-top: 7px;
 
 }
 
 
 .gallery-actions button {
 
-    padding: 5px 7px;
+    padding: 4px 5px;
 
-    border: 1px solid #e4e6e4;
+    color:
+        var(--velora-brand);
 
-    border-radius: 4px;
+    background:
+        var(--velora-brand-soft);
 
-    background: #fff;
-
-    color: #555;
+    border-radius:
+        4px;
 
     font-size: 6px;
 
@@ -2716,569 +2363,220 @@ font-size:15px;
 
 .gallery-stats {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(4, 1fr);
 
-    gap: 5px;
+    gap: 4px;
 
     margin-top: 8px;
 
 }
 
 
-.gallery-stats > div {
+.gallery-stats div {
 
-    padding: 7px 4px;
+    text-align:
+        center;
 
-    border: 1px solid #eeeeee;
+}
 
-    border-radius: 5px;
 
-    text-align: center;
+.gallery-stats strong,
+.gallery-stats span {
+
+    display: block;
 
 }
 
 
 .gallery-stats strong {
 
-    display: block;
-
-    color: var(--velora-ink);
-
-    font-size: 10px;
+    font-size: 8px;
 
 }
 
 
 .gallery-stats span {
 
-    display: block;
-
-    margin-top: 2px;
-
-    color: #999;
+    color:
+        var(--velora-neutral-500);
 
     font-size: 5px;
 
 }
 
 
-/*=========================================
-              BOTTOM CTA
-=========================================*/
+/* ---------------------------------------------------------
+   WORKFLOW BOTTOM
+--------------------------------------------------------- */
 
 .workflow-bottom {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
-        55px
-        1fr
-        1px
-        1.5fr
-        auto;
+        auto
+        1fr;
 
-    gap: 25px;
+    gap:
+        var(--v-space-5);
 
-    align-items: center;
+    align-items:
+        center;
 
-    max-width: 1150px;
+    margin-top:
+        var(--v-space-11);
 
-    margin: 90px auto 0;
+    padding:
+        var(--v-space-8);
 
-    padding: 28px 30px;
+    background:
+        var(--velora-green-50);
 
-    border: 1px solid var(--velora-line);
+    border:
+        1px solid
+        var(--velora-brand-soft);
 
-    border-radius: 16px;
-
-    background: #fbfcfb;
-
-}
-
-
-.workflow-bottom-icon {
-
-    width: 48px;
-
-    height: 48px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: var(--velora-green);
-
-    color: #fff;
-
-    font-size: 19px;
+    border-radius:
+        var(--v-radius-xl);
 
 }
 
 
 .workflow-bottom-copy strong {
 
-    color: var(--velora-ink);
+    font-size:
+        var(--v-font-size-lg);
 
-    font-size: 16px;
-
-    line-height: 1.35;
+    line-height:
+        1.35;
 
 }
 
 
 .workflow-bottom-divider {
 
-    width: 1px;
-
-    height: 45px;
-
-    background: var(--velora-line);
+    display: none;
 
 }
 
 
 .workflow-bottom p {
 
+    grid-column:
+        1 / -1;
+
     margin: 0;
 
-    color: var(--velora-muted);
-
-    font-size: 13px;
-
-    line-height: 1.6;
+    color:
+        var(--velora-muted);
 
 }
 
 
 .workflow-bottom-btn {
 
-    display: inline-flex;
+    grid-column:
+        1 / -1;
 
-    align-items: center;
+    display:
+        inline-flex;
 
-    gap: 10px;
+    align-items:
+        center;
 
-    padding: 13px 19px;
+    gap:
+        var(--v-space-2);
 
-    border-radius: 8px;
+    width: fit-content;
 
-    background: var(--velora-green);
+    color:
+        var(--velora-brand);
 
-    color: #fff;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    text-decoration: none;
-
-    white-space: nowrap;
-
-    transition: .2s ease;
+    font-weight:
+        var(--v-font-weight-bold);
 
 }
 
 
-.workflow-bottom-btn:hover {
-
-    background: var(--velora-green-dark);
-
-    color: #fff;
-
-    transform: translateY(-1px);
-
-}
-
-
-/*=========================================
-              RESPONSIVE
-=========================================*/
-
-@media (max-width: 1100px) {
-
-    .workflow-grid {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: 65px 25px;
-
-    }
-
-
-    .workflow-connector {
-
-        display: none;
-
-    }
-
-}
-
-
-@media (max-width: 991px) {
-
-    .velora-workflow {
-
-        padding: 110px 0;
-
-    }
-
-
-    .workflow-header {
-
-        margin-bottom: 65px;
-
-    }
-
-
-    .workflow-bottom {
-
-        grid-template-columns:
-            50px 1fr;
-
-        gap: 18px;
-
-    }
-
-
-    .workflow-bottom-divider {
-
-        display: none;
-
-    }
-
-
-    .workflow-bottom p {
-
-        grid-column: 2;
-
-    }
-
-
-    .workflow-bottom-btn {
-
-        grid-column: 2;
-
-        justify-self: start;
-
-    }
-
-}
-
-
-@media (max-width: 767px) {
-
-    .velora-workflow {
-
-        padding: 85px 0;
-
-    }
-
-
-    .workflow-header {
-
-        padding: 0 18px;
-
-        margin-bottom: 55px;
-
-    }
-
-
-    .workflow-header h2 {
-
-        font-size: 39px;
-
-    }
-
-
-    .workflow-header p {
-
-        font-size: 16px;
-
-    }
-
-
-    .workflow-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 55px;
-
-    }
-
-
-    .workflow-step-content {
-
-        min-height: auto;
-
-        margin-bottom: 20px;
-
-        padding: 0;
-
-    }
-
-
-    .workflow-number {
-
-        width: 36px;
-
-        height: 36px;
-
-        margin-bottom: 18px;
-
-        font-size: 12px;
-
-    }
-
-
-    .workflow-step h3 {
-
-        font-size: 19px;
-
-    }
-
-
-    .workflow-step-content p {
-
-        max-width: 100%;
-
-        font-size: 14px;
-
-    }
-
-
-    .workflow-ui {
-
-        grid-template-columns:
-            65px minmax(0, 1fr);
-
-    }
-
-
-    .workflow-sidebar {
-
-        padding: 12px 7px;
-
-    }
-
-
-    .workflow-main {
-
-        padding: 14px;
-
-    }
-
-
-    .workflow-bottom {
-
-        grid-template-columns: 45px 1fr;
-
-        margin: 60px 18px 0;
-
-        padding: 22px;
-
-    }
-
-
-    .workflow-bottom-icon {
-
-        width: 42px;
-
-        height: 42px;
-
-        font-size: 16px;
-
-    }
-
-
-    .workflow-bottom-copy strong {
-
-        font-size: 14px;
-
-    }
-
-}
-
-
-@media (max-width: 480px) {
-
-    .workflow-ui {
-
-        grid-template-columns:
-            55px minmax(0, 1fr);
-
-    }
-
-
-    .workflow-sidebar > span {
-
-        font-size: 6px;
-
-    }
-
-
-    .workflow-sidebar > span i {
-
-        font-size: 7px;
-
-    }
-
-
-    .workflow-logo {
-
-        font-size: 7px;
-
-    }
-
-
-    .workflow-main {
-
-        padding: 11px;
-
-    }
-
-
-    .workflow-gallery-card {
-
-        grid-template-columns: 70px 1fr;
-
-    }
-
-
-    .gallery-cover-image {
-
-        height: 90px;
-
-    }
-
-
-    .workflow-bottom {
-
-        margin-left: 10px;
-
-        margin-right: 10px;
-
-    }
-
-}
-
-/*=========================================
-      MADE FOR PHOTOGRAPHERS
-=========================================*/
+/* =========================================================
+   10 — MADE FOR PHOTOGRAPHERS
+========================================================= */
 
 .velora-photographers {
 
-    padding: 150px 0;
+    padding:
+        var(--v-section-space)
+        0;
 
-    background: #fafafa;
-
-    overflow: hidden;
+    background:
+        var(--velora-paper);
 
 }
 
-
-/*=========================================
-            MAIN SHOWCASE
-=========================================*/
 
 .photographers-showcase {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
-        minmax(0, .9fr)
-        minmax(0, 1.1fr);
+        1fr
+        1fr;
 
-    gap: 90px;
+    gap:
+        clamp(48px, 8vw, 120px);
 
-    align-items: center;
+    align-items:
+        center;
 
 }
 
-
-/*=========================================
-              CONTENT
-=========================================*/
 
 .photographers-content {
 
-    max-width: 520px;
-
-}
-
-
-.photographers-eyebrow {
-
-    display: inline-block;
-
-    margin-bottom: 22px;
-
-    color: var(--velora-green);
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: .12em;
+    max-width: 560px;
 
 }
 
 
 .photographers-content h2 {
 
-    margin: 0 0 25px;
+    margin-bottom:
+        var(--v-space-6);
 
-    color: var(--velora-ink);
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            var(--v-font-size-h2)
+        );
 
-    font-family: "Lato", sans-serif;
+    line-height:
+        var(--v-line-height-heading);
 
-    font-size: clamp(42px, 5vw, 64px);
-
-    font-weight: 500;
-
-    line-height: 1.07;
-
-    letter-spacing: -.05em;
-
-}
-
-
-.photographers-content h2 span {
-
-    color: var(--velora-green);
+    letter-spacing:
+        var(--v-letter-spacing-heading);
 
 }
 
 
 .photographers-content p {
 
-    max-width: 480px;
+    max-width: 520px;
 
-    margin: 0 0 35px;
+    margin-bottom:
+        var(--v-space-8);
 
-    color: var(--velora-muted);
+    color:
+        var(--velora-muted);
 
-    font-size: 18px;
-
-    line-height: 1.7;
-
-}
-
-
-/*=========================================
-              VISUAL
-=========================================*/
-
-.photographers-visual {
-
-    position: relative;
+    font-size:
+        var(--v-font-size-md);
 
 }
 
@@ -3291,201 +2589,157 @@ font-size:15px;
 
     overflow: hidden;
 
-    border-radius: 28px;
-
-    box-shadow:
-        0 35px 90px rgba(23, 24, 26, .15);
+    border-radius:
+        var(--v-radius-xl);
 
 }
 
 
-.photographers-image::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent 55%,
-            rgba(0,0,0,.28)
-        );
-
-    pointer-events: none;
-
-}
-
-
-.photographers-image img {
+.photographers-image > img {
 
     width: 100%;
 
-    height: 100%;
+    height: 620px;
 
-    min-height: 620px;
-
-    display: block;
-
-    object-fit: cover;
+    object-fit:
+        cover;
 
 }
 
-
-/*=========================================
-          FLOATING CLIENT CARD
-=========================================*/
 
 .photographers-floating-card {
 
     position: absolute;
 
-    z-index: 2;
+    left: 24px;
 
-    left: 30px;
+    bottom: 24px;
 
-    bottom: 30px;
+    min-width: 230px;
 
-    display: flex;
+    padding:
+        var(--v-space-5);
 
-    flex-direction: column;
+    background:
+        rgba(255, 255, 255, 0.93);
 
-    min-width: 220px;
+    backdrop-filter:
+        blur(16px);
 
-    padding: 18px 20px;
-
-    border: 1px solid rgba(255,255,255,.35);
-
-    border-radius: 14px;
-
-    background: rgba(255,255,255,.92);
-
-    backdrop-filter: blur(15px);
+    border-radius:
+        var(--v-radius-md);
 
     box-shadow:
-        0 15px 40px rgba(0,0,0,.15);
+        var(--v-shadow-md);
+
+}
+
+
+.photographers-floating-card span,
+.photographers-floating-card strong,
+.photographers-floating-card small {
+
+    display: block;
 
 }
 
 
 .photographers-floating-card span {
 
-    margin-bottom: 6px;
+    margin-bottom:
+        var(--v-space-2);
 
-    color: var(--velora-green);
+    color:
+        var(--velora-brand);
 
-    font-size: 9px;
+    font-size:
+        10px;
 
-    font-weight: 700;
+    font-weight:
+        var(--v-font-weight-heavy);
 
-    letter-spacing: .1em;
+    letter-spacing:
+        var(--v-letter-spacing-wide);
 
 }
 
 
 .photographers-floating-card strong {
 
-    color: var(--velora-ink);
+    margin-bottom: 3px;
 
-    font-size: 16px;
-
-    font-weight: 600;
+    font-size:
+        var(--v-font-size-lg);
 
 }
 
 
 .photographers-floating-card small {
 
-    margin-top: 3px;
-
-    color: var(--velora-muted);
-
-    font-size: 11px;
+    color:
+        var(--velora-muted);
 
 }
 
-
-/*=========================================
-              IMAGE INDEX
-=========================================*/
 
 .photographers-index {
 
     position: absolute;
 
-    z-index: 3;
+    top: 24px;
 
-    top: 25px;
+    right: 24px;
 
-    right: 25px;
+    color:
+        var(--velora-white);
 
-    width: 48px;
+    font-size:
+        var(--v-font-size-md);
 
-    height: 48px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border: 1px solid rgba(255,255,255,.5);
-
-    border-radius: 50%;
-
-    background: rgba(255,255,255,.15);
-
-    backdrop-filter: blur(10px);
-
-    color: white;
-
-    font-size: 11px;
-
-    font-weight: 600;
+    font-weight:
+        var(--v-font-weight-bold);
 
 }
 
 
-/*=========================================
-              PROOF ROW
-=========================================*/
+/* ---------------------------------------------------------
+   PROOF ROW
+--------------------------------------------------------- */
 
 .photographers-proof {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 0;
+    gap:
+        var(--v-space-7);
 
-    margin-top: 100px;
+    margin-top:
+        var(--v-space-12);
 
-    border-top: 1px solid var(--velora-line);
+    padding-top:
+        var(--v-space-9);
 
-    border-bottom: 1px solid var(--velora-line);
+    border-top:
+        1px solid
+        var(--velora-line);
 
 }
 
 
 .proof-item {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        flex-start;
 
-    gap: 16px;
-
-    padding: 30px 35px;
-
-}
-
-
-.proof-item + .proof-item {
-
-    border-left: 1px solid var(--velora-line);
+    gap:
+        var(--v-space-4);
 
 }
 
@@ -3496,267 +2750,108 @@ font-size:15px;
 
     height: 42px;
 
-    flex-shrink: 0;
+    flex: 0 0 42px;
 
-    display: flex;
+    display:
+        grid;
 
-    align-items: center;
+    place-items:
+        center;
 
-    justify-content: center;
+    color:
+        var(--velora-brand);
 
-    border-radius: 50%;
+    background:
+        var(--velora-brand-soft);
 
-    background: var(--velora-green-tint);
+    border-radius:
+        var(--v-radius-md);
 
-    color: var(--velora-green);
+}
+
+
+.proof-item strong,
+.proof-item span:not(.proof-icon) {
+
+    display: block;
 
 }
 
 
 .proof-item strong {
 
-    display: block;
+    margin-bottom:
+        var(--v-space-1);
 
-    margin-bottom: 4px;
-
-    color: var(--velora-ink);
-
-    font-size: 14px;
-
-    font-weight: 600;
+    font-size:
+        var(--v-font-size-base);
 
 }
 
 
-.proof-item div span {
+.proof-item span:not(.proof-icon) {
 
-    display: block;
+    color:
+        var(--velora-muted);
 
-    color: var(--velora-muted);
-
-    font-size: 12px;
-
-    line-height: 1.5;
+    font-size:
+        var(--v-font-size-sm);
 
 }
 
 
-/*=========================================
-              TABLET
-=========================================*/
-
-@media (max-width: 991px) {
-
-    .velora-photographers {
-
-        padding: 110px 0;
-
-    }
-
-
-    .photographers-showcase {
-
-        grid-template-columns: 1fr;
-
-        gap: 60px;
-
-    }
-
-
-    .photographers-content {
-
-        max-width: 700px;
-
-        text-align: center;
-
-        margin: 0 auto;
-
-    }
-
-
-    .photographers-content p {
-
-        margin-left: auto;
-
-        margin-right: auto;
-
-    }
-
-
-    .photographers-image {
-
-        min-height: 550px;
-
-    }
-
-
-    .photographers-image img {
-
-        min-height: 550px;
-
-    }
-
-}
-
-
-/*=========================================
-              MOBILE
-=========================================*/
-
-@media (max-width: 767px) {
-
-    .velora-photographers {
-
-        padding: 85px 0;
-
-    }
-
-
-    .photographers-content {
-
-        padding: 0 18px;
-
-    }
-
-
-    .photographers-content h2 {
-
-        font-size: 40px;
-
-    }
-
-
-    .photographers-content p {
-
-        font-size: 16px;
-
-    }
-
-
-    .photographers-image {
-
-        min-height: 460px;
-
-        border-radius: 20px;
-
-    }
-
-
-    .photographers-image img {
-
-        min-height: 460px;
-
-    }
-
-
-    .photographers-floating-card {
-
-        left: 18px;
-
-        bottom: 18px;
-
-        min-width: 190px;
-
-        padding: 14px 16px;
-
-    }
-
-
-    .photographers-proof {
-
-        grid-template-columns: 1fr;
-
-        margin-top: 65px;
-
-    }
-
-
-    .proof-item {
-
-        padding: 22px 10px;
-
-    }
-
-
-    .proof-item + .proof-item {
-
-        border-left: 0;
-
-        border-top: 1px solid var(--velora-line);
-
-    }
-
-}
-
-/*=========================================
-       TESTIMONIAL MARQUEE
-=========================================*/
+/* =========================================================
+   11 — TESTIMONIALS
+========================================================= */
 
 .velora-testimonials {
 
-    padding: 150px 0;
-
-    background: var(--velora-paper);
+    padding:
+        var(--v-section-space)
+        0;
 
     overflow: hidden;
 
+    background:
+        var(--velora-green-50);
+
 }
 
-
-/*=========================================
-              HEADER
-=========================================*/
 
 .testimonial-header {
 
     max-width: 700px;
 
-    margin: 0 auto 75px;
+    margin:
+        0 auto
+        var(--v-space-11);
 
-    padding: 0 20px;
+    padding:
+        0 24px;
 
-    text-align: center;
-
-}
-
-
-.testimonial-eyebrow {
-
-    display: inline-block;
-
-    margin-bottom: 20px;
-
-    color: var(--velora-green);
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: .12em;
+    text-align:
+        center;
 
 }
 
 
 .testimonial-header h2 {
 
-    margin: 0 0 22px;
+    margin-bottom:
+        var(--v-space-5);
 
-    color: var(--velora-ink);
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            var(--v-font-size-h2)
+        );
 
-    font-size: clamp(42px, 5vw, 60px);
+    line-height:
+        var(--v-line-height-heading);
 
-    font-weight: 500;
-
-    line-height: 1.08;
-
-    letter-spacing: -.05em;
-
-}
-
-
-.testimonial-header h2 span {
-
-    color: var(--velora-green);
+    letter-spacing:
+        var(--v-letter-spacing-heading);
 
 }
 
@@ -3765,18 +2860,18 @@ font-size:15px;
 
     margin: 0;
 
-    color: var(--velora-muted);
+    color:
+        var(--velora-muted);
 
-    font-size: 18px;
-
-    line-height: 1.7;
+    font-size:
+        var(--v-font-size-md);
 
 }
 
 
-/*=========================================
-              MARQUEE
-=========================================*/
+/* ---------------------------------------------------------
+   MARQUEE
+--------------------------------------------------------- */
 
 .testimonial-marquee {
 
@@ -3786,18 +2881,72 @@ font-size:15px;
 
     overflow: hidden;
 
+    margin-bottom:
+        var(--v-space-6);
+
+}
+
+
+.testimonial-marquee::before,
+.testimonial-marquee::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    bottom: 0;
+
+    z-index: 2;
+
+    width: 100px;
+
+    pointer-events: none;
+
+}
+
+
+.testimonial-marquee::before {
+
+    left: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--velora-green-50),
+            transparent
+        );
+
+}
+
+
+.testimonial-marquee::after {
+
+    right: 0;
+
+    background:
+        linear-gradient(
+            -90deg,
+            var(--velora-green-50),
+            transparent
+        );
+
 }
 
 
 .testimonial-track {
 
-    display: flex;
-
     width: max-content;
 
-    gap: 22px;
+    display:
+        flex;
 
-    will-change: transform;
+    gap:
+        var(--v-space-5);
+
+    will-change:
+        transform;
 
 }
 
@@ -3805,7 +2954,10 @@ font-size:15px;
 .testimonial-track-left {
 
     animation:
-        testimonialLeft 45s linear infinite;
+        velora-marquee-left
+        45s
+        linear
+        infinite;
 
 }
 
@@ -3813,473 +2965,355 @@ font-size:15px;
 .testimonial-track-right {
 
     animation:
-        testimonialRight 50s linear infinite;
+        velora-marquee-right
+        50s
+        linear
+        infinite;
 
 }
 
 
-.testimonial-marquee-second {
+.testimonial-marquee:hover
+.testimonial-track {
 
-    margin-top: 22px;
+    animation-play-state:
+        paused;
 
 }
 
-
-/*=========================================
-              CARDS
-=========================================*/
 
 .testimonial-card {
 
-    position: relative;
+    width: 360px;
 
-    width: 390px;
+    min-height: 230px;
 
-    min-height: 245px;
+    display:
+        flex;
 
-    flex-shrink: 0;
+    flex-direction:
+        column;
 
-    padding: 28px;
+    justify-content:
+        space-between;
 
-    background: #fbfcfb;
+    padding:
+        var(--v-space-7);
 
-    border: 1px solid var(--velora-line);
+    background:
+        var(--velora-white);
 
-    border-radius: 18px;
+    border:
+        1px solid
+        rgba(27, 67, 50, 0.08);
+
+    border-radius:
+        var(--v-radius-lg);
 
     box-shadow:
-        0 15px 45px rgba(23, 24, 26, .05);
+        var(--v-shadow-sm);
 
 }
 
 
 .testimonial-quote {
 
-    margin-bottom: 10px;
+    color:
+        var(--velora-brand);
 
-    color: var(--velora-green);
+    font-size: 48px;
 
-    font-family: Georgia, serif;
-
-    font-size: 38px;
-
-    line-height: .8;
+    line-height: 0.7;
 
 }
 
 
-.testimonial-card p {
+.testimonial-card > p {
 
-    max-width: 320px;
+    margin:
+        var(--v-space-5)
+        0
+        var(--v-space-7);
 
-    margin: 0 0 25px;
+    color:
+        var(--velora-neutral-800);
 
-    color: var(--velora-ink);
+    font-size:
+        var(--v-font-size-base);
 
-    font-size: 15px;
-
-    line-height: 1.65;
+    line-height:
+        1.7;
 
 }
 
-
-/*=========================================
-              AUTHOR
-=========================================*/
 
 .testimonial-author {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 11px;
+    gap:
+        var(--v-space-3);
 
 }
 
 
 .testimonial-avatar {
 
-    width: 34px;
+    width: 40px;
 
-    height: 34px;
+    height: 40px;
 
-    display: flex;
+    display:
+        grid;
 
-    align-items: center;
+    place-items:
+        center;
 
-    justify-content: center;
+    color:
+        var(--velora-brand);
 
-    flex-shrink: 0;
+    background:
+        var(--velora-brand-soft);
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
-    background: var(--velora-green-tint);
+    font-size:
+        var(--v-font-size-sm);
 
-    color: var(--velora-green);
+    font-weight:
+        var(--v-font-weight-bold);
 
-    font-size: 9px;
+}
 
-    font-weight: 700;
+
+.testimonial-author strong,
+.testimonial-author span {
+
+    display: block;
 
 }
 
 
 .testimonial-author strong {
 
-    display: block;
-
-    margin-bottom: 2px;
-
-    color: var(--velora-ink);
-
-    font-size: 12px;
-
-    font-weight: 600;
+    font-size:
+        var(--v-font-size-sm);
 
 }
 
 
 .testimonial-author span {
 
-    display: block;
+    color:
+        var(--velora-muted);
 
-    color: var(--velora-muted);
-
-    font-size: 10px;
+    font-size:
+        var(--v-font-size-xs);
 
 }
 
 
-/*=========================================
-              ANIMATION
-=========================================*/
-
-@keyframes testimonialLeft {
+@keyframes
+velora-marquee-left {
 
     from {
 
-        transform: translateX(0);
+        transform:
+            translateX(0);
 
     }
 
     to {
 
         transform:
-            translateX(calc(-50% - 11px));
+            translateX(-50%);
 
     }
 
 }
 
 
-@keyframes testimonialRight {
+@keyframes
+velora-marquee-right {
 
     from {
 
         transform:
-            translateX(calc(-50% - 11px));
+            translateX(-50%);
 
     }
 
     to {
 
-        transform: translateX(0);
+        transform:
+            translateX(0);
 
     }
 
 }
 
 
-/*=========================================
-          PAUSE ON HOVER
-=========================================*/
-
-.testimonial-marquee:hover
-.testimonial-track {
-
-    animation-play-state: paused;
-
-}
-
-
-/*=========================================
-              MOBILE
-=========================================*/
-
-@media (max-width: 767px) {
-
-    .velora-testimonials {
-
-        padding: 90px 0;
-
-    }
-
-
-    .testimonial-header {
-
-        margin-bottom: 50px;
-
-    }
-
-
-    .testimonial-header h2 {
-
-        font-size: 40px;
-
-    }
-
-
-    .testimonial-header p {
-
-        font-size: 16px;
-
-    }
-
-
-    .testimonial-track {
-
-        gap: 14px;
-
-    }
-
-
-    .testimonial-card {
-
-        width: 300px;
-
-        min-height: 225px;
-
-        padding: 22px;
-
-        border-radius: 16px;
-
-    }
-
-
-    .testimonial-card p {
-
-        font-size: 14px;
-
-    }
-
-
-    .testimonial-track-left {
-
-        animation-duration: 38s;
-
-    }
-
-
-    .testimonial-track-right {
-
-        animation-duration: 42s;
-
-    }
-
-}
-
-
-/*=========================================
-       REDUCED MOTION ACCESSIBILITY
-=========================================*/
-
-@media (prefers-reduced-motion: reduce) {
-
-    .testimonial-track {
-
-        animation: none;
-
-    }
-
-}
-
-/*=========================================
-          VELORA PRICING
-=========================================*/
+/* =========================================================
+   12 — PRICING
+========================================================= */
 
 .velora-pricing {
 
-    padding: 150px 0;
+    padding:
+        var(--v-section-space)
+        0;
 
-    background: #fafafa;
-
-    overflow: hidden;
+    background:
+        var(--velora-paper);
 
 }
 
-
-/*=========================================
-              HEADER
-=========================================*/
 
 .pricing-header {
 
     max-width: 700px;
 
-    margin: 0 auto 75px;
+    margin:
+        0 auto
+        var(--v-space-11);
 
-    padding: 0 20px;
-
-    text-align: center;
-
-}
-
-
-.pricing-eyebrow {
-
-    display: inline-block;
-
-    margin-bottom: 20px;
-
-    color: var(--velora-green);
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: .12em;
+    text-align:
+        center;
 
 }
 
 
 .pricing-header h2 {
 
-    margin: 0 0 22px;
+    margin-bottom:
+        var(--v-space-5);
 
-    color: var(--velora-ink);
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            var(--v-font-size-h2)
+        );
 
-    font-size: clamp(42px, 5vw, 60px);
+    line-height:
+        var(--v-line-height-heading);
 
-    font-weight: 500;
-
-    line-height: 1.08;
-
-    letter-spacing: -.05em;
-
-}
-
-
-.pricing-header h2 span {
-
-    color: var(--velora-green);
+    letter-spacing:
+        var(--v-letter-spacing-heading);
 
 }
 
 
 .pricing-header p {
 
-    max-width: 560px;
+    margin: 0;
 
-    margin: 0 auto;
+    color:
+        var(--velora-muted);
 
-    color: var(--velora-muted);
-
-    font-size: 18px;
-
-    line-height: 1.7;
+    font-size:
+        var(--v-font-size-md);
 
 }
 
-
-/*=========================================
-              PRICING GRID
-=========================================*/
 
 .pricing-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+        repeat(3, 1fr);
 
-    gap: 20px;
+    gap:
+        var(--v-space-5);
 
-    max-width: 1100px;
-
-    margin: 0 auto;
-
-    align-items: stretch;
+    align-items:
+        stretch;
 
 }
 
-
-/*=========================================
-              PRICING CARD
-=========================================*/
 
 .pricing-card {
 
     position: relative;
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    padding: 34px;
+    padding:
+        var(--v-space-8);
 
-    background: var(--velora-paper);
+    background:
+        var(--velora-white);
 
-    border: 1px solid var(--velora-line);
+    border:
+        1px solid
+        var(--velora-line);
 
-    border-radius: 20px;
-
-    box-shadow:
-        0 15px 45px rgba(23,24,26,.04);
+    border-radius:
+        var(--v-radius-xl);
 
 }
 
 
 .pricing-card-featured {
 
-    border: 1px solid var(--velora-green);
+    border:
+        2px solid
+        var(--velora-brand);
 
     box-shadow:
-        0 25px 65px rgba(27,67,50,.12);
+        var(--v-shadow-brand);
+
+    transform:
+        translateY(-12px);
 
 }
 
-
-/*=========================================
-              MOST POPULAR
-=========================================*/
 
 .pricing-popular {
 
     position: absolute;
 
-    top: -13px;
+    top: -14px;
 
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
-    padding: 6px 13px;
+    padding:
+        7px 14px;
 
-    border-radius: 999px;
+    color:
+        var(--velora-white);
 
-    background: var(--velora-green);
+    background:
+        var(--velora-brand);
 
-    color: white;
+    border-radius:
+        var(--v-radius-pill);
 
-    font-size: 9px;
+    white-space:
+        nowrap;
 
-    font-weight: 700;
+    font-size:
+        10px;
 
-    letter-spacing: .08em;
+    font-weight:
+        var(--v-font-weight-heavy);
 
-    white-space: nowrap;
-
-}
-
-
-/*=========================================
-              CARD TOP
-=========================================*/
-
-.pricing-card-top {
-
-    min-height: 160px;
+    letter-spacing:
+        var(--v-letter-spacing-wide);
 
 }
 
@@ -4288,801 +3322,589 @@ font-size:15px;
 
     display: block;
 
-    margin-bottom: 9px;
+    margin-bottom:
+        var(--v-space-3);
 
-    color: var(--velora-ink);
+    font-size:
+        var(--v-font-size-xl);
 
-    font-size: 22px;
-
-    font-weight: 600;
+    font-weight:
+        var(--v-font-weight-bold);
 
 }
 
 
 .pricing-description {
 
-    min-height: 45px;
+    min-height: 50px;
 
-    margin: 0 0 20px;
+    margin-bottom:
+        var(--v-space-7);
 
-    color: var(--velora-muted);
-
-    font-size: 13px;
-
-    line-height: 1.55;
+    color:
+        var(--velora-muted);
 
 }
 
 
 .pricing-price {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: baseline;
+    align-items:
+        baseline;
 
-    gap: 5px;
+    gap:
+        var(--v-space-2);
+
+    margin-bottom:
+        var(--v-space-7);
 
 }
 
 
 .pricing-price strong {
 
-    color: var(--velora-ink);
-
-    font-size: 48px;
-
-    font-weight: 500;
+    font-size:
+        48px;
 
     line-height: 1;
 
-    letter-spacing: -.05em;
+    letter-spacing:
+        var(--v-letter-spacing-tight);
 
 }
 
 
 .pricing-price span {
 
-    color: var(--velora-muted);
+    color:
+        var(--velora-muted);
 
-    font-size: 13px;
+    font-size:
+        var(--v-font-size-sm);
 
 }
 
-
-/*=========================================
-              BUTTONS
-=========================================*/
 
 .pricing-btn {
 
     width: 100%;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
     min-height: 50px;
 
-    border-radius: 999px;
+    display:
+        flex;
 
-    font-size: 14px;
+    align-items:
+        center;
 
-    font-weight: 600;
+    justify-content:
+        center;
 
-    text-decoration: none;
+    border-radius:
+        var(--v-radius-md);
+
+    font-weight:
+        var(--v-font-weight-bold);
 
     transition:
-        background-color .2s ease,
-        color .2s ease,
-        border-color .2s ease,
-        transform .2s ease;
-
-}
-
-
-.pricing-btn:hover {
-
-    transform: translateY(-2px);
-
-}
-
-
-.pricing-btn-outline {
-
-    border: 1px solid #dcdedc;
-
-    background: white;
-
-    color: var(--velora-ink);
-
-}
-
-
-.pricing-btn-outline:hover {
-
-    border-color: var(--velora-green);
-
-    background: var(--velora-green-tint);
-
-    color: var(--velora-green);
+        all var(--v-duration-base)
+        var(--v-ease);
 
 }
 
 
 .pricing-btn-primary {
 
-    border: 1px solid var(--velora-green);
+    color:
+        var(--velora-white);
 
-    background: var(--velora-green);
-
-    color: white;
+    background:
+        var(--velora-brand);
 
 }
 
 
 .pricing-btn-primary:hover {
 
-    border-color: var(--velora-green-dark);
+    color:
+        var(--velora-white);
 
-    background: var(--velora-green-dark);
-
-    color: white;
+    background:
+        var(--velora-brand-dark);
 
 }
 
 
-/*=========================================
-              DIVIDER
-=========================================*/
+.pricing-btn-outline {
+
+    color:
+        var(--velora-ink);
+
+    border:
+        1px solid
+        var(--velora-line);
+
+}
+
+
+.pricing-btn-outline:hover {
+
+    color:
+        var(--velora-brand);
+
+    border-color:
+        var(--velora-brand);
+
+    background:
+        var(--velora-brand-wash);
+
+}
+
 
 .pricing-divider {
 
-    width: 100%;
-
     height: 1px;
 
-    margin: 28px 0 20px;
+    margin:
+        var(--v-space-7)
+        0;
 
-    background: var(--velora-line);
+    background:
+        var(--velora-line);
 
 }
 
-
-/*=========================================
-              STORAGE
-=========================================*/
 
 .pricing-storage {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 8px;
+    gap:
+        var(--v-space-2);
 
-    margin-bottom: 20px;
+    margin-bottom:
+        var(--v-space-6);
 
-    color: var(--velora-green);
+    color:
+        var(--velora-brand);
 
-    font-size: 13px;
+    font-size:
+        var(--v-font-size-sm);
 
-    font-weight: 600;
+    font-weight:
+        var(--v-font-weight-bold);
 
 }
 
-
-.pricing-storage i {
-
-    font-size: 15px;
-
-}
-
-
-/*=========================================
-              FEATURES
-=========================================*/
 
 .pricing-features {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    gap: 13px;
-
-    margin: 0;
-
-    padding: 0;
-
-    list-style: none;
+    gap:
+        var(--v-space-4);
 
 }
 
 
 .pricing-features li {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: flex-start;
+    align-items:
+        flex-start;
 
-    gap: 9px;
+    gap:
+        var(--v-space-3);
 
-    color: var(--velora-ink);
+    color:
+        var(--velora-neutral-800);
 
-    font-size: 13px;
-
-    line-height: 1.45;
-
-}
-
-
-.pricing-features li i {
-
-    flex-shrink: 0;
-
-    margin-top: 1px;
-
-    color: var(--velora-green);
-
-    font-size: 14px;
+    font-size:
+        var(--v-font-size-sm);
 
 }
 
 
-.pricing-features
+.pricing-features i {
+
+    color:
+        var(--velora-brand);
+
+}
+
+
 .pricing-feature-disabled {
 
-    color: #a5a7a5;
+    color:
+        var(--velora-neutral-500)
+        !important;
 
 }
 
 
-.pricing-features
 .pricing-feature-disabled i {
 
-    color: #b7bab7;
+    color:
+        var(--velora-neutral-500);
 
 }
 
-
-/*=========================================
-          REASSURANCE
-=========================================*/
 
 .pricing-reassurance {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    align-items: center;
+    flex-wrap:
+        wrap;
 
-    flex-wrap: wrap;
+    gap:
+        var(--v-space-7);
 
-    gap: 30px;
+    margin-top:
+        var(--v-space-10);
 
-    margin-top: 45px;
+    color:
+        var(--velora-muted);
+
+    font-size:
+        var(--v-font-size-sm);
 
 }
 
 
 .pricing-reassurance span {
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 7px;
-
-    color: var(--velora-muted);
-
-    font-size: 12px;
+    gap:
+        var(--v-space-2);
 
 }
 
 
 .pricing-reassurance i {
 
-    color: var(--velora-green);
-
-    font-size: 14px;
+    color:
+        var(--velora-brand);
 
 }
 
 
-/*=========================================
-        COMPARE FEATURES
-=========================================*/
-
 .pricing-comparison-link {
 
-    margin-top: 25px;
+    margin-top:
+        var(--v-space-7);
 
-    text-align: center;
+    text-align:
+        center;
 
 }
 
 
 .pricing-comparison-link a {
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 8px;
+    gap:
+        var(--v-space-2);
 
-    color: var(--velora-ink);
+    color:
+        var(--velora-brand);
 
-    font-size: 13px;
-
-    font-weight: 600;
-
-    text-decoration: none;
-
-}
-
-
-.pricing-comparison-link a:hover {
-
-    color: var(--velora-green);
+    font-weight:
+        var(--v-font-weight-bold);
 
 }
 
 
-.pricing-comparison-link i {
-
-    transition:
-        transform .2s ease;
-
-}
-
-
-.pricing-comparison-link a:hover i {
-
-    transform:
-        translateX(4px);
-
-}
-
-
-/*=========================================
-              TABLET
-=========================================*/
-
-@media (max-width: 991px) {
-
-    .velora-pricing {
-
-        padding: 110px 0;
-
-    }
-
-
-    .pricing-grid {
-
-        grid-template-columns:
-            1fr;
-
-        max-width: 600px;
-
-        gap: 25px;
-
-    }
-
-
-    .pricing-card {
-
-        padding: 32px;
-
-    }
-
-
-    .pricing-card-featured {
-
-        order: -1;
-
-    }
-
-}
-
-
-/*=========================================
-              MOBILE
-=========================================*/
-
-@media (max-width: 767px) {
-
-    .velora-pricing {
-
-        padding: 85px 0;
-
-    }
-
-
-    .pricing-header {
-
-        margin-bottom: 55px;
-
-    }
-
-
-    .pricing-header h2 {
-
-        font-size: 40px;
-
-    }
-
-
-    .pricing-header p {
-
-        font-size: 16px;
-
-    }
-
-
-    .pricing-card {
-
-        padding: 28px 24px;
-
-        border-radius: 18px;
-
-    }
-
-
-    .pricing-price strong {
-
-        font-size: 44px;
-
-    }
-
-
-    .pricing-reassurance {
-
-        flex-direction: column;
-
-        gap: 14px;
-
-        margin-top: 35px;
-
-    }
-
-}
-
-/*=========================================
-              VELORA FAQ
-=========================================*/
+/* =========================================================
+   13 — FAQ
+========================================================= */
 
 .velora-faq {
 
-    padding: 150px 0;
+    padding:
+        var(--v-section-space)
+        0;
 
-    background: var(--velora-paper);
-
-    border-top: 1px solid var(--velora-line);
+    background:
+        var(--velora-green-50);
 
 }
 
-
-/*=========================================
-              LAYOUT
-=========================================*/
 
 .faq-layout {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
-        minmax(280px, .75fr)
-        minmax(0, 1.25fr);
+        minmax(280px, 0.8fr)
+        minmax(0, 1.2fr);
 
-    gap: 100px;
-
-    max-width: 1100px;
-
-    margin: 0 auto;
-
-    align-items: start;
+    gap:
+        clamp(48px, 8vw, 120px);
 
 }
 
-
-/*=========================================
-              INTRO
-=========================================*/
 
 .faq-intro {
 
-    position: sticky;
+    position:
+        sticky;
 
-    top: 100px;
+    top:
+        calc(
+            var(--v-nav-height) +
+            var(--v-space-7)
+        );
 
-}
-
-
-.faq-eyebrow {
-
-    display: inline-block;
-
-    margin-bottom: 20px;
-
-    color: var(--velora-green);
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    letter-spacing: .12em;
+    height:
+        fit-content;
 
 }
 
 
 .faq-intro h2 {
 
-    margin: 0 0 22px;
+    margin-bottom:
+        var(--v-space-5);
 
-    color: var(--velora-ink);
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            var(--v-font-size-h2)
+        );
 
-    font-size: clamp(40px, 4vw, 54px);
+    line-height:
+        var(--v-line-height-heading);
 
-    font-weight: 500;
-
-    line-height: 1.08;
-
-    letter-spacing: -.05em;
-
-}
-
-
-.faq-intro h2 span {
-
-    display: block;
-
-    color: var(--velora-green);
+    letter-spacing:
+        var(--v-letter-spacing-heading);
 
 }
 
 
 .faq-intro > p {
 
-    max-width: 410px;
+    margin-bottom:
+        var(--v-space-8);
 
-    margin: 0;
+    color:
+        var(--velora-muted);
 
-    color: var(--velora-muted);
-
-    font-size: 16px;
-
-    line-height: 1.7;
+    font-size:
+        var(--v-font-size-md);
 
 }
 
 
-/*=========================================
-              HELP CARD
-=========================================*/
-
 .faq-help-card {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 14px;
+    gap:
+        var(--v-space-4);
 
-    margin-top: 40px;
+    padding:
+        var(--v-space-5);
 
-    padding: 17px;
+    margin-bottom:
+        var(--v-space-5);
 
-    border: 1px solid var(--velora-line);
+    background:
+        var(--velora-white);
 
-    border-radius: 14px;
+    border:
+        1px solid
+        var(--velora-line);
 
-    background: #fafafa;
+    border-radius:
+        var(--v-radius-lg);
 
 }
 
 
 .faq-help-icon {
 
-    width: 42px;
+    width: 44px;
 
-    height: 42px;
+    height: 44px;
 
-    display: flex;
+    display:
+        grid;
 
-    align-items: center;
+    place-items:
+        center;
 
-    justify-content: center;
+    flex: 0 0 44px;
 
-    flex-shrink: 0;
+    color:
+        var(--velora-brand);
 
-    border-radius: 50%;
+    background:
+        var(--velora-brand-soft);
 
-    background: var(--velora-green-tint);
+    border-radius:
+        var(--v-radius-md);
 
-    color: var(--velora-green);
+}
+
+
+.faq-help-card strong,
+.faq-help-card span {
+
+    display: block;
 
 }
 
 
 .faq-help-card strong {
 
-    display: block;
-
     margin-bottom: 3px;
-
-    color: var(--velora-ink);
-
-    font-size: 13px;
-
-    font-weight: 600;
 
 }
 
 
 .faq-help-card span {
 
-    display: block;
+    color:
+        var(--velora-muted);
 
-    color: var(--velora-muted);
-
-    font-size: 12px;
+    font-size:
+        var(--v-font-size-sm);
 
 }
 
-
-/*=========================================
-              CONTACT LINK
-=========================================*/
 
 .faq-contact-link {
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 8px;
+    gap:
+        var(--v-space-2);
 
-    margin-top: 22px;
+    color:
+        var(--velora-brand);
 
-    color: var(--velora-ink);
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    text-decoration: none;
-
-}
-
-
-.faq-contact-link:hover {
-
-    color: var(--velora-green);
+    font-weight:
+        var(--v-font-weight-bold);
 
 }
 
-
-.faq-contact-link i {
-
-    transition:
-        transform .2s ease;
-
-}
-
-
-.faq-contact-link:hover i {
-
-    transform:
-        translateX(4px);
-
-}
-
-
-/*=========================================
-              FAQ LIST
-=========================================*/
 
 .faq-list {
 
-    width: 100%;
-
-    border-top: 1px solid var(--velora-line);
+    border-top:
+        1px solid
+        var(--velora-line);
 
 }
 
-
-/*=========================================
-              FAQ ITEM
-=========================================*/
 
 .faq-item {
 
-    border-bottom: 1px solid var(--velora-line);
+    border-bottom:
+        1px solid
+        var(--velora-line);
 
 }
 
-
-/*=========================================
-              QUESTION
-=========================================*/
 
 .faq-question {
 
     width: 100%;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
-    gap: 20px;
+    gap:
+        var(--v-space-5);
 
-    padding: 25px 4px;
+    padding:
+        var(--v-space-6)
+        0;
 
-    border: 0;
+    color:
+        var(--velora-ink);
 
-    background: transparent;
+    text-align:
+        left;
 
-    color: var(--velora-ink);
+    background:
+        transparent;
 
-    font-family: "Lato", sans-serif;
+    font-size:
+        var(--v-font-size-lg);
 
-    font-size: 16px;
-
-    font-weight: 600;
-
-    text-align: left;
-
-    cursor: pointer;
-
-}
-
-
-.faq-question:hover {
-
-    color: var(--velora-green);
+    font-weight:
+        var(--v-font-weight-bold);
 
 }
 
 
 .faq-question i {
 
-    display: flex;
+    flex: 0 0 auto;
 
-    align-items: center;
-
-    justify-content: center;
-
-    width: 28px;
-
-    height: 28px;
-
-    flex-shrink: 0;
-
-    border: 1px solid var(--velora-line);
-
-    border-radius: 50%;
-
-    color: var(--velora-muted);
-
-    font-size: 14px;
+    color:
+        var(--velora-brand);
 
     transition:
-        transform .3s ease,
-        background-color .3s ease,
-        color .3s ease,
-        border-color .3s ease;
+        transform var(--v-duration-base)
+        var(--v-ease);
 
 }
 
 
-/*=========================================
-              ANSWER
-=========================================*/
+.faq-item.active
+.faq-question i {
+
+    transform:
+        rotate(45deg);
+
+}
+
 
 .faq-answer {
 
@@ -5090,10 +3912,10 @@ font-size:15px;
 
     grid-template-rows: 0fr;
 
-    overflow: hidden;
-
     transition:
-        grid-template-rows .35s ease;
+        grid-template-rows
+        var(--v-duration-base)
+        var(--v-ease);
 
 }
 
@@ -5102,30 +3924,18 @@ font-size:15px;
 
     min-height: 0;
 
-    margin: 0;
-
-    padding: 0 50px 0 4px;
-
     overflow: hidden;
 
-    color: var(--velora-muted);
+    margin: 0;
 
-    font-size: 14px;
+    color:
+        var(--velora-muted);
 
-    line-height: 1.75;
-
-    opacity: 0;
-
-    transition:
-        opacity .25s ease,
-        padding .35s ease;
+    line-height:
+        1.7;
 
 }
 
-
-/*=========================================
-              ACTIVE FAQ
-=========================================*/
 
 .faq-item.active
 .faq-answer {
@@ -5138,55 +3948,781 @@ font-size:15px;
 .faq-item.active
 .faq-answer p {
 
-    padding-bottom: 25px;
-
-    opacity: 1;
-
-}
-
-
-.faq-item.active
-.faq-question {
-
-    color: var(--velora-green);
+    padding-bottom:
+        var(--v-space-6);
 
 }
 
 
-.faq-item.active
-.faq-question i {
+/* =========================================================
+   14 — FINAL CTA
+========================================================= */
 
-    transform: rotate(45deg);
+.velora-final-cta {
 
-    border-color: var(--velora-green);
+    padding:
+        var(--v-section-space)
+        0;
 
-    background: var(--velora-green-tint);
+    overflow: hidden;
 
-    color: var(--velora-green);
+    background:
+        var(--velora-brand-dark);
 
 }
 
 
-/*=========================================
-              TABLET
-=========================================*/
+.final-cta-content {
 
-@media (max-width: 991px) {
+    display:
+        grid;
 
-    .velora-faq {
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(300px, 0.8fr);
 
-        padding: 110px 0;
+    gap:
+        var(--v-space-11);
+
+    align-items:
+        center;
+
+}
+
+
+.final-cta-eyebrow {
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+}
+
+
+.final-cta-copy h2 {
+
+    max-width: 700px;
+
+    margin-bottom:
+        var(--v-space-6);
+
+    color:
+        var(--velora-white);
+
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            64px
+        );
+
+    line-height:
+        var(--v-line-height-tight);
+
+    letter-spacing:
+        var(--v-letter-spacing-tight);
+
+}
+
+
+.final-cta-copy h2 span {
+
+    color:
+        #a9c9b7;
+
+}
+
+
+.final-cta-copy p {
+
+    max-width: 600px;
+
+    margin-bottom:
+        var(--v-space-8);
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size:
+        var(--v-font-size-md);
+
+}
+
+
+.final-cta-actions {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        var(--v-space-3);
+
+}
+
+
+.final-cta-actions
+.velora-btn-primary {
+
+    color:
+        var(--velora-brand-dark);
+
+    background:
+        var(--velora-white);
+
+}
+
+
+.final-cta-actions
+.velora-btn-primary:hover {
+
+    background:
+        var(--velora-green-100);
+
+}
+
+
+.final-cta-actions
+.velora-btn-secondary {
+
+    color:
+        var(--velora-white);
+
+    border-color:
+        rgba(255, 255, 255, 0.3);
+
+}
+
+
+.final-cta-actions
+.velora-btn-secondary:hover {
+
+    color:
+        var(--velora-white);
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+}
+
+
+/* ---------------------------------------------------------
+   CTA ORBIT
+--------------------------------------------------------- */
+
+.final-cta-visual {
+
+    min-height: 420px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+}
+
+
+.final-cta-orbit {
+
+    position: relative;
+
+    width: 360px;
+
+    height: 360px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    border-radius:
+        50%;
+
+}
+
+
+.final-cta-orbit::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 50px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    border-radius:
+        50%;
+
+}
+
+
+.final-orbit-center {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    width: 110px;
+
+    height: 110px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        var(--velora-white);
+
+    border-radius:
+        50%;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.25);
+
+}
+
+
+.final-orbit-center img {
+
+    max-width: 65px;
+
+    max-height: 50px;
+
+    object-fit:
+        contain;
+
+}
+
+
+.final-orbit-card {
+
+    position: absolute;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        var(--v-space-2);
+
+    padding:
+        10px 14px;
+
+    color:
+        var(--velora-white);
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    backdrop-filter:
+        blur(10px);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    border-radius:
+        var(--v-radius-pill);
+
+    font-size:
+        var(--v-font-size-sm);
+
+}
+
+
+.final-orbit-card-one {
+
+    top: 8px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+.final-orbit-card-two {
+
+    right: -15px;
+
+    bottom: 70px;
+
+}
+
+
+.final-orbit-card-three {
+
+    left: -15px;
+
+    bottom: 70px;
+
+}
+
+
+/* =========================================================
+   15 — FOOTER
+========================================================= */
+
+.velora-footer {
+
+    padding:
+        var(--v-space-12)
+        0
+        var(--v-space-6);
+
+    background:
+        var(--velora-neutral-950);
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+}
+
+
+.velora-footer-main {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.5fr
+        repeat(3, 1fr);
+
+    gap:
+        var(--v-space-10);
+
+    padding-bottom:
+        var(--v-space-11);
+
+}
+
+
+.velora-footer-logo {
+
+    display:
+        inline-flex;
+
+    margin-bottom:
+        var(--v-space-5);
+
+}
+
+
+.velora-footer-logo img {
+
+    height: 34px;
+
+    width: auto;
+
+    filter:
+        brightness(0)
+        invert(1);
+
+}
+
+
+.velora-footer-brand > p {
+
+    max-width: 260px;
+
+    margin-bottom:
+        var(--v-space-6);
+
+    font-size:
+        var(--v-font-size-sm);
+
+    line-height:
+        1.7;
+
+}
+
+
+.velora-footer-socials {
+
+    display:
+        flex;
+
+    gap:
+        var(--v-space-3);
+
+}
+
+
+.velora-footer-socials a {
+
+    width: 38px;
+
+    height: 38px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    color:
+        var(--velora-white);
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-radius:
+        50%;
+
+    transition:
+        background var(--v-duration-base)
+        var(--v-ease);
+
+}
+
+
+.velora-footer-socials a:hover {
+
+    background:
+        var(--velora-brand);
+
+}
+
+
+.velora-footer-column h3 {
+
+    margin-bottom:
+        var(--v-space-5);
+
+    color:
+        var(--velora-white);
+
+    font-size:
+        var(--v-font-size-base);
+
+}
+
+
+.velora-footer-column ul {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        var(--v-space-3);
+
+}
+
+
+.velora-footer-column a {
+
+    font-size:
+        var(--v-font-size-sm);
+
+    transition:
+        color var(--v-duration-fast)
+        var(--v-ease);
+
+}
+
+
+.velora-footer-column a:hover {
+
+    color:
+        var(--velora-white);
+
+}
+
+
+.velora-footer-bottom {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        var(--v-space-5);
+
+    padding-top:
+        var(--v-space-6);
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    font-size:
+        var(--v-font-size-sm);
+
+}
+
+
+.velora-footer-bottom p {
+
+    margin: 0;
+
+}
+
+
+.velora-footer-bottom-links {
+
+    display:
+        flex;
+
+    gap:
+        var(--v-space-5);
+
+}
+
+
+.velora-footer-bottom a:hover {
+
+    color:
+        var(--velora-white);
+
+}
+
+
+/* =========================================================
+   16 — TABLET
+========================================================= */
+
+@media
+(max-width: 1199px) {
+
+    :root {
+
+        --v-section-space: 96px;
+
+    }
+
+
+    .business-showcase {
+
+        gap:
+            var(--v-space-8);
+
+    }
+
+
+    .workflow-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap:
+            var(--v-space-7);
+
+    }
+
+
+    .photographers-showcase {
+
+        gap:
+            var(--v-space-9);
+
+    }
+
+
+    .pricing-card {
+
+        padding:
+            var(--v-space-6);
+
+    }
+
+
+    .velora-footer-main {
+
+        grid-template-columns:
+            1.5fr
+            repeat(3, 1fr);
+
+        gap:
+            var(--v-space-7);
+
+    }
+
+}
+
+
+/* =========================================================
+   17 — MOBILE NAVIGATION + TABLET
+========================================================= */
+
+@media
+(max-width: 991px) {
+
+    .velora-nav {
+
+        min-height: 72px;
+
+    }
+
+
+    .velora-nav-inner {
+
+        min-height: 72px;
+
+    }
+
+
+    .navbar-collapse {
+
+        padding:
+            var(--v-space-5)
+            0
+            var(--v-space-6);
+
+    }
+
+
+    .velora-links {
+
+        gap:
+            var(--v-space-1);
+
+        margin:
+            var(--v-space-4)
+            0
+            var(--v-space-5)
+            !important;
+
+    }
+
+
+    .velora-links
+    .nav-link {
+
+        padding:
+            var(--v-space-3)
+            0
+            !important;
+
+    }
+
+
+    .velora-btn-dashboard {
+
+        width: 100%;
+
+    }
+
+
+    .business-showcase {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .business-features {
+
+        max-width: 760px;
+
+    }
+
+
+    .workflow-grid {
+
+        grid-template-columns:
+            1fr;
+
+        max-width: 650px;
+
+        margin: auto;
+
+    }
+
+
+    .workflow-step-content {
+
+        min-height: auto;
+
+    }
+
+
+    .photographers-showcase {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .photographers-content {
+
+        max-width: 700px;
+
+    }
+
+
+    .photographers-visual {
+
+        max-width: 700px;
+
+        width: 100%;
+
+        margin: auto;
+
+    }
+
+
+    .photographers-proof {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            var(--v-space-6);
+
+    }
+
+
+    .pricing-grid {
+
+        grid-template-columns:
+            1fr;
+
+        max-width: 560px;
+
+        margin: auto;
+
+        gap:
+            var(--v-space-7);
+
+    }
+
+
+    .pricing-card-featured {
+
+        transform: none;
 
     }
 
 
     .faq-layout {
 
-        grid-template-columns: 1fr;
-
-        gap: 65px;
-
-        max-width: 700px;
+        grid-template-columns:
+            1fr;
 
     }
 
@@ -5195,1242 +4731,497 @@ font-size:15px;
 
         position: static;
 
-        text-align: center;
-
-    }
-
-
-    .faq-intro > p {
-
-        margin: 0 auto;
-
-    }
-
-
-    .faq-help-card {
-
-        max-width: 350px;
-
-        margin-left: auto;
-
-        margin-right: auto;
-
-        text-align: left;
-
-    }
-
-
-    .faq-contact-link {
-
-        margin-top: 18px;
-
-    }
-
-}
-
-
-/*=========================================
-              MOBILE
-=========================================*/
-
-@media (max-width: 767px) {
-
-    .velora-faq {
-
-        padding: 85px 0;
-
-    }
-
-
-    .faq-layout {
-
-        gap: 50px;
-
-    }
-
-
-    .faq-intro {
-
-        padding: 0 10px;
-
-    }
-
-
-    .faq-intro h2 {
-
-        font-size: 40px;
-
-    }
-
-
-    .faq-intro > p {
-
-        font-size: 15px;
-
-    }
-
-
-    .faq-question {
-
-        padding: 22px 2px;
-
-        font-size: 14px;
-
-    }
-
-
-    .faq-question i {
-
-        width: 26px;
-
-        height: 26px;
-
-        font-size: 13px;
-
-    }
-
-
-    .faq-answer p {
-
-        padding-left: 2px;
-
-        padding-right: 25px;
-
-        font-size: 13px;
-
-    }
-
-
-    .faq-item.active
-    .faq-answer p {
-
-        padding-bottom: 22px;
-
-    }
-
-}
-
-/*=========================================
-            VELORA FINAL CTA
-=========================================*/
-
-.velora-final-cta {
-
-    position: relative;
-
-    min-height: 680px;
-
-    display: flex;
-
-    align-items: center;
-
-    overflow: hidden;
-
-    background: var(--velora-green-dark);
-
-}
-
-
-/*=========================================
-              BACKGROUND IMAGE
-=========================================*/
-
-.final-cta-background {
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 0;
-
-}
-
-
-.final-cta-image {
-
-    width: 100%;
-
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    opacity: .20;
-
-    filter: saturate(.65);
-
-}
-
-
-/*=========================================
-              OVERLAY
-=========================================*/
-
-.final-cta-background::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(18,51,37,.98) 0%,
-            rgba(18,51,37,.88) 45%,
-            rgba(18,51,37,.55) 100%
-        );
-
-}
-
-
-/*=========================================
-              CONTENT
-=========================================*/
-
-.final-cta-content {
-
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 780px;
-
-    padding: 120px 0;
-
-}
-
-
-.final-cta-eyebrow {
-
-    display: inline-block;
-
-    margin-bottom: 25px;
-
-    color: rgba(255,255,255,.7);
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    letter-spacing: .14em;
-
-}
-
-
-.final-cta-content h2 {
-
-    max-width: 760px;
-
-    margin: 0 0 28px;
-
-    color: white;
-
-    font-size: clamp(48px, 6vw, 78px);
-
-    font-weight: 500;
-
-    line-height: 1.02;
-
-    letter-spacing: -.055em;
-
-}
-
-
-.final-cta-content h2 span {
-
-    color: #b8d5c4;
-
-}
-
-
-.final-cta-content p {
-
-    max-width: 600px;
-
-    margin: 0 0 38px;
-
-    color: rgba(255,255,255,.72);
-
-    font-size: 18px;
-
-    line-height: 1.7;
-
-}
-
-
-/*=========================================
-              CTA BUTTON
-=========================================*/
-
-.final-cta-actions {
-
-    display: flex;
-
-    align-items: center;
-
-}
-
-
-.final-cta-button {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    min-height: 56px;
-
-    padding: 0 28px;
-
-    border-radius: 999px;
-
-    background: white;
-
-    color: var(--velora-green-dark);
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    text-decoration: none;
-
-    transition:
-        transform .2s ease,
-        background-color .2s ease,
-        box-shadow .2s ease;
-
-}
-
-
-.final-cta-button:hover {
-
-    transform: translateY(-3px);
-
-    background: #f5f7f5;
-
-    color: var(--velora-green-dark);
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.18);
-
-}
-
-
-.final-cta-button i {
-
-    font-size: 16px;
-
-    transition:
-        transform .2s ease;
-
-}
-
-
-.final-cta-button:hover i {
-
-    transform:
-        translateX(4px);
-
-}
-
-
-/*=========================================
-              CTA NOTE
-=========================================*/
-
-.final-cta-note {
-
-    display: flex;
-
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 22px;
-
-    margin-top: 22px;
-
-}
-
-
-.final-cta-note span {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    color: rgba(255,255,255,.6);
-
-    font-size: 11px;
-
-}
-
-
-.final-cta-note i {
-
-    color: #b8d5c4;
-
-    font-size: 13px;
-
-}
-
-
-/*=========================================
-              TABLET
-=========================================*/
-
-@media (max-width: 991px) {
-
-    .velora-final-cta {
-
-        min-height: 600px;
+        max-width: 700px;
 
     }
 
 
     .final-cta-content {
 
-        max-width: 700px;
-
-        padding: 100px 20px;
+        grid-template-columns:
+            1fr;
 
     }
 
 
-    .final-cta-content h2 {
+    .final-cta-visual {
 
-        font-size:
-            clamp(46px, 7vw, 68px);
+        min-height: 380px;
+
+    }
+
+
+    .velora-footer-main {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .velora-footer-brand {
+
+        grid-column:
+            1 / -1;
 
     }
 
 }
 
 
-/*=========================================
-              MOBILE
-=========================================*/
+/* =========================================================
+   18 — MOBILE
+========================================================= */
 
-@media (max-width: 767px) {
+@media
+(max-width: 767px) {
 
-    .velora-final-cta {
+    :root {
 
-        min-height: 600px;
+        --v-section-space: 80px;
 
     }
 
 
-    .final-cta-background::after {
+    .velora-hero {
 
-        background:
-            linear-gradient(
-                180deg,
-                rgba(18,51,37,.96),
-                rgba(18,51,37,.88)
+        min-height: auto;
+
+        padding:
+            72px 20px
+            0;
+
+    }
+
+
+    .velora-hero-title {
+
+        font-size:
+            clamp(
+                42px,
+                12vw,
+                56px
             );
 
     }
 
 
-    .final-cta-content {
+    .velora-hero-sub {
 
-        padding: 85px 20px;
-
-        text-align: center;
-
-    }
-
-
-    .final-cta-eyebrow {
-
-        font-size: 9px;
-
-        letter-spacing: .1em;
+        font-size:
+            var(--v-font-size-base);
 
     }
 
 
-    .final-cta-content h2 {
+    .velora-hero-actions {
 
-        font-size: 43px;
-
-        line-height: 1.05;
-
-    }
-
-
-    .final-cta-content p {
-
-        font-size: 16px;
-
-        line-height: 1.65;
+        flex-direction:
+            column;
 
     }
 
 
-    .final-cta-actions {
-
-        justify-content: center;
-
-    }
-
-
-    .final-cta-button {
+    .velora-hero-actions a {
 
         width: 100%;
 
-        max-width: 320px;
+    }
 
-        min-height: 54px;
+
+    .velora-hero-media {
+
+        margin-top:
+            var(--v-space-10);
+
+        border-radius:
+            var(--v-radius-lg)
+            var(--v-radius-lg)
+            0
+            0;
 
     }
 
 
-    .final-cta-note {
+    .velora-hero-img {
 
-        justify-content: center;
-
-        gap: 12px;
+        min-height: 280px;
 
     }
 
-}
 
-/*=========================================
-              VELORA FOOTER
-=========================================*/
+    .templates-header h2,
+    .business-header h2,
+    .workflow-header h2,
+    .photographers-content h2,
+    .testimonial-header h2,
+    .pricing-header h2,
+    .faq-intro h2 {
 
-.velora-footer {
+        font-size:
+            38px;
 
-    background: var(--velora-green-dark);
+    }
 
-    color: white;
 
-    padding: 85px 0 30px;
+    .veloraSwiper {
 
-    overflow: hidden;
+        padding-left: 16px;
 
-}
+        padding-right: 16px;
 
+    }
 
-/*=========================================
-              FOOTER MAIN
-=========================================*/
 
-.footer-main {
+    .veloraSwiper
+    .swiper-slide img {
 
-    display: grid;
+        aspect-ratio:
+            4 / 5;
 
-    grid-template-columns:
-        minmax(260px, 2fr)
-        repeat(4, minmax(110px, 1fr));
+    }
 
-    gap: 45px;
 
-    padding-bottom: 75px;
+    .veloraSwiper
+    .swiper-button-next,
 
-    border-bottom:
-        1px solid rgba(255,255,255,.14);
+    .veloraSwiper
+    .swiper-button-prev {
 
-}
+        display: none;
 
+    }
 
-/*=========================================
-              BRAND
-=========================================*/
 
-.footer-brand {
+    .preview-screen {
 
-    max-width: 320px;
+        min-height: 300px;
 
-}
+    }
 
 
-.footer-logo {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    margin-bottom: 22px;
-
-}
-
-
-.footer-logo img {
-
-    width: 150px;
-
-    height: auto;
-
-    display: block;
-
-}
-
-
-.footer-brand p {
-
-    max-width: 270px;
-
-    margin: 0 0 25px;
-
-    color: rgba(255,255,255,.62);
-
-    font-size: 14px;
-
-    line-height: 1.7;
-
-}
-
-
-/*=========================================
-              FOOTER CTA
-=========================================*/
-
-.footer-cta {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    color: white;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    text-decoration: none;
-
-    transition: color .2s ease;
-
-}
-
-
-.footer-cta:hover {
-
-    color: #b8d5c4;
-
-}
-
-
-.footer-cta i {
-
-    transition:
-        transform .2s ease;
-
-}
-
-
-.footer-cta:hover i {
-
-    transform:
-        translateX(4px);
-
-}
-
-
-/*=========================================
-              FOOTER COLUMNS
-=========================================*/
-
-.footer-column {
-
-    min-width: 0;
-
-}
-
-
-.footer-column h3 {
-
-    margin: 5px 0 20px;
-
-    color: white;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: .04em;
-
-}
-
-
-.footer-column ul {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 12px;
-
-    margin: 0;
-
-    padding: 0;
-
-    list-style: none;
-
-}
-
-
-.footer-column li {
-
-    margin: 0;
-
-    padding: 0;
-
-}
-
-
-.footer-column a {
-
-    display: inline-block;
-
-    color: rgba(255,255,255,.58);
-
-    font-size: 13px;
-
-    line-height: 1.4;
-
-    text-decoration: none;
-
-    transition:
-        color .2s ease,
-        transform .2s ease;
-
-}
-
-
-.footer-column a:hover {
-
-    color: white;
-
-    transform: translateX(2px);
-
-}
-
-
-/*=========================================
-              FOOTER BOTTOM
-=========================================*/
-
-.footer-bottom {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr auto 1fr;
-
-    align-items: center;
-
-    gap: 25px;
-
-    padding-top: 25px;
-
-}
-
-
-/*=========================================
-              COPYRIGHT
-=========================================*/
-
-.footer-copyright {
-
-    color: rgba(255,255,255,.42);
-
-    font-size: 11px;
-
-    line-height: 1.5;
-
-}
-
-
-/*=========================================
-              SOCIALS
-=========================================*/
-
-.footer-socials {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 8px;
-
-}
-
-
-.footer-socials a {
-
-    width: 34px;
-
-    height: 34px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    border:
-        1px solid rgba(255,255,255,.16);
-
-    border-radius: 50%;
-
-    color: rgba(255,255,255,.65);
-
-    font-size: 13px;
-
-    text-decoration: none;
-
-    transition:
-        background-color .2s ease,
-        border-color .2s ease,
-        color .2s ease,
-        transform .2s ease;
-
-}
-
-
-.footer-socials a:hover {
-
-    background:
-        rgba(255,255,255,.1);
-
-    border-color:
-        rgba(255,255,255,.3);
-
-    color: white;
-
-    transform:
-        translateY(-2px);
-
-}
-
-
-/*=========================================
-              BACK TO TOP
-=========================================*/
-
-.footer-top {
-
-    justify-self: end;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    padding: 0;
-
-    border: 0;
-
-    background: transparent;
-
-    color: rgba(255,255,255,.55);
-
-    font-family: "Lato", sans-serif;
-
-    font-size: 11px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition:
-        color .2s ease;
-
-}
-
-
-.footer-top:hover {
-
-    color: white;
-
-}
-
-
-.footer-top i {
-
-    font-size: 13px;
-
-}
-
-
-/*=========================================
-              LARGE TABLET
-=========================================*/
-
-@media (max-width: 1199px) {
-
-    .footer-main {
+    .business-feature {
 
         grid-template-columns:
-            1.6fr
-            repeat(4, minmax(95px, 1fr));
-
-        gap: 30px;
-
-    }
-
-}
-
-
-/*=========================================
-              TABLET
-=========================================*/
-
-@media (max-width: 991px) {
-
-    .velora-footer {
-
-        padding: 70px 0 30px;
+            32px
+            minmax(0, 1fr)
+            auto;
 
     }
 
 
-    .footer-main {
+    .workflow-bottom {
 
         grid-template-columns:
-            repeat(3, minmax(0, 1fr));
+            1fr;
 
-        gap: 45px 35px;
-
-        padding-bottom: 60px;
-
-    }
-
-
-    .footer-brand {
-
-        grid-column:
-            1 / -1;
-
-        max-width: 420px;
+        padding:
+            var(--v-space-6);
 
     }
 
 
-    .footer-bottom {
-
-        grid-template-columns:
-            1fr auto;
-
-        gap: 20px;
-
-    }
-
-
-    .footer-socials {
-
-        justify-content: flex-end;
-
-    }
-
-
-    .footer-top {
-
-        grid-column:
-            1 / -1;
-
-        justify-self: start;
-
-    }
-
-}
-
-
-/*=========================================
-              MOBILE
-=========================================*/
-
-@media (max-width: 767px) {
-
-    .velora-footer {
-
-        padding: 65px 0 25px;
-
-    }
-
-
-    .footer-main {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: 40px 25px;
-
-        padding-bottom: 50px;
-
-    }
-
-
-    .footer-brand {
-
-        grid-column:
-            1 / -1;
-
-        max-width: 100%;
-
-    }
-
-
-    .footer-logo {
-
-        margin-bottom: 18px;
-
-    }
-
-
-    .footer-logo img {
-
-        width: 135px;
-
-    }
-
-
-    .footer-brand p {
-
-        max-width: 280px;
-
-        font-size: 13px;
-
-    }
-
-
-    .footer-column h3 {
-
-        margin-bottom: 16px;
-
-        font-size: 11px;
-
-    }
-
-
-    .footer-column ul {
-
-        gap: 10px;
-
-    }
-
-
-    .footer-column a {
-
-        font-size: 12px;
-
-    }
-
-
-    .footer-bottom {
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 20px;
-
-        padding-top: 22px;
-
-    }
-
-
-    .footer-socials {
-
-        order: -1;
-
-        justify-content: flex-start;
-
-    }
-
-
-    .footer-top {
-
-        align-self: flex-start;
-
-    }
-
-
-    .footer-copyright {
-
-        order: 2;
-
-    }
-
-}
-
-
-/*=========================================
-            SMALL PHONES
-          381px — 480px
-=========================================*/
-
-@media (min-width: 381px) and (max-width: 480px) {
-
-    .footer-main {
-
-        gap: 35px 20px;
-
-    }
-
-
-    .footer-column a {
-
-        font-size: 11.5px;
-
-    }
-
-
-    .footer-socials {
-
-        gap: 7px;
-
-    }
-
-}
-
-
-/*=========================================
-              VERY SMALL PHONES
-              320px — 380px
-=========================================*/
-
-@media (max-width: 380px) {
-
-    .velora-footer {
-
-        padding: 55px 0 22px;
-
-    }
-
-
-    .footer-main {
-
-        grid-template-columns: 1fr;
-
-        gap: 32px;
-
-        padding-bottom: 45px;
-
-    }
-
-
-    .footer-brand {
+    .workflow-bottom p,
+    .workflow-bottom-btn {
 
         grid-column: auto;
 
     }
 
 
-    .footer-brand p {
+    .photographers-image {
 
-        max-width: 260px;
-
-        font-size: 12.5px;
+        min-height: 460px;
 
     }
 
 
-    .footer-column h3 {
+    .photographers-image > img {
 
-        margin-bottom: 13px;
-
-    }
-
-
-    .footer-column ul {
-
-        gap: 9px;
+        height: 460px;
 
     }
 
 
-    .footer-column a {
+    .photographers-floating-card {
 
-        font-size: 12px;
+        left: 16px;
 
-    }
+        right: 16px;
 
+        bottom: 16px;
 
-    .footer-bottom {
-
-        gap: 18px;
-
-    }
-
-
-    .footer-socials {
-
-        gap: 6px;
+        min-width: 0;
 
     }
 
 
-    .footer-socials a {
+    .testimonial-card {
 
-        width: 32px;
+        width: 300px;
 
-        height: 32px;
+        min-height: 220px;
 
-        font-size: 12px;
-
-    }
-
-
-    .footer-top {
-
-        font-size: 10px;
+        padding:
+            var(--v-space-6);
 
     }
 
 
-    .footer-copyright {
+    .testimonial-marquee::before,
+    .testimonial-marquee::after {
 
-        font-size: 10px;
+        width: 40px;
+
+    }
+
+
+    .pricing-card {
+
+        padding:
+            var(--v-space-6);
+
+    }
+
+
+    .pricing-reassurance {
+
+        flex-direction:
+            column;
+
+        align-items:
+            center;
+
+        gap:
+            var(--v-space-3);
+
+    }
+
+
+    .faq-question {
+
+        padding:
+            var(--v-space-5)
+            0;
+
+        font-size:
+            var(--v-font-size-base);
+
+    }
+
+
+    .final-cta-copy h2 {
+
+        font-size:
+            42px;
+
+    }
+
+
+    .final-cta-actions {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .final-cta-actions a {
+
+        width: 100%;
+
+    }
+
+
+    .final-cta-orbit {
+
+        width: 300px;
+
+        height: 300px;
+
+    }
+
+
+    .final-cta-orbit::before {
+
+        inset: 40px;
+
+    }
+
+
+    .final-orbit-center {
+
+        width: 90px;
+
+        height: 90px;
+
+    }
+
+
+    .final-orbit-card {
+
+        padding:
+            8px 10px;
+
+        font-size:
+            12px;
+
+    }
+
+
+    .velora-footer {
+
+        padding-top:
+            var(--v-space-10);
+
+    }
+
+
+    .velora-footer-main {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            var(--v-space-8);
+
+    }
+
+
+    .velora-footer-brand {
+
+        grid-column: auto;
+
+    }
+
+
+    .velora-footer-bottom {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
 
     }
 
 }
 
 
-/*=========================================
-        ACCESSIBILITY / TOUCH DEVICES
-=========================================*/
+/* =========================================================
+   19 — SMALL MOBILE
+========================================================= */
 
-@media (hover: none) {
+@media
+(max-width: 480px) {
 
-    .footer-column a:hover {
+    .velora-logo {
 
-        transform: none;
-
-    }
-
-
-    .footer-socials a:hover {
-
-        transform: none;
+        height: 30px;
 
     }
 
 
-    .footer-cta:hover i {
+    .velora-hero {
 
-        transform: none;
+        padding-left: 16px;
+
+        padding-right: 16px;
+
+    }
+
+
+    .velora-hero-title {
+
+        font-size:
+            40px;
+
+    }
+
+
+    .velora-hero-actions a {
+
+        min-height: 52px;
+
+    }
+
+
+    .workflow-ui {
+
+        grid-template-columns:
+            58px
+            minmax(0, 1fr);
+
+    }
+
+
+    .workflow-sidebar {
+
+        padding:
+            8px 5px;
+
+        font-size:
+            6px;
+
+    }
+
+
+    .workflow-main {
+
+        padding: 8px;
+
+    }
+
+
+    .workflow-info-grid {
+
+        gap: 5px;
+
+    }
+
+
+    .testimonial-card {
+
+        width: 270px;
+
+    }
+
+
+    .photographers-proof {
+
+        margin-top:
+            var(--v-space-9);
+
+    }
+
+
+    .pricing-price strong {
+
+        font-size:
+            42px;
+
+    }
+
+
+    .final-cta-orbit {
+
+        width: 270px;
+
+        height: 270px;
+
+    }
+
+
+    .final-orbit-card-two {
+
+        right: -25px;
+
+    }
+
+
+    .final-orbit-card-three {
+
+        left: -25px;
 
     }
 

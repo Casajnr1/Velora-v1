@@ -1,329 +1,517 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Velora | Home</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- =========================================
+         BOOTSTRAP
+    ========================================== -->
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- =========================================
+         BOOTSTRAP ICONS
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- =========================================
+         SWIPER
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    >
+
+
+    <!-- =========================================
+         LATO
+    ========================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"
+    >
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="css/style.css">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon"
+    <!-- =========================================
+         VELORA MAIN CSS
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <!-- =========================================
+         FAVICON
+    ========================================== -->
+
+    <link
+        rel="shortcut icon"
         href="media/favicon/favicon.png"
-        type="image/x-icon">
+        type="image/x-icon"
+    >
 
 </head>
+
 
 <body>
 
 
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
 
-<!-- ==========================
-            NAVBAR
-=========================== -->
+    <nav class="navbar navbar-expand-lg velora-nav">
 
-<nav class="navbar navbar-expand-lg velora-nav">
-
-    <div class="container velora-nav-inner">
-
-        <!-- Logo -->
-
-        <a class="navbar-brand velora-brand" href="#">
-
-            <img
-                src="media/logo/logo-1-main.png"
-                alt="Velora"
-                class="velora-logo">
-
-        </a>
+        <div class="container velora-nav-inner">
 
 
-        <!-- Mobile Toggle -->
-
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#veloraNav">
-
-            <span class="navbar-toggler-icon"></span>
-
-        </button>
-
-
-
-        <div
-            class="collapse navbar-collapse"
-            id="veloraNav">
-
-            <!-- Navigation -->
-
-            <ul class="navbar-nav velora-links mx-auto">
-
-                <li class="nav-item">
-
-                    <a class="nav-link active" href="#">
-
-                        Home
-
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-
-                    <a class="nav-link" href="#features">
-
-                        Features
-
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-
-                    <a class="nav-link" href="#templates">
-
-                        Templates
-
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-
-                    <a class="nav-link" href="#pricing">
-
-                        Pricing
-
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-
-                    <a class="nav-link" href="#contact">
-
-                        Contact
-
-                    </a>
-
-                </li>
-
-            </ul>
-
-
-
-            <!-- CTA -->
+            <!-- =====================================
+                 LOGO
+            ====================================== -->
 
             <a
-                href="register.html"
-                class="btn velora-btn-dashboard">
+                class="navbar-brand velora-brand"
+                href="index.html"
+                aria-label="Velora home"
+            >
 
-                Dashboard
+                <img
+                    src="media/logo/logo-1-main.png"
+                    alt="Velora"
+                    class="velora-logo"
+                >
 
             </a>
+
+
+            <!-- =====================================
+                 MOBILE TOGGLE
+            ====================================== -->
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#veloraNav"
+                aria-controls="veloraNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <!-- =====================================
+                 NAVIGATION
+            ====================================== -->
+
+            <div
+                class="collapse navbar-collapse"
+                id="veloraNav"
+            >
+
+                <ul class="navbar-nav velora-links mx-auto">
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link active"
+                            href="index.html"
+                            aria-current="page"
+                        >
+                            Home
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="#features"
+                        >
+                            Features
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="#templates"
+                        >
+                            Templates
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="#pricing"
+                        >
+                            Pricing
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="#contact"
+                        >
+                            Contact
+                        </a>
+
+                    </li>
+
+                </ul>
+
+
+                <!-- =====================================
+                     PRIMARY NAVIGATION ACTION
+                ====================================== -->
+
+                <a
+                    href="register.html"
+                    class="btn velora-btn-dashboard"
+                >
+                    Dashboard
+                </a>
+
+            </div>
 
         </div>
 
-    </div>
-
-</nav>
+    </nav>
 
 
+    <!-- =========================================
+         HERO
+    ========================================== -->
 
-<!-- ==========================
-            HERO
-=========================== -->
+    <header class="velora-hero">
 
-<header class="velora-hero">
+        <div class="velora-hero-inner">
 
-    <div class="velora-hero-inner">
+            <h1 class="velora-hero-title">
 
-        <h1 class="velora-hero-title">
+                Run your
 
-            Run your
+                <span
+                    class="velora-hero-accent fw-bold"
+                >
+                    PHOTOGRAPHY
+                </span>
 
-            <span style="color: #123325;" class="fw-bold">
+                business
 
-                PHOTOGRAPHY
+                <br class="d-none d-md-block">
 
-            </span>
+                from one calm
 
-            business
+                <span
+                    class="velora-hero-accent fw-bold"
+                >
+                    PLACE
+                </span>
 
-            <br class="d-none d-md-block">
-
-            from one calm
-
-            <span  style="color: #123325;" class="fw-bold">
-
-                PLACE
-
-            </span>
-
-        </h1>
-
+            </h1>
 
 
-        <p class="velora-hero-sub">
+            <p class="velora-hero-sub">
 
-            Galleries, bookings and client messages
-            organized, on brand, and ready the moment
-            a client says yes.
+                Galleries, bookings and client messages
+                organized, on brand, and ready the moment
+                a client says yes.
 
-        </p>
-
-
-
-        <div class="velora-hero-actions">
-
-            <a
-                href="register.html"
-                class="btn velora-btn-primary">
-
-                Get Started
-
-            </a>
-
-            <a
-                href="#templates"
-                class="btn velora-btn-secondary">
-
-                See Features
-
-            </a>
-
-        </div>
-
-    </div>
-
-
-
-    <div class="velora-hero-media">
-
-        <img
-            src="https://ss-assets.pixieset.com/43gaRjvVJOlImHyVuTwR4Q/PW-hero-090425.webp"
-            class="velora-hero-img"
-            alt="Velora Dashboard">
-
-    </div>
-
-</header>
-<!-- ==========================
-        TEMPLATES SECTION
-========================== -->
-
-<section class="velora-templates" id="templates">
-
-    <div class="container">
-
-        <div class="templates-header">
-
-            <h2>
-                Templates as stunning as your photos
-            </h2>
-
-            <p>
-                Our beautiful, easy-to-customize templates are crafted by
-                world-class designers to put your photos in full focus at
-                every moment.
             </p>
 
-            <a href="#" class="btn velora-btn-primary">
-                See website templates
-            </a>
+
+            <!-- =====================================
+                 HERO ACTIONS
+            ====================================== -->
+
+            <div class="velora-hero-actions">
+
+                <a
+                    href="register.html"
+                    class="btn velora-btn-primary"
+                >
+                    Get Started
+                </a>
+
+
+                <a
+                    href="#features"
+                    class="btn velora-btn-secondary"
+                >
+                    See Features
+                </a>
+
+            </div>
 
         </div>
 
-    </div>
+
+        <!-- =====================================
+             HERO MEDIA
+        ====================================== -->
+
+        <div class="velora-hero-media">
+
+            <img
+                src="https://ss-assets.pixieset.com/43gaRjvVJOlImHyVuTwR4Q/PW-hero-090425.webp"
+                class="velora-hero-img"
+                alt="Velora photography business workspace"
+            >
+
+        </div>
+
+    </header>
 
 
+    <!-- =========================================
+         TEMPLATES SECTION
+    ========================================== -->
 
-   <div class="template-slider">
+    <section
+        class="velora-templates"
+        id="templates"
+    >
 
-<div class="swiper veloraSwiper">
+        <div class="container">
 
-<div class="swiper-wrapper">
+            <!-- =====================================
+                 SECTION HEADER
+            ====================================== -->
 
-<div class="swiper-slide">
-<img src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.15.jpeg" alt="">
-</div>
+            <div class="templates-header">
 
-<div class="swiper-slide">
-<img src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.17.jpeg" alt="">
-</div>
+                <h2>
 
-<div class="swiper-slide">
-<img src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.22.jpeg" alt="">
-</div>
+                    Templates as stunning as your photos
 
-<div class="swiper-slide">
-<img src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.11.jpeg" alt="">
-</div>
+                </h2>
 
-<div class="swiper-slide">
-<img src="media/L.P img/WhatsApp Image 2026-08-09 at 11.53.11.jpeg" alt="">
-</div>
 
-<div class="swiper-slide">
-<img src="media/L.P img/WhatsApp Image 2026-08-09 at 11.52.53.jpeg" alt="">
-</div>
+                <p>
 
-<div class="swiper-slide">
-<img src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.13.jpeg" alt="">
-</div>
+                    Our beautiful, easy-to-customize templates are crafted by
+                    world-class designers to put your photos in full focus at
+                    every moment.
 
-</div>
+                </p>
 
-<div class="swiper-button-prev"></div>
-<div class="swiper-button-next"></div>
 
-<div class="swiper-pagination"></div>
+                <a
+                    href="#"
+                    class="btn velora-btn-primary"
+                >
+                    See website templates
+                </a>
 
-</div>
+            </div>
 
-</div>
-        <!-- Navigation -->
+        </div>
 
-        
 
-    </div>
+        <!-- =========================================
+             TEMPLATE IMAGE SLIDER
 
-</section>
+             IMPORTANT:
+             The .swiper-wrapper contains ONLY
+             .swiper-slide elements.
 
-<!-- =========================================
+             Navigation and pagination remain
+             direct children of the Swiper container.
+        ========================================== -->
+
+        <div class="template-slider">
+
+            <div
+                class="swiper veloraSwiper"
+                aria-label="Photography website templates"
+            >
+
+                <!-- =====================================
+                     SLIDES
+                ====================================== -->
+
+                <div class="swiper-wrapper">
+
+
+                    <!-- TEMPLATE 01 -->
+
+                    <div class="swiper-slide">
+
+                        <img
+                            src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.15.jpeg"
+                            alt="Velora photography website template one"
+                        >
+
+                    </div>
+
+
+                    <!-- TEMPLATE 02 -->
+
+                    <div class="swiper-slide">
+
+                        <img
+                            src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.17.jpeg"
+                            alt="Velora photography website template two"
+                        >
+
+                    </div>
+
+
+                    <!-- TEMPLATE 03 -->
+
+                    <div class="swiper-slide">
+
+                        <img
+                            src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.22.jpeg"
+                            alt="Velora photography website template three"
+                        >
+
+                    </div>
+
+
+                    <!-- TEMPLATE 04 -->
+
+                    <div class="swiper-slide">
+
+                        <img
+                            src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.11.jpeg"
+                            alt="Velora photography website template four"
+                        >
+
+                    </div>
+
+
+                    <!-- TEMPLATE 05 -->
+
+                    <div class="swiper-slide">
+
+                        <img
+                            src="media/L.P img/WhatsApp Image 2026-08-09 at 11.53.11.jpeg"
+                            alt="Velora photography website template five"
+                        >
+
+                    </div>
+
+
+                    <!-- TEMPLATE 06 -->
+
+                    <div class="swiper-slide">
+
+                        <img
+                            src="media/L.P img/WhatsApp Image 2026-08-09 at 11.52.53.jpeg"
+                            alt="Velora photography website template six"
+                        >
+
+                    </div>
+
+
+                    <!-- TEMPLATE 07 -->
+
+                    <div class="swiper-slide">
+
+                        <img
+                            src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.13.jpeg"
+                            alt="Velora photography website template seven"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =====================================
+                     SLIDER NAVIGATION
+                ====================================== -->
+
+                <div
+                    class="swiper-button-prev"
+                    aria-label="Previous template"
+                ></div>
+
+                <div
+                    class="swiper-button-next"
+                    aria-label="Next template"
+                ></div>
+
+
+                <!-- =====================================
+                     SLIDER PAGINATION
+                ====================================== -->
+
+                <div
+                    class="swiper-pagination"
+                    aria-label="Template slider pagination"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- =========================================
      EVERYTHING YOUR PHOTOGRAPHY BUSINESS NEEDS
 ========================================= -->
 
-<section class="velora-business" id="features">
+<section
+    class="velora-business"
+    id="features"
+>
 
     <div class="container">
+
 
         <!-- =================================
              SECTION HEADER
@@ -369,13 +557,17 @@
 
                     <div class="preview-topbar">
 
-                        <div class="preview-dots">
+                        <div
+                            class="preview-dots"
+                            aria-hidden="true"
+                        >
 
                             <span></span>
                             <span></span>
                             <span></span>
 
                         </div>
+
 
                         <div class="preview-address">
                             app.velora.com
@@ -398,6 +590,9 @@
                         <div
                             class="dashboard-panel active"
                             data-panel="overview"
+                            id="dashboard-overview"
+                            role="tabpanel"
+                            aria-hidden="false"
                         >
 
                             <img
@@ -408,7 +603,6 @@
                         </div>
 
 
-
                         <!-- =============================
                              02 — GALLERIES
                         ============================== -->
@@ -416,6 +610,9 @@
                         <div
                             class="dashboard-panel"
                             data-panel="galleries"
+                            id="dashboard-galleries"
+                            role="tabpanel"
+                            aria-hidden="true"
                         >
 
                             <img
@@ -426,7 +623,6 @@
                         </div>
 
 
-
                         <!-- =============================
                              03 — BOOKINGS
                         ============================== -->
@@ -434,6 +630,9 @@
                         <div
                             class="dashboard-panel"
                             data-panel="bookings"
+                            id="dashboard-bookings"
+                            role="tabpanel"
+                            aria-hidden="true"
                         >
 
                             <img
@@ -444,7 +643,6 @@
                         </div>
 
 
-
                         <!-- =============================
                              04 — ANALYTICS
                         ============================== -->
@@ -452,6 +650,9 @@
                         <div
                             class="dashboard-panel"
                             data-panel="analytics"
+                            id="dashboard-analytics"
+                            role="tabpanel"
+                            aria-hidden="true"
                         >
 
                             <img
@@ -461,7 +662,6 @@
 
                         </div>
 
-
                     </div>
 
                 </div>
@@ -469,12 +669,15 @@
             </div>
 
 
-
             <!-- =================================
                  FEATURE TABS
             ================================== -->
 
-            <div class="business-features">
+            <div
+                class="business-features"
+                role="tablist"
+                aria-label="Velora business features"
+            >
 
 
                 <!-- =============================
@@ -485,11 +688,15 @@
                     class="business-feature active"
                     type="button"
                     data-target="overview"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="dashboard-overview"
                 >
 
                     <span class="feature-number">
                         01
                     </span>
+
 
                     <span class="feature-content">
 
@@ -504,10 +711,13 @@
 
                     </span>
 
-                    <i class="bi bi-arrow-up-right"></i>
+
+                    <i
+                        class="bi bi-arrow-up-right"
+                        aria-hidden="true"
+                    ></i>
 
                 </button>
-
 
 
                 <!-- =============================
@@ -518,11 +728,15 @@
                     class="business-feature"
                     type="button"
                     data-target="galleries"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="dashboard-galleries"
                 >
 
                     <span class="feature-number">
                         02
                     </span>
+
 
                     <span class="feature-content">
 
@@ -537,10 +751,13 @@
 
                     </span>
 
-                    <i class="bi bi-arrow-up-right"></i>
+
+                    <i
+                        class="bi bi-arrow-up-right"
+                        aria-hidden="true"
+                    ></i>
 
                 </button>
-
 
 
                 <!-- =============================
@@ -551,11 +768,15 @@
                     class="business-feature"
                     type="button"
                     data-target="bookings"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="dashboard-bookings"
                 >
 
                     <span class="feature-number">
                         03
                     </span>
+
 
                     <span class="feature-content">
 
@@ -570,10 +791,13 @@
 
                     </span>
 
-                    <i class="bi bi-arrow-up-right"></i>
+
+                    <i
+                        class="bi bi-arrow-up-right"
+                        aria-hidden="true"
+                    ></i>
 
                 </button>
-
 
 
                 <!-- =============================
@@ -584,11 +808,15 @@
                     class="business-feature"
                     type="button"
                     data-target="analytics"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="dashboard-analytics"
                 >
 
                     <span class="feature-number">
                         04
                     </span>
+
 
                     <span class="feature-content">
 
@@ -603,10 +831,13 @@
 
                     </span>
 
-                    <i class="bi bi-arrow-up-right"></i>
+
+                    <i
+                        class="bi bi-arrow-up-right"
+                        aria-hidden="true"
+                    ></i>
 
                 </button>
-
 
             </div>
 
@@ -617,94 +848,23 @@
 </section>
 
 
-
-<!-- =========================================
-        DASHBOARD TAB JAVASCRIPT
-========================================= -->
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const featureButtons =
-        document.querySelectorAll(".business-feature");
-
-    const dashboardPanels =
-        document.querySelectorAll(".dashboard-panel");
-
-
-    featureButtons.forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
-            const target =
-                this.dataset.target;
-
-
-            /* Remove active state
-               from all buttons */
-
-            featureButtons.forEach(function (item) {
-
-                item.classList.remove("active");
-
-            });
-
-
-            /* Hide all dashboard screens */
-
-            dashboardPanels.forEach(function (panel) {
-
-                panel.classList.remove("active");
-
-            });
-
-
-            /* Activate selected button */
-
-            this.classList.add("active");
-
-
-            /* Show matching dashboard */
-
-            const targetPanel =
-                document.querySelector(
-                    '.dashboard-panel[data-panel="' +
-                    target +
-                    '"]'
-                );
-
-
-            if (targetPanel) {
-
-                targetPanel.classList.add("active");
-
-            }
-
-        });
-
-    });
-
-});
-
-</script>
-
-
 <!-- =========================================
      FROM INQUIRY TO DELIVERY
 ========================================= -->
 
-<section class="velora-workflow" id="workflow">
+<section
+    class="velora-workflow"
+    id="workflow"
+>
 
     <div class="container">
 
-        <!-- SECTION HEADER -->
+
+        <!-- =================================
+             SECTION HEADER
+        ================================== -->
 
         <div class="workflow-header">
-
-            <!-- <span class="workflow-eyebrow">
-                YOUR WORKFLOW, SIMPLIFIED
-            </span> -->
 
             <h2>
                 From inquiry to delivery,
@@ -754,26 +914,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <!-- Connector -->
 
-                <div class="workflow-connector workflow-connector-right">
+                <div
+                    class="workflow-connector workflow-connector-right"
+                    aria-hidden="true"
+                >
 
                     <span></span>
 
                 </div>
 
 
-                <!-- UI MOCKUP -->
+                <!-- =================================
+                     UI MOCKUP
+                ================================== -->
 
                 <div class="workflow-mockup">
 
                     <div class="workflow-browser">
 
+
                         <div class="workflow-browser-bar">
 
-                            <div class="workflow-dots">
+                            <div
+                                class="workflow-dots"
+                                aria-hidden="true"
+                            >
+
                                 <span></span>
                                 <span></span>
                                 <span></span>
+
                             </div>
+
 
                             <span class="workflow-url">
                                 app.velora.com
@@ -784,36 +956,59 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         <div class="workflow-ui">
 
+
                             <aside class="workflow-sidebar">
 
                                 <div class="workflow-logo">
                                     VELORA
                                 </div>
 
-                                <span>Overview</span>
+                                <span>
+                                    Overview
+                                </span>
 
                                 <span class="workflow-active">
-                                    <i class="bi bi-inbox"></i>
+                                    <i
+                                        class="bi bi-inbox"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Inbox
                                 </span>
 
                                 <span>
-                                    <i class="bi bi-calendar3"></i>
+                                    <i
+                                        class="bi bi-calendar3"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Bookings
                                 </span>
 
                                 <span>
-                                    <i class="bi bi-folder"></i>
+                                    <i
+                                        class="bi bi-folder"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Projects
                                 </span>
 
                                 <span>
-                                    <i class="bi bi-people"></i>
+                                    <i
+                                        class="bi bi-people"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Clients
                                 </span>
 
                                 <span>
-                                    <i class="bi bi-images"></i>
+                                    <i
+                                        class="bi bi-images"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Galleries
                                 </span>
 
@@ -822,12 +1017,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
                             <div class="workflow-main">
 
+
                                 <div class="workflow-ui-heading">
 
-                                    <strong>Inbox</strong>
+                                    <strong>
+                                        Inbox
+                                    </strong>
 
-                                    <button>
-                                        <i class="bi bi-search"></i>
+                                    <button
+                                        type="button"
+                                        aria-label="Search inbox"
+                                    >
+
+                                        <i
+                                            class="bi bi-search"
+                                            aria-hidden="true"
+                                        ></i>
+
                                     </button>
 
                                 </div>
@@ -850,11 +1056,14 @@ document.addEventListener("DOMContentLoaded", function () {
                                 </div>
 
 
+                                <!-- Inquiry One -->
+
                                 <div class="workflow-inquiry">
 
                                     <div class="workflow-avatar">
                                         OP
                                     </div>
+
 
                                     <div>
 
@@ -873,6 +1082,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                                     </div>
 
+
                                     <time>
                                         10:24 AM
                                     </time>
@@ -880,11 +1090,14 @@ document.addEventListener("DOMContentLoaded", function () {
                                 </div>
 
 
+                                <!-- Inquiry Two -->
+
                                 <div class="workflow-inquiry">
 
                                     <div class="workflow-avatar">
                                         JT
                                     </div>
+
 
                                     <div>
 
@@ -903,6 +1116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                                     </div>
 
+
                                     <time>
                                         Yesterday
                                     </time>
@@ -918,7 +1132,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
             </article>
-
 
 
             <!-- =================================
@@ -946,7 +1159,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
 
-                <div class="workflow-connector workflow-connector-right">
+                <div
+                    class="workflow-connector workflow-connector-right"
+                    aria-hidden="true"
+                >
 
                     <span></span>
 
@@ -957,13 +1173,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="workflow-browser">
 
+
                         <div class="workflow-browser-bar">
 
-                            <div class="workflow-dots">
+                            <div
+                                class="workflow-dots"
+                                aria-hidden="true"
+                            >
+
                                 <span></span>
                                 <span></span>
                                 <span></span>
+
                             </div>
+
 
                             <span class="workflow-url">
                                 app.velora.com
@@ -974,36 +1197,59 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         <div class="workflow-ui">
 
+
                             <aside class="workflow-sidebar">
 
                                 <div class="workflow-logo">
                                     VELORA
                                 </div>
 
-                                <span>Overview</span>
+                                <span>
+                                    Overview
+                                </span>
 
                                 <span>
-                                    <i class="bi bi-inbox"></i>
+                                    <i
+                                        class="bi bi-inbox"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Inbox
                                 </span>
 
                                 <span class="workflow-active">
-                                    <i class="bi bi-calendar3"></i>
+                                    <i
+                                        class="bi bi-calendar3"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Bookings
                                 </span>
 
                                 <span>
-                                    <i class="bi bi-folder"></i>
+                                    <i
+                                        class="bi bi-folder"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Projects
                                 </span>
 
                                 <span>
-                                    <i class="bi bi-people"></i>
+                                    <i
+                                        class="bi bi-people"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Clients
                                 </span>
 
                                 <span>
-                                    <i class="bi bi-images"></i>
+                                    <i
+                                        class="bi bi-images"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Galleries
                                 </span>
 
@@ -1011,6 +1257,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                             <div class="workflow-main">
+
 
                                 <div class="workflow-ui-heading">
 
@@ -1031,6 +1278,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                         OP
                                     </div>
 
+
                                     <div>
 
                                         <strong>
@@ -1048,6 +1296,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                                 <div class="workflow-info-grid">
 
+
                                     <div>
 
                                         <small>
@@ -1059,6 +1308,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                         </strong>
 
                                     </div>
+
 
                                     <div>
 
@@ -1072,6 +1322,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                                     </div>
 
+
                                     <div>
 
                                         <small>
@@ -1083,6 +1334,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                         </strong>
 
                                     </div>
+
 
                                     <div>
 
@@ -1101,6 +1353,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                                 <div class="workflow-progress">
 
+
                                     <div>
 
                                         <span>
@@ -1112,6 +1365,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                         </strong>
 
                                     </div>
+
 
                                     <div class="workflow-progress-bar">
 
@@ -1132,7 +1386,6 @@ document.addEventListener("DOMContentLoaded", function () {
             </article>
 
 
-
             <!-- =================================
                  STEP 03
             ================================== -->
@@ -1146,7 +1399,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
 
                     <h3>
-                        Shoot & organize
+                        Shoot &amp; organize
                     </h3>
 
                     <p>
@@ -1157,7 +1410,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
 
-                <div class="workflow-connector workflow-connector-right">
+                <div
+                    class="workflow-connector workflow-connector-right"
+                    aria-hidden="true"
+                >
 
                     <span></span>
 
@@ -1168,13 +1424,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="workflow-browser">
 
+
                         <div class="workflow-browser-bar">
 
-                            <div class="workflow-dots">
+                            <div
+                                class="workflow-dots"
+                                aria-hidden="true"
+                            >
+
                                 <span></span>
                                 <span></span>
                                 <span></span>
+
                             </div>
+
 
                             <span class="workflow-url">
                                 app.velora.com
@@ -1185,36 +1448,59 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         <div class="workflow-ui">
 
+
                             <aside class="workflow-sidebar">
 
                                 <div class="workflow-logo">
                                     VELORA
                                 </div>
 
-                                <span>Overview</span>
+                                <span>
+                                    Overview
+                                </span>
 
                                 <span>
-                                    <i class="bi bi-inbox"></i>
+                                    <i
+                                        class="bi bi-inbox"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Inbox
                                 </span>
 
                                 <span>
-                                    <i class="bi bi-calendar3"></i>
+                                    <i
+                                        class="bi bi-calendar3"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Bookings
                                 </span>
 
                                 <span class="workflow-active">
-                                    <i class="bi bi-folder"></i>
+                                    <i
+                                        class="bi bi-folder"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Projects
                                 </span>
 
                                 <span>
-                                    <i class="bi bi-people"></i>
+                                    <i
+                                        class="bi bi-people"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Clients
                                 </span>
 
                                 <span>
-                                    <i class="bi bi-images"></i>
+                                    <i
+                                        class="bi bi-images"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Galleries
                                 </span>
 
@@ -1223,13 +1509,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
                             <div class="workflow-main">
 
+
                                 <div class="workflow-ui-heading">
 
                                     <strong>
                                         Olivia Parker
                                     </strong>
 
-                                    <button>
+                                    <button type="button">
                                         Upload files
                                     </button>
 
@@ -1280,6 +1567,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                                 <div class="workflow-project-progress">
 
+
                                     <div>
 
                                         <span>
@@ -1292,9 +1580,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
                                     </div>
 
+
                                     <div class="workflow-progress-bar">
 
-                                        <span style="width:60%;"></span>
+                                        <span
+                                            style="width: 60%;"
+                                        ></span>
 
                                     </div>
 
@@ -1309,7 +1600,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
             </article>
-
 
 
             <!-- =================================
@@ -1340,13 +1630,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="workflow-browser">
 
+
                         <div class="workflow-browser-bar">
 
-                            <div class="workflow-dots">
+                            <div
+                                class="workflow-dots"
+                                aria-hidden="true"
+                            >
+
                                 <span></span>
                                 <span></span>
                                 <span></span>
+
                             </div>
+
 
                             <span class="workflow-url">
                                 app.velora.com
@@ -1357,36 +1654,59 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         <div class="workflow-ui">
 
+
                             <aside class="workflow-sidebar">
 
                                 <div class="workflow-logo">
                                     VELORA
                                 </div>
 
-                                <span>Overview</span>
+                                <span>
+                                    Overview
+                                </span>
 
                                 <span>
-                                    <i class="bi bi-inbox"></i>
+                                    <i
+                                        class="bi bi-inbox"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Inbox
                                 </span>
 
                                 <span>
-                                    <i class="bi bi-calendar3"></i>
+                                    <i
+                                        class="bi bi-calendar3"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Bookings
                                 </span>
 
                                 <span>
-                                    <i class="bi bi-folder"></i>
+                                    <i
+                                        class="bi bi-folder"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Projects
                                 </span>
 
                                 <span>
-                                    <i class="bi bi-people"></i>
+                                    <i
+                                        class="bi bi-people"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Clients
                                 </span>
 
                                 <span class="workflow-active">
-                                    <i class="bi bi-images"></i>
+                                    <i
+                                        class="bi bi-images"
+                                        aria-hidden="true"
+                                    ></i>
+
                                     Galleries
                                 </span>
 
@@ -1395,13 +1715,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
                             <div class="workflow-main">
 
+
                                 <div class="workflow-ui-heading">
 
                                     <strong>
                                         Galleries
                                     </strong>
 
-                                    <button>
+                                    <button type="button">
                                         + New Gallery
                                     </button>
 
@@ -1409,6 +1730,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                                 <div class="workflow-gallery-card">
+
 
                                     <div class="gallery-cover">
 
@@ -1435,13 +1757,14 @@ document.addEventListener("DOMContentLoaded", function () {
                                             Delivered May 27, 2026
                                         </small>
 
+
                                         <div class="gallery-actions">
 
-                                            <button>
+                                            <button type="button">
                                                 View Gallery
                                             </button>
 
-                                            <button>
+                                            <button type="button">
                                                 Share
                                             </button>
 
@@ -1455,23 +1778,54 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <div class="gallery-stats">
 
                                     <div>
-                                        <strong>48</strong>
-                                        <span>Photos</span>
+
+                                        <strong>
+                                            48
+                                        </strong>
+
+                                        <span>
+                                            Photos
+                                        </span>
+
                                     </div>
 
-                                    <div>
-                                        <strong>12</strong>
-                                        <span>Favorites</span>
-                                    </div>
 
                                     <div>
-                                        <strong>5</strong>
-                                        <span>Downloads</span>
+
+                                        <strong>
+                                            12
+                                        </strong>
+
+                                        <span>
+                                            Favorites
+                                        </span>
+
                                     </div>
 
+
                                     <div>
-                                        <strong>98</strong>
-                                        <span>Views</span>
+
+                                        <strong>
+                                            5
+                                        </strong>
+
+                                        <span>
+                                            Downloads
+                                        </span>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <strong>
+                                            98
+                                        </strong>
+
+                                        <span>
+                                            Views
+                                        </span>
+
                                     </div>
 
                                 </div>
@@ -1490,16 +1844,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         <!-- =================================
-             BOTTOM CTA
+             WORKFLOW CTA
         ================================== -->
 
         <div class="workflow-bottom">
 
-            <div class="workflow-bottom-icon">
+            <div
+                class="workflow-bottom-icon"
+                aria-hidden="true"
+            ></div>
 
-                <!-- <i class="bi bi-"></i> -->
-
-            </div>
 
             <div class="workflow-bottom-copy">
 
@@ -1511,7 +1865,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             </div>
 
-            <div class="workflow-bottom-divider"></div>
+
+            <div
+                class="workflow-bottom-divider"
+                aria-hidden="true"
+            ></div>
+
 
             <p>
                 No more jumping between tools or chasing emails.
@@ -1519,11 +1878,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 connected and stress-free.
             </p>
 
-            <a href="#features" class="workflow-bottom-btn">
 
-                See Velora in action
+            <a
+                href="register.html"
+                class="workflow-bottom-btn"
+            >
 
-                <i class="bi bi-arrow-right"></i>
+                Start with Velora
+
+                <i
+                    class="bi bi-arrow-right"
+                    aria-hidden="true"
+                ></i>
 
             </a>
 
@@ -1532,7 +1898,6 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
 
 </section>
-```
 <!-- =========================================
      MADE FOR PHOTOGRAPHERS
 ========================================= -->
@@ -1541,7 +1906,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <div class="container">
 
+        <!-- =================================
+             PHOTOGRAPHER SHOWCASE
+        ================================== -->
+
         <div class="photographers-showcase">
+
 
             <!-- CONTENT -->
 
@@ -1551,17 +1921,20 @@ document.addEventListener("DOMContentLoaded", function () {
                     MADE FOR PHOTOGRAPHERS
                 </span>
 
+
                 <h2>
                     Your work deserves
                     a business that feels
                     just as <span>considered.</span>
                 </h2>
 
+
                 <p>
                     Velora gives photographers a calmer way to manage
                     their business — from the first client inquiry to
                     the final gallery delivery.
                 </p>
+
 
                 <a
                     href="register.html"
@@ -1581,8 +1954,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <img
                         src="media/L.P img/WhatsApp Image 2026-08-09 at 11.56.13.jpeg"
-                        alt="Photography portfolio"
+                        alt="Velora photography portfolio template"
                     >
+
+
+                    <!-- Floating Information Card -->
 
                     <div class="photographers-floating-card">
 
@@ -1590,9 +1966,11 @@ document.addEventListener("DOMContentLoaded", function () {
                             YOUR WORK
                         </span>
 
+
                         <strong>
                             Olivia Parker
                         </strong>
+
 
                         <small>
                             Portrait Collection · 2026
@@ -1600,7 +1978,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     </div>
 
-                    <div class="photographers-index">
+
+                    <!-- Image Index -->
+
+                    <div
+                        class="photographers-index"
+                        aria-hidden="true"
+                    >
                         01
                     </div>
 
@@ -1617,17 +2001,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div class="photographers-proof">
 
+
+            <!-- PROOF 01 -->
+
             <div class="proof-item">
 
-                <span class="proof-icon">
-                   <i class="bi bi-magic"></i>
+                <span
+                    class="proof-icon"
+                    aria-hidden="true"
+                >
+                    <i class="bi bi-magic"></i>
                 </span>
+
 
                 <div>
 
                     <strong>
                         Beautiful by default
                     </strong>
+
 
                     <span>
                         Every detail is designed around your work.
@@ -1638,17 +2030,24 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
 
+            <!-- PROOF 02 -->
+
             <div class="proof-item">
 
-                <span class="proof-icon">
+                <span
+                    class="proof-icon"
+                    aria-hidden="true"
+                >
                     <i class="bi bi-lightning-charge"></i>
                 </span>
+
 
                 <div>
 
                     <strong>
                         Simple to manage
                     </strong>
+
 
                     <span>
                         Spend less time managing your business.
@@ -1659,17 +2058,24 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
 
+            <!-- PROOF 03 -->
+
             <div class="proof-item">
 
-                <span class="proof-icon">
+                <span
+                    class="proof-icon"
+                    aria-hidden="true"
+                >
                     <i class="bi bi-palette"></i>
                 </span>
+
 
                 <div>
 
                     <strong>
                         Yours to brand
                     </strong>
+
 
                     <span>
                         Make every client touchpoint feel like you.
@@ -1685,16 +2091,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </section>
 
+
 <!-- =========================================
-     PHOTOGRAPHER TESTIMONIAL MARQUEE
+     PHOTOGRAPHER TESTIMONIALS
 ========================================= -->
 
-<section class="velora-testimonials">
+<section
+    class="velora-testimonials"
+    aria-labelledby="testimonial-heading"
+>
 
     <div class="container-fluid">
 
 
-        <!-- SECTION HEADER -->
+        <!-- =================================
+             SECTION HEADER
+        ================================== -->
 
         <div class="testimonial-header">
 
@@ -1702,10 +2114,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 PHOTOGRAPHERS LOVE VELORA
             </span>
 
-            <h2>
+
+            <h2 id="testimonial-heading">
                 Built to make the
                 <span>business side</span> easier.
             </h2>
+
 
             <p>
                 Less time managing your workflow.
@@ -1715,23 +2129,31 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
 
 
-
         <!-- =================================
              MARQUEE ROW ONE
         ================================== -->
 
-        <div class="testimonial-marquee">
+        <div
+            class="testimonial-marquee"
+            aria-label="Photographer testimonials"
+        >
 
             <div class="testimonial-track testimonial-track-left">
 
 
-                <!-- Card 1 -->
+                <!-- =================================
+                     CARD 01
+                ================================== -->
 
                 <article class="testimonial-card">
 
-                    <div class="testimonial-quote">
+                    <div
+                        class="testimonial-quote"
+                        aria-hidden="true"
+                    >
                         “
                     </div>
+
 
                     <p>
                         Velora gives my photography business
@@ -1739,17 +2161,23 @@ document.addEventListener("DOMContentLoaded", function () {
                         without making everything feel complicated.
                     </p>
 
+
                     <div class="testimonial-author">
 
-                        <div class="testimonial-avatar">
+                        <div
+                            class="testimonial-avatar"
+                            aria-hidden="true"
+                        >
                             OP
                         </div>
+
 
                         <div>
 
                             <strong>
                                 Olivia
                             </strong>
+
 
                             <span>
                                 Portrait Photographer
@@ -1762,14 +2190,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 </article>
 
 
-
-                <!-- Card 2 -->
+                <!-- =================================
+                     CARD 02
+                ================================== -->
 
                 <article class="testimonial-card">
 
-                    <div class="testimonial-quote">
+                    <div
+                        class="testimonial-quote"
+                        aria-hidden="true"
+                    >
                         “
                     </div>
+
 
                     <p>
                         My clients get a beautiful experience
@@ -1777,17 +2210,23 @@ document.addEventListener("DOMContentLoaded", function () {
                         gallery delivery.
                     </p>
 
+
                     <div class="testimonial-author">
 
-                        <div class="testimonial-avatar">
+                        <div
+                            class="testimonial-avatar"
+                            aria-hidden="true"
+                        >
                             JM
                         </div>
+
 
                         <div>
 
                             <strong>
                                 James
                             </strong>
+
 
                             <span>
                                 Wedding Photographer
@@ -1800,14 +2239,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 </article>
 
 
-
-                <!-- Card 3 -->
+                <!-- =================================
+                     CARD 03
+                ================================== -->
 
                 <article class="testimonial-card">
 
-                    <div class="testimonial-quote">
+                    <div
+                        class="testimonial-quote"
+                        aria-hidden="true"
+                    >
                         “
                     </div>
+
 
                     <p>
                         I love that my portfolio, bookings and
@@ -1815,17 +2259,23 @@ document.addEventListener("DOMContentLoaded", function () {
                         cohesive brand.
                     </p>
 
+
                     <div class="testimonial-author">
 
-                        <div class="testimonial-avatar">
+                        <div
+                            class="testimonial-avatar"
+                            aria-hidden="true"
+                        >
                             A
                         </div>
+
 
                         <div>
 
                             <strong>
                                 Abigail
                             </strong>
+
 
                             <span>
                                 Editorial Photographer
@@ -1838,14 +2288,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 </article>
 
 
-
-                <!-- Card 4 -->
+                <!-- =================================
+                     CARD 04
+                ================================== -->
 
                 <article class="testimonial-card">
 
-                    <div class="testimonial-quote">
+                    <div
+                        class="testimonial-quote"
+                        aria-hidden="true"
+                    >
                         “
                     </div>
+
 
                     <p>
                         It feels like the tools were actually
@@ -1853,17 +2308,23 @@ document.addEventListener("DOMContentLoaded", function () {
                         adapted from another industry.
                     </p>
 
+
                     <div class="testimonial-author">
 
-                        <div class="testimonial-avatar">
+                        <div
+                            class="testimonial-avatar"
+                            aria-hidden="true"
+                        >
                             DN
                         </div>
+
 
                         <div>
 
                             <strong>
                                 Daniel Norris
                             </strong>
+
 
                             <span>
                                 Commercial Photographer
@@ -1876,14 +2337,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 </article>
 
 
+                <!-- =================================
+                     DUPLICATE SET
 
-                <!-- DUPLICATES -->
+                     Required for seamless
+                     infinite marquee movement.
+                ================================== -->
 
-                <article class="testimonial-card">
+
+                <!-- DUPLICATE CARD 01 -->
+
+                <article
+                    class="testimonial-card"
+                    aria-hidden="true"
+                >
 
                     <div class="testimonial-quote">
                         “
                     </div>
+
 
                     <p>
                         Velora gives my photography business
@@ -1891,17 +2363,20 @@ document.addEventListener("DOMContentLoaded", function () {
                         without making everything feel complicated.
                     </p>
 
+
                     <div class="testimonial-author">
 
                         <div class="testimonial-avatar">
                             OP
                         </div>
 
+
                         <div>
 
                             <strong>
-                                David
+                                Olivia
                             </strong>
+
 
                             <span>
                                 Portrait Photographer
@@ -1914,11 +2389,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 </article>
 
 
-                <article class="testimonial-card">
+                <!-- DUPLICATE CARD 02 -->
+
+                <article
+                    class="testimonial-card"
+                    aria-hidden="true"
+                >
 
                     <div class="testimonial-quote">
                         “
                     </div>
+
 
                     <p>
                         My clients get a beautiful experience
@@ -1926,17 +2407,20 @@ document.addEventListener("DOMContentLoaded", function () {
                         gallery delivery.
                     </p>
 
+
                     <div class="testimonial-author">
 
                         <div class="testimonial-avatar">
                             JM
                         </div>
 
+
                         <div>
 
                             <strong>
-                                James Morgan
+                                James
                             </strong>
+
 
                             <span>
                                 Wedding Photographer
@@ -1949,11 +2433,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 </article>
 
 
-                <article class="testimonial-card">
+                <!-- DUPLICATE CARD 03 -->
+
+                <article
+                    class="testimonial-card"
+                    aria-hidden="true"
+                >
 
                     <div class="testimonial-quote">
                         “
                     </div>
+
 
                     <p>
                         I love that my portfolio, bookings and
@@ -1961,17 +2451,20 @@ document.addEventListener("DOMContentLoaded", function () {
                         cohesive brand.
                     </p>
 
+
                     <div class="testimonial-author">
 
                         <div class="testimonial-avatar">
-                            AC
+                            A
                         </div>
+
 
                         <div>
 
                             <strong>
-                                Amelia Carter
+                                Abigail
                             </strong>
+
 
                             <span>
                                 Editorial Photographer
@@ -1984,11 +2477,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 </article>
 
 
-                <article class="testimonial-card">
+                <!-- DUPLICATE CARD 04 -->
+
+                <article
+                    class="testimonial-card"
+                    aria-hidden="true"
+                >
 
                     <div class="testimonial-quote">
                         “
                     </div>
+
 
                     <p>
                         It feels like the tools were actually
@@ -1996,17 +2495,20 @@ document.addEventListener("DOMContentLoaded", function () {
                         adapted from another industry.
                     </p>
 
+
                     <div class="testimonial-author">
 
                         <div class="testimonial-avatar">
                             DN
                         </div>
 
+
                         <div>
 
                             <strong>
                                 Daniel Norris
                             </strong>
+
 
                             <span>
                                 Commercial Photographer
@@ -2023,21 +2525,31 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
 
 
-
         <!-- =================================
              MARQUEE ROW TWO
         ================================== -->
 
-        <div class="testimonial-marquee testimonial-marquee-second">
+        <div
+            class="testimonial-marquee testimonial-marquee-second"
+            aria-label="More photographer testimonials"
+        >
 
             <div class="testimonial-track testimonial-track-right">
 
 
+                <!-- =================================
+                     CARD 01
+                ================================== -->
+
                 <article class="testimonial-card">
 
-                    <div class="testimonial-quote">
+                    <div
+                        class="testimonial-quote"
+                        aria-hidden="true"
+                    >
                         “
                     </div>
+
 
                     <p>
                         Everything feels calmer when the
@@ -2045,17 +2557,23 @@ document.addEventListener("DOMContentLoaded", function () {
                         organized.
                     </p>
 
+
                     <div class="testimonial-author">
 
-                        <div class="testimonial-avatar">
+                        <div
+                            class="testimonial-avatar"
+                            aria-hidden="true"
+                        >
                             SL
                         </div>
+
 
                         <div>
 
                             <strong>
                                 Judeson Ataisi
                             </strong>
+
 
                             <span>
                                 Lifestyle Photographer
@@ -2068,11 +2586,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 </article>
 
 
+                <!-- =================================
+                     CARD 02
+                ================================== -->
+
                 <article class="testimonial-card">
 
-                    <div class="testimonial-quote">
+                    <div
+                        class="testimonial-quote"
+                        aria-hidden="true"
+                    >
                         “
                     </div>
+
 
                     <p>
                         The gallery experience makes delivering
@@ -2080,17 +2606,23 @@ document.addEventListener("DOMContentLoaded", function () {
                         not an afterthought.
                     </p>
 
+
                     <div class="testimonial-author">
 
-                        <div class="testimonial-avatar">
+                        <div
+                            class="testimonial-avatar"
+                            aria-hidden="true"
+                        >
                             RK
                         </div>
+
 
                         <div>
 
                             <strong>
                                 Patrick Obialor
                             </strong>
+
 
                             <span>
                                 Wedding Photographer
@@ -2103,11 +2635,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 </article>
 
 
+                <!-- =================================
+                     CARD 03
+                ================================== -->
+
                 <article class="testimonial-card">
 
-                    <div class="testimonial-quote">
+                    <div
+                        class="testimonial-quote"
+                        aria-hidden="true"
+                    >
                         “
                     </div>
+
 
                     <p>
                         I can finally see what's happening across
@@ -2115,17 +2655,23 @@ document.addEventListener("DOMContentLoaded", function () {
                         different tools.
                     </p>
 
+
                     <div class="testimonial-author">
 
-                        <div class="testimonial-avatar">
+                        <div
+                            class="testimonial-avatar"
+                            aria-hidden="true"
+                        >
                             I
                         </div>
+
 
                         <div>
 
                             <strong>
                                 Ikedinachi
                             </strong>
+
 
                             <span>
                                 Family Photographer
@@ -2138,11 +2684,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 </article>
 
 
+                <!-- =================================
+                     CARD 04
+                ================================== -->
+
                 <article class="testimonial-card">
 
-                    <div class="testimonial-quote">
+                    <div
+                        class="testimonial-quote"
+                        aria-hidden="true"
+                    >
                         “
                     </div>
+
 
                     <p>
                         Velora feels premium without feeling
@@ -2150,17 +2704,23 @@ document.addEventListener("DOMContentLoaded", function () {
                         what I needed.
                     </p>
 
+
                     <div class="testimonial-author">
 
-                        <div class="testimonial-avatar">
+                        <div
+                            class="testimonial-avatar"
+                            aria-hidden="true"
+                        >
                             BT
                         </div>
+
 
                         <div>
 
                             <strong>
-                                BOY TONY
+                                Boy Tony
                             </strong>
+
 
                             <span>
                                 Fashion Photographer
@@ -2173,13 +2733,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 </article>
 
 
-                <!-- DUPLICATES -->
+                <!-- =================================
+                     DUPLICATE SET
 
-                <article class="testimonial-card">
+                     Required for seamless
+                     infinite marquee movement.
+                ================================== -->
+
+
+                <!-- DUPLICATE CARD 01 -->
+
+                <article
+                    class="testimonial-card"
+                    aria-hidden="true"
+                >
 
                     <div class="testimonial-quote">
                         “
                     </div>
+
 
                     <p>
                         Everything feels calmer when the
@@ -2187,17 +2759,20 @@ document.addEventListener("DOMContentLoaded", function () {
                         organized.
                     </p>
 
+
                     <div class="testimonial-author">
 
                         <div class="testimonial-avatar">
                             SL
                         </div>
 
+
                         <div>
 
                             <strong>
                                 Judeson Ataisi
                             </strong>
+
 
                             <span>
                                 Lifestyle Photographer
@@ -2210,11 +2785,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 </article>
 
 
-                <article class="testimonial-card">
+                <!-- DUPLICATE CARD 02 -->
+
+                <article
+                    class="testimonial-card"
+                    aria-hidden="true"
+                >
 
                     <div class="testimonial-quote">
                         “
                     </div>
+
 
                     <p>
                         The gallery experience makes delivering
@@ -2222,17 +2803,20 @@ document.addEventListener("DOMContentLoaded", function () {
                         not an afterthought.
                     </p>
 
+
                     <div class="testimonial-author">
 
                         <div class="testimonial-avatar">
-                            PO
+                            RK
                         </div>
+
 
                         <div>
 
                             <strong>
                                 Patrick Obialor
                             </strong>
+
 
                             <span>
                                 Wedding Photographer
@@ -2245,11 +2829,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 </article>
 
 
-                <article class="testimonial-card">
+                <!-- DUPLICATE CARD 03 -->
+
+                <article
+                    class="testimonial-card"
+                    aria-hidden="true"
+                >
 
                     <div class="testimonial-quote">
                         “
                     </div>
+
 
                     <p>
                         I can finally see what's happening across
@@ -2257,17 +2847,20 @@ document.addEventListener("DOMContentLoaded", function () {
                         different tools.
                     </p>
 
+
                     <div class="testimonial-author">
 
                         <div class="testimonial-avatar">
                             I
                         </div>
 
+
                         <div>
 
                             <strong>
-                              Ikedinachi
+                                Ikedinachi
                             </strong>
+
 
                             <span>
                                 Family Photographer
@@ -2280,11 +2873,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 </article>
 
 
-                <article class="testimonial-card">
+                <!-- DUPLICATE CARD 04 -->
+
+                <article
+                    class="testimonial-card"
+                    aria-hidden="true"
+                >
 
                     <div class="testimonial-quote">
                         “
                     </div>
+
 
                     <p>
                         Velora feels premium without feeling
@@ -2292,17 +2891,20 @@ document.addEventListener("DOMContentLoaded", function () {
                         what I needed.
                     </p>
 
+
                     <div class="testimonial-author">
 
                         <div class="testimonial-avatar">
                             BT
                         </div>
 
+
                         <div>
 
                             <strong>
                                 Boy Tony
                             </strong>
+
 
                             <span>
                                 Fashion Photographer
@@ -2321,14 +2923,17 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
 
 </section>
-
 <!-- =========================================
      VELORA PRICING
 ========================================= -->
 
-<section class="velora-pricing" id="pricing">
+<section
+    class="velora-pricing"
+    id="pricing"
+>
 
     <div class="container">
+
 
         <!-- ==============================
              PRICING HEADER
@@ -2340,10 +2945,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 SIMPLE PRICING
             </span>
 
+
             <h2>
                 Plans that grow
                 <span>with your business.</span>
             </h2>
+
 
             <p>
                 Start for free and upgrade when your photography
@@ -2361,7 +2968,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             <!-- ==============================
-                 FREE
+                 FREE PLAN
             =============================== -->
 
             <article class="pricing-card">
@@ -2372,15 +2979,18 @@ document.addEventListener("DOMContentLoaded", function () {
                         Free
                     </span>
 
+
                     <p class="pricing-description">
                         Start your photography business.
                     </p>
+
 
                     <div class="pricing-price">
 
                         <strong>
                             $0
                         </strong>
+
 
                         <span>
                             /month
@@ -2399,12 +3009,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 </a>
 
 
-                <div class="pricing-divider"></div>
+                <div
+                    class="pricing-divider"
+                    aria-hidden="true"
+                ></div>
 
 
                 <div class="pricing-storage">
 
-                    <i class="bi bi-cloud"></i>
+                    <i
+                        class="bi bi-cloud"
+                        aria-hidden="true"
+                    ></i>
+
 
                     <span>
                         1 GB storage
@@ -2416,43 +3033,80 @@ document.addEventListener("DOMContentLoaded", function () {
                 <ul class="pricing-features">
 
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
                         Portfolio
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
                         Website templates
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
                         Limited galleries
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
                         Basic bookings
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
                         Basic client management
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
                         Basic analytics
                     </li>
 
-                    <li class="pricing-feature-disabled">
-                        <i class="bi bi-dash"></i>
-                        Custom domain
-                    </li>
 
                     <li class="pricing-feature-disabled">
-                        <i class="bi bi-dash"></i>
+
+                        <i
+                            class="bi bi-dash"
+                            aria-hidden="true"
+                        ></i>
+
+                        Custom domain
+
+                    </li>
+
+
+                    <li class="pricing-feature-disabled">
+
+                        <i
+                            class="bi bi-dash"
+                            aria-hidden="true"
+                        ></i>
+
                         Remove Velora branding
+
                     </li>
 
                 </ul>
@@ -2460,18 +3114,15 @@ document.addEventListener("DOMContentLoaded", function () {
             </article>
 
 
-
             <!-- ==============================
-                 STUDIO
+                 STUDIO PLAN
             =============================== -->
 
             <article class="pricing-card pricing-card-featured">
 
 
                 <div class="pricing-popular">
-
                     MOST POPULAR
-
                 </div>
 
 
@@ -2481,15 +3132,18 @@ document.addEventListener("DOMContentLoaded", function () {
                         Studio
                     </span>
 
+
                     <p class="pricing-description">
                         Run your photography business.
                     </p>
+
 
                     <div class="pricing-price">
 
                         <strong>
                             $10
                         </strong>
+
 
                         <span>
                             /month
@@ -2508,12 +3162,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 </a>
 
 
-                <div class="pricing-divider"></div>
+                <div
+                    class="pricing-divider"
+                    aria-hidden="true"
+                ></div>
 
 
                 <div class="pricing-storage">
 
-                    <i class="bi bi-cloud"></i>
+                    <i
+                        class="bi bi-cloud"
+                        aria-hidden="true"
+                    ></i>
+
 
                     <span>
                         25 GB storage
@@ -2525,52 +3186,101 @@ document.addEventListener("DOMContentLoaded", function () {
                 <ul class="pricing-features">
 
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
                         Everything in Free
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
                         Unlimited galleries
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
                         Unlimited bookings
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
                         Client management
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
                         Custom domain
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
                         Remove Velora branding
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
                         Custom branding
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
                         Analytics
                     </li>
 
-                    <li>
-                        <i class="bi bi-check2"></i>
-                        Contracts & invoices
-                    </li>
 
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
+                        Contracts &amp; invoices
+                    </li>
+
+
+                    <li>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
                         Client messaging
                     </li>
 
@@ -2579,9 +3289,8 @@ document.addEventListener("DOMContentLoaded", function () {
             </article>
 
 
-
             <!-- ==============================
-                 PRO
+                 PRO PLAN
             =============================== -->
 
             <article class="pricing-card">
@@ -2592,15 +3301,18 @@ document.addEventListener("DOMContentLoaded", function () {
                         Pro
                     </span>
 
+
                     <p class="pricing-description">
                         Grow your photography business.
                     </p>
+
 
                     <div class="pricing-price">
 
                         <strong>
                             $25
                         </strong>
+
 
                         <span>
                             /month
@@ -2619,12 +3331,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 </a>
 
 
-                <div class="pricing-divider"></div>
+                <div
+                    class="pricing-divider"
+                    aria-hidden="true"
+                ></div>
 
 
                 <div class="pricing-storage">
 
-                    <i class="bi bi-cloud"></i>
+                    <i
+                        class="bi bi-cloud"
+                        aria-hidden="true"
+                    ></i>
+
 
                     <span>
                         250 GB storage
@@ -2636,37 +3355,71 @@ document.addEventListener("DOMContentLoaded", function () {
                 <ul class="pricing-features">
 
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
                         Everything in Studio
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
                         Advanced analytics
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
                         Advanced workflows
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
                         Advanced bookings
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
                         Team access
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
                         Priority support
                     </li>
 
+
                     <li>
-                        <i class="bi bi-check2"></i>
+                        <i
+                            class="bi bi-check2"
+                            aria-hidden="true"
+                        ></i>
+
                         Advanced gallery controls
                     </li>
 
@@ -2684,22 +3437,46 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="pricing-reassurance">
 
             <span>
-                <i class="bi bi-check-circle"></i>
+
+                <i
+                    class="bi bi-check-circle"
+                    aria-hidden="true"
+                ></i>
+
                 No contracts
+
             </span>
 
+
             <span>
-                <i class="bi bi-check-circle"></i>
+
+                <i
+                    class="bi bi-check-circle"
+                    aria-hidden="true"
+                ></i>
+
                 Cancel anytime
+
             </span>
 
+
             <span>
-                <i class="bi bi-check-circle"></i>
+
+                <i
+                    class="bi bi-check-circle"
+                    aria-hidden="true"
+                ></i>
+
                 Built for photographers
+
             </span>
 
         </div>
 
+
+        <!-- ==============================
+             CONNECTED USER JOURNEY
+        =============================== -->
 
         <div class="pricing-comparison-link">
 
@@ -2707,7 +3484,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 Compare all features
 
-                <i class="bi bi-arrow-right"></i>
+                <i
+                    class="bi bi-arrow-right"
+                    aria-hidden="true"
+                ></i>
 
             </a>
 
@@ -2717,11 +3497,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </section>
 
+
 <!-- =========================================
-     VELORA FAQ SECTION
+     VELORA FAQ
 ========================================= -->
 
-<section class="velora-faq" id="faq">
+<section
+    class="velora-faq"
+    id="faq"
+>
 
     <div class="container">
 
@@ -2729,7 +3513,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             <!-- =================================
-                 LEFT CONTENT
+                 FAQ INTRODUCTION
             ================================== -->
 
             <div class="faq-intro">
@@ -2738,10 +3522,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     FREQUENTLY ASKED QUESTIONS
                 </span>
 
+
                 <h2>
                     Questions?
                     <span>We've got answers.</span>
                 </h2>
+
 
                 <p>
                     Everything you need to know about Velora,
@@ -2752,17 +3538,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div class="faq-help-card">
 
-                    <div class="faq-help-icon">
+                    <div
+                        class="faq-help-icon"
+                        aria-hidden="true"
+                    >
 
                         <i class="bi bi-chat-dots"></i>
 
                     </div>
+
 
                     <div>
 
                         <strong>
                             Still have questions?
                         </strong>
+
 
                         <span>
                             We're here to help.
@@ -2777,14 +3568,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     href="#contact"
                     class="faq-contact-link"
                 >
+
                     Contact us
 
-                    <i class="bi bi-arrow-right"></i>
+                    <i
+                        class="bi bi-arrow-right"
+                        aria-hidden="true"
+                    ></i>
 
                 </a>
 
             </div>
-
 
 
             <!-- =================================
@@ -2796,24 +3590,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <!-- FAQ 01 -->
 
-                <div class="faq-item active">
+                <div
+                    class="faq-item active"
+                    id="faq-item-01"
+                >
 
                     <button
                         class="faq-question"
                         type="button"
                         aria-expanded="true"
+                        aria-controls="faq-answer-01"
                     >
 
                         <span>
                             What is Velora?
                         </span>
 
-                        <i class="bi bi-plus"></i>
+
+                        <i
+                            class="bi bi-plus"
+                            aria-hidden="true"
+                        ></i>
 
                     </button>
 
 
-                    <div class="faq-answer">
+                    <div
+                        class="faq-answer"
+                        id="faq-answer-01"
+                    >
 
                         <p>
                             Velora is a photography business platform
@@ -2827,27 +3632,37 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
 
-
                 <!-- FAQ 02 -->
 
-                <div class="faq-item">
+                <div
+                    class="faq-item"
+                    id="faq-item-02"
+                >
 
                     <button
                         class="faq-question"
                         type="button"
                         aria-expanded="false"
+                        aria-controls="faq-answer-02"
                     >
 
                         <span>
                             Can I use my own domain?
                         </span>
 
-                        <i class="bi bi-plus"></i>
+
+                        <i
+                            class="bi bi-plus"
+                            aria-hidden="true"
+                        ></i>
 
                     </button>
 
 
-                    <div class="faq-answer">
+                    <div
+                        class="faq-answer"
+                        id="faq-answer-02"
+                    >
 
                         <p>
                             Yes. Custom domains are available on
@@ -2861,27 +3676,37 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
 
-
                 <!-- FAQ 03 -->
 
-                <div class="faq-item">
+                <div
+                    class="faq-item"
+                    id="faq-item-03"
+                >
 
                     <button
                         class="faq-question"
                         type="button"
                         aria-expanded="false"
+                        aria-controls="faq-answer-03"
                     >
 
                         <span>
                             Can I change my plan later?
                         </span>
 
-                        <i class="bi bi-plus"></i>
+
+                        <i
+                            class="bi bi-plus"
+                            aria-hidden="true"
+                        ></i>
 
                     </button>
 
 
-                    <div class="faq-answer">
+                    <div
+                        class="faq-answer"
+                        id="faq-answer-03"
+                    >
 
                         <p>
                             Yes. You can upgrade or change your plan
@@ -2895,27 +3720,37 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
 
-
                 <!-- FAQ 04 -->
 
-                <div class="faq-item">
+                <div
+                    class="faq-item"
+                    id="faq-item-04"
+                >
 
                     <button
                         class="faq-question"
                         type="button"
                         aria-expanded="false"
+                        aria-controls="faq-answer-04"
                     >
 
                         <span>
                             What happens to my photos if I downgrade?
                         </span>
 
-                        <i class="bi bi-plus"></i>
+
+                        <i
+                            class="bi bi-plus"
+                            aria-hidden="true"
+                        ></i>
 
                     </button>
 
 
-                    <div class="faq-answer">
+                    <div
+                        class="faq-answer"
+                        id="faq-answer-04"
+                    >
 
                         <p>
                             Your existing content remains associated
@@ -2930,27 +3765,37 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
 
-
                 <!-- FAQ 05 -->
 
-                <div class="faq-item">
+                <div
+                    class="faq-item"
+                    id="faq-item-05"
+                >
 
                     <button
                         class="faq-question"
                         type="button"
                         aria-expanded="false"
+                        aria-controls="faq-answer-05"
                     >
 
                         <span>
                             Can my clients access their galleries?
                         </span>
 
-                        <i class="bi bi-plus"></i>
+
+                        <i
+                            class="bi bi-plus"
+                            aria-hidden="true"
+                        ></i>
 
                     </button>
 
 
-                    <div class="faq-answer">
+                    <div
+                        class="faq-answer"
+                        id="faq-answer-05"
+                    >
 
                         <p>
                             Yes. Velora is designed to give your clients
@@ -2963,27 +3808,37 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
 
-
                 <!-- FAQ 06 -->
 
-                <div class="faq-item">
+                <div
+                    class="faq-item"
+                    id="faq-item-06"
+                >
 
                     <button
                         class="faq-question"
                         type="button"
                         aria-expanded="false"
+                        aria-controls="faq-answer-06"
                     >
 
                         <span>
                             Can I customize my website?
                         </span>
 
-                        <i class="bi bi-plus"></i>
+
+                        <i
+                            class="bi bi-plus"
+                            aria-hidden="true"
+                        ></i>
 
                     </button>
 
 
-                    <div class="faq-answer">
+                    <div
+                        class="faq-answer"
+                        id="faq-answer-06"
+                    >
 
                         <p>
                             Yes. Velora provides customizable website
@@ -2997,27 +3852,37 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
 
-
                 <!-- FAQ 07 -->
 
-                <div class="faq-item">
+                <div
+                    class="faq-item"
+                    id="faq-item-07"
+                >
 
                     <button
                         class="faq-question"
                         type="button"
                         aria-expanded="false"
+                        aria-controls="faq-answer-07"
                     >
 
                         <span>
                             Does Velora support bookings?
                         </span>
 
-                        <i class="bi bi-plus"></i>
+
+                        <i
+                            class="bi bi-plus"
+                            aria-hidden="true"
+                        ></i>
 
                     </button>
 
 
-                    <div class="faq-answer">
+                    <div
+                        class="faq-answer"
+                        id="faq-answer-07"
+                    >
 
                         <p>
                             Yes. Velora's booking tools are designed
@@ -3031,27 +3896,37 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
 
-
                 <!-- FAQ 08 -->
 
-                <div class="faq-item">
+                <div
+                    class="faq-item"
+                    id="faq-item-08"
+                >
 
                     <button
                         class="faq-question"
                         type="button"
                         aria-expanded="false"
+                        aria-controls="faq-answer-08"
                     >
 
                         <span>
                             Can I cancel anytime?
                         </span>
 
-                        <i class="bi bi-plus"></i>
+
+                        <i
+                            class="bi bi-plus"
+                            aria-hidden="true"
+                        ></i>
 
                     </button>
 
 
-                    <div class="faq-answer">
+                    <div
+                        class="faq-answer"
+                        id="faq-answer-08"
+                    >
 
                         <p>
                             Yes. Velora plans are designed without
@@ -3070,121 +3945,118 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
 
 </section>
-
-<script>
-
-document.querySelectorAll(".faq-question").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const item = button.closest(".faq-item");
-
-        const isActive = item.classList.contains("active");
-
-
-        // Close every item
-
-        document
-            .querySelectorAll(".faq-item")
-            .forEach(faq => {
-
-                faq.classList.remove("active");
-
-                faq
-                    .querySelector(".faq-question")
-                    .setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-            });
-
-
-        // Open clicked item
-
-        if (!isActive) {
-
-            item.classList.add("active");
-
-            button.setAttribute(
-                "aria-expanded",
-                "true"
-            );
-
-        }
-
-    });
-
-});
-
-</script>
-
 <!-- =========================================
-     VELORA FINAL CTA
+     FINAL CTA
 ========================================= -->
 
-<section class="velora-final-cta">
-
-    <div class="final-cta-background">
-
-        <img
-            src="media/banner/CASA_8445.jpg"
-            alt=""
-            class="final-cta-image"
-        >
-
-    </div>
-
+<section
+    class="velora-final-cta"
+    id="contact"
+>
 
     <div class="container">
 
         <div class="final-cta-content">
 
-            <span class="final-cta-eyebrow">
-                YOUR WORK. YOUR BUSINESS. YOUR VELORA.
-            </span>
+
+            <!-- CTA COPY -->
+
+            <div class="final-cta-copy">
+
+                <span class="final-cta-eyebrow">
+                    YOUR NEXT CHAPTER STARTS HERE
+                </span>
 
 
-            <h2>
-                Your photography
-                deserves a better
-                <span>place to live.</span>
-            </h2>
+                <h2>
+                    Spend less time managing.
+                    <br>
+                    Spend more time
+                    <span>creating.</span>
+                </h2>
 
 
-            <p>
-                Build your portfolio, manage your clients,
-                deliver beautiful galleries, and run your
-                photography business from one calm place.
-            </p>
+                <p>
+                    Bring your photography business together with
+                    galleries, bookings and client management in
+                    one connected workspace.
+                </p>
 
 
-            <div class="final-cta-actions">
+                <div class="final-cta-actions">
 
-                <a
-                    href="register.html"
-                    class="final-cta-button"
-                >
-                    Start building with Velora
+                    <a
+                        href="register.html"
+                        class="btn velora-btn-primary"
+                    >
+                        Get started
+                    </a>
 
-                    <i class="bi bi-arrow-right"></i>
 
-                </a>
+                    <a
+                        href="#pricing"
+                        class="btn velora-btn-secondary"
+                    >
+                        View pricing
+                    </a>
+
+                </div>
 
             </div>
 
 
-            <div class="final-cta-note">
+            <!-- CTA VISUAL -->
 
-                <span>
-                    <i class="bi bi-check-circle"></i>
-                    Free to get started
-                </span>
+            <div
+                class="final-cta-visual"
+                aria-hidden="true"
+            >
 
-                <span>
-                    <i class="bi bi-check-circle"></i>
-                    No credit card required
-                </span>
+                <div class="final-cta-orbit">
+
+                    <div class="final-orbit-card final-orbit-card-one">
+
+                        <i class="bi bi-images"></i>
+
+                        <span>
+                            Galleries
+                        </span>
+
+                    </div>
+
+
+                    <div class="final-orbit-card final-orbit-card-two">
+
+                        <i class="bi bi-calendar-check"></i>
+
+                        <span>
+                            Bookings
+                        </span>
+
+                    </div>
+
+
+                    <div class="final-orbit-card final-orbit-card-three">
+
+                        <i class="bi bi-person-heart"></i>
+
+                        <span>
+                            Clients
+                        </span>
+
+                    </div>
+
+
+                    <div class="final-orbit-center">
+
+                        <img
+                            src="media/logo/logo-1-main.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -3194,6 +4066,7 @@ document.querySelectorAll(".faq-question").forEach(button => {
 
 </section>
 
+
 <!-- =========================================
      VELORA FOOTER
 ========================================= -->
@@ -3202,20 +4075,22 @@ document.querySelectorAll(".faq-question").forEach(button => {
 
     <div class="container">
 
-        <!-- ==============================
-             FOOTER MAIN
-        =============================== -->
 
-        <div class="footer-main">
+        <!-- =================================
+             FOOTER MAIN
+        ================================== -->
+
+        <div class="velora-footer-main">
 
 
             <!-- BRAND -->
 
-            <div class="footer-brand">
+            <div class="velora-footer-brand">
 
                 <a
-                    href="#"
-                    class="footer-logo"
+                    href="index.html"
+                    class="velora-footer-logo"
+                    aria-label="Velora home"
                 >
 
                     <img
@@ -3227,34 +4102,49 @@ document.querySelectorAll(".faq-question").forEach(button => {
 
 
                 <p>
-                    A calmer way to run
-                    your photography business.
+                    A calmer way to run your
+                    photography business.
                 </p>
 
 
-                <a
-                    href="register.html"
-                    class="footer-cta"
-                >
-                    Start building with Velora
+                <div class="velora-footer-socials">
 
-                    <i class="bi bi-arrow-right"></i>
+                    <a
+                        href="#"
+                        aria-label="Velora on Instagram"
+                    >
+                        <i class="bi bi-instagram"></i>
+                    </a>
 
-                </a>
+
+                    <a
+                        href="#"
+                        aria-label="Velora on Facebook"
+                    >
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="Velora on X"
+                    >
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+
+                </div>
 
             </div>
 
 
+            <!-- PRODUCT -->
 
-            <!-- ==============================
-                 PRODUCT
-            =============================== -->
-
-            <div class="footer-column">
+            <div class="velora-footer-column">
 
                 <h3>
                     Product
                 </h3>
+
 
                 <ul>
 
@@ -3264,11 +4154,13 @@ document.querySelectorAll(".faq-question").forEach(button => {
                         </a>
                     </li>
 
+
                     <li>
                         <a href="#templates">
                             Templates
                         </a>
                     </li>
+
 
                     <li>
                         <a href="#pricing">
@@ -3276,29 +4168,6 @@ document.querySelectorAll(".faq-question").forEach(button => {
                         </a>
                     </li>
 
-                    <li>
-                        <a href="#dashboard">
-                            Dashboard
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- ==============================
-                 RESOURCES
-            =============================== -->
-
-            <div class="footer-column">
-
-                <h3>
-                    Resources
-                </h3>
-
-                <ul>
 
                     <li>
                         <a href="#faq">
@@ -3306,77 +4175,78 @@ document.querySelectorAll(".faq-question").forEach(button => {
                         </a>
                     </li>
 
+                </ul>
+
+            </div>
+
+
+            <!-- PLATFORM -->
+
+            <div class="velora-footer-column">
+
+                <h3>
+                    Platform
+                </h3>
+
+
+                <ul>
+
+                    <li>
+                        <a href="register.html">
+                            Create an account
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="login.html">
+                            Sign in
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="galleries.html">
+                            Galleries
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="profile.html">
+                            Your profile
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- SUPPORT -->
+
+            <div class="velora-footer-column">
+
+                <h3>
+                    Support
+                </h3>
+
+
+                <ul>
+
+                    <li>
+                        <a href="#faq">
+                            Help centre
+                        </a>
+                    </li>
+
+
                     <li>
                         <a href="#contact">
-                            Contact
+                            Contact us
                         </a>
                     </li>
 
-                    <li>
-                        <a href="#">
-                            Help Center
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            Documentation
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- ==============================
-                 COMPANY
-            =============================== -->
-
-            <div class="footer-column">
-
-                <h3>
-                    Company
-                </h3>
-
-                <ul>
-
-                    <li>
-                        <a href="#">
-                            About
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            Careers
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            Contact
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- ==============================
-                 LEGAL
-            =============================== -->
-
-            <div class="footer-column">
-
-                <h3>
-                    Legal
-                </h3>
-
-                <ul>
 
                     <li>
                         <a href="#">
@@ -3384,15 +4254,10 @@ document.querySelectorAll(".faq-question").forEach(button => {
                         </a>
                     </li>
 
-                    <li>
-                        <a href="#">
-                            Terms
-                        </a>
-                    </li>
 
                     <li>
                         <a href="#">
-                            Cookies
+                            Terms
                         </a>
                     </li>
 
@@ -3403,82 +4268,29 @@ document.querySelectorAll(".faq-question").forEach(button => {
         </div>
 
 
-
-        <!-- ==============================
+        <!-- =================================
              FOOTER BOTTOM
-        =============================== -->
+        ================================== -->
 
-        <div class="footer-bottom">
+        <div class="velora-footer-bottom">
 
-
-            <div class="footer-copyright">
-
-                © 2026 Velora.
-                All rights reserved.
-
-            </div>
+            <p>
+                © 2026 Velora. All rights reserved.
+            </p>
 
 
+            <div class="velora-footer-bottom-links">
 
-            <div class="footer-socials">
-
-                <a
-                    href="#"
-                    aria-label="Instagram"
-                >
-
-                    <i class="bi bi-instagram"></i>
-
+                <a href="#">
+                    Privacy Policy
                 </a>
 
 
-                <a
-                    href="#"
-                    aria-label="X"
-                >
-
-                    <i class="bi bi-twitter-x"></i>
-
-                </a>
-
-
-                <a
-                    href="#"
-                    aria-label="Facebook"
-                >
-
-                    <i class="bi bi-facebook"></i>
-
-                </a>
-
-
-                <a
-                    href="#"
-                    aria-label="LinkedIn"
-                >
-
-                    <i class="bi bi-linkedin"></i>
-
+                <a href="#">
+                    Terms of Service
                 </a>
 
             </div>
-
-
-
-            <button
-                class="footer-top"
-                type="button"
-                onclick="window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                })"
-            >
-
-                Back to top
-
-                <i class="bi bi-arrow-up"></i>
-
-            </button>
 
         </div>
 
@@ -3487,105 +4299,472 @@ document.querySelectorAll(".faq-question").forEach(button => {
 </footer>
 
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- =========================================
+     BOOTSTRAP JAVASCRIPT
+========================================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+></script>
+
+
+<!-- =========================================
+     SWIPER JAVASCRIPT
+========================================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+></script>
+
+
+<!-- =========================================
+     VELORA PAGE JAVASCRIPT
+
+     All Index page interactions are initialized
+     from one controlled script.
+========================================= -->
 
 <script>
-const swiper = new Swiper(".veloraSwiper", {
 
-    slidesPerView: 3,
-    centeredSlides: true,
-    loop: true,
-    spaceBetween: 30,
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
 
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
+        /* =========================================
+           TEMPLATE SLIDER
+        ========================================== */
 
-    breakpoints:{
+        const veloraSwiperElement =
+            document.querySelector(
+                ".veloraSwiper"
+            );
 
-        0:{
-            slidesPerView:1.15,
-            spaceBetween:20
-        },
 
-        768:{
-            slidesPerView:2,
-            spaceBetween:25
-        },
+        if (veloraSwiperElement) {
 
-        1200:{
-            slidesPerView:3,
-            spaceBetween:30
+            new Swiper(
+                ".veloraSwiper",
+                {
+
+                    slidesPerView: 1.1,
+
+                    centeredSlides: true,
+
+                    loop: true,
+
+                    spaceBetween: 20,
+
+                    grabCursor: true,
+
+
+                    navigation: {
+
+                        nextEl:
+                            ".veloraSwiper .swiper-button-next",
+
+                        prevEl:
+                            ".veloraSwiper .swiper-button-prev"
+
+                    },
+
+
+                    pagination: {
+
+                        el:
+                            ".veloraSwiper .swiper-pagination",
+
+                        clickable: true
+
+                    },
+
+
+                    keyboard: {
+
+                        enabled: true
+
+                    },
+
+
+                    breakpoints: {
+
+                        576: {
+
+                            slidesPerView: 1.5,
+
+                            spaceBetween: 20
+
+                        },
+
+
+                        768: {
+
+                            slidesPerView: 2,
+
+                            centeredSlides: false,
+
+                            spaceBetween: 24
+
+                        },
+
+
+                        992: {
+
+                            slidesPerView: 2.5,
+
+                            centeredSlides: false,
+
+                            spaceBetween: 28
+
+                        },
+
+
+                        1200: {
+
+                            slidesPerView: 3,
+
+                            centeredSlides: false,
+
+                            spaceBetween: 30
+
+                        }
+
+                    }
+
+                }
+            );
+
         }
 
+
+        /* =========================================
+           BUSINESS FEATURE TABS
+        ========================================== */
+
+        const businessFeatures =
+            document.querySelectorAll(
+                ".business-feature"
+            );
+
+
+        const dashboardPanels =
+            document.querySelectorAll(
+                ".dashboard-panel"
+            );
+
+
+        businessFeatures.forEach(
+            function (feature) {
+
+
+                feature.addEventListener(
+                    "click",
+                    function () {
+
+
+                        const target =
+                            this.getAttribute(
+                                "data-target"
+                            );
+
+
+                        businessFeatures.forEach(
+                            function (item) {
+
+                                item.classList.remove(
+                                    "active"
+                                );
+
+                                item.setAttribute(
+                                    "aria-selected",
+                                    "false"
+                                );
+
+                            }
+                        );
+
+
+                        dashboardPanels.forEach(
+                            function (panel) {
+
+                                panel.classList.remove(
+                                    "active"
+                                );
+
+                                panel.setAttribute(
+                                    "aria-hidden",
+                                    "true"
+                                );
+
+                            }
+                        );
+
+
+                        this.classList.add(
+                            "active"
+                        );
+
+
+                        this.setAttribute(
+                            "aria-selected",
+                            "true"
+                        );
+
+
+                        const activePanel =
+                            document.querySelector(
+                                '.dashboard-panel[data-panel="' +
+                                target +
+                                '"]'
+                            );
+
+
+                        if (activePanel) {
+
+                            activePanel.classList.add(
+                                "active"
+                            );
+
+
+                            activePanel.setAttribute(
+                                "aria-hidden",
+                                "false"
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =========================================
+           FAQ ACCORDION
+        ========================================== */
+
+        const faqItems =
+            document.querySelectorAll(
+                ".faq-item"
+            );
+
+
+        faqItems.forEach(
+            function (faqItem) {
+
+
+                const question =
+                    faqItem.querySelector(
+                        ".faq-question"
+                    );
+
+
+                if (!question) {
+
+                    return;
+
+                }
+
+
+                question.addEventListener(
+                    "click",
+                    function () {
+
+
+                        const isActive =
+                            faqItem.classList.contains(
+                                "active"
+                            );
+
+
+                        faqItems.forEach(
+                            function (item) {
+
+
+                                item.classList.remove(
+                                    "active"
+                                );
+
+
+                                const button =
+                                    item.querySelector(
+                                        ".faq-question"
+                                    );
+
+
+                                if (button) {
+
+                                    button.setAttribute(
+                                        "aria-expanded",
+                                        "false"
+                                    );
+
+                                }
+
+                            }
+                        );
+
+
+                        if (!isActive) {
+
+                            faqItem.classList.add(
+                                "active"
+                            );
+
+
+                            question.setAttribute(
+                                "aria-expanded",
+                                "true"
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =========================================
+           MOBILE NAVIGATION
+
+           Close the Bootstrap navigation after
+           selecting an internal page section.
+        ========================================== */
+
+        const navLinks =
+            document.querySelectorAll(
+                "#veloraNav .nav-link"
+            );
+
+
+        const navCollapseElement =
+            document.getElementById(
+                "veloraNav"
+            );
+
+
+        if (navCollapseElement) {
+
+
+            navLinks.forEach(
+                function (link) {
+
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+
+                            if (
+                                window.innerWidth < 992 &&
+                                navCollapseElement.classList.contains(
+                                    "show"
+                                )
+                            ) {
+
+
+                                const navCollapse =
+                                    bootstrap.Collapse.getOrCreateInstance(
+                                        navCollapseElement
+                                    );
+
+
+                                navCollapse.hide();
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =========================================
+           SMOOTH INTERNAL NAVIGATION
+
+           Allows all internal Index page links
+           to move smoothly between connected
+           sections.
+        ========================================== */
+
+        const internalLinks =
+            document.querySelectorAll(
+                'a[href^="#"]'
+            );
+
+
+        internalLinks.forEach(
+            function (link) {
+
+
+                link.addEventListener(
+                    "click",
+                    function (event) {
+
+
+                        const targetId =
+                            this.getAttribute(
+                                "href"
+                            );
+
+
+                        if (
+                            !targetId ||
+                            targetId === "#"
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        const target =
+                            document.querySelector(
+                                targetId
+                            );
+
+
+                        if (!target) {
+
+                            return;
+
+                        }
+
+
+                        event.preventDefault();
+
+
+                        target.scrollIntoView(
+                            {
+
+                                behavior:
+                                    "smooth",
+
+                                block:
+                                    "start"
+
+                            }
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
     }
-
-});
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const features =
-        document.querySelectorAll(".business-feature");
-
-    const dashboard =
-        document.querySelector("#businessDashboardImage");
-
-
-    features.forEach(function (feature) {
-
-        feature.addEventListener("click", function () {
-
-            const image =
-                this.getAttribute("data-image");
-
-
-            /* Remove active state */
-
-            features.forEach(function (item) {
-
-                item.classList.remove("active");
-
-            });
-
-
-            /* Activate selected feature */
-
-            this.classList.add("active");
-
-
-            /* Fade dashboard out */
-
-            dashboard.classList.add("is-changing");
-
-
-            setTimeout(function () {
-
-                dashboard.src = image;
-
-                dashboard.onload = function () {
-
-                    dashboard.classList.remove("is-changing");
-
-                };
-
-            }, 220);
-
-        });
-
-    });
-
-});
+);
 
 </script>
-</script>
+
+
 </body>
 
 </html>
